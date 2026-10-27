@@ -1,0 +1,23 @@
+code,marche_code,type_code,titre_travail,audience,risque_code,relecture_metier,methode_auteur,prix_cible,whop_product_id,statut_code
+EN01,EN,FICHE,Dosage Calculation & IV Drip Rates,"Nursing students, NCLEX",FORT,oui,AGENT,3.99,prod_9Ko8pATY5WXru,A_FAIRE
+EN02,EN,FICHE,Physics Formula Sheet (College & Pre-Med),"Pre-med, college physics, MCAT",FAIBLE,non,AGENT,4.99,prod_a0D5tpYs18kFt,A_FAIRE
+EN03,EN,FICHE,Chemistry Formula Sheet (College & Pre-Med),"Pre-med, gen chem, MCAT",FAIBLE,non,AGENT,3.99,prod_8a0pATJq6gFX2,A_FAIRE
+EN04,EN,FICHE,SPI Ultrasound Physics — Express Review Sheets,Sonography students (ARDMS SPI),FAIBLE,non,AGENT,9.99,,A_FAIRE
+EN05,EN,FICHE,EKG Rhythms Cheat Sheet,"Nursing students, NCLEX",FORT,oui,AGENT,4.99,,A_FAIRE
+EN06,EN,FICHE,Anatomy & Physiology — 10 Systems Sheets,Nursing and pre-health students,FAIBLE,oui,AGENT,8.99,,A_FAIRE
+EN07,EN,FICHE,ABG Interpretation Cheat Sheet,"Nursing students, NCLEX",FORT,oui,AGENT,3.99,,A_FAIRE
+EN08,EN,FICHE,Lab Values Cheat Sheet,"Nursing students, NCLEX",FAIBLE,oui,AGENT,3.99,,A_FAIRE
+EN09,EN,KIT,"Nursing Essentials Bundle (Dosage, EKG, ABG, Labs)","Nursing students, NCLEX",FORT,oui,AGENT,9.99,,A_FAIRE
+EN10,EN,FICHE,TEAS 7 Science Review Sheets,TEAS 7 candidates,MOYEN,non,AGENT,9.99,,A_FAIRE
+EN11,EN,GUIDE,SPI Ultrasound Physics — Complete Study Guide,Sonography students (ARDMS SPI),MOYEN,non,AGENT,24.99,,A_FAIRE
+EN12,EN,GUIDE,TEAS 7 Science — Complete Study Guide,TEAS 7 candidates,MOYEN,non,AGENT,19.99,,A_FAIRE
+FR01,FR,FICHE,Calculs de doses et débits — fiche méthode,Étudiant.e.s en IFSI,FORT,oui,AGENT,3.90,,A_FAIRE
+FR02,FR,FICHE,"Pack stage IFSI (constantes, échelles, transmissions, précautions)",Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,6.90,,A_FAIRE
+FR03,FR,FICHE,Bilan biologique — normes françaises,Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,3.90,,A_FAIRE
+FR04,FR,FICHE,Pharmacologie IFSI — 10 classes,Étudiant.e.s en IFSI,MOYEN,oui,AGENT,9.90,,A_FAIRE
+FR05,FR,KIT,"Kit IFSI (doses, stage, biologie, pharmacologie)",Étudiant.e.s en IFSI,FORT,oui,AGENT,19.90,,A_FAIRE
+FR06,FR,GUIDE,Cahier calculs de doses — 100 exercices corrigés,Étudiant.e.s en IFSI,FORT,oui,AGENT,9.90,,A_FAIRE
+FR07,FR,FICHE,PASS/LAS Physique-Biophysique — fiche formules,Étudiant.e.s en PASS/LAS,FAIBLE,non,AGENT,4.90,,A_FAIRE
+FR08,FR,FICHE,PASS/LAS Chimie — fiche formules,Étudiant.e.s en PASS/LAS,FAIBLE,non,AGENT,4.90,,A_FAIRE
+FR09,FR,FICHE,PASS/LAS Biostatistiques — fiche formules,Étudiant.e.s en PASS/LAS,FAIBLE,non,AGENT,3.90,,A_FAIRE
+FR10,FR,GUIDE,Physique-Biophysique PASS/LAS — guide complet,Étudiant.e.s en PASS/LAS,MOYEN,non,AGENT,17.90,,A_FAIRE

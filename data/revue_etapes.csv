@@ -1,0 +1,4 @@
+code,ordre,libelle,acteur,condition
+VERIF_AUTO,1,Vérification indépendante,VERIFICATEUR,TOUJOURS
+RELECTURE_METIER,2,Relecture par une personne du domaine,RELECTEUR_METIER,SI_RELECTURE_METIER
+VALIDATION,3,Validation et signature,TRISTAN,TOUJOURS

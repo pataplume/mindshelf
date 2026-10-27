@@ -1,0 +1,23 @@
+code,ordre,titre,statut_code
+R00,0,"Fondations : charte, chaîne de fabrication, outils",A_FAIRE
+R01,1,Fiches EN existantes passées à la charte,A_FAIRE
+R02,2,Adaptations FR des fiches existantes,A_FAIRE
+R03,3,"Nouvelles fiches EN (SPI, labs, TEAS)",A_FAIRE
+R04,4,Anatomie-physiologie EN + biostatistiques PASS,A_FAIRE
+R05,5,Fiches IFSI à faible risque,A_FAIRE
+R06,6,"Fiches EN à risque fort (EKG, ABG)",A_FAIRE
+R07,7,Pharmacologie IFSI,A_FAIRE
+R08,8,Kits EN et FR,A_FAIRE
+R09,9,Guide SPI 1/3,A_FAIRE
+R10,10,Guide SPI 2/3,A_FAIRE
+R11,11,Guide SPI 3/3,A_FAIRE
+R12,12,Guide TEAS 7 Science 1/3,A_FAIRE
+R13,13,Guide TEAS 7 Science 2/3,A_FAIRE
+R14,14,Guide TEAS 7 Science 3/3,A_FAIRE
+R15,15,Cahier calculs de doses 1/3,A_FAIRE
+R16,16,Cahier calculs de doses 2/3,A_FAIRE
+R17,17,Cahier calculs de doses 3/3,A_FAIRE
+R18,18,Guide Physique-Biophysique PASS 1/3,A_FAIRE
+R19,19,Guide Physique-Biophysique PASS 2/3,A_FAIRE
+R20,20,Guide Physique-Biophysique PASS 3/3,A_FAIRE
+R21,21,Mise en vente Etsy et contrôle final,A_FAIRE

@@ -1,0 +1,8 @@
+id,canal_code,type,taux_pct,montant_min,montant_max,devise,base,a_verifier,source_code
+1,ETSY,ouverture_boutique,,15,29,USD,unique,oui,SRC_ETSY_OUVERTURE
+2,ETSY,annonce,,0.2,0.2,USD,par_annonce_et_renouvellement_4_mois,non,SRC_ETSY_FRAIS
+3,ETSY,transaction,6.5,,,,par_vente,non,SRC_ETSY_FRAIS
+4,ETSY,traitement_paiement,3,0.25,0.25,USD,par_vente,oui,SRC_ETSY_FRAIS
+5,ETSY,conversion_devise,2.5,,,,par_vente,oui,SRC_ETSY_FRAIS
+6,ETSY,offsite_ads,15,,,,par_vente_attribuee,non,SRC_ETSY_ADS
+7,WHOP,litige,,15,15,USD,par_litige,non,SRC_WHOP_LITIGES

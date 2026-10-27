@@ -1,0 +1,9 @@
+code,ordre,libelle
+A_FAIRE,1,À faire
+EN_COURS,2,En cours
+A_VERIFIER,3,"Produit, en attente de vérification"
+A_CORRIGER,4,Vérification : corrections bloquantes
+A_VALIDER,5,"Vérifié, en attente de relecture et validation"
+VALIDE,6,Validé par Tristan
+PUBLIE,7,Publié
+BLOQUE,9,Bloqué (décision ou entrée manquante)

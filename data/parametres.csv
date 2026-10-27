@@ -1,0 +1,14 @@
+cle,valeur,unite,description
+run_agents_production_max,3,agents,Agents producteurs en parallèle par run (hors vérificateur et conditionneur)
+budget_depart_max,50,USD,Plafond de dépenses de lancement validé par Tristan
+etsy_video_duree_min,5,s,Durée minimale d'une vidéo d'annonce Etsy
+etsy_video_duree_max,15,s,Durée maximale d'une vidéo d'annonce Etsy
+etsy_video_taille_max,100,Mo,Poids maximal d'une vidéo d'annonce Etsy
+etsy_videos_par_annonce_max,2,vidéos,Nombre maximal de vidéos par annonce Etsy
+etsy_tags_max,13,tags,Nombre de tags par annonce Etsy
+etsy_titre_mots_max,15,mots,Longueur conseillée d'un titre Etsy (titres naturels)
+whop_titre_car_max,80,caractères,Limite API Whop pour le titre produit
+whop_accroche_car_max,80,caractères,Limite API Whop pour la headline
+whop_description_car_max,1500,caractères,Limite API Whop pour la description
+validation_estimee_par_produit,10,min,"Estimation du temps de validation par Tristan, par variante (à recalibrer)"
+etsy_publications_par_semaine_max,3,annonces,"Rythme de publication Etsy pour éviter le profil 'automatisation de masse' (jugement, pas une règle Etsy)"

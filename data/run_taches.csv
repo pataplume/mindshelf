@@ -1,0 +1,132 @@
+id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
+1,R00,PRODUCTION,CHARTE,,,Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR,A_FAIRE
+2,R00,PRODUCTION,PIPELINE,,,"Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test",A_FAIRE
+3,R00,PRODUCTION,OUTILLAGE,,,"Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces",A_FAIRE
+4,R00,VERIFICATION,VERIFICATEUR,,,Contrôle de bout en bout sur la fiche test,A_FAIRE
+5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",A_FAIRE
+7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,A_FAIRE
+8,R01,PRODUCTION,PRODUCTEUR,EN01,,Porter la fiche dosage & IV dans la charte,A_FAIRE
+9,R01,VERIFICATION,VERIFICATEUR,EN02,,Vérification indépendante,A_FAIRE
+10,R01,VERIFICATION,VERIFICATEUR,EN03,,Vérification indépendante,A_FAIRE
+11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,A_FAIRE
+12,R01,CONDITIONNEMENT,CONDITIONNEUR,EN02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+13,R01,CONDITIONNEMENT,CONDITIONNEUR,EN03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+15,R02,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",A_FAIRE
+17,R02,PRODUCTION,PRODUCTEUR,FR08,,Adapter EN03 au tronc commun PASS/LAS (chimie),A_FAIRE
+18,R02,PRODUCTION,PRODUCTEUR,FR01,,"Fiche méthode calculs de doses et débits, variantes 2009 et 2026",A_FAIRE
+19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,A_FAIRE
+20,R02,VERIFICATION,VERIFICATEUR,FR08,,Vérification indépendante,A_FAIRE
+21,R02,VERIFICATION,VERIFICATEUR,FR01,,Vérification indépendante,A_FAIRE
+22,R02,CONDITIONNEMENT,CONDITIONNEUR,FR07,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+25,R03,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),A_FAIRE
+27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),A_FAIRE
+28,R03,PRODUCTION,PRODUCTEUR,EN10,,Fiches TEAS 7 Science,A_FAIRE
+29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,A_FAIRE
+30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,A_FAIRE
+31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,A_FAIRE
+32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+35,R04,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+36,R04,PRODUCTION,PRODUCTEUR,EN06,A,Systèmes 1 à 5,A_FAIRE
+37,R04,PRODUCTION,PRODUCTEUR,EN06,B,Systèmes 6 à 10,A_FAIRE
+38,R04,PRODUCTION,PRODUCTEUR,FR09,,Fiche formules biostatistiques PASS/LAS,A_FAIRE
+39,R04,VERIFICATION,VERIFICATEUR,EN06,,Vérification indépendante,A_FAIRE
+40,R04,VERIFICATION,VERIFICATEUR,FR09,,Vérification indépendante,A_FAIRE
+41,R04,CONDITIONNEMENT,CONDITIONNEUR,EN06,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+42,R04,CONDITIONNEMENT,CONDITIONNEUR,FR09,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+43,R05,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+44,R05,PRODUCTION,PRODUCTEUR,FR02,,"Pack stage IFSI, variantes 2009 et 2026",A_FAIRE
+45,R05,PRODUCTION,PRODUCTEUR,FR03,,"Bilan biologique, normes françaises, variantes 2009 et 2026",A_FAIRE
+46,R05,VERIFICATION,VERIFICATEUR,FR02,,Vérification indépendante,A_FAIRE
+47,R05,VERIFICATION,VERIFICATEUR,FR03,,Vérification indépendante,A_FAIRE
+48,R05,CONDITIONNEMENT,CONDITIONNEUR,FR02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+49,R05,CONDITIONNEMENT,CONDITIONNEUR,FR03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+50,R06,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+51,R06,PRODUCTION,PRODUCTEUR,EN05,,Fiche rythmes ECG (tracés dessinés en code),A_FAIRE
+52,R06,PRODUCTION,PRODUCTEUR,EN07,,Fiche interprétation des gaz du sang,A_FAIRE
+53,R06,VERIFICATION,VERIFICATEUR,EN05,,Vérification indépendante,A_FAIRE
+54,R06,VERIFICATION,VERIFICATEUR,EN07,,Vérification indépendante,A_FAIRE
+55,R06,CONDITIONNEMENT,CONDITIONNEUR,EN05,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+56,R06,CONDITIONNEMENT,CONDITIONNEUR,EN07,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+57,R07,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+58,R07,PRODUCTION,PRODUCTEUR,FR04,A,"Classes 1 à 5 (DCI et spécialités françaises, surveillance infirmière)",A_FAIRE
+59,R07,PRODUCTION,PRODUCTEUR,FR04,B,Classes 6 à 10,A_FAIRE
+60,R07,VERIFICATION,VERIFICATEUR,FR04,,Vérification indépendante,A_FAIRE
+61,R07,CONDITIONNEMENT,CONDITIONNEUR,FR04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+62,R08,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+63,R08,PRODUCTION,ASSEMBLEUR,EN09,,"Assembler EN01, EN05, EN07, EN08 : couverture, sommaire, PDF unique",A_FAIRE
+64,R08,PRODUCTION,ASSEMBLEUR,FR05,,"Assembler FR01 à FR04, variantes 2009 et 2026",A_FAIRE
+65,R08,VERIFICATION,VERIFICATEUR,EN09,,Cohérence de l'assemblage avec les composants validés,A_FAIRE
+66,R08,VERIFICATION,VERIFICATEUR,FR05,,Cohérence de l'assemblage avec les composants validés,A_FAIRE
+67,R08,CONDITIONNEMENT,CONDITIONNEUR,EN09,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+68,R08,CONDITIONNEMENT,CONDITIONNEUR,FR05,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+69,R09,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+70,R09,PRODUCTION,PRODUCTEUR,EN11,PLAN,Plan détaillé du guide + chapitres 1-2,A_FAIRE
+71,R09,PRODUCTION,PRODUCTEUR,EN11,L1,chapitres 3-4,A_FAIRE
+72,R09,PRODUCTION,QCM,EN11,Q1,"Banque de questions, partie 1",A_FAIRE
+73,R09,VERIFICATION,VERIFICATEUR,EN11,,Vérification des chapitres et questions du run,A_FAIRE
+74,R10,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+75,R10,PRODUCTION,PRODUCTEUR,EN11,L2,chapitres 5-6,A_FAIRE
+76,R10,PRODUCTION,PRODUCTEUR,EN11,L3,chapitres 7-8,A_FAIRE
+77,R10,PRODUCTION,QCM,EN11,Q2,"Banque de questions, partie 2",A_FAIRE
+78,R10,VERIFICATION,VERIFICATEUR,EN11,,Vérification des chapitres et questions du run,A_FAIRE
+79,R11,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+80,R11,PRODUCTION,ASSEMBLEUR,EN11,,"Assemblage final : sommaire, renvois, index, corrigés",A_FAIRE
+81,R11,PRODUCTION,QCM,EN11,EXAM,Examen blanc et corrigé expliqué,A_FAIRE
+82,R11,VERIFICATION,VERIFICATEUR,EN11,,Vérification complète du guide assemblé,A_FAIRE
+83,R11,CONDITIONNEMENT,CONDITIONNEUR,EN11,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+84,R12,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+85,R12,PRODUCTION,PRODUCTEUR,EN12,PLAN,Plan détaillé du guide + anatomie-physiologie (1/2),A_FAIRE
+86,R12,PRODUCTION,PRODUCTEUR,EN12,L1,anatomie-physiologie (2/2),A_FAIRE
+87,R12,PRODUCTION,QCM,EN12,Q1,"Banque de questions, partie 1",A_FAIRE
+88,R12,VERIFICATION,VERIFICATEUR,EN12,,Vérification des chapitres et questions du run,A_FAIRE
+89,R13,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+90,R13,PRODUCTION,PRODUCTEUR,EN12,L2,biologie et chimie,A_FAIRE
+91,R13,PRODUCTION,PRODUCTEUR,EN12,L3,physique et raisonnement scientifique,A_FAIRE
+92,R13,PRODUCTION,QCM,EN12,Q2,"Banque de questions, partie 2",A_FAIRE
+93,R13,VERIFICATION,VERIFICATEUR,EN12,,Vérification des chapitres et questions du run,A_FAIRE
+94,R14,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+95,R14,PRODUCTION,ASSEMBLEUR,EN12,,"Assemblage final : sommaire, renvois, index, corrigés",A_FAIRE
+96,R14,PRODUCTION,QCM,EN12,EXAM,Examen blanc et corrigé expliqué,A_FAIRE
+97,R14,VERIFICATION,VERIFICATEUR,EN12,,Vérification complète du guide assemblé,A_FAIRE
+98,R14,CONDITIONNEMENT,CONDITIONNEUR,EN12,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+99,R15,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+100,R15,PRODUCTION,PRODUCTEUR,FR06,PLAN,Plan détaillé du guide + rappels et méthode,A_FAIRE
+101,R15,PRODUCTION,PRODUCTEUR,FR06,L1,exercices 1 à 35,A_FAIRE
+102,R15,PRODUCTION,QCM,FR06,Q1,"Banque de questions, partie 1",A_FAIRE
+103,R15,VERIFICATION,VERIFICATEUR,FR06,,Vérification des chapitres et questions du run,A_FAIRE
+104,R16,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+105,R16,PRODUCTION,PRODUCTEUR,FR06,L2,exercices 36 à 70,A_FAIRE
+106,R16,PRODUCTION,PRODUCTEUR,FR06,L3,exercices 71 à 100 et situations cliniques,A_FAIRE
+107,R16,PRODUCTION,QCM,FR06,Q2,"Banque de questions, partie 2",A_FAIRE
+108,R16,VERIFICATION,VERIFICATEUR,FR06,,Vérification des chapitres et questions du run,A_FAIRE
+109,R17,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+110,R17,PRODUCTION,ASSEMBLEUR,FR06,,"Assemblage final : sommaire, renvois, index, corrigés",A_FAIRE
+111,R17,PRODUCTION,QCM,FR06,EXAM,Examen blanc et corrigé expliqué,A_FAIRE
+112,R17,VERIFICATION,VERIFICATEUR,FR06,,Vérification complète du guide assemblé,A_FAIRE
+113,R17,CONDITIONNEMENT,CONDITIONNEUR,FR06,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+114,R18,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+115,R18,PRODUCTION,PRODUCTEUR,FR10,PLAN,Plan détaillé du guide + états de la matière,A_FAIRE
+116,R18,PRODUCTION,PRODUCTEUR,FR10,L1,rayonnements,A_FAIRE
+117,R18,PRODUCTION,QCM,FR10,Q1,"Banque de questions, partie 1",A_FAIRE
+118,R18,VERIFICATION,VERIFICATEUR,FR10,,Vérification des chapitres et questions du run,A_FAIRE
+119,R19,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+120,R19,PRODUCTION,PRODUCTEUR,FR10,L2,circulation des fluides,A_FAIRE
+121,R19,PRODUCTION,PRODUCTEUR,FR10,L3,transports membranaires et électrophysiologie,A_FAIRE
+122,R19,PRODUCTION,QCM,FR10,Q2,"Banque de questions, partie 2",A_FAIRE
+123,R19,VERIFICATION,VERIFICATEUR,FR10,,Vérification des chapitres et questions du run,A_FAIRE
+124,R20,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+125,R20,PRODUCTION,ASSEMBLEUR,FR10,,"Assemblage final : sommaire, renvois, index, corrigés",A_FAIRE
+126,R20,PRODUCTION,QCM,FR10,EXAM,Examen blanc et corrigé expliqué,A_FAIRE
+127,R20,VERIFICATION,VERIFICATEUR,FR10,,Vérification complète du guide assemblé,A_FAIRE
+128,R20,CONDITIONNEMENT,CONDITIONNEUR,FR10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+129,R21,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
+130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
+131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE

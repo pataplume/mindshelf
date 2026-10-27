@@ -1,0 +1,4 @@
+code,libelle,etsy_autorise,regle
+FAIBLE,"Référence : formules, tableaux, normes",oui,Déclaration IA obligatoire
+MOYEN,Guide et QCM,oui,Déclaration IA obligatoire
+FORT,"Méthode pas à pas (calcul, interprétation)",si_methode_tristan,Etsy interdit les instructions fonctionnelles générées par IA (SRC_ETSY_IA)

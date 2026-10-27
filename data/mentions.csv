@@ -1,0 +1,8 @@
+code,type,texte_fr,texte_en
+IA_REDACTION_ASSISTEE,ia,Rédaction assistée par IA ; contenu vérifié et validé par le vendeur.,Written with AI assistance; content checked and approved by the seller.
+AVERT_REVISION,avertissement,"Outil de révision. Il complète vos cours et ouvrages de référence, il ne les remplace pas.",A study aid. It complements your courses and reference books; it doesn't replace them.
+AVERT_CLINIQUE,avertissement,"Ne remplace ni les protocoles de votre service, ni la prescription médicale, ni l'avis d'un.e professionnel.le de santé.","Does not replace your facility's protocols, the prescriber's order or professional advice."
+MARQUE_MCAT,marque,,MCAT is a registered trademark of the AAMC. Not affiliated with or endorsed by the AAMC.
+MARQUE_NCLEX,marque,,NCLEX is a registered trademark of the NCSBN. Not affiliated with or endorsed by the NCSBN.
+MARQUE_TEAS,marque,,TEAS is a registered trademark of ATI (Assessment Technologies Institute). Not affiliated with or endorsed by ATI.
+MARQUE_SPI,marque,,"SPI is an examination of ARDMS, a registered trademark. Not affiliated with or endorsed by ARDMS."

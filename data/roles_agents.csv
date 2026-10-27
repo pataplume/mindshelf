@@ -1,0 +1,10 @@
+code,libelle,spec
+ORCHESTRATEUR,Orchestrateur (session principale de Claude),agents/orchestrateur.md
+CHARTE,Charte graphique MindShelf,agents/charte.md
+PIPELINE,Chaîne de fabrication Typst,agents/pipeline.md
+OUTILLAGE,Outils de conditionnement,agents/outillage.md
+PRODUCTEUR,Rédaction et mise en page d'un produit,agents/producteur.md
+QCM,Banque de questions d'un guide,agents/qcm.md
+ASSEMBLEUR,Assemblage des kits et des guides,agents/assembleur.md
+VERIFICATEUR,Vérification indépendante,agents/verificateur.md
+CONDITIONNEUR,"Aperçus, vidéo, Anki, annonces, script iPhone",agents/conditionneur.md
