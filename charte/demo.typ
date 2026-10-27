@@ -1,5 +1,7 @@
-// Démonstration de la charte : tous les composants sur une à deux pages.
-// Compilation : voir charte/README.md (entrées « format » et « langue »).
+// Démonstration de la charte : tous les composants sur une page A4.
+// Entrées : format (a4 | letter | nb | tablette), langue (en | fr), marque.
+// Compilation : voir charte/README.md.
+// Contenu illustratif : il montre la mise en page, ce n'est pas un produit.
 #import "/charte/modele.typ": *
 
 #let langue = sys.inputs.at("langue", default: "en")
@@ -9,10 +11,10 @@
 #show: fiche.with(
   titre: t("Dosage & IV Drip Rates", "Calculs de doses et débits"),
   sous-titre: t("Charter demo: every component on one sheet", "Démo de la charte : tous les composants sur une fiche"),
-  marque: t("MindShelf", "Marque FR"),
+  marque: sys.inputs.at("marque", default: t("MindShelf", "Marque FR")),
   langue: langue,
   format: sys.inputs.at("format", default: "a4"),
-  mentions: mentions-produit("EN01", langue),
+  mentions: mentions-produit(t("EN01", "FR01"), langue),
   version: "v1",
   numerotation: true,
 )
@@ -66,14 +68,14 @@
 #tableau(
   columns: (1fr, auto, auto),
   t[Set][Perfuseur], t[Drop factor][Gouttes/mL], t[Typical use][Usage courant],
-  t[Macro-drip][Standard], [10–20 gtt/mL], t[Adults, large volumes][Adultes, grands volumes],
-  t[Micro-drip][Pédiatrique], [60 gtt/mL], t[Pediatrics, small volumes][Pédiatrie, petits volumes],
-  t[Blood set][Transfusion], [10–15 gtt/mL], t[Blood products][Produits sanguins],
+  t[Macro-drip][Standard], t[10–20 gtt/mL][20], t[Adults, large volumes][Adultes, grands volumes],
+  t[Micro-drip][Précision], [60], t[Pediatrics, small volumes][Pédiatrie, petits volumes],
+  t[Blood set][Transfusion], t[10–15 gtt/mL][15], t[Blood products][Produits sanguins],
 )
 
 == #t("Number formatting", "Format des nombres")
 
-- #t[Helper `nombre()`:][Fonction `nombre()` :] #nombre(1234567.891, decimales: 2), #nombre(-0.5), #nombre("12500")
+- #t[Helper `nombre()`:][Fonction `nombre()` :] #nombre(1234567.891, decimales: 2)#t[, ][ ; ]#nombre(-0.5)#t[, ][ ; ]#nombre("12500")#t[, ][ ; ]#nombre(4, decimales: 1)
 - #t[Tabular figures keep columns aligned.][Chiffres tabulaires : colonnes alignées.]
   - #t[Second-level item.][Élément de second niveau.]
 
@@ -96,6 +98,31 @@
   [Body text in Fira Sans, set ragged-right for narrow columns. A #link("https://example.org")[external link] is underlined; *bold* is semi-bold.],
   [Texte courant en Fira Sans, aligné à gauche pour les colonnes étroites. Un #link("https://example.org")[lien externe] est souligné ; le *gras* est semi-gras.],
 )
+]
+
+= #t("Three-column block", "Bloc en trois colonnes")
+
+#colonnes(3)[
+  #tableau(
+    columns: (1fr, 1fr),
+    t[Unit][Unité], t[Equals][Vaut],
+    [1 g], [1000 mg],
+    [1 mg], [1000 µg],
+    [1 L], [1000 mL],
+    [1 h], [60 min],
+  )
+
+  #exemple(titre: t("Weight-based dose", "Dose au poids"))[
+    #t([Ordered 15 mg/kg; weight 12 kg.], [Prescription 15 mg/kg ; poids 12 kg.])
+    $ 15 times 12 = 180 "mg" $
+  ]
+
+  #piege(titre: t("Zeros", "Zéros"))[
+    #t(
+      [No trailing zero (5.0 mg is misread as 50 mg); always a leading zero (0.5 mg, not .5 mg).],
+      [Jamais de zéro final (5,0 mg lu 50 mg) ; toujours un zéro initial (0,5 mg et non ,5 mg).],
+    )
+  ]
 ]
 
 = #t("Full-width table", "Tableau pleine largeur")

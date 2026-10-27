@@ -44,27 +44,36 @@
   (if format == "nb" { "couleur-nb." } else { "couleur." }) + nom,
 ))
 
+/// Configuration du document en cours : (format:, gabarit:, langue:).
+/// À appeler dans un `context`.
+#let config-fiche() = _etat.get()
+
 /// Couleur d'un rôle de la palette pour le format en cours.
 /// À appeler dans un `context` (ex. dessins, schémas).
 #let couleur(nom) = _couleur(nom, _etat.get().format)
 
-// Libellé dans la langue du texte courant.
-#let _libelle(nom) = jeton(
-  "libelle." + nom + "." + (if text.lang == "fr" { "fr" } else { "en" }),
-)
+// Libellé dans une langue donnée (par défaut : celle du texte courant).
+#let _libelle(nom, langue: auto) = {
+  let lg = if langue != auto { langue } else if text.lang == "fr" { "fr" } else { "en" }
+  jeton("libelle." + nom + "." + lg)
+}
 
 // ───────────────────────── Nombres ─────────────────────────
 
 /// Formate un nombre selon la langue courante (séparateurs décimal et
-/// milliers, signe moins typographique). `decimales` : none = tel quel,
+/// milliers, signe moins typographique). `decimales` : none = valeur telle
+/// quelle (une chaîne lue dans un CSV garde exactement ses chiffres),
 /// entier = arrondi avec zéros conservés. À utiliser pour tout nombre lu
 /// dans un CSV de données.
 #let nombre(valeur, decimales: none) = context {
   let lg = if text.lang == "fr" { "fr" } else { "en" }
-  let x = if type(valeur) == str { float(valeur.trim().replace(",", ".")) } else { valeur }
+  let brut = if type(valeur) == str { valeur.trim().replace(",", ".") } else { none }
+  let x = if brut != none { float(brut) } else { valeur }
   let negatif = x < 0
   let a = calc.abs(x)
-  let s = if decimales == none { str(a) } else { str(calc.round(a, digits: decimales)) }
+  let s = if decimales != none { str(calc.round(a, digits: decimales)) }
+    else if brut != none { brut.trim("-", at: start).trim("+", at: start) }
+    else { str(a) }
   let parties = s.split(".")
   let ent = parties.at(0)
   let dec = if parties.len() > 1 { parties.at(1) } else { "" }
@@ -130,12 +139,13 @@
   // Le livre penché s'appuie sur le coin du deuxième.
   let ecart3 = hs.at(1) * h * calc.tan(ang) + g
   let largeur = 2 * w + g + ecart3 + w
-  box(width: largeur + w * 0.4, height: h + socle, baseline: socle, {
+  let debord = _v("logo.socle-debord")
+  box(width: largeur + debord, height: h + socle, baseline: socle, {
     place(bottom + left, dy: -socle, rect(width: w, height: hs.at(0) * h, fill: c1))
     place(bottom + left, dx: w + g, dy: -socle, rect(width: w, height: hs.at(1) * h, fill: c1))
     place(bottom + left, dx: 2 * w + g + ecart3, dy: -socle,
       rotate(-ang, origin: bottom + left, reflow: false, rect(width: w, height: hs.at(2) * h, fill: c2)))
-    place(bottom + left, rect(width: largeur + w * 0.4, height: socle, fill: c1))
+    place(bottom + left, rect(width: largeur + debord, height: socle, fill: c1))
   })
 }
 
@@ -246,7 +256,7 @@
     {
       if titre != none {
         block(width: 100%, sticky: true, fill: _couleur("encadre.entete", f),
-          inset: (x: mx, y: my * 0.75), above: 0pt, below: 0pt,
+          inset: (x: mx, y: _v("encadre.entete.marge.y")), above: 0pt, below: 0pt,
           text(size: _v("taille.libelle"), weight: _v("graisse.titre"),
             fill: _couleur("encadre.texte", f), titre))
       }
@@ -257,19 +267,18 @@
 
 // ───────────────────────── Tableau ─────────────────────────
 
-/// Tableau dense : en-tête teinté répété, lignes alternées, texte condensé,
-/// chiffres tabulaires. `entete` : nombre de lignes d'en-tête prises dans
-/// les cellules (ignoré si un `table.header` est fourni).
+/// Tableau dense : en-tête teinté répété à chaque page, lignes alternées,
+/// texte condensé, chiffres tabulaires. `entete` : nombre de lignes d'en-tête
+/// (les `columns × entete` premières cellules, ou le `table.header` fourni).
+/// Tout autre paramètre nommé de `table` (align, fill, stroke…) est transmis
+/// et remplace la valeur de la charte.
 #let tableau(columns: auto, entete: 1, ..args) = context {
   let f = _etat.get().format
   let cellules = args.pos()
-  let nommes = args.named()
   let ncol = if type(columns) == int { columns } else if type(columns) == array { columns.len() } else { 1 }
   let a-entete = (cellules.len() > 0 and type(cellules.first()) == content
     and cellules.first().func() == table.header)
-  let nent = if a-entete {
-    calc.ceil(cellules.first().children.len() / ncol)
-  } else if entete > 0 and cellules.len() >= ncol * entete {
+  let nent = if a-entete { entete } else if entete > 0 and cellules.len() >= ncol * entete {
     cellules = (table.header(..cellules.slice(0, ncol * entete)),) + cellules.slice(ncol * entete)
     entete
   } else { 0 }
@@ -284,28 +293,57 @@
     set text(weight: _v("graisse.titre"))
     it
   } else { it }
-  table(
+  let params = (
     columns: columns,
     inset: (x: _v("tableau.marge.x"), y: _v("tableau.marge.y")),
-    align: left + horizon,
+    align: _v("tableau.alignement"),
     fill: (x, y) => if y < nent { c-ent } else if calc.odd(y - nent) { c-zebre } else { none },
     stroke: (x, y) => if nent > 0 and y == nent - 1 {
       (bottom: _v("trait.tableau-entete") + c-trait)
     } else { none },
-    ..nommes,
-    ..cellules,
-    table.hline(stroke: filet),
-  )
+  ) + args.named()
+  table(..params, ..cellules, table.hline(stroke: filet))
 }
 
 // ───────────────────────── Colonnes ─────────────────────────
 
-/// Mise en colonnes (gouttière de la charte par défaut).
-#let colonnes(n, gouttiere: auto, corps) = columns(
-  n,
-  gutter: if gouttiere == auto { _v("colonnes.gouttiere") } else { gouttiere },
-  corps,
-)
+/// Mise en colonnes. Par défaut (jeton colonnes.equilibre), si tout le
+/// contenu tient dans la place restante de la page, les colonnes sont
+/// équilibrées (hauteur minimale) ; sinon le texte s'écoule normalement
+/// de colonne en colonne et de page en page.
+/// La largeur utilisée est celle du conteneur (page, encadré, cellule).
+#let colonnes(n, gouttiere: auto, equilibre: auto, corps) = {
+  let g = if gouttiere == auto { _v("colonnes.gouttiere") } else { gouttiere }
+  let eq = if equilibre == auto { _v("colonnes.equilibre") } else { equilibre }
+  if not eq or n < 2 { return columns(n, gutter: g, corps) }
+  // Repère hors flux posé avant le bloc : il reste sur la page courante même
+  // si le bloc est repoussé (ce qui évite qu'une passe de mise en page
+  // s'auto-entretienne sur la page suivante) et ne sépare pas un libellé
+  // « collant » de son contenu.
+  place([#metadata("ms-colonnes") <ms-colonnes>])
+  layout(taille => {
+    let w = taille.width
+    let tol = _v("colonnes.tolerance")
+    let reperes = query(selector(<ms-colonnes>).before(here()))
+    let pos = if reperes.len() > 0 { reperes.last().location().position() } else { here().position() }
+    let m-bas = page.margin.bottom
+    let dispo = (page.height - m-bas.length - m-bas.ratio * page.height - pos.y
+      - _v("colonnes.securite").to-absolute())
+    // Le contenu tient dans n colonnes de hauteur h si aucune colonne n'est pleine.
+    let tient(h) = measure(columns(n, gutter: g, corps), width: w, height: h).height < h - tol
+    if dispo <= 0pt or not tient(dispo) { return columns(n, gutter: g, corps) }
+    let h1 = measure(block(width: (w - (n - 1) * g) / n, corps)).height
+    let bas = h1 / n
+    let haut = calc.min(dispo, h1 + 2 * tol)
+    if not tient(haut) { haut = dispo }
+    let pas = _v("colonnes.precision")
+    while haut - bas > pas {
+      let milieu = (bas + haut) / 2
+      if tient(milieu) { haut = milieu } else { bas = milieu }
+    }
+    block(height: haut, breakable: false, columns(n, gutter: g, corps))
+  })
+}
 
 // ───────────────────────── Mentions ─────────────────────────
 
@@ -380,7 +418,7 @@
 
   // Pied de page : mentions à gauche, marque · version · pagination à droite.
   let pied(pagination) = block(width: 100%, _typo(langue, {
-    set text(font: polices, size: corps-taille, lang: langue, hyphenate: false)
+    set text(font: polices, size: corps-taille, lang: langue, hyphenate: _v("pied.cesure"))
     set text(size: _v("taille.pied"), fill: c("encre-douce"))
     set par(leading: _v("interligne.pied"), justify: false, spacing: 0pt)
     line(length: 100%, stroke: _v("trait.filet") + c("filet"))
@@ -424,7 +462,7 @@
               column-gutter: _v("pied.gouttiere"),
               titre,
               if tablette and avec-sommaire {
-                link(<ms-sommaire>, text(fill: c("lien"), _libelle("retour-sommaire")))
+                link(<ms-sommaire>, text(fill: c("lien"), _libelle("retour-sommaire", langue: langue)))
               } else { marque },
             ))
         }
@@ -437,7 +475,7 @@
       size: corps-taille,
       fill: c("encre"),
       lang: langue,
-      region: if langue == "fr" { "FR" } else { "US" },
+      region: jeton("langue." + langue + ".region"),
       hyphenate: _v("cesure"),
     )
     set par(
@@ -466,7 +504,7 @@
       show ",": math.class("normal", ",")
       it
     } else { it }
-    show raw: set text(font: jeton("police.mono"), size: _v("taille.mono") / 0.8)
+    show raw: set text(font: jeton("police.mono"), size: _v("taille.mono"))
     show link: it => if type(it.dest) == str {
       underline(text(fill: c("lien"), it))
     } else { it }
@@ -489,7 +527,8 @@
           if it.numbering != none {
             box(fill: c("titre1"), radius: _v("rayon.badge"),
               inset: (x: _v("numero-titre.marge.x"), y: _v("numero-titre.marge.y")),
-              text(fill: c("sur-fonce"), number-width: "tabular", counter(heading).display(it.numbering)))
+              text(fill: c("sur-fonce"), number-width: jeton("chiffres.titre"),
+                counter(heading).display(it.numbering)))
             h(_v("titre1.ecart-numero"))
           }
           it.body
@@ -534,16 +573,44 @@
     })
 
     // Sommaire cliquable (tablette par défaut ; sur demande ailleurs).
+    // Entrées réparties en colonnes par une grille : aucune mesure, donc
+    // aucune interaction avec l'équilibrage des colonnes du corps.
     if avec-sommaire {
       block(width: 100%, fill: c("sommaire.fond"), inset: _v("sommaire.marge"),
         radius: _v("rayon.encadre"), {
           [#metadata("sommaire") <ms-sommaire>]
-          text(weight: _v("graisse.titre"), fill: c("titre1"), _libelle("sommaire"))
+          text(weight: _v("graisse.titre"), fill: c("titre1"), _libelle("sommaire", langue: langue))
           set text(size: _v("taille.sommaire"))
-          show outline.entry.where(level: 1): set text(weight: _v("graisse.titre"))
-          show outline.entry: set block(spacing: _v("espace.liste." + gabarit))
-          columns(int(_v("sommaire.colonnes")), gutter: _v("colonnes.gouttiere"),
-            outline(title: none, depth: int(_v("sommaire.profondeur"))))
+          context {
+            let nc = int(_v("sommaire.colonnes"))
+            let prof = int(_v("sommaire.profondeur"))
+            let titres = query(heading.where(outlined: true)).filter(t => t.level <= prof)
+            let par-col = calc.max(1, calc.ceil(titres.len() / nc))
+            let ent(t) = {
+              let loc = t.location()
+              let num = if t.numbering != none {
+                numbering(t.numbering, ..counter(heading).at(loc)) + h(_v("titre1.ecart-numero"))
+              }
+              let pg = counter(page).at(loc).first()
+              link(loc, block(width: 100%, {
+                set text(weight: if t.level == 1 { _v("graisse.titre") } else { _v("graisse.normale") })
+                h(_v("sommaire.retrait") * (t.level - 1))
+                num
+                t.body
+                box(width: 1fr, repeat(jeton("sommaire.points"), gap: _v("sommaire.points-ecart")))
+                str(pg)
+              }))
+            }
+            grid(
+              columns: (1fr,) * nc,
+              column-gutter: _v("colonnes.gouttiere"),
+              ..range(nc).map(k => {
+                let lot = titres.slice(calc.min(k * par-col, titres.len()),
+                  calc.min((k + 1) * par-col, titres.len()))
+                stack(spacing: _v("espace.liste." + gabarit), ..lot.map(ent))
+              }),
+            )
+          }
         })
     }
 

@@ -66,11 +66,11 @@ police.math,Fira Math,"Formules (police math OpenType, SIL OFL 1.1, charte/polic
 police.mono,Fira Mono,"Code et identifiants (SIL OFL 1.1, charte/polices/fira-mono)"
 police.secours,Fira Math|DejaVu Sans Mono,"Polices de repli pour les glyphes absents de Fira Sans (✓, ⚠…), dans l'ordre ; DejaVu Sans Mono est embarquée dans Typst"
 corps.fiche.a4,8pt,Corps du texte : fiche dense (cheat sheet) en A4
-corps.fiche.letter,7.8pt,"Corps du texte : fiche en US Letter (même largeur de texte que l'A4, corps réduit pour tenir dans la hauteur plus courte)"
+corps.fiche.letter,7.7pt,"Corps du texte : fiche en US Letter (légèrement réduit pour tenir dans la hauteur plus courte)"
 corps.fiche.nb,8pt,Corps du texte : fiche N&B (A4)
 corps.fiche.tablette,9.5pt,Corps du texte : fiche en tablette (légèrement plus grand)
 corps.guide.a4,9.5pt,Corps du texte : guide complet en A4
-corps.guide.letter,9.3pt,Corps du texte : guide complet en US Letter
+corps.guide.letter,9.3pt,"Corps du texte : guide complet en US Letter (légèrement réduit, comme la fiche)"
 corps.guide.nb,9.5pt,Corps du texte : guide complet N&B (A4)
 corps.guide.tablette,11pt,Corps du texte : guide complet en tablette
 taille.titre-produit,1.9em,Titre du produit dans l'en-tête de première page
@@ -81,11 +81,11 @@ taille.titre2,1.1em,Sous-titre de section (niveau 2)
 taille.titre3,1em,Intertitre (niveau 3 et plus)
 taille.libelle,0.92em,"Libellés des encadrés (EXEMPLE, PIÈGE…) et titre de l'encadré formule"
 taille.tableau,0.95em,Texte des tableaux
-taille.pied,0.75em,Pied de page (mentions et pagination)
+taille.pied,0.8em,Pied de page (mentions et pagination)
 taille.entete-courant,0.8em,En-tête courant des pages 2 et suivantes
 taille.mono,0.92em,Texte en police mono
 taille.sommaire,0.95em,Entrées du sommaire
-taille.retour,0.62em,Lien « ↑ Sommaire » à droite des titres de section (tablette)
+graisse.normale,400,Texte courant et entrées secondaires du sommaire
 graisse.gras,600,Mise en gras (*texte*) : semi-gras
 graisse.titre,600,Titres de section et titres d'encadrés
 graisse.titre-produit,700,Titre du produit
@@ -123,7 +123,7 @@ page.a4.marge.haut,10mm,Marge haute (A4)
 page.a4.marge.bas,7mm,Marge basse sous le pied de page (A4)
 page.letter.largeur,215.9mm,Largeur de page US Letter (8.5 in)
 page.letter.hauteur,279.4mm,Hauteur de page US Letter (11 in)
-page.letter.marge.x,12.95mm,Marges gauche et droite (Letter) : largeur de texte identique à l'A4 (190 mm)
+page.letter.marge.x,10mm,"Marges gauche et droite (Letter) : texte 6 mm plus large qu'en A4, ce qui compense la hauteur plus courte (une fiche A4 d'une page tient sur une page Letter)"
 page.letter.marge.haut,8mm,Marge haute (Letter)
 page.letter.marge.bas,6mm,Marge basse sous le pied de page (Letter)
 page.nb.largeur,210mm,Largeur de page N&B (A4)
@@ -132,7 +132,7 @@ page.nb.marge.x,10mm,Marges gauche et droite (N&B)
 page.nb.marge.haut,10mm,Marge haute (N&B)
 page.nb.marge.bas,7mm,Marge basse sous le pied de page (N&B)
 page.tablette.largeur,240mm,"Largeur de page tablette : paysage, rapport 1,43 (iPad Air / iPad 10e gén. 2360×1640)"
-page.tablette.hauteur,168mm,Hauteur de page tablette
+page.tablette.hauteur,167mm,Hauteur de page tablette
 page.tablette.marge.x,10mm,Marges gauche et droite (tablette)
 page.tablette.marge.haut,8mm,Marge haute (tablette)
 page.tablette.marge.bas,6mm,Marge basse sous le pied de page (tablette)
@@ -141,8 +141,10 @@ pied.ecart,2mm,Écart entre le texte et le pied de page
 pied.ecart-filet,0.3em,Écart entre le filet du pied de page et son texte
 pied.gouttiere,2em,Écart entre les mentions et la pagination
 pied.separateur," · ",Séparateur entre deux mentions dans le pied de page
+pied.cesure,false,Césure dans le pied de page (désactivée : mentions légales)
 pied.numerotation,1 / 1,Motif de pagination (page courante / total)
 rayon.boite,1.5pt,Coins droits des encadrés formule/exemple/piège/note
+encadre.entete.marge.y,0.34em,Marge verticale du bandeau de titre de l'encadré générique
 rayon.encadre,2pt,Coins de l'encadré générique
 rayon.icone,1.2pt,Coins de l'icône carrée (note clinique)
 rayon.badge,1pt,Coins du pavé de numéro de section
@@ -177,23 +179,35 @@ liste.puce1,•,Puce de niveau 1
 liste.puce2,–,Puce de niveau 2
 liste.numerotation,1.,Numérotation des listes ordonnées
 colonnes.gouttiere,4.5mm,Gouttière entre colonnes
+colonnes.equilibre,true,Équilibrer les colonnes quand le contenu tient sur la page en cours
+colonnes.precision,0.5pt,Précision de la recherche de hauteur équilibrée
+colonnes.tolerance,0.01pt,Marge de comparaison pour décider qu'une colonne est pleine
+colonnes.securite,1em,"Réserve sous le repère de début de bloc (espacements, dernière ligne du paragraphe précédent) avant d'équilibrer"
 tableau.marge.x,0.4em,Marge horizontale des cellules
 tableau.marge.y,0.3em,Marge verticale des cellules
+tableau.alignement,left + horizon,Alignement par défaut des cellules (surchargeable par tableau)
 tableau.etirement,75%,"Chasse du texte des tableaux (75 % = Fira Sans Condensed, plus de colonnes lisibles)"
 chiffres.tableau,tabular,Chiffres à chasse fixe dans les tableaux (alignement des colonnes)
 chiffres.formule,tabular,Chiffres à chasse fixe dans les encadrés formule
+chiffres.titre,tabular,Chiffres à chasse fixe dans les numéros de section
 logo.hauteur,0.92em,Hauteur du pictogramme de marque (trois livres sur une étagère)
 logo.barre.largeur,0.2em,Largeur d'un livre du pictogramme
 logo.barre.ecart,0.07em,Écart entre deux livres
 logo.barre.hauteurs,1|0.78|0.9,Hauteurs relatives des trois livres (le troisième est penché)
 logo.inclinaison,18deg,Inclinaison du troisième livre
 logo.socle,0.08em,Épaisseur de l'étagère
+logo.socle-debord,0.08em,Débord de l'étagère à droite du dernier livre
 logo.ecart-nom,0.3em,Écart entre pictogramme et nom de marque
 logo.interlettre,0.01em,Interlettrage du nom de marque
 sommaire.colonnes,2,Nombre de colonnes du sommaire
 sommaire.profondeur,2,Niveaux de titres repris dans le sommaire
 sommaire.marge,0.6em,Marge intérieure du bloc sommaire
+sommaire.retrait,1.2em,Retrait par niveau de titre dans le sommaire
+sommaire.points,.,Caractère de remplissage entre titre et numéro de page
+sommaire.points-ecart,0.15em,Écart entre deux points de remplissage
 paragraphe.justifier,false,Texte justifié (false = fer à gauche ; plus lisible en colonnes étroites)
+langue.fr.region,FR,Région typographique et de césure pour le français
+langue.en.region,US,Région typographique et de césure pour l'anglais (orthographe US)
 cesure,true,Césure automatique selon la langue
 typo.insecables,true,"Espaces insécables automatiques : fine avant ; : ! ? et % en français, insécable entre un nombre et son unité"
 nombre.fr.decimale,",",Séparateur décimal (français)
