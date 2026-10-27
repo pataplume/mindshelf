@@ -1,0 +1,216 @@
+cle,valeur,usage
+couleur.encre,#15181E,Texte courant (contraste 17.8:1 sur blanc)
+couleur.encre-douce,#4A5160,"Texte secondaire : sous-titre, pied de page, en-tête courant (8.0:1)"
+couleur.filet,#C5CBD3,"Filets fins : tableaux, pied de page, séparateurs"
+couleur.fond-page,#FFFFFF,Fond de page
+couleur.marque,#134B5F,"Couleur de marque (bleu pétrole) : filet d'en-tête, logo, titres de section, puces"
+couleur.marque-accent,#C98A2B,"Accent décoratif du logo (livre penché) ; jamais pour du texte"
+couleur.sur-fonce,#FFFFFF,"Texte et pictogrammes posés sur un aplat foncé (icônes, numéros de section)"
+couleur.lien,#134B5F,Liens (renvoi au sommaire en tablette ; liens externes soulignés)
+couleur.titre1,#134B5F,Titre de section (niveau 1) et son filet
+couleur.titre2,#15181E,Sous-titre de section (niveau 2)
+couleur.titre3,#4A5160,Intertitre (niveau 3)
+couleur.formule.trait,#134B5F,Barre gauche de l'encadré formule
+couleur.formule.fond,#EDF3F5,Fond de l'encadré formule
+couleur.formule.texte,#134B5F,Titre de l'encadré formule
+couleur.exemple.trait,#1F6E46,"Barre gauche et icône (cercle coché) de l'encadré exemple"
+couleur.exemple.fond,#EDF6F0,Fond de l'encadré exemple
+couleur.exemple.texte,#195C3A,Libellé et titre de l'encadré exemple (7.2:1 sur son fond)
+couleur.piege.trait,#B0291B,"Barre hachurée et icône (triangle !) de l'encadré piège"
+couleur.piege.fond,#FCEFEC,Fond de l'encadré piège
+couleur.piege.texte,#9C2417,Libellé et titre de l'encadré piège (6.9:1 sur son fond)
+couleur.note.trait,#5E3889,"Barre gauche et icône (carré +) de la note clinique"
+couleur.note.fond,#F4F0FA,Fond de la note clinique
+couleur.note.texte,#53307A,Libellé et titre de la note clinique (9.0:1 sur son fond)
+couleur.encadre.trait,#8A93A3,Contour de l'encadré générique
+couleur.encadre.fond,#FFFFFF,Fond du corps de l'encadré générique
+couleur.encadre.entete,#EEF1F4,Bandeau de titre de l'encadré générique
+couleur.encadre.texte,#15181E,Titre de l'encadré générique
+couleur.tableau.entete-fond,#E1EBEE,Fond de la ligne d'en-tête des tableaux
+couleur.tableau.entete-trait,#134B5F,Filet sous l'en-tête des tableaux
+couleur.tableau.zebre,#F5F7F9,Une ligne sur deux dans le corps des tableaux
+couleur.sommaire.fond,#F5F7F9,Fond du bloc sommaire
+couleur-nb.encre,#000000,N&B : texte courant
+couleur-nb.encre-douce,#3C3C3C,N&B : texte secondaire
+couleur-nb.filet,#A6A6A6,N&B : filets fins
+couleur-nb.fond-page,#FFFFFF,N&B : fond de page
+couleur-nb.marque,#000000,N&B : couleur de marque
+couleur-nb.marque-accent,#8C8C8C,N&B : accent du logo
+couleur-nb.sur-fonce,#FFFFFF,N&B : texte sur aplat foncé
+couleur-nb.lien,#000000,N&B : liens
+couleur-nb.titre1,#000000,N&B : titre de section
+couleur-nb.titre2,#000000,N&B : sous-titre de section
+couleur-nb.titre3,#3C3C3C,N&B : intertitre
+couleur-nb.formule.trait,#000000,N&B : barre de l'encadré formule
+couleur-nb.formule.fond,#EFEFEF,N&B : fond de l'encadré formule
+couleur-nb.formule.texte,#000000,N&B : titre de l'encadré formule
+couleur-nb.exemple.trait,#000000,N&B : barre et icône de l'encadré exemple
+couleur-nb.exemple.fond,#F4F4F4,N&B : fond de l'encadré exemple
+couleur-nb.exemple.texte,#000000,N&B : libellé de l'encadré exemple
+couleur-nb.piege.trait,#000000,N&B : hachures et icône de l'encadré piège
+couleur-nb.piege.fond,#EAEAEA,N&B : fond de l'encadré piège
+couleur-nb.piege.texte,#000000,N&B : libellé de l'encadré piège
+couleur-nb.note.trait,#000000,N&B : barre et icône de la note clinique
+couleur-nb.note.fond,#F4F4F4,N&B : fond de la note clinique
+couleur-nb.note.texte,#000000,N&B : libellé de la note clinique
+couleur-nb.encadre.trait,#6E6E6E,N&B : contour de l'encadré générique
+couleur-nb.encadre.fond,#FFFFFF,N&B : fond de l'encadré générique
+couleur-nb.encadre.entete,#E6E6E6,N&B : bandeau de titre de l'encadré générique
+couleur-nb.encadre.texte,#000000,N&B : titre de l'encadré générique
+couleur-nb.tableau.entete-fond,#DADADA,N&B : en-tête des tableaux
+couleur-nb.tableau.entete-trait,#000000,N&B : filet sous l'en-tête des tableaux
+couleur-nb.tableau.zebre,#F2F2F2,N&B : lignes alternées des tableaux
+couleur-nb.sommaire.fond,#F2F2F2,N&B : fond du sommaire
+police.texte,Fira Sans,"Texte, titres, tableaux (SIL OFL 1.1, charte/polices/fira-sans) ; chiffres tabulaires disponibles"
+police.math,Fira Math,"Formules (police math OpenType, SIL OFL 1.1, charte/polices/fira-math)"
+police.mono,Fira Mono,"Code et identifiants (SIL OFL 1.1, charte/polices/fira-mono)"
+police.secours,Fira Math|DejaVu Sans Mono,"Polices de repli pour les glyphes absents de Fira Sans (✓, ⚠…), dans l'ordre ; DejaVu Sans Mono est embarquée dans Typst"
+corps.fiche.a4,8pt,Corps du texte : fiche dense (cheat sheet) en A4
+corps.fiche.letter,7.8pt,"Corps du texte : fiche en US Letter (même largeur de texte que l'A4, corps réduit pour tenir dans la hauteur plus courte)"
+corps.fiche.nb,8pt,Corps du texte : fiche N&B (A4)
+corps.fiche.tablette,9.5pt,Corps du texte : fiche en tablette (légèrement plus grand)
+corps.guide.a4,9.5pt,Corps du texte : guide complet en A4
+corps.guide.letter,9.3pt,Corps du texte : guide complet en US Letter
+corps.guide.nb,9.5pt,Corps du texte : guide complet N&B (A4)
+corps.guide.tablette,11pt,Corps du texte : guide complet en tablette
+taille.titre-produit,1.9em,Titre du produit dans l'en-tête de première page
+taille.sous-titre,1.05em,Sous-titre du produit
+taille.logo,1.25em,Logo-type (nom de marque) dans l'en-tête de première page
+taille.titre1,1.28em,Titre de section (niveau 1)
+taille.titre2,1.1em,Sous-titre de section (niveau 2)
+taille.titre3,1em,Intertitre (niveau 3 et plus)
+taille.libelle,0.92em,"Libellés des encadrés (EXEMPLE, PIÈGE…) et titre de l'encadré formule"
+taille.tableau,0.95em,Texte des tableaux
+taille.pied,0.75em,Pied de page (mentions et pagination)
+taille.entete-courant,0.8em,En-tête courant des pages 2 et suivantes
+taille.mono,0.92em,Texte en police mono
+taille.sommaire,0.95em,Entrées du sommaire
+taille.retour,0.62em,Lien « ↑ Sommaire » à droite des titres de section (tablette)
+graisse.gras,600,Mise en gras (*texte*) : semi-gras
+graisse.titre,600,Titres de section et titres d'encadrés
+graisse.titre-produit,700,Titre du produit
+graisse.libelle,600,"Libellés des encadrés (EXEMPLE, PIÈGE…)"
+graisse.logo,600,Logo-type
+interligne.fiche,0.5em,Interlignage du texte courant d'une fiche dense
+interligne.guide,0.62em,Interlignage du texte courant d'un guide
+interligne.tableau,0.38em,Interlignage dans les cellules de tableau
+interligne.pied,0.38em,Interlignage du pied de page
+interligne.titre-produit,0.3em,Interlignage du titre produit sur plusieurs lignes
+espace.paragraphe.fiche,0.6em,Espace entre paragraphes (fiche)
+espace.paragraphe.guide,0.85em,Espace entre paragraphes (guide)
+espace.bloc.fiche,0.55em,"Espace avant et après encadrés, tableaux, équations (fiche)"
+espace.bloc.guide,0.85em,"Espace avant et après encadrés, tableaux, équations (guide)"
+espace.liste.fiche,0.32em,Espace entre éléments de liste (fiche)
+espace.liste.guide,0.5em,Espace entre éléments de liste (guide)
+titre1.avant,0.75em,Espace au-dessus d'un titre de section (en em du titre)
+titre1.apres,0.4em,Espace sous un titre de section
+titre1.filet-ecart,0.15em,Écart entre le texte du titre de section et son filet
+titre1.ecart-numero,0.4em,Écart entre le numéro et le texte du titre de section
+titre2.avant,0.6em,Espace au-dessus d'un sous-titre (niveau 2)
+titre2.apres,0.3em,Espace sous un sous-titre (niveau 2)
+titre3.avant,0.5em,Espace au-dessus d'un intertitre (niveau 3)
+titre3.apres,0.25em,Espace sous un intertitre (niveau 3)
+titre.numerotation,1.1,"Motif de numérotation des titres quand numerotation: true (lu comme texte, pas comme nombre)"
+numero-titre.marge.x,0.3em,Marge horizontale du pavé de numéro de section
+numero-titre.marge.y,0.12em,Débord vertical du pavé de numéro de section
+entete.ecart-filet,0.3em,Écart entre le bloc titre/logo et le filet de marque (première page)
+entete.apres,0.65em,Espace sous le filet de marque (première page)
+entete.ecart-colonnes,1.2em,Écart minimal entre le titre produit et le logo
+page.a4.largeur,210mm,Largeur de page A4
+page.a4.hauteur,297mm,Hauteur de page A4
+page.a4.marge.x,10mm,Marges gauche et droite (A4)
+page.a4.marge.haut,10mm,Marge haute (A4)
+page.a4.marge.bas,7mm,Marge basse sous le pied de page (A4)
+page.letter.largeur,215.9mm,Largeur de page US Letter (8.5 in)
+page.letter.hauteur,279.4mm,Hauteur de page US Letter (11 in)
+page.letter.marge.x,12.95mm,Marges gauche et droite (Letter) : largeur de texte identique à l'A4 (190 mm)
+page.letter.marge.haut,8mm,Marge haute (Letter)
+page.letter.marge.bas,6mm,Marge basse sous le pied de page (Letter)
+page.nb.largeur,210mm,Largeur de page N&B (A4)
+page.nb.hauteur,297mm,Hauteur de page N&B (A4)
+page.nb.marge.x,10mm,Marges gauche et droite (N&B)
+page.nb.marge.haut,10mm,Marge haute (N&B)
+page.nb.marge.bas,7mm,Marge basse sous le pied de page (N&B)
+page.tablette.largeur,240mm,"Largeur de page tablette : paysage, rapport 1,43 (iPad Air / iPad 10e gén. 2360×1640)"
+page.tablette.hauteur,168mm,Hauteur de page tablette
+page.tablette.marge.x,10mm,Marges gauche et droite (tablette)
+page.tablette.marge.haut,8mm,Marge haute (tablette)
+page.tablette.marge.bas,6mm,Marge basse sous le pied de page (tablette)
+page.entete-montee,30%,Position de l'en-tête courant dans la marge haute (part de la marge)
+pied.ecart,2mm,Écart entre le texte et le pied de page
+pied.ecart-filet,0.3em,Écart entre le filet du pied de page et son texte
+pied.gouttiere,2em,Écart entre les mentions et la pagination
+pied.separateur," · ",Séparateur entre deux mentions dans le pied de page
+pied.numerotation,1 / 1,Motif de pagination (page courante / total)
+rayon.boite,1.5pt,Coins droits des encadrés formule/exemple/piège/note
+rayon.encadre,2pt,Coins de l'encadré générique
+rayon.icone,1.2pt,Coins de l'icône carrée (note clinique)
+rayon.badge,1pt,Coins du pavé de numéro de section
+trait.barre,2.2pt,Barre gauche pleine des encadrés
+trait.barre-motif,3.6pt,Barre gauche hachurée (encadré piège)
+trait.filet,0.4pt,Filets fins (tableaux et pied de page)
+trait.entete,1.4pt,Filet de marque sous l'en-tête de première page
+trait.entete-courant,0.4pt,Filet sous l'en-tête courant
+trait.titre1,0.5pt,Filet sous les titres de section
+trait.encadre,0.6pt,Contour de l'encadré générique
+trait.tableau-entete,0.8pt,Filet sous l'en-tête des tableaux
+hachure.pas,2.6pt,Pas du motif hachuré (barre de l'encadré piège)
+hachure.trait,0.9pt,Épaisseur des hachures
+motif.formule,plein,Barre gauche de l'encadré formule : plein ou hachure
+motif.exemple,plein,Barre gauche de l'encadré exemple : plein ou hachure
+motif.piege,hachure,Barre gauche de l'encadré piège : plein ou hachure (reste visible en N&B)
+motif.note,plein,Barre gauche de la note clinique : plein ou hachure
+boite.marge.x,0.6em,Marge intérieure horizontale des encadrés
+boite.marge.y,0.45em,Marge intérieure verticale des encadrés
+boite.ecart-libelle,0.3em,Écart entre la ligne de libellé et le contenu d'un encadré
+boite.ecart-icone,0.3em,Écart entre l'icône et le libellé
+boite.ecart-titre,0.5em,Écart entre le libellé et le titre d'un encadré
+formule.espace-equation,0.3em,Espace autour d'une équation centrée dans l'encadré formule
+icone.taille,1.05em,Côté des icônes d'encadré
+icone.ligne-de-base,0.17em,Décalage vertical des icônes par rapport à la ligne de base
+icone.trait,0.14,Épaisseur des traits d'icône (fraction de la taille)
+libelle.interlettre,0.04em,Interlettrage des libellés en petites capitales
+libelle.petites-capitales,true,Libellés d'encadrés en petites capitales
+liste.retrait,0.15em,Retrait des listes
+liste.ecart-puce,0.4em,Écart entre puce et texte
+liste.puce1,•,Puce de niveau 1
+liste.puce2,–,Puce de niveau 2
+liste.numerotation,1.,Numérotation des listes ordonnées
+colonnes.gouttiere,4.5mm,Gouttière entre colonnes
+tableau.marge.x,0.4em,Marge horizontale des cellules
+tableau.marge.y,0.3em,Marge verticale des cellules
+tableau.etirement,75%,"Chasse du texte des tableaux (75 % = Fira Sans Condensed, plus de colonnes lisibles)"
+chiffres.tableau,tabular,Chiffres à chasse fixe dans les tableaux (alignement des colonnes)
+chiffres.formule,tabular,Chiffres à chasse fixe dans les encadrés formule
+logo.hauteur,0.92em,Hauteur du pictogramme de marque (trois livres sur une étagère)
+logo.barre.largeur,0.2em,Largeur d'un livre du pictogramme
+logo.barre.ecart,0.07em,Écart entre deux livres
+logo.barre.hauteurs,1|0.78|0.9,Hauteurs relatives des trois livres (le troisième est penché)
+logo.inclinaison,18deg,Inclinaison du troisième livre
+logo.socle,0.08em,Épaisseur de l'étagère
+logo.ecart-nom,0.3em,Écart entre pictogramme et nom de marque
+logo.interlettre,0.01em,Interlettrage du nom de marque
+sommaire.colonnes,2,Nombre de colonnes du sommaire
+sommaire.profondeur,2,Niveaux de titres repris dans le sommaire
+sommaire.marge,0.6em,Marge intérieure du bloc sommaire
+paragraphe.justifier,false,Texte justifié (false = fer à gauche ; plus lisible en colonnes étroites)
+cesure,true,Césure automatique selon la langue
+typo.insecables,true,"Espaces insécables automatiques : fine avant ; : ! ? et % en français, insécable entre un nombre et son unité"
+nombre.fr.decimale,",",Séparateur décimal (français)
+nombre.fr.milliers,U+202F,Séparateur de milliers (français) : espace fine insécable
+nombre.fr.groupe-min,5,Nombre minimal de chiffres pour grouper les milliers (français : 10 000 mais 1000)
+nombre.en.decimale,.,Séparateur décimal (anglais)
+nombre.en.milliers,",",Séparateur de milliers (anglais)
+nombre.en.groupe-min,4,"Nombre minimal de chiffres pour grouper les milliers (anglais : 1000 → 1,000)"
+nombre.moins,U+2212,Signe moins typographique
+nombre.espace-unite,U+00A0,Espace insécable entre un nombre et son unité
+libelle.exemple.fr,Exemple,Libellé de l'encadré exemple (français)
+libelle.exemple.en,Example,Libellé de l'encadré exemple (anglais)
+libelle.piege.fr,Piège,Libellé de l'encadré piège (français)
+libelle.piege.en,Trap,Libellé de l'encadré piège (anglais)
+libelle.note-clinique.fr,Note clinique,Libellé de la note clinique (français)
+libelle.note-clinique.en,Clinical note,Libellé de la note clinique (anglais)
+libelle.sommaire.fr,Sommaire,Titre du sommaire (français)
+libelle.sommaire.en,Contents,Titre du sommaire (anglais)
+libelle.retour-sommaire.fr,↑ Sommaire,Lien de retour au sommaire (tablette)
+libelle.retour-sommaire.en,↑ Contents,Lien de retour au sommaire (tablette)

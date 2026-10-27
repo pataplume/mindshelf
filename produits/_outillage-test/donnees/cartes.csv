@@ -1,0 +1,6 @@
+recto,verso,tags
+Newton's second law,<b>F = m·a</b><br>force (N) = mass (kg) × acceleration (m/s²),test-banc dynamics
+Kinetic energy,K = ½ m v<sup>2</sup>,test-banc energy
+Ohm's law,"V = I·R<br><i>V</i> in volts, <i>I</i> in amperes, <i>R</i> in ohms",test-banc circuits
+Snell's law,n<sub>1</sub> sin θ<sub>1</sub> = n<sub>2</sub> sin θ<sub>2</sub>,test-banc optics
+Resistors in parallel,<ul><li>1/R = 1/R<sub>1</sub> + 1/R<sub>2</sub></li><li>R is smaller than each R<sub>i</sub></li></ul>,test-banc circuits

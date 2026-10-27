@@ -1,0 +1,34 @@
+cle,valeur,unite,description
+apercu_largeur_min_px,2000,px,Largeur minimale de tout aperçu PNG (contrôlée après rendu)
+apercu_page_largeur_px,2480,px,Largeur des PNG de pages (A4 à 300 ppp ; au moins 2000 px)
+apercu_extrait_largeur_px,2400,px,Largeur des recadrages d'extraits (zone agrandie à cette largeur)
+apercu_extrait_defaut_hauteur_pct,30,%,"Hauteur des deux recadrages par défaut (haut et bas de la page 1), utilisés sans donnees/extraits.csv"
+apercu_extrait_defaut_marge_pct,4,%,Marge latérale retirée de chaque côté dans les recadrages par défaut (en % de la largeur de page)
+apercu_vignette_largeur_px,2400,px,Largeur de la vignette « ce qu'il y a dedans »
+apercu_vignette_hauteur_px,1800,px,Hauteur de la vignette « ce qu'il y a dedans » (4:3)
+apercu_vignette_police,Inter,,Police de la vignette (à remplacer par la police de la charte)
+apercu_vignette_fond_couleur,#F5F3EE,,Fond de la vignette (à reprendre de la charte)
+apercu_vignette_texte_couleur,#1E2A32,,Texte de la vignette (à reprendre de la charte)
+apercu_vignette_accent_couleur,#2F6F73,,Accent de la vignette : titre de bloc et puces (à reprendre de la charte)
+etsy_video_resolution_min,1080,px,Plus petit côté minimal d'une vidéo d'annonce Etsy
+video_largeur_px,1440,px,Largeur de la vidéo de feuilletage (paire ; 4:3 avec la hauteur)
+video_hauteur_px,1080,px,Hauteur de la vidéo de feuilletage (paire)
+video_ips,30,images/s,Cadence de la vidéo de feuilletage
+video_crf,20,,Qualité x264 (plus bas = plus net et plus lourd)
+video_preset,veryfast,,Préréglage de vitesse x264
+video_transition_s,0.6,s,Durée d'un fondu entre deux plans
+video_transition_type,fondu_fond,,"Transition entre plans : fondu_fond (la page sort vers le fond, la suivante en sort) ou fondu_enchaine (superposition)"
+video_plan_min_s,1.5,s,Durée minimale d'un plan ; en dessous des pages sont retirées de la vidéo
+video_pages_max,4,pages,Nombre maximal de pages montrées avant les extraits
+video_zoom_max,1.06,facteur,Zoom atteint en fin de plan (léger zoom avant ou arrière)
+video_marge_pct,6,%,Marge autour de l'image dans le cadre (en % de la hauteur de la vidéo)
+video_fond_couleur,#E9E5DD,,Fond de la vidéo (à reprendre de la charte)
+video_ombre_pct,1.2,%,Rayon de l'ombre sous la page (en % de la hauteur ; 0 = sans ombre)
+video_ombre_opacite,0.35,,Opacité de l'ombre sous la page (0 à 1)
+etsy_titre_car_max,140,caractères,Longueur maximale d'un titre Etsy (API Etsy v3)
+etsy_photos_par_annonce_max,20,images,Nombre maximal d'images par annonce Etsy (limite relevée de 10 à 20 en août 2025)
+etsy_titre_categories_unicode,L Nd P Sm Zs,,"Catégories Unicode admises dans un titre Etsy (API Etsy v3 : lettres, chiffres, ponctuation, symboles mathématiques, espaces)"
+etsy_titre_car_speciaux,™©®,,Caractères admis en plus dans un titre Etsy
+etsy_titre_car_uniques,%:&+,,Caractères admis une seule fois chacun dans un titre Etsy
+etsy_tag_categories_unicode,L Nd Zs,,"Catégories Unicode admises dans un tag Etsy (API Etsy v3 : lettres, chiffres, espaces)"
+etsy_tag_car_speciaux,-'™©®,,Caractères admis en plus dans un tag Etsy (tiret et apostrophe droite)
