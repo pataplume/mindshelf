@@ -3,6 +3,6 @@ D01,Nom de la marque FR,3 propositions livrées au run R00,R02,ouvert,
 D02,Boutique Etsy pour le marché FR,2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf,R21,ouvert,
 D03,Relecteur.rice métier,"Qui, et sous quel délai par produit",R01,ouvert,
 D04,Méthodes des produits à risque FORT écrites par Tristan,Oui (ouvre Etsy pour ces produits) / Non (Whop seul),R01,ouvert,
-D05,Dépôt GitHub,"Créer pataplume/mindshelf en privé, vide",R00,ouvert,
+D05,Dépôt GitHub,"Créer pataplume/mindshelf en privé, vide (création refusée depuis la session Claude : à faire par Tristan)",R01,tranche,"pataplume/mindshelf, privé, créé par Tristan le 2026-10-27"
 D06,"Produits Whop hors plan (Pre-Med pack, Betting, Futures)",Garder tels quels / passer à la charte / retirer,,ouvert,
 D07,"Sources des 3 fiches existantes (physique, chimie, dosage)",Fournir les sources ou les PDF actuels,R01,ouvert,
