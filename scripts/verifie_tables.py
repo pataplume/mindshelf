@@ -68,6 +68,12 @@ produits = index(lire("produits.csv"))
 for p in produits.values():
     if p["methode_auteur"] not in ("AGENT", "TRISTAN"):
         erreurs.append(f"produits.csv {p['code']} methode_auteur invalide")
+for p in produits.values():
+    if not p.get("pages_max", "").isdigit() or int(p["pages_max"]) < 1:
+        erreurs.append(f"produits.csv {p['code']} pages_max invalide")
+for v in lire("variantes.csv"):
+    if not v.get("version"):
+        erreurs.append(f"variantes.csv {v['code']} sans version")
 for c in lire("compositions.csv"):
     if produits[c["kit_code"]]["type_code"] != "KIT":
         erreurs.append(f"compositions.csv {c['kit_code']} n'est pas un KIT")

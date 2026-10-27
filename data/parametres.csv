@@ -51,3 +51,11 @@ apercu_vignette_graisse_titre,charte:graisse.titre-produit,,Graisse du titre de 
 apercu_vignette_graisse_rubrique,charte:graisse.libelle,,Graisse de la rubrique « ce qu'il y a dedans » (jeton de data/charte_tokens.csv)
 apercu_vignette_echelle_min,0.7,facteur,"Réduction maximale du texte de la vignette quand la liste est longue ; au-delà, apercus.py échoue"
 apercu_vignette_echelle_pas,0.05,facteur,Pas de réduction du texte de la vignette
+controle_pages_facteur_a4,1,facteur,Borne de pages du PDF A4 : pages_max du produit × ce facteur (arrondi au-dessus)
+controle_pages_facteur_letter,1,facteur,Borne de pages du PDF US Letter : pages_max × ce facteur (la charte fait tenir une page A4 sur une page Letter)
+controle_pages_facteur_nb,1,facteur,Borne de pages du PDF N&B (A4) : pages_max × ce facteur
+controle_pages_facteur_tablette,3,facteur,"Borne de pages du PDF tablette : pages_max × ce facteur (corps agrandi, paysage : une page A4 en occupe 2 ou 3)"
+controle_nb_ppp,50,ppp,Définition du rendu utilisé pour chercher des pixels colorés dans le PDF N&B
+controle_nb_ecart_max,8,niveaux (0-255),"Écart maximal entre canaux R, V et B d'un pixel jugé gris (au-delà : pixel coloré)"
+controle_nb_pixels_max,0,pixels,Nombre de pixels colorés tolérés dans tout le PDF N&B
+controle_debordement_tolerance_pt,1,pt,Tolérance avant de signaler un mot qui sort de la zone de texte latérale

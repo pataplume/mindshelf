@@ -1,0 +1,10 @@
+{
+  "variante": "TEST-FR",
+  "produit": "FR01",
+  "referentiel": "IFSI_2026",
+  "langue": "fr",
+  "marque": "Marque FR (provisoire)",
+  "version": "v1",
+  "titre": "Fiche test du pipeline",
+  "pages_max": 1
+}

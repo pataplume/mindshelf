@@ -1,0 +1,4 @@
+element,source_code,localisation
+"Préfixes milli (10^-3) et micro (10^-6) : 1 mg = 1000 µg (EX05, EX06)",BIPM_SI_9,"BIPM, Le Système international d'unités, 9e édition (2019), tableau 7 : préfixes SI"
+"Heure = 60 min ; litre et millilitre (EX02, EX03)",BIPM_SI_9,"BIPM, Le Système international d'unités, 9e édition (2019), tableau 8 : unités en dehors du SI acceptées (minute, heure, litre)"
+"V = D / H × Q, débit = V / T, gouttes/min = V × DF / (T × M), dose = P × W (EX01 à EX04)",ANALYSE_DIMENSIONNELLE,"Relations de définition vérifiables par les unités : mg ÷ (mg/mL) = mL ; mL ÷ h = mL/h ; mL × gouttes/mL ÷ min = gouttes/min ; mg/kg × kg = mg"

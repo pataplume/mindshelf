@@ -1,8 +1,8 @@
 id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 1,R00,PRODUCTION,CHARTE,,,Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR,A_VERIFIER
-2,R00,PRODUCTION,PIPELINE,,,"Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test",EN_COURS
+2,R00,PRODUCTION,PIPELINE,,,"Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test",A_VERIFIER
 3,R00,PRODUCTION,OUTILLAGE,,,"Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces",A_VERIFIER
-4,R00,VERIFICATION,VERIFICATEUR,,,Contrôle de bout en bout sur la fiche test,A_FAIRE
+4,R00,VERIFICATION,VERIFICATEUR,,,Contrôle de bout en bout sur la fiche test,EN_COURS
 5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",A_FAIRE
 7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,A_FAIRE
