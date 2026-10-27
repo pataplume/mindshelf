@@ -13,11 +13,8 @@ SCRIPTS = Path(__file__).resolve().parent
 PRODUITS = RACINE / "produits"
 FORMATS_PDF = ("a4", "letter", "nb", "tablette")
 
-# Réglages techniques de l'outillage en attente de fusion dans data/parametres.csv
-# (couleurs et police : dans data/charte_tokens.csv). Dès qu'une clé existe dans data/, c'est elle qui compte.
-REGLAGES_EN_ATTENTE = SCRIPTS / "parametres_outillage.csv"
 # Textes affichés par les outils (vignette, champs Anki), une ligne par clé et par langue.
-LIBELLES = SCRIPTS / "libelles_outillage.csv"
+LIBELLES = DATA / "libelles_outillage.csv"
 
 
 class ErreurOutillage(Exception):
@@ -34,7 +31,7 @@ def _cle_valeur(chemin):
 
 
 def reglage(cle):
-    """Valeur d'un réglage : data/parametres.csv (tables.param), sinon scripts/parametres_outillage.csv.
+    """Valeur d'un réglage de data/parametres.csv (tables.param).
     Une valeur « charte:<clé> » renvoie au jeton <clé> de data/charte_tokens.csv.
     Échoue si la clé n'existe nulle part."""
     valeur = ""
@@ -43,10 +40,7 @@ def reglage(cle):
     except KeyError:
         pass
     if valeur == "":
-        valeur = _cle_valeur(REGLAGES_EN_ATTENTE).get(cle, "")
-    if valeur == "":
-        raise ErreurOutillage(
-            f"réglage « {cle} » introuvable (data/parametres.csv, scripts/{REGLAGES_EN_ATTENTE.name})")
+        raise ErreurOutillage(f"réglage « {cle} » introuvable (data/parametres.csv)")
     if valeur.startswith("charte:"):
         jeton = valeur.split(":", 1)[1]
         valeur = _cle_valeur(DATA / "charte_tokens.csv").get(jeton, "")
@@ -71,12 +65,12 @@ def reglage_entier(cle):
 
 
 def libelle(cle, langue):
-    """Texte d'interface d'un outil dans la langue demandée (scripts/libelles_outillage.csv)."""
+    """Texte d'interface d'un outil dans la langue demandée (data/libelles_outillage.csv)."""
     with open(LIBELLES, newline="", encoding="utf-8") as f:
         textes = {(l["cle"], l["langue"]): l["texte"] for l in csv.DictReader(f)}
     texte = textes.get((cle, langue), "")
     if not texte:
-        raise ErreurOutillage(f"libellé « {cle} » absent pour la langue « {langue} » (scripts/{LIBELLES.name})")
+        raise ErreurOutillage(f"libellé « {cle} » absent pour la langue « {langue} » (data/{LIBELLES.name})")
     return texte
 
 
@@ -143,16 +137,14 @@ def dossier_livraison(code_variante):
 
 
 def chemin_pdf(code_variante, format_pdf="a4"):
-    """produits/<CODE>/livraison/<VARIANTE>/<CODE>-<VARIANTE>-<format>.pdf (convention du pipeline)."""
+    """produits/<CODE>/livraison/<VARIANTE>/<VARIANTE>-<format>.pdf (convention du pipeline)."""
     if format_pdf not in FORMATS_PDF:
         raise ErreurOutillage(f"format inconnu : {format_pdf} (attendu : {', '.join(FORMATS_PDF)})")
-    code = variante(code_variante)["produit_code"]
-    return dossier_livraison(code_variante) / f"{code}-{code_variante}-{format_pdf}.pdf"
+    return dossier_livraison(code_variante) / f"{code_variante}-{format_pdf}.pdf"
 
 
 def chemin_apkg(code_variante):
-    code = variante(code_variante)["produit_code"]
-    return dossier_livraison(code_variante) / f"{code}-{code_variante}.apkg"
+    return dossier_livraison(code_variante) / f"{code_variante}.apkg"
 
 
 # --- Divers ------------------------------------------------------------------------------

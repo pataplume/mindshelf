@@ -18,7 +18,6 @@ Sortie : liste des erreurs ; code de sortie 1 s'il y en a.
 """
 import argparse
 import re
-import sys
 import unicodedata
 from pathlib import Path
 

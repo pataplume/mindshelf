@@ -7,7 +7,7 @@ Tristan publie à la main à partir de ce fichier (docs/conformite.md).
 
 Règles générales
 - Langue = langue du marché du produit. Garder les quatre sections, dans cet ordre, avec ces intitulés exacts.
-- Limites lues dans data/parametres.csv (etsy_*) et, en attendant leur fusion, dans scripts/parametres_outillage.csv.
+- Limites lues dans data/parametres.csv (etsy_*).
   Les commentaires HTML comme celui-ci sont ignorés par le contrôle.
 - Aucune promesse de réussite, aucun faux avis, aucune affirmation non vérifiée.
 -->

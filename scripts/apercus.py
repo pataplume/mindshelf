@@ -24,7 +24,7 @@ from pathlib import Path
 from PIL import Image
 from pypdf import PdfReader
 
-from outillage_commun import (ErreurOutillage, chemin_pdf, dossier_produit, executer, langue_produit,
+from outillage_commun import (RACINE, ErreurOutillage, chemin_pdf, dossier_produit, executer, langue_produit,
                               lancer, libelle, lire_csv, produit_de_variante, relatif, reglage,
                               reglage_entier, reglage_nombre, slug, variante)
 
@@ -45,7 +45,7 @@ def _pages(pdf):
 
 def taille_page_pt(page):
     """(largeur, hauteur) affichées d'une page pypdf, en points, rotation comprise."""
-    largeur, hauteur = float(page.cropbox.width), float(page.cropbox.height)  # pdftoppm rend la CropBox
+    largeur, hauteur = float(page.cropbox.width), float(page.cropbox.height)  # zone visible ; pdftoppm est appelé avec -cropbox
     if (page.get("/Rotate") or 0) % 180:
         largeur, hauteur = hauteur, largeur
     return largeur, hauteur
@@ -54,7 +54,7 @@ def taille_page_pt(page):
 def rendre_page(pdf, num_page, sortie_png, largeur_px):
     """Rend une page entière à la largeur demandée (hauteur proportionnelle)."""
     base = Path(sortie_png).with_suffix("")
-    executer(["pdftoppm", "-png", "-f", num_page, "-l", num_page, "-scale-to-x", largeur_px,
+    executer(["pdftoppm", "-png", "-cropbox", "-f", num_page, "-l", num_page, "-scale-to-x", largeur_px,
               "-scale-to-y", -1, "-singlefile", pdf, base])
     return Path(sortie_png)
 
@@ -65,7 +65,7 @@ def rendre_zone(pdf, num_page, taille_pt, zone, sortie_png, largeur_px):
     larg_pt, haut_pt = taille_pt
     ppp = largeur_px * 72 / (l / 100 * larg_pt)
     echelle = ppp / 72
-    executer(["pdftoppm", "-png", "-f", num_page, "-l", num_page, "-r", f"{ppp:.4f}",
+    executer(["pdftoppm", "-png", "-cropbox", "-f", num_page, "-l", num_page, "-r", f"{ppp:.4f}",
               "-x", round(x / 100 * larg_pt * echelle), "-y", round(y / 100 * haut_pt * echelle),
               "-W", largeur_px, "-H", round(h / 100 * haut_pt * echelle), "-singlefile",
               pdf, Path(sortie_png).with_suffix("")])
@@ -146,17 +146,27 @@ def generer_vignette(elements, sortie_png, langue, titre="", image_page=None):
         donnees = {
             "largeur_pt": largeur * 72 / ppp, "hauteur_pt": hauteur * 72 / ppp,
             "police": reglage("apercu_vignette_police"), "langue": langue,
+            "graisse_titre": reglage_entier("apercu_vignette_graisse_titre"),
+            "graisse_rubrique": reglage_entier("apercu_vignette_graisse_rubrique"),
+            "echelle_min": reglage_nombre("apercu_vignette_echelle_min"),
+            "echelle_pas": reglage_nombre("apercu_vignette_echelle_pas"),
             "fond": reglage("apercu_vignette_fond_couleur"), "texte": reglage("apercu_vignette_texte_couleur"),
             "accent": reglage("apercu_vignette_accent_couleur"),
             "titre": titre, "rubrique": libelle("vignette_rubrique", langue),
             "elements": list(elements), "image": image, "image_ratio": ratio,
         }
+        polices = RACINE / reglage("apercu_vignette_polices_dossier")
         shutil.copy(GABARIT_VIGNETTE, tmp / "vignette.typ")
         try:
-            pages = typst.compile(str(tmp / "vignette.typ"), root=str(tmp), format="png", ppi=float(ppp),
-                                  sys_inputs={"donnees": json.dumps(donnees, ensure_ascii=False)})
+            pages, alertes = typst.compile_with_warnings(
+                str(tmp / "vignette.typ"), root=str(tmp), format="png", ppi=float(ppp),
+                font_paths=[str(polices)] if polices.is_dir() else [],
+                sys_inputs={"donnees": json.dumps(donnees, ensure_ascii=False)})
         except Exception as e:
             raise ErreurOutillage(f"vignette : compilation Typst impossible ({e})")
+    alertes = [str(getattr(a, "message", a)) for a in alertes]
+    if alertes:  # ex. police introuvable : Typst se replierait sans le dire sur une autre police
+        raise ErreurOutillage("vignette : " + " ; ".join(alertes))
     if isinstance(pages, list):
         raise ErreurOutillage(f"vignette : le contenu déborde sur {len(pages)} pages, réduire contenu.csv")
     Path(sortie_png).write_bytes(pages)
