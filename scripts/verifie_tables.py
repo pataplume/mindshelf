@@ -61,7 +61,11 @@ fk("produit_sources.csv", "produit_code", "produits.csv")
 fk("produit_sources.csv", "source_code", "sources.csv")
 fk("whop_existants.csv", "produit_code", "produits.csv", vide_ok=True)
 fk("whop_existants.csv", "decision_code", "decisions.csv", vide_ok=True)
-fk("decisions.csv", "bloque_run_code", "runs.csv", vide_ok=True)
+fk("decision_runs.csv", "decision_code", "decisions.csv")
+fk("decision_runs.csv", "run_code", "runs.csv")
+fk("runs_durees.csv", "run_code", "runs.csv")
+fk("runs_durees.csv", "phase_code", "phases.csv")
+fk("runs_durees.csv", "role_code", "roles_agents.csv")
 
 # Règles métier
 produits = index(lire("produits.csv"))

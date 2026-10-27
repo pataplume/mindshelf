@@ -16,6 +16,7 @@ Usage :
     (le format se lit dans le suffixe du nom : -a4, -letter, -nb, -tablette)
 Code de sortie 1 si un contrôle échoue.
 """
+import re
 import argparse
 import math
 import subprocess
@@ -26,7 +27,7 @@ from PIL import Image, ImageChops
 from pypdf import PdfReader
 from pypdf.generic import ContentStream
 
-from outillage_commun import (FORMATS_PDF, ErreurOutillage, chemin_pdf, executer, lancer, relatif,
+from outillage_commun import (FORMATS_PDF, ErreurOutillage, chemin_pdf, executer, lancer, mentions_produit, relatif,
                               reglage_entier, reglage_nombre)
 from tables import DATA
 
@@ -138,9 +139,20 @@ def _jeton_mm(cle):
     return float(valeur[:-2])
 
 
+def _compacte(texte):
+    """Texte sans espaces, tirets ni césures : la comparaison résiste aux retours à la ligne du pied de page."""
+    return re.sub(r"[\s\-\u00ad\u2010\u2011]+", "", texte)
+
+
+def mentions_absentes(pdf, textes):
+    """Mentions obligatoires (data/produit_mentions.csv) introuvables dans le texte du PDF."""
+    contenu = _compacte(executer(["pdftotext", str(pdf), "-"]))
+    return [t for t in textes if _compacte(t) not in contenu]
+
+
 # --- Contrôle d'un PDF -------------------------------------------------------------------
 
-def controler(pdf, fmt, titre, marque, pages_max):
+def controler(pdf, fmt, titre, marque, pages_max, mentions=()):
     """Liste de Resultat pour un PDF d'un format donné."""
     pdf = Path(pdf)
     if not pdf.is_file():
@@ -177,6 +189,12 @@ def controler(pdf, fmt, titre, marque, pages_max):
                         "; ".join(f"p. {p} « {m} » x={x}" for p, m, x in hors[:5])
                         + (f" (+{len(hors) - 5})" if len(hors) > 5 else "")))
 
+    if mentions:
+        manquantes = mentions_absentes(pdf, mentions)
+        res.append(Resultat(fmt, "mentions", not manquantes,
+                            f"{len(mentions)} présentes" if not manquantes
+                            else "absentes : " + " | ".join(m[:60] for m in manquantes)))
+
     if fmt == "nb":
         fautives = pixels_colores(pdf, reglage_entier("controle_nb_ppp"), reglage_entier("controle_nb_ecart_max"))
         total = sum(n for _, n in fautives)
@@ -200,13 +218,13 @@ def controler(pdf, fmt, titre, marque, pages_max):
     return res
 
 
-def controler_ensemble(pdfs, titre, marque, pages_max):
+def controler_ensemble(pdfs, titre, marque, pages_max, mentions=()):
     """pdfs : {format: chemin}. Renvoie la liste de tous les Resultat."""
     res = []
     for fmt, pdf in pdfs.items():
         if fmt not in FORMATS_PDF:
             raise ErreurOutillage(f"format inconnu : {fmt} (attendu : {', '.join(FORMATS_PDF)})")
-        res.extend(controler(pdf, fmt, titre, marque, pages_max))
+        res.extend(controler(pdf, fmt, titre, marque, pages_max, mentions))
     return res
 
 
@@ -226,6 +244,8 @@ def main():
     ap.add_argument("--titre", help="mode direct : Title attendu")
     ap.add_argument("--marque", help="mode direct : Author attendu")
     ap.add_argument("--pages-max", type=int, help="mode direct : pages maximales en A4")
+    ap.add_argument("--produit", help="mode direct : code produit dont les mentions doivent figurer dans le PDF")
+    ap.add_argument("--langue", help="mode direct : langue des mentions (en, fr)")
     a = ap.parse_args()
     if a.pdf:
         if a.variante or not (a.titre and a.marque and a.pages_max):
@@ -237,15 +257,17 @@ def main():
                 ap.error(f"{f} : le nom doit finir par -{'/-'.join(FORMATS_PDF)}.pdf")
             pdfs[fmt] = Path(f)
         titre, marque, pages_max = a.titre, a.marque, a.pages_max
+        mentions = [t for _, t in mentions_produit(a.produit, a.langue)] if a.produit and a.langue else []
     elif a.variante:
         from build import donnees_variante  # import tardif : build importe ce module
         d = donnees_variante(a.variante)
         pdfs = {fmt: chemin_pdf(a.variante, fmt) for fmt in FORMATS_PDF}
         titre, marque, pages_max = d["entrees"]["titre"], d["entrees"]["marque"], d["pages_max"]
+        mentions = [t for _, t in mentions_produit(d["entrees"]["produit"], d["entrees"]["langue"])]
     else:
         ap.error("donner un code de variante, ou --pdf …")
     print(f"Contrôle : {a.variante or ', '.join(a.pdf)}")
-    echecs = afficher(controler_ensemble(pdfs, titre, marque, pages_max))
+    echecs = afficher(controler_ensemble(pdfs, titre, marque, pages_max, mentions))
     if echecs:
         raise ErreurOutillage(f"{echecs} contrôle(s) PDF en échec")
     print("Tous les contrôles passent.")

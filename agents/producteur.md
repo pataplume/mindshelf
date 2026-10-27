@@ -23,7 +23,7 @@ Ligne produit et variantes, mentions obligatoires, chemin de la charte et de la 
 7. **Mentions** : afficher celles de `data/produit_mentions.csv` en pied de fiche.
 
 8. **Contrat technique** : `src/main.typ` utilise le modèle de `charte/README.md` et les entrées de compilation décrites dans `scripts/README-pipeline.md` (format, variante, produit, référentiel, langue, marque, version, titre). Titre, marque et version ne s'écrivent jamais dans le Typst : ils arrivent par ces entrées.
-9. **Données chiffrées** : dans `donnees/exemples.csv`, la colonne `formule` n'utilise que `+ - * /` et des parenthèses (pas de `**`, pas de fonctions) : elle est évaluée par Typst et par le script du vérificateur. Les nombres de `entrees_json` s'écrivent en décimal (0.000001, jamais 1e-6). Le Typst affiche les nombres avec `nombre()` à partir de ces données.
+9. **Données chiffrées** : dans `donnees/exemples.csv`, la colonne `formule` n'utilise que `+ - * /` et des parenthèses (pas de `**`, pas de fonctions) : elle est évaluée par Typst et par le script du vérificateur. Les nombres de `entrees_json` s'écrivent en décimal (0.000001, jamais 1e-6). Le Typst affiche les nombres avec `nombre()` à partir de ces données. La colonne `arrondi` donne le nombre de décimales du résultat **affiché** : toute quantité à régler ou administrer (gouttes/min, mL/h, mL prélevés) s'affiche à une valeur réellement réglable, le calcul exact pouvant figurer avant (« 31,25 ⇒ 31 gouttes/min »).
 10. **Budget** : livrer d'abord le produit complet et compilé, puis améliorer. Au plus deux allers-retours visuels par format ; ce qui reste perfectible va dans le résumé final, pas dans des itérations supplémentaires.
 
 ## Interdits

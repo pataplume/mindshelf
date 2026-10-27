@@ -2,21 +2,20 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 131
-- Durée estimée totale : 12 h 50 · restant : 12 h 50 (hors validation par Tristan)
+- Runs : 22 · tâches : 132
+- Durée estimée totale : 31 h 00 · restant : 29 h 50 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** aucun (voir décisions bloquantes)
+**Lançables maintenant :** R03
 
 ## Décisions ouvertes
 
 | Code | Sujet | Options | Bloque |
 |---|---|---|---|
-| D01 | Nom de la marque FR | 3 propositions livrées au run R00 | R02 |
+| D01 | Nom de la marque FR | 3 propositions livrées au run R00 | R02, R04, R05, R07, R08, R15, R18 |
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
-| D03 | Relecteur.rice métier | Qui, et sous quel délai par produit | R01 |
-| D04 | Méthodes des produits à risque FORT écrites par Tristan | Oui (ouvre Etsy pour ces produits) / Non (Whop seul) | R01 |
-| D05 | Dépôt GitHub | Créer pataplume/mindshelf en privé, vide | R00 |
+| D03 | Relecteur.rice métier | Qui, et sous quel délai par produit (bloque la validation des produits à relecture métier, pas les runs) | — |
+| D04 | Méthodes des produits à risque FORT écrites par Tristan | Oui (ouvre Etsy pour ces produits) / Non (Whop seul) | R01, R02, R06, R08, R15 |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
 | D07 | Sources des 3 fiches existantes (physique, chimie, dosage) | Fournir les sources ou les PDF actuels | R01 |
 
@@ -24,18 +23,18 @@
 
 ### R00 — Fondations : charte, chaîne de fabrication, outils
 
-≈ 28 min · statut : À faire · décisions requises : D05
+≈ 1 h 10 · statut : Vérifié, en attente de relecture et validation
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 1 | Production | Charte graphique MindShelf | — | — | Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR | À faire |
-| 2 | Production | Chaîne de fabrication Typst | — | — | Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test | À faire |
-| 3 | Production | Outils de conditionnement | — | — | Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces | À faire |
-| 4 | Vérification | Vérification indépendante | — | — | Contrôle de bout en bout sur la fiche test | À faire |
+| 1 | Production | Charte graphique MindShelf | — | — | Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR | Vérifié, en attente de relecture et validation |
+| 2 | Production | Chaîne de fabrication Typst | — | — | Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test | Vérifié, en attente de relecture et validation |
+| 3 | Production | Outils de conditionnement | — | — | Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces | Vérifié, en attente de relecture et validation |
+| 4 | Vérification | Vérification indépendante | — | — | Contrôle de bout en bout sur la fiche test | Vérifié, en attente de relecture et validation |
 
 ### R01 — Fiches EN existantes passées à la charte
 
-≈ 40 min · statut : À faire · dépend de : R00 · décisions requises : D03, D04, D07
+≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D04, D07
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -52,7 +51,7 @@
 
 ### R02 — Adaptations FR des fiches existantes
 
-≈ 40 min · statut : À faire · dépend de : R01 · décisions requises : D01
+≈ 1 h 35 · statut : À faire · dépend de : R01 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -69,7 +68,7 @@
 
 ### R03 — Nouvelles fiches EN (SPI, labs, TEAS)
 
-≈ 40 min · statut : À faire · dépend de : R00
+≈ 1 h 35 · statut : À faire · dépend de : R00
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -77,6 +76,7 @@
 | 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | À faire |
 | 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | À faire |
 | 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | À faire |
+| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md | À faire |
 | 29 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Vérification indépendante | À faire |
 | 30 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | — | Vérification indépendante | À faire |
 | 31 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | — | Vérification indépendante | À faire |
@@ -86,7 +86,7 @@
 
 ### R04 — Anatomie-physiologie EN + biostatistiques PASS
 
-≈ 40 min · statut : À faire · dépend de : R00
+≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -101,7 +101,7 @@
 
 ### R05 — Fiches IFSI à faible risque
 
-≈ 40 min · statut : À faire · dépend de : R00
+≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -115,7 +115,7 @@
 
 ### R06 — Fiches EN à risque fort (EKG, ABG)
 
-≈ 40 min · statut : À faire · dépend de : R00
+≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -129,7 +129,7 @@
 
 ### R07 — Pharmacologie IFSI
 
-≈ 40 min · statut : À faire · dépend de : R00
+≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -141,7 +141,7 @@
 
 ### R08 — Kits EN et FR
 
-≈ 40 min · statut : À faire · dépend de : R01, R02, R03, R05, R06, R07
+≈ 1 h 35 · statut : À faire · dépend de : R01, R02, R03, R05, R06, R07 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -155,7 +155,7 @@
 
 ### R09 — Guide SPI 1/3
 
-≈ 30 min · statut : À faire · dépend de : R03
+≈ 1 h 15 · statut : À faire · dépend de : R03
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -167,7 +167,7 @@
 
 ### R10 — Guide SPI 2/3
 
-≈ 30 min · statut : À faire · dépend de : R09
+≈ 1 h 15 · statut : À faire · dépend de : R09
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -179,7 +179,7 @@
 
 ### R11 — Guide SPI 3/3
 
-≈ 40 min · statut : À faire · dépend de : R10
+≈ 1 h 35 · statut : À faire · dépend de : R10
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -191,7 +191,7 @@
 
 ### R12 — Guide TEAS 7 Science 1/3
 
-≈ 30 min · statut : À faire · dépend de : R03, R04
+≈ 1 h 15 · statut : À faire · dépend de : R03, R04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -203,7 +203,7 @@
 
 ### R13 — Guide TEAS 7 Science 2/3
 
-≈ 30 min · statut : À faire · dépend de : R12
+≈ 1 h 15 · statut : À faire · dépend de : R12
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -215,7 +215,7 @@
 
 ### R14 — Guide TEAS 7 Science 3/3
 
-≈ 40 min · statut : À faire · dépend de : R13
+≈ 1 h 35 · statut : À faire · dépend de : R13
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -227,7 +227,7 @@
 
 ### R15 — Cahier calculs de doses 1/3
 
-≈ 30 min · statut : À faire · dépend de : R02
+≈ 1 h 15 · statut : À faire · dépend de : R02 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -239,7 +239,7 @@
 
 ### R16 — Cahier calculs de doses 2/3
 
-≈ 30 min · statut : À faire · dépend de : R15
+≈ 1 h 15 · statut : À faire · dépend de : R15
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -251,7 +251,7 @@
 
 ### R17 — Cahier calculs de doses 3/3
 
-≈ 40 min · statut : À faire · dépend de : R16
+≈ 1 h 35 · statut : À faire · dépend de : R16
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -263,7 +263,7 @@
 
 ### R18 — Guide Physique-Biophysique PASS 1/3
 
-≈ 30 min · statut : À faire · dépend de : R02
+≈ 1 h 15 · statut : À faire · dépend de : R02 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -275,7 +275,7 @@
 
 ### R19 — Guide Physique-Biophysique PASS 2/3
 
-≈ 30 min · statut : À faire · dépend de : R18
+≈ 1 h 15 · statut : À faire · dépend de : R18
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -287,7 +287,7 @@
 
 ### R20 — Guide Physique-Biophysique PASS 3/3
 
-≈ 40 min · statut : À faire · dépend de : R19
+≈ 1 h 35 · statut : À faire · dépend de : R19
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -299,7 +299,7 @@
 
 ### R21 — Mise en vente Etsy et contrôle final
 
-≈ 22 min · statut : À faire · dépend de : R08, R11, R14, R17, R20 · décisions requises : D02
+≈ 50 min · statut : À faire · dépend de : R08, R11, R14, R17, R20 · décisions requises : D02
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|

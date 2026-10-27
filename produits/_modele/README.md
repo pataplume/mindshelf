@@ -6,7 +6,7 @@ produits/<CODE>/
 │   ├── main.typ             point d'entrée ; lit la charte et les données
 │   └── contenu/             sections du produit
 ├── donnees/
-│   ├── exemples.csv         id, enonce, entrees_json, formule, resultat_attendu, unite, tolerance
+│   ├── exemples.csv         id, enonce, entrees_json, formule, resultat_attendu, unite, tolerance, arrondi
 │   ├── references.csv       element, source_code, localisation (page, section, article)
 │   ├── variantes.csv        correspondances propres à une variante (ex. numéros d'UE 2009 / 2026)
 │   ├── cartes.csv           recto, verso, tags (export Anki)

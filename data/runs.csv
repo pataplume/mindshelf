@@ -1,5 +1,5 @@
 code,ordre,titre,statut_code
-R00,0,"Fondations : charte, chaîne de fabrication, outils",EN_COURS
+R00,0,"Fondations : charte, chaîne de fabrication, outils",A_VALIDER
 R01,1,Fiches EN existantes passées à la charte,A_FAIRE
 R02,2,Adaptations FR des fiches existantes,A_FAIRE
 R03,3,"Nouvelles fiches EN (SPI, labs, TEAS)",A_FAIRE

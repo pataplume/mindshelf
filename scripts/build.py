@@ -192,7 +192,8 @@ def construire(source, sortie_dir, entrees, formats, pages_max):
     print(f"Build {code} : {relatif(Path(source).resolve())}")
     pdfs = compiler(source, sortie_dir, code, entrees, formats)
     print(f"Contrôle {code} :")
-    resultats = controle_pdf.controler_ensemble(pdfs, entrees["titre"], entrees["marque"], pages_max)
+    mentions = [m for _, m in controle_pdf.mentions_produit(entrees["produit"], entrees["langue"])]
+    resultats = controle_pdf.controler_ensemble(pdfs, entrees["titre"], entrees["marque"], pages_max, mentions)
     echecs = controle_pdf.afficher(resultats)
     if echecs:
         raise ErreurOutillage(f"{code} : {echecs} contrôle(s) PDF en échec")

@@ -23,10 +23,12 @@ for d in lire("run_dependances.csv"):
 taches_run = defaultdict(list)
 for t in taches:
     taches_run[t["run_code"]].append(t)
+decisions_idx = index(decisions)
 decisions_run = defaultdict(list)
-for d in decisions:
-    if d["bloque_run_code"]:
-        decisions_run[d["bloque_run_code"]].append(d)
+runs_decision = defaultdict(list)
+for l in lire("decision_runs.csv"):
+    decisions_run[l["run_code"]].append(decisions_idx[l["decision_code"]])
+    runs_decision[l["decision_code"]].append(l["run_code"])
 statut_run = {r["code"]: r["statut_code"] for r in runs}
 SEUIL_FAIT = int(statuts["A_VALIDER"]["ordre"])
 
@@ -61,7 +63,7 @@ ouvertes = [d for d in decisions if d["statut"] != "tranche"]
 if ouvertes:
     L.append("## Décisions ouvertes\n\n| Code | Sujet | Options | Bloque |\n|---|---|---|---|\n")
     for d in ouvertes:
-        L.append(f"| {d['code']} | {d['sujet']} | {d['options']} | {d['bloque_run_code'] or '—'} |\n")
+        L.append(f"| {d['code']} | {d['sujet']} | {d['options']} | {', '.join(runs_decision[d['code']]) or '—'} |\n")
     L.append("\n")
 L.append("## Runs\n\n")
 for r in runs:
