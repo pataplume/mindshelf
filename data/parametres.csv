@@ -12,3 +12,4 @@ whop_accroche_car_max,80,caractères,Limite API Whop pour la headline
 whop_description_car_max,1500,caractères,Limite API Whop pour la description
 validation_estimee_par_produit,10,min,"Estimation du temps de validation par Tristan, par variante (à recalibrer)"
 etsy_publications_par_semaine_max,3,annonces,"Rythme de publication Etsy pour éviter le profil 'automatisation de masse' (jugement, pas une règle Etsy)"
+etsy_tag_car_max,20,caractères,Longueur maximale d'un tag Etsy
