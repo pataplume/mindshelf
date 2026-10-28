@@ -1,0 +1,13 @@
+methode,groupe,min,max,remarque
+IR,O–H (alcohol),3200,3600,broad
+IR,O–H (carboxylic acid),2500,3100,very broad
+IR,N–H,3300,3500,1 or 2 peaks
+IR,C≡N / C≡C,2100,2260,
+IR,C=O,1670,1780,strong & sharp
+NMR,alkyl C–H,0.9,1.8,
+NMR,H–C–C=O,2.0,2.5,
+NMR,H–C–O / H–C–X,3.3,4.5,
+NMR,vinylic =C–H,4.5,6.5,
+NMR,aromatic Ar–H,6.5,8.0,
+NMR,aldehyde CHO,9.0,10.0,
+NMR,carboxylic acid COOH,10,12,broad

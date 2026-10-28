@@ -1,0 +1,19 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+EX02,"Impulsion, réception jambes fléchies : m = 70 kg, v = 5 m/s, arrêt en t = 0.5 s ; F = m v / t","{""m"": 70, ""v"": 5, ""t"": 0.5}",m * v / t,700,N,0.0001,0
+EX03,"Impulsion, réception jambes tendues : m = 70 kg, v = 5 m/s, arrêt en t = 0.05 s ; F = m v / t","{""m"": 70, ""v"": 5, ""t"": 0.05}",m * v / t,7000,N,0.0001,0
+EX04,"Poiseuille : rayon réduit à k = 0.8 fois sa valeur ; débit relatif = k⁴ (en %)","{""k"": 0.8}",k * k * k * k * 100,40.96,%,0.0001,0
+EX05,"Poiseuille : rayon réduit à k = 0.8 ; résistance relative = 1 / k⁴","{""k"": 0.8}",1 / (k * k * k * k),2.4414,×,0.0001,1
+EX06,"Pression hydrostatique d'une poche de perfusion à h = 1 m au-dessus du cathéter : rho = 1000 kg/m³, g = 9.8 m/s², 1 mmHg = 133.322 Pa ; P = rho g h / 133.322","{""rho"": 1000, ""g"": 9.8, ""h"": 1, ""Pmm"": 133.322}",rho * g * h / Pmm,73.5062,mmHg,0.001,0
+EX07,"Longueur d'onde ultrasonore : c = 1540 m/s, f = 5 MHz ; lambda = c / f (en mm)","{""c"": 1540, ""f"": 5000000}",c / f * 1000,0.308,mm,0.000001,2
+EX08,"Décalage Doppler ultrasonore : f0 = 5 MHz, v = 0.5 m/s, cos(theta) = 0.5 (60°), c = 1540 m/s ; df = 2 f0 v cos / c (en kHz)","{""f"": 5000000, ""v"": 0.5, ""cs"": 0.5, ""c"": 1540}",2 * f * v * cs / c / 1000,1.62338,kHz,0.00001,1
+EX09,"Lentille mince : f = 0.1 m, objet à do = 0.3 m ; di = 1 / (1/f - 1/do)","{""f"": 0.1, ""d"": 0.3}",1 / (1 / f - 1 / d),0.15,m,0.000001,2
+EX10,"Grandissement : di = 0.15 m, do = 0.3 m ; m = -di / do","{""di"": 0.15, ""d"": 0.3}",-di / d,-0.5,,0.000001,1
+EX11,"Myopie : punctum remotum à x = 0.5 m ; verre correcteur P = -1 / x (dioptries)","{""x"": 0.5}",-1 / x,-2,D,0.000001,0
+EX12,"Résistances en parallèle : R1 = 6 ohms, R2 = 3 ohms ; R = 1 / (1/R1 + 1/R2)","{""R1"": 6, ""R2"": 3}",1 / (1 / R1 + 1 / R2),2,Ω,0.000001,0
+EX13,"Défibrillateur : C = 100 µF (0.0001 F) chargé à V = 2000 V ; U = C V² / 2","{""C"": 0.0001, ""V"": 2000}",C * V * V / 2,200,J,0.000001,0
+EX14,"Loi de Dalton, PO2 de l'air inspiré humidifié : FO2 = 0.21, Patm = 760 mmHg, PH2O = 47 mmHg ; PIO2 = FO2 (Patm - PH2O)","{""F"": 0.21, ""P"": 760, ""W"": 47}",F * (P - W),149.73,mmHg,0.0001,0
+EX15,"Énergie d'un photon : hc = 1240 eV·nm, lambda = 500 nm ; E = hc / lambda","{""hc"": 1240, ""l"": 500}",hc / l,2.48,eV,0.000001,2
+EX16,"Demi-vie : t = 24 h, T½ = 6 h ; nombre de demi-vies n = t / T","{""t"": 24, ""T"": 6}",t / T,4,,0.000001,0
+EX17,"Décroissance : A0 = 800 MBq après n = 4 demi-vies ; A = A0 / 2⁴","{""A0"": 800}",A0 / (2 * 2 * 2 * 2),50,MBq,0.000001,0
+EX18,"Pression artérielle moyenne : PAS = 120 mmHg, PAD = 80 mmHg ; PAM ≈ PAD + (PAS - PAD) / 3","{""S"": 120, ""D"": 80}",D + (S - D) / 3,93.3333,mmHg,0.0001,0
+EX19,"Gradient valvulaire (Bernoulli simplifié) : v = 4 m/s, coefficient K = 4 ; dP = K v²","{""K"": 4, ""v"": 4}",K * v * v,64,mmHg,0.000001,0

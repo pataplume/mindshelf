@@ -1,0 +1,26 @@
+recto,verso,tags
+Molarity vs molality: what is in the denominator?,"Molarity M = mol solute per <b>liter of solution</b>; molality m = mol solute per <b>kg of solvent</b>.",EN03 units
+Dilution equation,"C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> (moles of solute stay constant).",EN03 units
+"Periodic trends across a period (left to right)","Atomic radius decreases; ionization energy and electronegativity increase. Down a group: the reverse.",EN03 atoms
+Formal charge formula,"FC = V − N − B/2 (valence electrons − nonbonding electrons − half the bonding electrons).",EN03 bonding
+"VSEPR: 4 electron domains, 2 lone pairs","Bent, ≈104.5° (H<sub>2</sub>O), sp<sup>3</sup>.",EN03 bonding vsepr
+"VSEPR: 4 electron domains, 1 lone pair","Trigonal pyramidal, ≈107° (NH<sub>3</sub>), sp<sup>3</sup>.",EN03 bonding vsepr
+Rank the intermolecular forces,"Ion–dipole &gt; hydrogen bond (H on N, O, F) &gt; dipole–dipole &gt; London dispersion.",EN03 bonding
+Graham's law,"r<sub>1</sub>/r<sub>2</sub> = √(ℳ<sub>2</sub>/ℳ<sub>1</sub>): the lighter gas effuses faster.",EN03 gases
+"ΔH &gt; 0 and ΔS &gt; 0: when is the reaction spontaneous?","At high temperature (ΔG = ΔH − TΔS becomes negative).",EN03 thermo
+Link between ΔG° and K; between ΔG° and E°,"ΔG° = −RT ln K = −nFE°.",EN03 thermo electrochem
+Half-life of a first-order reaction,"t<sub>1/2</sub> = 0.693/k, independent of the starting concentration.",EN03 kinetics
+What does a catalyst change?,"It lowers E<sub>a</sub> and speeds both directions; it changes neither K nor ΔG.",EN03 kinetics
+Michaelis–Menten equation and meaning of K<sub>m</sub>,"v = V<sub>max</sub>[S]/(K<sub>m</sub> + [S]); K<sub>m</sub> is the [S] at which v = V<sub>max</sub>/2.",EN03 enzymes
+Competitive inhibitor: effect on K<sub>m</sub> and V<sub>max</sub>,"K<sub>m</sub> rises, V<sub>max</sub> unchanged (overcome by more substrate).",EN03 enzymes
+Uncompetitive inhibitor: effect on K<sub>m</sub> and V<sub>max</sub>,"Both decrease (binds the ES complex only).",EN03 enzymes
+What is the only factor that changes K?,"Temperature.",EN03 equilibrium
+Henderson–Hasselbalch equation,"pH = pK<sub>a</sub> + log([A<sup>−</sup>]/[HA]); at half-equivalence pH = pK<sub>a</sub>.",EN03 acids
+Bicarbonate buffer equation,"pH = 6.1 + log([HCO<sub>3</sub><sup>−</sup>] / (0.03 × PaCO<sub>2</sub>)).",EN03 acids clinical
+Primary change and compensation in metabolic acidosis,"HCO<sub>3</sub><sup>−</sup> falls; PaCO<sub>2</sub> falls (respiratory compensation).",EN03 acids clinical
+Freezing-point depression,"ΔT<sub>f</sub> = i K<sub>f</sub> m; K<sub>f</sub> (water) = 1.86 °C·kg/mol; NaCl gives i ≈ 2.",EN03 solutions
+Galvanic vs electrolytic cell: signs,"Galvanic: ΔG &lt; 0, E<sub>cell</sub> &gt; 0, anode negative. Electrolytic: ΔG &gt; 0, E<sub>cell</sub> &lt; 0, anode positive. Oxidation always at the anode.",EN03 electrochem
+SN1 vs SN2: stereochemistry and best solvent,"SN1: racemization, polar protic solvent. SN2: inversion, polar aprotic solvent.",EN03 organic
+Isoelectric point of an amino acid with a neutral side chain,"pI = (pK<sub>a1</sub> + pK<sub>a2</sub>)/2; net charge positive below pI, negative above.",EN03 organic
+Anion gap formula,"AG = Na<sup>+</sup> − (Cl<sup>−</sup> + HCO<sub>3</sub><sup>−</sup>); StatPearls range 4–12 mmol/L (varies by lab).",EN03 clinical
+Calculated serum osmolality (US units),"2 Na<sup>+</sup> + glucose/18 + BUN/2.8 (glucose, BUN in mg/dL); about 275–295 mOsm/kg (varies by lab).",EN03 clinical

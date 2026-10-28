@@ -1,0 +1,9 @@
+domaines,paires_libres,forme,angle,angle2,qualificatif,hybridation,exemple
+2,0,linear,180,,,sp,CO₂
+3,0,trig. planar,120,,,sp²,BF₃
+3,1,bent,120,,<,sp²,SO₂
+4,0,tetrahedral,109.5,,,sp³,CH₄
+4,1,trig. pyramidal,107,,≈,sp³,NH₃
+4,2,bent,104.5,,≈,sp³,H₂O
+5,0,trig. bipyramid,90,120,,sp³d,PCl₅
+6,0,octahedral,90,,,sp³d²,SF₆

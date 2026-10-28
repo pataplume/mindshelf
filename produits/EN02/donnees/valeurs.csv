@@ -1,0 +1,44 @@
+id,groupe,ordre,symbole,libelle,mantisse,exposant,unite,source_code
+K_C,CONST,1,c,speed of light (vacuum),2.998,8,m/s,CODATA_2022
+K_H,CONST,2,h,Planck constant,6.626,-34,J·s,CODATA_2022
+K_E,CONST,3,e,elementary charge,1.602,-19,C,CODATA_2022
+K_NA,CONST,4,N_A,Avogadro constant,6.022,23,mol⁻¹,CODATA_2022
+K_KB,CONST,5,k_B,Boltzmann constant,1.381,-23,J/K,CODATA_2022
+K_R,CONST,6,R,molar gas constant,8.314,0,J/(mol·K),CODATA_2022
+K_RL,CONST,7,R,same in L·atm,0.08206,0,L·atm/(mol·K),CODATA_2022
+K_G,CONST,8,G,gravitational constant,6.674,-11,N·m²/kg²,CODATA_2022
+K_K,CONST,9,k,Coulomb constant 1/(4πε₀),8.988,9,N·m²/C²,CODATA_2022
+K_EPS,CONST,10,epsilon_0,vacuum permittivity,8.854,-12,F/m,CODATA_2022
+K_MU,CONST,11,mu_0,vacuum permeability,1.257,-6,N/A²,CODATA_2022
+K_ME,CONST,12,m_e,electron mass,9.109,-31,kg,CODATA_2022
+K_MP,CONST,13,m_p,proton mass,1.673,-27,kg,CODATA_2022
+K_GN,CONST,14,g_n,standard gravity,9.807,0,m/s²,CODATA_2022
+K_HC,CONST,15,h c,photon shortcut,1240,0,eV·nm,CODATA_2022
+U_ATM,UNIT,1,,1 atm,101.325,0,kPa,NIST_SP811
+U_ATM_MMHG,UNIT,2,,1 atm,760,0,mmHg,NIST_SP811
+U_MMHG,UNIT,3,,1 mmHg,133.322,0,Pa,NIST_SP811
+U_CMH2O,UNIT,4,,1 cmH₂O,98.0665,0,Pa,NIST_SP811
+U_MMHG_CMH2O,UNIT,5,,1 mmHg,1.36,0,cmH₂O,NIST_SP811
+U_CAL,UNIT,6,,1 cal,4.184,0,J,NIST_SP811
+U_KCAL,UNIT,7,,1 Cal (food) = 1 kcal,4184,0,J,NIST_SP811
+U_EV,UNIT,8,,1 eV,1.602,-19,J,CODATA_2022
+U_KELVIN,UNIT,9,,T(K) = T(°C) +,273.15,0,,BIPM_SI_9
+P_I0,PHYS,1,I_0,threshold of hearing (reference intensity),1,-12,W/m²,OPENSTAX_CP
+P_CTISSUE,PHYS,2,c_"tissue",speed of sound assumed in soft tissue,1540,0,m/s,OPENSTAX_CP
+P_DB2,PHYS,3,,doubling intensity adds,3,0,dB,ANALYSE_MATH
+P_RC63,PHYS,4,,charge reached after one τ,63,0,%,ANALYSE_MATH
+P_RC37,PHYS,5,,charge left after one τ (discharge),37,0,%,ANALYSE_MATH
+P_PH2O,PHYS,6,P_(H_2 O),water vapor pressure at 37 °C,47,0,mmHg,CRC_HANDBOOK
+P_FIO2,PHYS,7,F_(O_2),O₂ fraction of dry air,0.21,0,,US_STD_ATM_1976
+P_AS_VMAX,PHYS,8,v_max,aortic jet velocity defining severe stenosis,4,0,m/s,ESC_ASE_AS_2017
+P_BERN_K,PHYS,9,,simplified Bernoulli coefficient,4,0,mmHg·s²/m²,ESC_ASE_AS_2017
+D_CXR,DOSE,1,,Chest X-ray (PA),0.02,0,mSv,METTLER_2008
+D_CXR2,DOSE,2,,Chest X-ray (PA + lateral),0.1,0,mSv,METTLER_2008
+D_MAMMO,DOSE,3,,Mammography,0.4,0,mSv,METTLER_2008
+D_CTHEAD,DOSE,4,,Head CT,2,0,mSv,METTLER_2008
+D_CTCHEST,DOSE,5,,Chest CT,7,0,mSv,METTLER_2008
+D_CTABD,DOSE,6,,Abdomen CT,8,0,mSv,METTLER_2008
+D_BG,DOSE,7,,Natural background (per year),3,0,mSv,METTLER_2008
+W_PHOTON,WR,1,,"photons (X, γ), electrons",1,0,,ICRP_103
+W_PROTON,WR,2,,protons,2,0,,ICRP_103
+W_ALPHA,WR,3,,alpha particles,20,0,,ICRP_103

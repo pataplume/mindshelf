@@ -1,0 +1,36 @@
+id,valeur,valeur_max,exposant,unite,condition,description
+NA,6.022,,23,mol⁻¹,,Constante d'Avogadro (valeur exacte 6.02214076 × 10^23 ; affichée à 4 chiffres)
+R_J,8.314,,,J/(mol·K),,Constante molaire des gaz (8.314462618 ; affichée à 4 chiffres)
+R_ATM,0.08206,,,L·atm/(mol·K),,R exprimée en L·atm/(mol·K) = 8.314462618 / 101.325
+F,96485,,,C/mol,,Constante de Faraday (96485.33212 ; affichée à l'unité)
+H,6.626,,-34,J·s,,Constante de Planck (6.62607015 × 10^−34 exacte)
+C,3.00,,8,m/s,,Vitesse de la lumière (299792458 m/s exacte ; arrondie à 3 chiffres)
+KW,1.0,,-14,,25 °C,Produit ionique de l'eau à 25 °C
+ATM_MMHG,760,,,mmHg,1 atm,1 atm en mmHg (torr)
+ATM_KPA,101.325,,,kPa,1 atm,1 atm en kPa (définition)
+VM,22.4,,,L/mol,"0 °C, 1 atm",Volume molaire d'un gaz parfait à 273.15 K et 1 atm (22.41396954 ; arrondi)
+T0,273.15,,,K,0 °C,0 °C en kelvins
+CP_EAU,4.184,,,J/(g·°C),,Capacité thermique massique de l'eau liquide
+CAL,4.184,,,J,,1 calorie thermochimique en joules
+KF_EAU,1.86,,,°C·kg/mol,,Constante cryoscopique de l'eau
+KB_EAU,0.512,,,°C·kg/mol,,Constante ébullioscopique de l'eau
+LN10,2.303,,,,,ln 10 (2.302585…) pour passer de ln à log10
+NERNST25,0.0592,,,V,25 °C,RT ln10 / F à 298.15 K (0.059159 V ; arrondi)
+NERNST37,61.5,,,mV,37 °C,RT ln10 / F à 310.15 K (61.540 mV ; arrondi)
+LN2,0.693,,,,,ln 2 (0.693147…) : t1/2 = ln 2 / k
+OSM_NA,2,,,,,Coefficient du sodium dans l'osmolalité calculée (Na+ et anions associés)
+OSM_GLU,18,,,,,Diviseur du glucose en mg/dL vers mmol/L (masse molaire 180.16 g/mol / 10)
+OSM_BUN,2.8,,,,,Diviseur de l'azote uréique en mg/dL vers mmol/L (2 N = 28.01 g/mol / 10)
+HB_CAP,1.34,,,mL O₂/g,,Capacité de fixation de l'O2 par gramme d'hémoglobine (valeur clinique usuelle)
+O2_SOL,0.003,,,mL O₂/(dL·mmHg),,Solubilité de l'O2 dans le sang
+BICARB_PKA,6.1,,,,37 °C,pKa apparent du système CO2/HCO3− à 37 °C
+CO2_SOL,0.03,,,mmol/(L·mmHg),,Solubilité du CO2 dans le plasma
+AG_REF,4,12,,mEq/L,,Intervalle de référence du trou anionique Na − (Cl + HCO3) (varie selon laboratoire et analyseur)
+OSM_REF,275,295,,mOsm/kg,,Intervalle de référence de l'osmolalité sérique (varie selon laboratoire)
+PATM,760,,,mmHg,,Pression atmosphérique au niveau de la mer
+PH2O,47,,,mmHg,37 °C,Pression de vapeur saturante de l'eau à 37 °C (6.28 kPa ≈ 47.1 mmHg)
+RQ,0.8,,,,,Quotient respiratoire moyen (≈ 0.8 ; StatPearls donne ≈ 0.82)
+OX_ROUGE,660,,,nm,,Longueur d'onde rouge de l'oxymètre de pouls
+OX_IR,940,,,nm,,Longueur d'onde infrarouge de l'oxymètre de pouls
+TAMPON_ECART,1,,,,,Zone tampon efficace : pKa ± 1 (rapport [A−]/[HA] de 0.1 à 10)
+PH_NEUTRE,7,,,,25 °C,pH neutre à 25 °C (pKw / 2)

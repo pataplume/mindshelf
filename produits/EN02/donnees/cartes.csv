@@ -1,0 +1,26 @@
+recto,verso,tags
+"Three constant-acceleration equations?","v = v₀ + at<br>Δx = v₀t + ½at²<br>v² = v₀² + 2aΔx",physics::kinematics
+"On an incline of angle θ, what are the parallel component of weight and the normal force?","F∥ = mg sin θ ; N = mg cos θ (only if no other force acts perpendicular to the slope)",physics::forces
+"Work done by a force F over a displacement d at angle θ? When is it zero?","W = Fd cos θ ; zero when F is perpendicular to the motion (centripetal force, magnetic force)",physics::energy
+"Impulse–momentum theorem, and why do airbags reduce injury?","J = FΔt = Δp. Same Δp spread over a longer Δt gives a smaller peak force.",physics::momentum clinical
+"What is conserved in a perfectly inelastic collision?","Momentum only; kinetic energy is not conserved.",physics::momentum trap
+"Centripetal acceleration and force?","a_c = v²/r = ω²r ; F_c = mv²/r, pointing toward the center (no real centrifugal force)",physics::circular
+"Hydrostatic pressure at depth h?","P = P₀ + ρgh (P − P₀ is the gauge pressure; blood pressure is a gauge pressure)",physics::fluids
+"Continuity equation and Bernoulli's equation?","A₁v₁ = A₂v₂ ; P + ½ρv² + ρgh = constant. Faster flow, lower pressure.",physics::fluids
+"Poiseuille's law, and the effect of reducing a vessel radius to 0.8 of its value?","Q = πr⁴ΔP/(8ηL). Flow × 0.8⁴ ≈ 41 % of baseline; resistance × 2.4.",physics::fluids clinical
+"Law of Laplace for a vessel and for an alveolus?","Vessel: T = Pr. Alveolus (one surface): P = 2T/r. Surfactant lowers T so small alveoli stay open.",physics::fluids clinical
+"Sound intensity level, and what does doubling the intensity add?","β = 10 log₁₀(I/I₀), I₀ = 10⁻¹² W/m². Doubling I adds about 3 dB.",physics::waves
+"Doppler shift of an ultrasound echo from moving blood?","Δf = 2f₀v cos θ / c, with c ≈ 1540 m/s in soft tissue; no shift if the beam is perpendicular to flow.",physics::waves clinical
+"Thin-lens equation, magnification and lens power?","1/f = 1/d_o + 1/d_i ; m = −d_i/d_o ; P = 1/f in diopters (f in meters)",physics::optics
+"Sign conventions: f, d_i and m?","f &gt; 0 converging lens or concave mirror; d_i &gt; 0 real image; m &gt; 0 upright, m &lt; 0 inverted",physics::optics trap
+"Which lens corrects myopia, and its power for a far point of 0.5 m?","Diverging lens: P = −1/0.5 m = −2 D",physics::optics clinical
+"Coulomb's law, field and potential of a point charge?","F = kq₁q₂/r² ; E = kq/r² ; V = kq/r (k ≈ 8.988 × 10⁹ N·m²/C²)",physics::electricity
+"Resistors in series and in parallel? Capacitors?","Resistors: series R = R₁ + R₂ ; parallel 1/R = 1/R₁ + 1/R₂. Capacitors combine the other way round.",physics::circuits trap
+"Energy stored in a capacitor, and for C = 100 µF at 2000 V?","U = ½CV² = 200 J",physics::circuits clinical
+"RC time constant: how much charge after one τ?","τ = RC ; about 63 % of full charge (about 37 % left when discharging)",physics::circuits
+"Ideal gas law and combined gas law?","PV = nRT ; P₁V₁/T₁ = P₂V₂/T₂, with T in kelvin",physics::thermodynamics trap
+"First law of thermodynamics (sign convention)?","ΔU = Q − W, where W is the work done by the gas (W = PΔV at constant pressure)",physics::thermodynamics
+"Inspired O₂ partial pressure at sea level (humidified air)?","P_IO₂ = F_O₂ (P_atm − P_H₂O) = 0.21 × (760 − 47) ≈ 150 mmHg",physics::gases clinical
+"Photoelectric effect: what does intensity change, what does frequency change?","Intensity: number of ejected electrons. Frequency: their maximum kinetic energy, K_max = hf − φ.",physics::atomic trap
+"Radioactive decay law and activity after 4 half-lives?","N = N₀(½)^(t/T½) ; A = λN ; after 4 half-lives 1/16 remains (800 MBq → 50 MBq)",physics::nuclear
+"Gray vs sievert?","Gy: absorbed dose (J/kg). Sv: equivalent dose H = w_R × D (w_R = 1 for photons, 20 for alpha).",physics::nuclear clinical
