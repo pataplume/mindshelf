@@ -5,6 +5,6 @@ ordre,ne_pas_ecrire,risque,ecrire,source_code
 4,IU,Read as IV or 10,international unit(s),TJC_DNU
 5,QD / QOD,Daily and every other day confused,daily / every other day,TJC_DNU
 6,µg,Read as mg,mcg,ISMP_ABBR
-7,cc,Read as u or 00,mL,ISMP_ABBR
+7,cc,Read as u (units),mL,ISMP_ABBR
 8,"MS, MSO4, MgSO4",Morphine and magnesium confused,full drug name,TJC_DNU
 9,100000 units,Zeros miscounted,"100,000 units",ISMP_ABBR

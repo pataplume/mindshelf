@@ -118,7 +118,7 @@
 
 #colonnes(2)[
 
-_Drugs A–F and all example numbers: exercise values, not dosing guidance._
+_Drugs A–F and their numbers: exercise values, not dosing guidance._
 
 = Core methods
 
@@ -176,7 +176,7 @@ _Drugs A–F and all example numbers: exercise values, not dosing guidance._
   Ordered #v("EX03C", "O") × #v("EX03C", "J")/#v("EX03C", "I") #res("EX03C"): safe. Outside the range: hold, call the prescriber.
 ]
 
-#piege[mg/kg/day is a #val("heures_par_jour") h total: compare per day with per day, per dose with per dose.]
+#piege[mg/kg/day is a #val("heures_par_jour") h total: compare per day or per dose, like with like.]
 
 = IV infusion rates
 
@@ -251,7 +251,7 @@ _Drugs A–F and all example numbers: exercise values, not dosing guidance._
 
 #piege[Bag in mg, dose in mcg: × #val("facteur_metrique") first; per-minute doses need × #val("min_par_h").]
 
-#note-clinique[High-alert drips (ISMP: IV heparin, insulin): independent double check per facility policy; doses come from the order and protocol.]
+#note-clinique[ISMP high-alert (IV heparin, insulin): independent double check per policy.]
 
 = Rounding & syringes
 
@@ -261,7 +261,7 @@ _Drugs A–F and all example numbers: exercise values, not dosing guidance._
   - Syringe: to its marks, #valu("seringue_petite_pas") (#valu("seringue_petite") size) or #valu("seringue_std_pas") (#valu("seringue_std") size).
 ]
 
-#piege[Rounding a concentration or an intermediate result early shifts the final rate.]
+#piege[Rounding a concentration or intermediate early shifts the final rate.]
 
 = Safe notation
 
