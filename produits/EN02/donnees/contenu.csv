@@ -5,4 +5,4 @@ ordre,element
 4,"High-yield medical physics table: MAP, valve gradient, ultrasound and Doppler, inspired O₂, imaging effective doses, radiation weighting factors"
 5,"14 worked examples (18 computed results: 5 example boxes + 4 rows of the medical table), every result recalculated from the data"
 6,"9 clinical notes and 12 exam traps"
-7,"Constants box (CODATA 2022 values, rounded; g_n conventional; R in L·atm and hc derived) and unit conversions (atm, kPa, mmHg, cmH₂O, cal, kcal, eV, K)"
+7,"Constants box (CODATA 2022 values, rounded; gₙ conventional; R in L·atm and hc derived) and unit conversions (atm, kPa, mmHg, cmH₂O, cal, kcal, eV, K)"
