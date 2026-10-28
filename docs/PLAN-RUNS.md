@@ -13,7 +13,6 @@
 | Code | Sujet | Options | Bloque |
 |---|---|---|---|
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
-| D03 | Relecteur.rice métier | Qui, et sous quel délai par produit (bloque la validation des produits à relecture métier, pas les runs) | — |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
 
 ## Runs

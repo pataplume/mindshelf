@@ -61,6 +61,8 @@ fk("produit_sources.csv", "produit_code", "produits.csv")
 fk("produit_sources.csv", "source_code", "sources.csv")
 fk("whop_existants.csv", "produit_code", "produits.csv", vide_ok=True)
 fk("whop_existants.csv", "decision_code", "decisions.csv", vide_ok=True)
+fk("produit_relecteurs.csv", "produit_code", "produits.csv")
+fk("produit_relecteurs.csv", "relecteur_code", "relecteurs.csv")
 fk("decision_runs.csv", "decision_code", "decisions.csv")
 fk("decision_runs.csv", "run_code", "runs.csv")
 fk("runs_durees.csv", "run_code", "runs.csv")
@@ -83,6 +85,10 @@ for c in lire("compositions.csv"):
         erreurs.append(f"compositions.csv {c['kit_code']} n'est pas un KIT")
     if produits[c["composant_code"]]["marche_code"] != produits[c["kit_code"]]["marche_code"]:
         erreurs.append(f"compositions.csv {c['kit_code']}/{c['composant_code']} marchés différents")
+avec_relecteur = {l["produit_code"] for l in lire("produit_relecteurs.csv")}
+for p in produits.values():
+    if p["relecture_metier"] == "oui" and p["code"] not in avec_relecteur:
+        erreurs.append(f"produits.csv {p['code']} relecture métier sans relecteur.rice (produit_relecteurs.csv)")
 avec_variante = {v["produit_code"] for v in lire("variantes.csv")}
 for code in produits:
     if code not in avec_variante:
