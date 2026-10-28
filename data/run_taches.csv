@@ -12,7 +12,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,A_CORRIGER
 12,R01,CONDITIONNEMENT,CONDITIONNEUR,EN02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 13,R01,CONDITIONNEMENT,CONDITIONNEUR,EN03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
-14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
+14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 15,R02,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",A_FAIRE
 17,R02,PRODUCTION,PRODUCTEUR,FR08,,Adapter EN03 au tronc commun PASS/LAS (chimie),A_FAIRE
