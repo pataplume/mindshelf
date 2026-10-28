@@ -3,45 +3,42 @@
 # Plan des runs
 
 - Runs : 22 · tâches : 132
-- Durée estimée totale : 31 h 00 · restant : 29 h 50 (hors validation par Tristan)
+- Durée estimée totale : 31 h 00 · restant : 28 h 15 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R03
+**Lançables maintenant :** R03, R04, R05, R06, R07
 
 ## Décisions ouvertes
 
 | Code | Sujet | Options | Bloque |
 |---|---|---|---|
-| D01 | Nom de la marque FR | 3 propositions livrées au run R00 | R02, R04, R05, R07, R08, R15, R18 |
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
 | D03 | Relecteur.rice métier | Qui, et sous quel délai par produit (bloque la validation des produits à relecture métier, pas les runs) | — |
-| D04 | Méthodes des produits à risque FORT écrites par Tristan | Oui (ouvre Etsy pour ces produits) / Non (Whop seul) | R01, R02, R06, R08, R15 |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
-| D07 | Sources des 3 fiches existantes (physique, chimie, dosage) | Fournir les sources ou les PDF actuels | R01 |
 
 ## Runs
 
 ### R00 — Fondations : charte, chaîne de fabrication, outils
 
-≈ 1 h 10 · statut : Vérifié, en attente de relecture et validation
+≈ 1 h 10 · statut : Validé par Tristan
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 1 | Production | Charte graphique MindShelf | — | — | Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR | Vérifié, en attente de relecture et validation |
-| 2 | Production | Chaîne de fabrication Typst | — | — | Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test | Vérifié, en attente de relecture et validation |
-| 3 | Production | Outils de conditionnement | — | — | Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces | Vérifié, en attente de relecture et validation |
-| 4 | Vérification | Vérification indépendante | — | — | Contrôle de bout en bout sur la fiche test | Vérifié, en attente de relecture et validation |
+| 1 | Production | Charte graphique MindShelf | — | — | Charte MindShelf en tokens (data/charte_tokens.csv) + modèle Typst + version N&B + 3 propositions de nom FR | Validé par Tristan |
+| 2 | Production | Chaîne de fabrication Typst | — | — | Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test | Validé par Tristan |
+| 3 | Production | Outils de conditionnement | — | — | Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces | Validé par Tristan |
+| 4 | Vérification | Vérification indépendante | — | — | Contrôle de bout en bout sur la fiche test | Validé par Tristan |
 
 ### R01 — Fiches EN existantes passées à la charte
 
-≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D04, D07
+≈ 1 h 35 · statut : En cours · dépend de : R00 · décisions requises : D04, D07
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
-| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | À faire |
-| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | À faire |
-| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | À faire |
+| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | En cours |
+| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | En cours |
+| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | En cours |
+| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | En cours |
 | 9 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | — | Vérification indépendante | À faire |
 | 10 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Vérification indépendante | À faire |
 | 11 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | — | Vérification indépendante | À faire |

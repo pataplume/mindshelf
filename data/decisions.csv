@@ -1,8 +1,8 @@
 code,sujet,options,statut,choix
-D01,Nom de la marque FR,3 propositions livrées au run R00,ouvert,
+D01,Nom de la marque FR,3 propositions livrées au run R00,tranche,"Clairance (domaine .fr, Instagram et INPI à vérifier par Tristan)"
 D02,Boutique Etsy pour le marché FR,2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf,ouvert,
 D03,Relecteur.rice métier,"Qui, et sous quel délai par produit (bloque la validation des produits à relecture métier, pas les runs)",ouvert,
-D04,Méthodes des produits à risque FORT écrites par Tristan,Oui (ouvre Etsy pour ces produits) / Non (Whop seul),ouvert,
+D04,Méthodes des produits à risque FORT écrites par Tristan,Oui (ouvre Etsy pour ces produits) / Non (Whop seul),tranche,Non : les produits à risque FORT restent sur Whop uniquement
 D05,Dépôt GitHub,"Créer pataplume/mindshelf en privé, vide (création refusée depuis la session Claude : à faire par Tristan)",tranche,"pataplume/mindshelf, privé, créé par Tristan le 2026-10-27"
 D06,"Produits Whop hors plan (Pre-Med pack, Betting, Futures)",Garder tels quels / passer à la charte / retirer,ouvert,
-D07,"Sources des 3 fiches existantes (physique, chimie, dosage)",Fournir les sources ou les PDF actuels,ouvert,
+D07,"Sources des 3 fiches existantes (physique, chimie, dosage)",Fournir les sources ou les PDF actuels,tranche,Sources d'origine indisponibles depuis la session ; reconstruction à partir du plan détaillé des annonces Whop (produits/<CODE>/donnees/brief-whop.md)

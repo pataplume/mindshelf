@@ -1,6 +1,6 @@
 code,ordre,titre,statut_code
-R00,0,"Fondations : charte, chaîne de fabrication, outils",A_VALIDER
-R01,1,Fiches EN existantes passées à la charte,A_FAIRE
+R00,0,"Fondations : charte, chaîne de fabrication, outils",VALIDE
+R01,1,Fiches EN existantes passées à la charte,EN_COURS
 R02,2,Adaptations FR des fiches existantes,A_FAIRE
 R03,3,"Nouvelles fiches EN (SPI, labs, TEAS)",A_FAIRE
 R04,4,Anatomie-physiologie EN + biostatistiques PASS,A_FAIRE
