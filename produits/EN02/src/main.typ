@@ -59,7 +59,10 @@
   if l.exposant == "0" { nombre(l.mantisse) } else { $#nombre(l.mantisse) times 10^#nombre(l.exposant)$ }
 }
 // Valeur suivie de son unité.
-#let qu(id) = [#q(id)~#val(id).unite]
+// Pas d'espace avant % (usage anglais US).
+#let qu(id) = if val(id).unite == "%" [#q(id)%] else [#q(id)~#val(id).unite]
+// Facteur d'un préfixe SI (valeurs.csv, groupe PREFIX) : mantisse × 10^exposant.
+#let facteur(id) = float(val(id).mantisse) * calc.pow(10.0, int(val(id).exposant))
 #let groupe(g) = valeurs-liste.filter(l => l.groupe == g).sorted(key: l => int(l.ordre))
 
 // Cohérence des conversions dérivées (échec de compilation si la table se contredit).
@@ -149,7 +152,7 @@
 ]
 
 #exemple(titre: "Poiseuille and IV bag")[
-  Radius × $k = #v("EX04", "k")$ $=>$ flow × $k^4 approx$ #res("EX04") % of baseline, resistance × #res("EX05").
+  Radius × $k = #v("EX04", "k")$ $=>$ flow × $k^4 approx$ #res("EX04")% of baseline, resistance × $approx$ #res("EX05").
   Bag #v("EX06", "h") m above the cannula: $rho g h = #v("EX06", "rho") times #v("EX06", "g") times #v("EX06", "h") "Pa" approx #res("EX06") "mmHg"$.
 ]
 
@@ -164,7 +167,7 @@
 = Light & optics
 
 #formule[
-  $n = c \/ v$; $n_1 sin theta_1 = n_2 sin theta_2$; critical angle $sin theta_c = n_2 \/ n_1$.
+  $n = c \/ v$; $n_1 sin theta_1 = n_2 sin theta_2$; critical angle $sin theta_c = n_2 \/ n_1$ ($n_1 > n_2$).
   $ 1 / f = 1 / d_o + 1 / d_i #h(1em) m = - d_i / d_o #h(1em) P = 1 / f $
   $P$ in diopters ($f$ in m). Mirror $f = R \/ 2$. Lenses in contact: $P = P_1 + P_2$.
 ]
@@ -200,7 +203,7 @@
 
 #exemple(titre: "Parallel and defibrillator")[
   $#v("EX12", "R1") thin Omega parallel #v("EX12", "R2") thin Omega = #res("EX12") thin Omega$.
-  $C = #v("EX13", "C") "F"$ at #v("EX13", "V") V: $U = 1/2 C V^2 = #res("EX13") "J"$.
+  $C = #nombre(ex("EX13").e.C / facteur("P_MICRO"), decimales: 0) thin mu"F"$ ($#v("EX13", "C") "F"$) at #v("EX13", "V") V: $U = 1/2 C V^2 = #res("EX13") "J"$.
 ]
 
 = Thermodynamics & gases
@@ -213,7 +216,8 @@
 = Atomic & nuclear
 
 #formule[
-  $E = h f = h c \/ lambda$; $K_max = h f - phi$; $E = Delta m c^2$; $A = lambda N$; $lambda = ln 2 \/ T_(1/2)$.
+  $E = h f = h c \/ lambda$; $K_max = h f - phi$; $E = Delta m c^2$.
+  Activity $A = lambda N$, with $lambda = ln 2 \/ T_(1/2)$ the decay constant (not a wavelength).
   $ N = N_0 (1/2)^(t \/ T_(1/2)) $
   α: $A - 4$, $Z - 2$; β⁻: $Z + 1$; β⁺: $Z - 1$; γ: no change.
   Dose $D$ in Gy (J/kg); equivalent dose $H = w_R D$ in Sv.
@@ -258,13 +262,13 @@
   [Topic], [Relation and worked value],
   [MAP], [$"MAP" approx "DBP" + ("SBP" - "DBP") \/ 3$: #v("EX18", "S")/#v("EX18", "D") mmHg $=>$ #res("EX18") mmHg. $"MAP" - "CVP" approx "CO" times "SVR"$, $"CO" = "HR" times "SV"$],
   [Valve], [$Delta P approx #q("P_BERN_K") v^2$ (mmHg, m/s): $v = #v("EX19", "v") "m/s" => #res("EX19") "mmHg"$. Severe aortic stenosis: $v_max >= #qu("P_AS_VMAX")$],
-  [Ultrasound], [$c_"tissue" = #qu("P_CTISSUE")$; at #nombre(ex("EX07").e.f / 1000000) MHz, $lambda = #res("EX07") "mm"$. Doppler $Delta f = 2 f_0 v cos theta \/ c$: $v = #v("EX08", "v") "m/s"$, $cos theta = #v("EX08", "cs") => #res("EX08") "kHz"$],
+  [Ultrasound], [$c_"tissue" = #qu("P_CTISSUE")$; at #nombre(ex("EX07").e.f / facteur("P_MEGA")) MHz, $lambda approx #res("EX07") "mm"$. Doppler $Delta f = 2 f_0 v cos theta \/ c$: $v = #v("EX08", "v") "m/s"$, $cos theta = #v("EX08", "cs") => #res("EX08") "kHz"$],
   [Inspired O₂], [$P_(I O_2) = F_(O_2) (P_"atm" - P_(H_2 O))$, $P_(H_2 O) = #qu("P_PH2O")$: $#v("EX14", "F") times (#v("EX14", "P") - #v("EX14", "W")) approx #res("EX14") "mmHg"$],
-  [Doses], [Effective dose, adult: #groupe("DOSE").map(l => [#l.libelle #qu(l.id)]).join("; ")],
+  [Doses], [Effective dose $sum w_T H_T$ (Sv; tissue-weighted, whole-body risk), adult: #groupe("DOSE").map(l => [#l.libelle #qu(l.id)]).join("; ")],
   [Gy to Sv], [$w_R$: #groupe("WR").map(l => [#l.libelle #q(l.id)]).join("; ")],
 )
 
-= Constants (CODATA 2022)
+= Constants
 
 #let cst = groupe("CONST")
 #let moitie = calc.ceil(cst.len() / 2)
@@ -274,4 +278,5 @@
   entete: 0,
   ..range(moitie).map(i => cellule(cst.at(i)) + cellule(cst.at(i + moitie, default: none))).flatten(),
 )
+#text(size: 0.85em)[#val("K_C").source_code.replace("_", " ") values, rounded; $g_n$ conventional; $R$ in L·atm and $h c$ derived.]
 ]

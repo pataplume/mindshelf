@@ -42,3 +42,5 @@ D_BG,DOSE,7,,Natural background (per year),3,0,mSv,METTLER_2008
 W_PHOTON,WR,1,,"photons (X, γ), electrons",1,0,,ICRP_103
 W_PROTON,WR,2,,protons,2,0,,ICRP_103
 W_ALPHA,WR,3,,alpha particles,20,0,,ICRP_103
+P_MICRO,PREFIX,1,µ,micro (SI prefix),1,-6,,BIPM_SI_9
+P_MEGA,PREFIX,2,M,mega (SI prefix),1,6,,BIPM_SI_9
