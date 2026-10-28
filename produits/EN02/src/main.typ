@@ -152,7 +152,7 @@
 ]
 
 #exemple(titre: "Poiseuille and IV bag")[
-  Radius × $k = #v("EX04", "k")$ $=>$ flow × $k^4 approx$ #res("EX04")% of baseline, resistance × $approx$ #res("EX05").
+  Radius × $k = #v("EX04", "k")$ $=>$ flow × $k^4 approx$ #res("EX04")% of baseline, resistance $approx times$ #res("EX05").
   Bag #v("EX06", "h") m above the cannula: $rho g h = #v("EX06", "rho") times #v("EX06", "g") times #v("EX06", "h") "Pa" approx #res("EX06") "mmHg"$.
 ]
 

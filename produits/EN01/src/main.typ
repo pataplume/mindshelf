@@ -118,6 +118,8 @@
 
 #colonnes(2)[
 
+_Drugs A–F and all example numbers: exercise values, not dosing guidance._
+
 = Core methods
 
 #formule(titre: "Three methods, one answer")[
@@ -126,8 +128,8 @@
   *Dimensional analysis:* chain the order through conversion factors until only the wanted unit remains.
 ]
 
-#exemple(titre: "Injection, three ways")[
-  Drug X ordered #v("EX01", "D") mg; vial #v("EX01", "H") mg per #v("EX01", "Q") mL.\
+#exemple(titre: "Injection, three ways (Drug A)")[
+  Drug A ordered #v("EX01", "D") mg; vial #v("EX01", "H") mg per #v("EX01", "Q") mL.\
   D/H × Q: #v("EX01", "D") ÷ #v("EX01", "H") × #v("EX01", "Q") #res("EX01")\
   Ratio #v("EX01", "H") : #v("EX01", "Q") = #v("EX01", "D") : $V$ and DA agree. Use a #valu("seringue_petite") syringe (#valu("seringue_petite_pas") marks).
 ]
@@ -144,7 +146,7 @@
 #tableau(
   columns: (auto, 1fr, auto),
   align: (left, right, right),
-  [US measure], [Exact (NIST)], [Label & course],
+  [US measure], [NIST (exact, rounded)], [Label & course],
   ..menager.map(l => (
     [#l.mesure],
     [#sym.approx #nombre(str(calc.round(float(l.nist_ml), digits: int(l.decimales)))) mL],
@@ -153,7 +155,7 @@
 )
 
 #exemple(titre: "Child's weight")[
-  #v("EX02A", "P") lb × #v("EX02A", "F") #res("EX02A")\;
+  #v("EX02A", "P") lb × #v("EX02A", "F") #res("EX02A") (recorded to #valu("poids_pas"))\;
   course shortcut #v("EX02B", "P") ÷ #v("EX02B", "G") #res("EX02B").
 ]
 
@@ -168,13 +170,13 @@
   Safe if low end × kg ≤ ordered daily total ≤ high end × kg.
 ]
 
-#exemple(titre: "Safe-range check (Drug Y, fictional range)")[
+#exemple(titre: "Safe-range check (Drug B)")[
   #v("EX03A", "L")–#v("EX03B", "U") mg/kg/day; #v("EX03A", "W") kg; ordered #v("EX03C", "O") mg every #v("EX03C", "I") h.
   Min #v("EX03A", "L") × #v("EX03A", "W") #res("EX03A")\; max #v("EX03B", "U") × #v("EX03B", "W") #res("EX03B").
   Ordered #v("EX03C", "O") × #v("EX03C", "J")/#v("EX03C", "I") #res("EX03C"): safe. Outside the range: hold, call the prescriber.
 ]
 
-#piege[mg/kg/day is a #val("heures_par_jour") h total: divide by doses per day first.]
+#piege[mg/kg/day is a #val("heures_par_jour") h total: compare per day with per day, per dose with per dose.]
 
 = IV infusion rates
 
@@ -205,22 +207,22 @@
   BSA (m²) = $sqrt("height (cm)" times "weight (kg)" "÷" #val("mosteller_k"))$
 ]
 
-#exemple(titre: "BSA-based dose (Drug Z)")[
+#exemple(titre: "BSA-based dose (Drug C)")[
   #v("EX06A", "H") cm, #v("EX06A", "W") kg: $sqrt(#v("EX06A", "H") times #v("EX06A", "W") "÷" #v("EX06A", "K")) = sqrt(#nombre(str(x("EX06A")))) = #v("EX06B", "B")$ m².
   Ordered #v("EX06B", "P") mg/m²: #v("EX06B", "B") × #v("EX06B", "P") #res("EX06B").
 ]
 
-#piege[#val("mosteller_k") assumes cm and kg: convert inches and pounds first.]
+#piege[Mosteller's #val("mosteller_k") assumes cm and kg: convert in and lb first.]
 
 = Reconstitution & strength
 
 #formule[
   concentration = drug ÷ *final* volume on the label.
   % (w/v) = g per #valu("pct_volume"): #v("C01", "P")% = #v("C01", "P") × #v("C01", "K") ÷ #v("C01", "C") #res("C01").
-  Ratio 1:#v("C02", "V") = #v("C02", "G") g in #v("C02", "V") mL #res("C02").
+  Ratio #v("C02", "G"):#v("C02", "V") = #v("C02", "G") g in #v("C02", "V") mL #res("C02").
 ]
 
-#exemple(titre: "Powder vial (Drug X, fictional label)")[
+#exemple(titre: "Powder vial (Drug D, fictional label)")[
   #v("EX07A", "G") g; label: add #v("EX07A", "A") mL to obtain #v("EX07A", "F") mL.
   #v("EX07A", "G") × #v("EX07A", "K") ÷ #v("EX07A", "F") #res("EX07A").
   Order #v("EX07B", "O") mg: #v("EX07B", "O") ÷ #v("EX07B", "C") #res("EX07B") (#valu("seringue_std") syringe, #valu("seringue_std_pas") marks).
@@ -236,30 +238,30 @@
   Reverse: mcg/kg/min = mL/h × $C$ ÷ (kg × #val("min_par_h")). Units: mL/h = (units/h) ÷ (units/mL).
 ]
 
-#exemple(titre: "mcg/kg/min → mL/h (Drug X)")[
+#exemple(titre: "mcg/kg/min → mL/h (Drug E)")[
   #v("EX08A", "D") mg in #v("EX08A", "V") mL: #v("EX08A", "D") × #v("EX08A", "K") ÷ #v("EX08A", "V") #res("EX08A").
-  #v("EX08B", "O") mcg/kg/min, #v("EX08B", "W") kg: #v("EX08B", "O") × #v("EX08B", "W") × #v("EX08B", "M") ÷ #v("EX08B", "C") #res("EX08B").
+  #v("EX08B", "O") mcg/kg/min, #v("EX08B", "W") kg (as recorded): #v("EX08B", "O") × #v("EX08B", "W") × #v("EX08B", "M") ÷ #v("EX08B", "C") #res("EX08B").
 ]
 
-#exemple(titre: "units/kg/h → mL/h (Drug W)")[
+#exemple(titre: "units/kg/h → mL/h (Drug F)")[
   #v("EX09A", "U") units in #v("EX09A", "V") mL #res("EX09A").
   #v("EX09B", "P") units/kg/h × #v("EX09B", "W") kg #res("EX09B")\;
   #v("EX09C", "N") ÷ #v("EX09C", "C") #res("EX09C").
 ]
 
-#note-clinique[Heparin and insulin drips are high-alert: follow your facility's double-check policy.]
-
 #piege[Bag in mg, dose in mcg: × #val("facteur_metrique") first; per-minute doses need × #val("min_par_h").]
+
+#note-clinique[High-alert drips (ISMP: IV heparin, insulin): independent double check per facility policy; doses come from the order and protocol.]
 
 = Rounding & syringes
 
 #encadre(titre: "Round once, at the end")[
-  - Keep full precision in between; weight to #valu("poids_pas").
+  - Weight: record to #valu("poids_pas"), use as recorded. Keep concentrations and intermediates unrounded.
   - gtt/min: whole drops. mL/h: pump precision (#valu("pompe_pas") here; some pumps: whole mL/h).
   - Syringe: to its marks, #valu("seringue_petite_pas") (#valu("seringue_petite") size) or #valu("seringue_std_pas") (#valu("seringue_std") size).
 ]
 
-#piege[Rounding the weight or the concentration early shifts the final rate.]
+#piege[Rounding a concentration or an intermediate result early shifts the final rate.]
 
 = Safe notation
 

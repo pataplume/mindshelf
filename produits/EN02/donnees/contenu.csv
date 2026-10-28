@@ -3,6 +3,6 @@ ordre,element
 2,"Fluids & circulation: Bernoulli, Poiseuille, Laplace, hydrostatic pressure"
 3,"Optics sign table, thin lens, diopters and vision correction"
 4,"High-yield medical physics table: MAP, valve gradient, ultrasound and Doppler, inspired O₂, imaging effective doses, radiation weighting factors"
-5,"14 worked examples (18 computed results: 5 example boxes + 5 rows of the medical table), every result recalculated from the data"
+5,"14 worked examples (18 computed results: 5 example boxes + 4 rows of the medical table), every result recalculated from the data"
 6,"9 clinical notes and 12 exam traps"
 7,"Constants box (CODATA 2022 values, rounded; g_n conventional; R in L·atm and hc derived) and unit conversions (atm, kPa, mmHg, cmH₂O, cal, kcal, eV, K)"

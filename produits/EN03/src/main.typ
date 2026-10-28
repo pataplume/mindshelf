@@ -46,6 +46,13 @@
   if l.arrondi == "" { nombre(l.resultat_attendu) } else { nombre(l.resultat_attendu, decimales: int(l.arrondi)) }
 }
 
+// Signe devant un résultat : « = » si la valeur affichée est exacte, « ≈ » si elle est arrondie.
+#let rel(id) = {
+  let l = ex(id)
+  let x = float(l.resultat_attendu)
+  if l.arrondi == "" or calc.abs(calc.round(x, digits: int(l.arrondi)) - x) < 1e-9 { sym.eq } else { sym.approx }
+}
+
 // ── Constantes, coefficients, intervalles ──
 #let valeurs = {
   let d = (:)
@@ -93,7 +100,7 @@
 #formule[
   $ M = n / V_"soln" quad m = n_"solute" / m_"solvent (kg)" quad n = m / cal(M) $
   $ C_1 V_1 = C_2 V_2 quad "eq" = n times |z| quad "osmolarity" = i times M $
-  $cal(M)$ molar mass; $i$ van 't Hoff factor; $z$ ion charge. _E.g._ #v("EX01", "V2") mL of #v("EX01", "C2") M from #v("EX01", "C1") M stock: $V_1 = #v("EX01", "C2") times #v("EX01", "V2") \/ #v("EX01", "C1") = #res("EX01")$ mL.
+  $cal(M)$ molar mass; $i$ van 't Hoff factor; $z$ ion charge. _E.g._ #v("EX01", "V2") mL of #v("EX01", "C2") M from #v("EX01", "C1") M stock: $V_1 = #v("EX01", "C2") times #v("EX01", "V2") \/ #v("EX01", "C1") #rel("EX01") #res("EX01")$ mL.
 ]
 
 = Atoms & Periodic Trends
@@ -128,7 +135,7 @@ Across a period →: radius ↓, ionization energy ↑, electronegativity ↑; d
 #formule[
   $ P V = n R T quad (P_1 V_1) / T_1 = (P_2 V_2) / T_2 $
   $ P_i = X_i P_"tot" quad r_1 / r_2 = sqrt(cal(M)_2 / cal(M)_1) $
-  $T$ in kelvin. _E.g._ #v("EX02", "P") atm, #v("EX02", "V") L, #v("EX02", "T") K, $R$ = #v("EX02", "R"): $n = P V \/ R T = #res("EX02")$ mol.
+  $T$ in kelvin. _E.g._ #v("EX02", "P") atm, #v("EX02", "V") L, #v("EX02", "T") K, $R$ = #v("EX02", "R"): $n = P V \/ R T #rel("EX02") #res("EX02")$ mol.
 ]
 
 = Thermochemistry
@@ -137,7 +144,7 @@ Across a period →: radius ↓, ionization energy ↑, electronegativity ↑; d
   $ q = m c Delta T quad Delta G = Delta H - T Delta S $
   $ Delta H_"rxn" = sum Delta H_f^"prod" - sum Delta H_f^"react" $
   $ Delta G° = -R T ln K = -n F E° $
-  _E.g._ $Delta H = #v("EX03", "H")$ kJ/mol, $Delta S = #v("EX03", "S")$ kJ/(mol·K), #v("EX03", "T") K: $Delta G = #res("EX03")$ kJ/mol.
+  _E.g._ $Delta H = #v("EX03", "H")$ kJ/mol, $Delta S = #v("EX03", "S")$ kJ/(mol·K), #v("EX03", "T") K: $Delta G #rel("EX03") #res("EX03")$ kJ/mol.
 ]
 
 Spontaneous ($Delta G < 0$): $Delta H < 0, Delta S > 0$ always; $Delta H > 0, Delta S < 0$ never; both negative at low $T$; both positive at high $T$.
@@ -148,7 +155,7 @@ Spontaneous ($Delta G < 0$): $Delta H < 0, Delta S > 0$ always; $Delta H > 0, De
   $ "rate" = k [A]^m [B]^n quad k = A e^(-E_a \/ R T) $
   First order: $ln [A] = ln [A]_0 - k t$; $t_(1\/2) = #k("LN2") \/ k$.
   $ v = (V_max [S]) / (K_m + [S]) quad 1 / v = K_m / V_max dot 1 / [S] + 1 / V_max $
-  Orders come from experiment, not coefficients. _E.g._ $K_m = #v("EX13", "Km")$ mM, $[S] = #v("EX13", "S")$ mM, $V_max = #v("EX13", "Vmax")$: $v = #res("EX13")$ µmol/min.
+  Orders come from experiment, not coefficients. _E.g._ $K_m = #v("EX13", "Km")$ mM, $[S] = #v("EX13", "S")$ mM, $V_max = #v("EX13", "Vmax")$: $v #rel("EX13") #res("EX13")$ µmol/min.
 ]
 
 #block(breakable: false)[#tableau(
@@ -195,7 +202,7 @@ Spontaneous ($Delta G < 0$): $Delta H < 0, Delta S > 0$ always; $Delta H > 0, De
 
 #formule[
   $ Delta T_f = i K_f m quad Delta T_b = i K_b m quad Pi = i M R T $
-  Raoult: $P_"soln" = X_"solvent" P°_"solvent"$. Water: $K_f$ = #k("KF_EAU", u: true), $K_b$ = #k("KB_EAU", u: true). _E.g._ #v("EX12", "m") mol/kg NaCl: $Delta T_f = #v("EX12", "i") times #v("EX12", "Kf") times #v("EX12", "m") = #res("EX12")$ °C.
+  Raoult: $P_"soln" = X_"solvent" P°_"solvent"$. Water: $K_f$ = #k("KF_EAU", u: true), $K_b$ = #k("KB_EAU", u: true). _E.g._ #v("EX12", "m") mol/kg NaCl: $Delta T_f = #v("EX12", "i") times #v("EX12", "Kf") times #v("EX12", "m") #rel("EX12") #res("EX12")$ °C.
 ]
 
 = Electrochemistry
@@ -203,13 +210,13 @@ Spontaneous ($Delta G < 0$): $Delta H < 0, Delta S > 0$ always; $Delta H > 0, De
 #formule[
   $ E°_"cell" = E°_"cathode" - E°_"anode" quad Delta G° = -n F E° $
   $ E = E° - (R T) / (n F) ln Q = E° - #k("NERNST25") / n log Q $
-  (#cond("NERNST25"), V). _E.g._ $E° = #v("EX15", "E0")$ V, $n = #v("EX15", "n")$, $Q = #v("EX15", "R")$: $E = #res("EX15")$ V.
+  (#cond("NERNST25"), V). _E.g._ $E° = #v("EX15", "E0")$ V, $n = #v("EX15", "n")$, $Q = #v("EX15", "R")$: $E #rel("EX15") #res("EX15")$ V.
 ]
 Oxidation at the anode. *Galvanic:* $Delta G < 0$, $E_"cell" > 0$, anode (−). *Electrolytic:* all three reversed.
 
 #note-clinique(titre: [Membrane potential (#cond("NERNST37"))])[
   $ E_"ion" = #k("NERNST37") / z log [X]_"out" / [X]_"in" "(mV)" $
-  K⁺ #v("EX06", "Kext") mM out, #v("EX06", "Kint") mM in: $E = #v("EX06", "k") times (#v("EX06", "L")) = #res("EX06")$ mV.
+  K⁺ #v("EX06", "Kext") mM out, #v("EX06", "Kint") mM in: $E = #v("EX06", "k") times (#v("EX06", "L")) #rel("EX06") #res("EX06")$ mV.
 ]
 
 = Organic Essentials
@@ -227,13 +234,13 @@ Oxidation at the anode. *Galvanic:* $Delta G < 0$, $E_"cell" > 0$, anode (−). 
   [Stereo], [racemization], [inversion],
 )]
 
-*Amino acid pI* (neutral side chain): $"pI" = ("p"K_(a 1) + "p"K_(a 2)) \/ 2$; net charge + below pI, − above. _E.g._ #v("EX16", "p1") and #v("EX16", "p2"): pI = #res("EX16").
+*Amino acid pI* (neutral side chain): $"pI" = ("p"K_(a 1) + "p"K_(a 2)) \/ 2$; net charge + below pI, − above. _E.g._ #v("EX16", "p1") and #v("EX16", "p2"): pI #rel("EX16") #res("EX16").
 
 = Spectroscopy
 
 #formule(titre: "Beer–Lambert")[
   $ A = -log T = epsilon l c $
-  _E.g._ $A$ = #v("EX14", "A"), $epsilon$ = #v("EX14", "e") L/(mol·cm), $l$ = #v("EX14", "l") cm: $c$ = #res("EX14") µM.
+  _E.g._ $A$ = #v("EX14", "A"), $epsilon$ = #v("EX14", "e") L/(mol·cm), $l$ = #v("EX14", "l") cm: $c$ #rel("EX14") #res("EX14") µM.
 ]
 #note-clinique(titre: "Pulse oximetry")[HbO₂ and Hb absorb #k("OX_ROUGE", u: true) and #k("OX_IR", u: true) light differently; the absorbance ratio gives SpO₂.]
 
@@ -266,10 +273,10 @@ Oxidation at the anode. *Galvanic:* $Delta G < 0$, $E_"cell" > 0$, anode (−). 
 Glu, BUN in mg/dL; Hb in g/dL. Reference: AG #plage("AG_REF"), osm #plage("OSM_REF"); intervals vary by lab and method.
 
 #exemple[
-  - Na #v("EX07", "Na"), Cl #v("EX07", "Cl"), HCO₃⁻ #v("EX07", "HCO3"): AG = #res("EX07") mEq/L (high).
-  - Na #v("EX08", "Na"), glucose #v("EX08", "G"), BUN #v("EX08", "B"): Osm = #res("EX08") mOsm/kg.
-  - Hb #v("EX09", "Hb"), SaO₂ #v("EX09", "Sa"), PaO₂ #v("EX09", "Pa"): CaO₂ = #res("EX09") mL/dL, only #res("EX10") dissolved.
-  - V#sub[d] #v("EX11", "Vd") L, CL #v("EX11", "CL") L/h: $t_(1\/2)$ = #res("EX11") h.
+  - Na #v("EX07", "Na"), Cl #v("EX07", "Cl"), HCO₃⁻ #v("EX07", "HCO3"): AG #rel("EX07") #res("EX07") mEq/L (high).
+  - Na #v("EX08", "Na"), glucose #v("EX08", "G"), BUN #v("EX08", "B"): Osm #rel("EX08") #res("EX08") mOsm/kg.
+  - Hb #v("EX09", "Hb"), SaO₂ #v("EX09", "Sa"), PaO₂ #v("EX09", "Pa"): CaO₂ #rel("EX09") #res("EX09") mL/dL, only #res("EX10") dissolved.
+  - V#sub[d] #v("EX11", "Vd") L, CL #v("EX11", "CL") L/h: $t_(1\/2)$ #rel("EX11") #res("EX11") h.
 ]
 
 #note-clinique(titre: "Alveolar gas equation")[
