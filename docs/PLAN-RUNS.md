@@ -3,10 +3,10 @@
 # Plan des runs
 
 - Runs : 22 · tâches : 139
-- Durée estimée totale : 31 h 00 · restant : 28 h 15 (hors validation par Tristan)
+- Durée estimée totale : 21 h 50 · restant : 19 h 55 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R03, R04, R05, R06, R07
+**Lançables maintenant :** R02, R03, R04, R05, R06, R07
 
 ## Décisions ouvertes
 
@@ -19,7 +19,7 @@
 
 ### R00 — Fondations : charte, chaîne de fabrication, outils
 
-≈ 1 h 10 · statut : Validé par Tristan
+≈ 50 min · statut : Validé par Tristan
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -30,21 +30,21 @@
 
 ### R01 — Fiches EN existantes passées à la charte
 
-≈ 1 h 35 · statut : En cours · dépend de : R00 · décisions requises : D04, D07
+≈ 1 h 05 · statut : Vérifié, en attente de relecture et validation · dépend de : R00 · décisions requises : D04, D07
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Produit, en attente de vérification |
-| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | Produit, en attente de vérification |
-| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | Produit, en attente de vérification |
-| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | Produit, en attente de vérification |
-| 133 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR1 | Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs | Produit, en attente de vérification |
-| 134 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce | Produit, en attente de vérification |
-| 135 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : 9 mineurs du rapport-v1 | Produit, en attente de vérification |
-| 139 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR2 | Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente | En cours |
-| 9 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérification : corrections bloquantes |
-| 10 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérification : corrections bloquantes |
-| 11 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | — | Vérification indépendante | Vérification : corrections bloquantes |
+| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
+| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | Vérifié, en attente de relecture et validation |
+| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | Vérifié, en attente de relecture et validation |
+| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | Vérifié, en attente de relecture et validation |
+| 133 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR1 | Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs | Vérifié, en attente de relecture et validation |
+| 134 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce | Vérifié, en attente de relecture et validation |
+| 135 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : 9 mineurs du rapport-v1 | Vérifié, en attente de relecture et validation |
+| 139 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR2 | Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente | Vérifié, en attente de relecture et validation |
+| 9 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 10 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 11 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
 | 136 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
 | 137 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
 | 138 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
@@ -54,7 +54,7 @@
 
 ### R02 — Adaptations FR des fiches existantes
 
-≈ 1 h 35 · statut : À faire · dépend de : R01 · décisions requises : D01, D04
+≈ 1 h 05 · statut : À faire · dépend de : R01 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -71,7 +71,7 @@
 
 ### R03 — Nouvelles fiches EN (SPI, labs, TEAS)
 
-≈ 1 h 35 · statut : À faire · dépend de : R00
+≈ 1 h 05 · statut : À faire · dépend de : R00
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -89,7 +89,7 @@
 
 ### R04 — Anatomie-physiologie EN + biostatistiques PASS
 
-≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
+≈ 1 h 05 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -104,7 +104,7 @@
 
 ### R05 — Fiches IFSI à faible risque
 
-≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
+≈ 1 h 05 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -118,7 +118,7 @@
 
 ### R06 — Fiches EN à risque fort (EKG, ABG)
 
-≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D04
+≈ 1 h 05 · statut : À faire · dépend de : R00 · décisions requises : D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -132,7 +132,7 @@
 
 ### R07 — Pharmacologie IFSI
 
-≈ 1 h 35 · statut : À faire · dépend de : R00 · décisions requises : D01
+≈ 1 h 05 · statut : À faire · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -144,7 +144,7 @@
 
 ### R08 — Kits EN et FR
 
-≈ 1 h 35 · statut : À faire · dépend de : R01, R02, R03, R05, R06, R07 · décisions requises : D01, D04
+≈ 1 h 05 · statut : À faire · dépend de : R01, R02, R03, R05, R06, R07 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -158,7 +158,7 @@
 
 ### R09 — Guide SPI 1/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R03
+≈ 55 min · statut : À faire · dépend de : R03
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -170,7 +170,7 @@
 
 ### R10 — Guide SPI 2/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R09
+≈ 55 min · statut : À faire · dépend de : R09
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -182,7 +182,7 @@
 
 ### R11 — Guide SPI 3/3
 
-≈ 1 h 35 · statut : À faire · dépend de : R10
+≈ 1 h 05 · statut : À faire · dépend de : R10
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -194,7 +194,7 @@
 
 ### R12 — Guide TEAS 7 Science 1/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R03, R04
+≈ 55 min · statut : À faire · dépend de : R03, R04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -206,7 +206,7 @@
 
 ### R13 — Guide TEAS 7 Science 2/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R12
+≈ 55 min · statut : À faire · dépend de : R12
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -218,7 +218,7 @@
 
 ### R14 — Guide TEAS 7 Science 3/3
 
-≈ 1 h 35 · statut : À faire · dépend de : R13
+≈ 1 h 05 · statut : À faire · dépend de : R13
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -230,7 +230,7 @@
 
 ### R15 — Cahier calculs de doses 1/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R02 · décisions requises : D01, D04
+≈ 55 min · statut : À faire · dépend de : R02 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -242,7 +242,7 @@
 
 ### R16 — Cahier calculs de doses 2/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R15
+≈ 55 min · statut : À faire · dépend de : R15
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -254,7 +254,7 @@
 
 ### R17 — Cahier calculs de doses 3/3
 
-≈ 1 h 35 · statut : À faire · dépend de : R16
+≈ 1 h 05 · statut : À faire · dépend de : R16
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -266,7 +266,7 @@
 
 ### R18 — Guide Physique-Biophysique PASS 1/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R02 · décisions requises : D01
+≈ 55 min · statut : À faire · dépend de : R02 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -278,7 +278,7 @@
 
 ### R19 — Guide Physique-Biophysique PASS 2/3
 
-≈ 1 h 15 · statut : À faire · dépend de : R18
+≈ 55 min · statut : À faire · dépend de : R18
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -290,7 +290,7 @@
 
 ### R20 — Guide Physique-Biophysique PASS 3/3
 
-≈ 1 h 35 · statut : À faire · dépend de : R19
+≈ 1 h 05 · statut : À faire · dépend de : R19
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
@@ -302,7 +302,7 @@
 
 ### R21 — Mise en vente Etsy et contrôle final
 
-≈ 50 min · statut : À faire · dépend de : R08, R11, R14, R17, R20 · décisions requises : D02
+≈ 40 min · statut : À faire · dépend de : R08, R11, R14, R17, R20 · décisions requises : D02
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|

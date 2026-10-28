@@ -2,9 +2,9 @@ id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
 EX01,"Injection (Drug A, exercise values, not dosing guidance): ordered D = 28 mg; vial H = 32 mg per Q = 1 mL; volume V = D / H × Q, drawn up in a 1 mL syringe (0.01 mL marks)","{""D"": 28, ""H"": 32, ""Q"": 1}",D / H * Q,0.875,mL,0,2
 EX02A,"Weight conversion: P = 44 lb; exact factor F = 0.45359237 kg per lb (NIST); weight = P × F, recorded to 0.1 kg and then used as recorded","{""P"": 44, ""F"": 0.45359237}",P * F,19.95806428,kg,0.000001,1
 EX02B,"Same child, course shortcut: P = 44 lb; G = 2.2 lb per kg; weight = P / G","{""P"": 44, ""G"": 2.2}",P / G,20,kg,0.000001,1
-EX03A,"Safe-dose check (Drug B, fictional reference range, exercise values, not dosing guidance): low end L = 17 mg/kg/day; recorded weight W = 20 kg; minimum daily dose = L × W","{""L"": 17, ""W"": 20}",L * W,340,mg/day,0,0
-EX03B,Safe-dose check (Drug B): high end U = 33 mg/kg/day; weight W = 20 kg; maximum daily dose = U × W,"{""U"": 33, ""W"": 20}",U * W,660,mg/day,0,0
-EX03C,Safe-dose check (Drug B): ordered O = 165 mg every I = 8 h; J = 24 h per day; ordered daily dose = O × J / I,"{""O"": 165, ""J"": 24, ""I"": 8}",O * J / I,495,mg/day,0,0
+EX03A,"Safe-dose check (Drug B, fictional reference range, exercise values, not dosing guidance): low end L = 36 mg/kg/day; recorded weight W = 20 kg; minimum daily dose = L × W","{""L"": 36, ""W"": 20}",L * W,720,mg/day,0,0
+EX03B,Safe-dose check (Drug B): high end U = 48 mg/kg/day; weight W = 20 kg; maximum daily dose = U × W,"{""U"": 48, ""W"": 20}",U * W,960,mg/day,0,0
+EX03C,Safe-dose check (Drug B): ordered O = 210 mg every I = 6 h; J = 24 h per day; ordered daily dose = O × J / I,"{""O"": 210, ""J"": 24, ""I"": 6}",O * J / I,840,mg/day,0,0
 EX04A,"Volumetric pump: V = 1000 mL over T = 8 h; rate = V / T, set to the pump's 0.1 mL/h precision","{""V"": 1000, ""T"": 8}",V / T,125,mL/h,0,1
 EX04B,"Gravity infusion, same order: V = 1000 mL over T = 8 h; drop factor DF = 20 gtt/mL; M = 60 min/h; drip rate = V × DF / (T × M), counted in whole drops","{""V"": 1000, ""DF"": 20, ""T"": 8, ""M"": 60}",V * DF / (T * M),41.6666666667,gtt/min,0.000001,0
 EX05A,Infusion time: V = 750 mL at R = 100 mL/h; duration = V / R,"{""V"": 750, ""R"": 100}",V / R,7.5,h,0,2
@@ -14,10 +14,10 @@ EX06A,"Mosteller BSA, radicand: height H = 150 cm; weight W = 54 kg; K = 3600; r
 EX06B,"BSA-based dose (Drug C, exercise values, not dosing guidance): BSA B = 1.5 m²; ordered P = 92 mg/m²; dose = B × P","{""B"": 1.5, ""P"": 92}",B * P,138,mg,0.000001,0
 EX07A,"Reconstitution (Drug D, fictional label, exercise values, not dosing guidance): G = 1.4 g powder; label: add A = 6.2 mL diluent to obtain F = 7 mL; K = 1000 mg per g; concentration = G × K / F","{""G"": 1.4, ""K"": 1000, ""A"": 6.2, ""F"": 7}",G * K / F,200,mg/mL,0.000001,0
 EX07B,"Volume to give after reconstitution (Drug D): ordered O = 320 mg; concentration C = 200 mg/mL (EX07A); volume = O / C, 3 mL syringe (0.1 mL marks)","{""O"": 320, ""C"": 200}",O / C,1.6,mL,0.000001,1
-EX08A,"Titrated drip concentration (Drug E, exercise values, not dosing guidance): D = 360 mg in V = 300 mL; K = 1000 mcg per mg; concentration = D × K / V","{""D"": 360, ""K"": 1000, ""V"": 300}",D * K / V,1200,mcg/mL,0,0
-EX08B,"Titrated drip rate (Drug E): ordered O = 4.5 mcg/kg/min; weight as recorded W = 76.4 kg (not rounded); M = 60 min/h; concentration C = 1200 mcg/mL (EX08A, unrounded); rate = O × W × M / C, set to the pump's 0.1 mL/h precision","{""O"": 4.5, ""W"": 76.4, ""M"": 60, ""C"": 1200}",O * W * M / C,17.19,mL/h,0.000001,1
-EX09A,"Drug dosed in units (Drug F, exercise values, not dosing guidance): U = 30000 units in V = 400 mL; concentration = U / V","{""U"": 30000, ""V"": 400}",U / V,75,units/mL,0,0
-EX09B,"Weight-based units/h (Drug F): ordered P = 9.5 units/kg/h; weight W = 64 kg; hourly dose = P × W (intermediate, not rounded)","{""P"": 9.5, ""W"": 64}",P * W,608,units/h,0.000001,0
-EX09C,"Pump rate for units/h (Drug F): N = 608 units/h (EX09B); concentration C = 75 units/mL (EX09A); rate = N / C, set to the pump's 0.1 mL/h precision","{""N"": 608, ""C"": 75}",N / C,8.1066666667,mL/h,0.000001,1
+EX08A,"Titrated drip concentration (Drug E, exercise values, not dosing guidance): D = 330 mg in V = 300 mL; K = 1000 mcg per mg; concentration = D × K / V","{""D"": 330, ""K"": 1000, ""V"": 300}",D * K / V,1100,mcg/mL,0,0
+EX08B,"Titrated drip rate (Drug E): ordered O = 4.5 mcg/kg/min; weight as recorded W = 76.4 kg (not rounded); M = 60 min/h; concentration C = 1100 mcg/mL (EX08A, unrounded); rate = O × W × M / C, set to the pump's 0.1 mL/h precision","{""O"": 4.5, ""W"": 76.4, ""M"": 60, ""C"": 1100}",O * W * M / C,18.7527272727,mL/h,0.000001,1
+EX09A,"Drug dosed in units (Drug F, exercise values, not dosing guidance): U = 48000 units in V = 200 mL; concentration = U / V","{""U"": 48000, ""V"": 200}",U / V,240,units/mL,0,0
+EX09B,"Weight-based units/h (Drug F): ordered P = 140 units/kg/h; weight W = 64 kg; hourly dose = P × W (intermediate, not rounded)","{""P"": 140, ""W"": 64}",P * W,8960,units/h,0.000001,0
+EX09C,"Pump rate for units/h (Drug F): N = 8960 units/h (EX09B); concentration C = 240 units/mL (EX09A); rate = N / C, set to the pump's 0.1 mL/h precision","{""N"": 8960, ""C"": 240}",N / C,37.3333333333,mL/h,0.000001,1
 C01,Percent strength (w/v): P = 0.9 % means 0.9 g per C = 100 mL; K = 1000 mg per g; mg/mL = P × K / C,"{""P"": 0.9, ""K"": 1000, ""C"": 100}",P * K / C,9,mg/mL,0.000001,0
 C02,Ratio strength 1:1000 means G = 1 g in V = 1000 mL; K = 1000 mg per g; mg/mL = G × K / V,"{""G"": 1, ""K"": 1000, ""V"": 1000}",G * K / V,1,mg/mL,0,0

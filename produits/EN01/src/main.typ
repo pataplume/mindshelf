@@ -116,6 +116,11 @@
   numerotation: true,
 )
 
+// Unités composées insécables (rapport v2, N4) : « mg/day », « mL/h », « mcg/kg/min »… jamais coupées après « / » :
+// un gluon (U+2060) suit chaque « / » entre deux lettres. Pas de box : la règle « chiffre espace unité » de la
+// charte découpe déjà le texte, une box ouvrirait une coupure entre « m » et « g/m² ».
+#show regex("[\\p{L}²]/[\\p{L}]"): it => it.text.replace("/", "/\u{2060}")
+
 #colonnes(2)[
 
 _Drugs A–F and their numbers: exercise values, not dosing guidance._
@@ -207,7 +212,7 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
   BSA (m²) = $sqrt("height (cm)" times "weight (kg)" "÷" #val("mosteller_k"))$
 ]
 
-#exemple(titre: "BSA-based dose (Drug C)")[
+#exemple(titre: "BSA-based dose (Drug C, exercise values)")[
   #v("EX06A", "H") cm, #v("EX06A", "W") kg: $sqrt(#v("EX06A", "H") times #v("EX06A", "W") "÷" #v("EX06A", "K")) = sqrt(#nombre(str(x("EX06A")))) = #v("EX06B", "B")$ m².
   Ordered #v("EX06B", "P") mg/m²: #v("EX06B", "B") × #v("EX06B", "P") #res("EX06B").
 ]
@@ -222,7 +227,7 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
   Ratio #v("C02", "G"):#v("C02", "V") = #v("C02", "G") g in #v("C02", "V") mL #res("C02").
 ]
 
-#exemple(titre: "Powder vial (Drug D, fictional label)")[
+#exemple(titre: "Powder vial (Drug D, exercise values)")[
   #v("EX07A", "G") g; label: add #v("EX07A", "A") mL to obtain #v("EX07A", "F") mL.
   #v("EX07A", "G") × #v("EX07A", "K") ÷ #v("EX07A", "F") #res("EX07A").
   Order #v("EX07B", "O") mg: #v("EX07B", "O") ÷ #v("EX07B", "C") #res("EX07B") (#valu("seringue_std") syringe, #valu("seringue_std_pas") marks).
@@ -238,12 +243,12 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
   Reverse: mcg/kg/min = mL/h × $C$ ÷ (kg × #val("min_par_h")). Units: mL/h = (units/h) ÷ (units/mL).
 ]
 
-#exemple(titre: "mcg/kg/min → mL/h (Drug E)")[
+#exemple(titre: "mcg/kg/min → mL/h (Drug E, exercise values)")[
   #v("EX08A", "D") mg in #v("EX08A", "V") mL: #v("EX08A", "D") × #v("EX08A", "K") ÷ #v("EX08A", "V") #res("EX08A").
   #v("EX08B", "O") mcg/kg/min, #v("EX08B", "W") kg (as recorded): #v("EX08B", "O") × #v("EX08B", "W") × #v("EX08B", "M") ÷ #v("EX08B", "C") #res("EX08B").
 ]
 
-#exemple(titre: "units/kg/h → mL/h (Drug F)")[
+#exemple(titre: "units/kg/h → mL/h (Drug F, exercise values)")[
   #v("EX09A", "U") units in #v("EX09A", "V") mL #res("EX09A").
   #v("EX09B", "P") units/kg/h × #v("EX09B", "W") kg #res("EX09B")\;
   #v("EX09C", "N") ÷ #v("EX09C", "C") #res("EX09C").
@@ -253,11 +258,12 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
 
 = Rounding & syringes
 
-#encadre(titre: "Round once, at the end")[
+// Encadré non sécable (rapport v2, N6) : les règles d'arrondi restent sur une même page (tablette).
+#block(breakable: false, encadre(titre: "Round only what you record, set or draw up")[
   - Weight: record to #valu("poids_pas"), then use as recorded.
   - gtt/min: whole drops. mL/h: pump step (#valu("pompe_pas") here; some: whole mL/h).
   - Syringe: to its marks, #valu("seringue_petite_pas") (#valu("seringue_petite") size) or #valu("seringue_std_pas") (#valu("seringue_std") size).
-]
+])
 
 #piege[Rounding a concentration or intermediate early shifts the final rate.]
 

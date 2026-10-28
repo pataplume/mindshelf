@@ -3,13 +3,13 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 2,R00,PRODUCTION,PIPELINE,,,"Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test",VALIDE
 3,R00,PRODUCTION,OUTILLAGE,,,"Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces",VALIDE
 4,R00,VERIFICATION,VERIFICATEUR,,,Contrôle de bout en bout sur la fiche test,VALIDE
-5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VERIFIER
-6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",A_VERIFIER
-7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,A_VERIFIER
-8,R01,PRODUCTION,PRODUCTEUR,EN01,,Porter la fiche dosage & IV dans la charte,A_VERIFIER
-9,R01,VERIFICATION,VERIFICATEUR,EN02,,Vérification indépendante,A_CORRIGER
-10,R01,VERIFICATION,VERIFICATEUR,EN03,,Vérification indépendante,A_CORRIGER
-11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,A_CORRIGER
+5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
+6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",A_VALIDER
+7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,A_VALIDER
+8,R01,PRODUCTION,PRODUCTEUR,EN01,,Porter la fiche dosage & IV dans la charte,A_VALIDER
+9,R01,VERIFICATION,VERIFICATEUR,EN02,,Vérification indépendante,A_VALIDER
+10,R01,VERIFICATION,VERIFICATEUR,EN03,,Vérification indépendante,A_VALIDER
+11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,A_VALIDER
 12,R01,CONDITIONNEMENT,CONDITIONNEUR,EN02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 13,R01,CONDITIONNEMENT,CONDITIONNEUR,EN03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
@@ -131,10 +131,10 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
 132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03)",A_FAIRE
-133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",A_VERIFIER
-134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VERIFIER
-135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VERIFIER
+133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",A_VALIDER
+134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VALIDER
+135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VALIDER
 136,R01,VERIFICATION,VERIFICATEUR,EN01,CORR1,Contre-vérification des corrections v2,A_VALIDER
 137,R01,VERIFICATION,VERIFICATEUR,EN03,CORR1,Contre-vérification des corrections v2,A_VALIDER
 138,R01,VERIFICATION,VERIFICATEUR,EN02,CORR1,Contre-vérification des corrections v2,A_VALIDER
-139,R01,PRODUCTION,PRODUCTEUR,EN01,CORR2,"Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente",EN_COURS
+139,R01,PRODUCTION,PRODUCTEUR,EN01,CORR2,"Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente",A_VALIDER

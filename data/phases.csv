@@ -1,5 +1,5 @@
 code,ordre,libelle,description,duree_cible_min
 PREPARATION,0,Préparation,"Publication Whop des variantes validées depuis le run précédent, lecture de l'état, contrôle des décisions",5
-PRODUCTION,1,Production,Agents producteurs en parallèle,45
+PRODUCTION,1,Production,Agents producteurs en parallèle,25
 VERIFICATION,2,Vérification,Agent vérificateur indépendant,25
-CONDITIONNEMENT,3,Conditionnement,"Agent conditionneur, puis commit, push et rapport",20
+CONDITIONNEMENT,3,Conditionnement,"Agent conditionneur, puis commit, push et rapport",10
