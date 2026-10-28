@@ -16,4 +16,4 @@ seringue_petite_pas,0.01,mL,Graduation of the small syringe
 seringue_std,3,mL,Standard syringe capacity
 seringue_std_pas,0.1,mL,Graduation of the standard syringe
 pompe_pas,0.1,mL/h,Pump precision assumed on this sheet (some pumps: whole mL/h only)
-poids_pas,0.1,kg,Weight kept to tenths of a kg
+poids_pas,0.1,kg,"Weight recorded to tenths of a kg, then used as recorded (never rounded again)"
