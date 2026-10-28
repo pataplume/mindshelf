@@ -6,9 +6,9 @@
 
 | Code | Produit | Type | Risque IA | Relecture métier | Méthode | Canaux | Prix | Variantes | Runs | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
-| EN01 | Dosage Calculation & IV Drip Rates | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R01 | À faire |
-| EN02 | Physics Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.99 | 1 | R01 | À faire |
-| EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | À faire |
+| EN01 | Dosage Calculation & IV Drip Rates | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R01 | Vérification : corrections bloquantes |
+| EN02 | Physics Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
+| EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
 | EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | À faire |
 | EN05 | EKG Rhythms Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 4.99 | 1 | R06 | À faire |
 | EN06 | Anatomy & Physiology — 10 Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |

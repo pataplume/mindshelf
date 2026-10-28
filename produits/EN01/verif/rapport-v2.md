@@ -288,3 +288,5 @@ for a in anomalies: print("  -", *a)
           16  ….5 h (7 h 30 min) → ends 16:30. Microdrip:…
 == 0 anomalie(s)
 ```
+
+Les deux nombres sans correspondance directe sont le numéro de section « 6 » et l’heure « 16 » de 16:30, calculée par `horloge()` à partir de EX05B (16.5 h). Aucun nombre n’est tapé en dur dans le Typst.

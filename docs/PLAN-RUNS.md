@@ -2,7 +2,7 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 132
+- Runs : 22 · tâches : 139
 - Durée estimée totale : 31 h 00 · restant : 28 h 15 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
@@ -14,6 +14,7 @@
 |---|---|---|---|
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
+| D08 | Périmètre de la relecture d'EN01 (fiche US, relectrice infirmière en Suisse) | Relectrice CH sur les calculs et la sécurité, conventions US (horloge, pompes, seringues, Joint Commission, ISMP) validées sur sources / trouver un.e relecteur.rice formé.e à la pratique US / retirer de la fiche les conventions US non sourcées | — |
 
 ## Runs
 
@@ -34,16 +35,23 @@
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | En cours |
-| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | En cours |
-| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | En cours |
-| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | En cours |
-| 9 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | — | Vérification indépendante | À faire |
-| 10 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Vérification indépendante | À faire |
-| 11 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | — | Vérification indépendante | À faire |
-| 12 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN02 Physics Formula Sheet (College & Pre-Med) | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 13 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 14 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN01 Dosage Calculation & IV Drip Rates | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
+| 5 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Produit, en attente de vérification |
+| 6 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | — | Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med | Produit, en attente de vérification |
+| 7 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Porter la fiche chimie dans la charte | Produit, en attente de vérification |
+| 8 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | — | Porter la fiche dosage & IV dans la charte | Produit, en attente de vérification |
+| 133 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR1 | Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs | Produit, en attente de vérification |
+| 134 | Production | Rédaction et mise en page d'un produit | EN03 Chemistry Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce | Produit, en attente de vérification |
+| 135 | Production | Rédaction et mise en page d'un produit | EN02 Physics Formula Sheet (College & Pre-Med) | CORR1 | Correction v2 : 9 mineurs du rapport-v1 | Produit, en attente de vérification |
+| 139 | Production | Rédaction et mise en page d'un produit | EN01 Dosage Calculation & IV Drip Rates | CORR2 | Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente | En cours |
+| 9 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérification : corrections bloquantes |
+| 10 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Vérification indépendante | Vérification : corrections bloquantes |
+| 11 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | — | Vérification indépendante | Vérification : corrections bloquantes |
+| 136 | Vérification | Vérification indépendante | EN01 Dosage Calculation & IV Drip Rates | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 137 | Vérification | Vérification indépendante | EN03 Chemistry Formula Sheet (College & Pre-Med) | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 138 | Vérification | Vérification indépendante | EN02 Physics Formula Sheet (College & Pre-Med) | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 12 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN02 Physics Formula Sheet (College & Pre-Med) | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 13 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN03 Chemistry Formula Sheet (College & Pre-Med) | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 14 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN01 Dosage Calculation & IV Drip Rates | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 
 ### R02 — Adaptations FR des fiches existantes
 
@@ -72,7 +80,7 @@
 | 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | À faire |
 | 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | À faire |
 | 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | À faire |
-| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md | À faire |
+| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03) | À faire |
 | 29 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Vérification indépendante | À faire |
 | 30 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | — | Vérification indépendante | À faire |
 | 31 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | — | Vérification indépendante | À faire |
