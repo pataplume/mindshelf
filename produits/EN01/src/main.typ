@@ -256,8 +256,8 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
 = Rounding & syringes
 
 #encadre(titre: "Round once, at the end")[
-  - Weight: record to #valu("poids_pas"), use as recorded. Keep concentrations and intermediates unrounded.
-  - gtt/min: whole drops. mL/h: pump precision (#valu("pompe_pas") here; some pumps: whole mL/h).
+  - Weight: record to #valu("poids_pas"), then use as recorded.
+  - gtt/min: whole drops. mL/h: pump step (#valu("pompe_pas") here; some: whole mL/h).
   - Syringe: to its marks, #valu("seringue_petite_pas") (#valu("seringue_petite") size) or #valu("seringue_std_pas") (#valu("seringue_std") size).
 ]
 

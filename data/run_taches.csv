@@ -132,7 +132,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
 132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03)",A_FAIRE
 133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",EN_COURS
-134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",EN_COURS
+134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VERIFIER
 135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VERIFIER
 136,R01,VERIFICATION,VERIFICATEUR,EN01,CORR1,Contre-vérification des corrections v2,A_FAIRE
 137,R01,VERIFICATION,VERIFICATEUR,EN03,CORR1,Contre-vérification des corrections v2,A_FAIRE
