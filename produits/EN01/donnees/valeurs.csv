@@ -1,0 +1,19 @@
+cle,valeur,unite,libelle
+facteur_metrique,1000,,"Factor between adjacent units of the ladder g, mg, mcg and between L and mL"
+min_par_h,60,min/h,Minutes per hour
+heures_par_jour,24,h,Hours per day
+lb_kg,0.45359237,kg,"1 lb (avoirdupois) in kg, exact by definition"
+lb_par_kg_cours,2.2,lb/kg,Rounded lb-per-kg factor used in most courses
+in_cm,2.54,cm,"1 in in cm, exact by definition"
+mosteller_k,3600,,Mosteller constant (height in cm and weight in kg)
+gtt_macro_a,10,gtt/mL,Macrodrip drop factor
+gtt_macro_b,15,gtt/mL,Macrodrip drop factor
+gtt_macro_c,20,gtt/mL,Macrodrip drop factor
+gtt_micro,60,gtt/mL,Microdrip drop factor
+pct_volume,100,mL,Percent strength w/v: grams per 100 mL
+seringue_petite,1,mL,Small (tuberculin-type) syringe capacity
+seringue_petite_pas,0.01,mL,Graduation of the small syringe
+seringue_std,3,mL,Standard syringe capacity
+seringue_std_pas,0.1,mL,Graduation of the standard syringe
+pompe_pas,0.1,mL/h,Pump precision assumed on this sheet (some pumps: whole mL/h only)
+poids_pas,0.1,kg,Weight kept to tenths of a kg

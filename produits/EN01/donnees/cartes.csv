@@ -1,0 +1,25 @@
+recto,verso,tags
+Desired-over-have formula,"V = D / H × Q (D dose ordered, H dose on hand, Q volume or tablets holding H); put D and H in the same unit first",EN01 core-methods
+Ratio–proportion setup for a dose,"H : Q = D : V, then cross-multiply to find V",EN01 core-methods
+Dimensional analysis in one sentence,Chain the order through conversion factors until only the wanted unit is left,EN01 core-methods
+Metric ladder g → mg → mcg,"× 1,000 per step down, ÷ 1,000 per step up (same for L → mL)",EN01 conversions
+Exact lb → kg factor,"1 lb = 0.45359237 kg (exact, NIST); courses usually divide lb by 2.2",EN01 conversions
+"US teaspoon, tablespoon, fluid ounce in mL","Exact: about 4.93, 14.79 and 29.57 mL; label values: 5, 15 and 30 mL",EN01 conversions
+How should an oral liquid dose be measured?,"In mL, with an oral syringe or mL-marked device, never a kitchen spoon",EN01 conversions clinical
+Per day vs per dose,"A mg/kg/day dose is the 24-hour total: divide by the number of doses per day to get each dose",EN01 weight-based
+Safe-dose check,"Low end × kg ≤ ordered daily total ≤ high end × kg; outside the range, hold and clarify with the prescriber",EN01 weight-based
+Pump rate (mL/h),rate = volume (mL) ÷ time (h),EN01 iv-rates
+Gravity drip rate (gtt/min),"gtt/min = volume (mL) × drop factor (gtt/mL) ÷ (time (h) × 60), rounded to whole drops",EN01 iv-rates
+Common drop factors,"Macrodrip 10, 15 or 20 gtt/mL; microdrip 60 gtt/mL; read the tubing package",EN01 iv-rates
+60-drop shortcut,"With microdrip tubing (60 gtt/mL), gtt/min equals mL/h",EN01 iv-rates
+Infusion end time,"duration = volume ÷ rate; end time = start time + duration",EN01 iv-rates
+Mosteller BSA,"BSA (m²) = √(height (cm) × weight (kg) ÷ 3,600); the constant assumes cm and kg",EN01 bsa
+Concentration after reconstitution,"Drug amount ÷ final volume stated on the label, not the volume of diluent added",EN01 reconstitution
+0.9 % (w/v) in mg/mL,"0.9 g per 100 mL = 9 mg/mL",EN01 reconstitution
+Ratio strength 1:1000 in mg/mL,"1 g in 1,000 mL = 1 mg/mL",EN01 reconstitution
+mcg/kg/min → mL/h,"mL/h = mcg/kg/min × kg × 60 ÷ concentration (mcg/mL)",EN01 titration
+units/h → mL/h,"mL/h = ordered units/h ÷ concentration (units/mL)",EN01 titration
+When do you round?,"Once, at the end: whole drops for gtt/min, the pump's precision for mL/h, the syringe's marks for a volume",EN01 rounding
+Why never write 1.0 mg or .5 mg?,"A trailing zero can be read as 10 mg, a missing leading zero as 5 mg: write 1 mg and 0.5 mg",EN01 notation clinical
+"Write instead of µg, U and cc","mcg, unit(s) and mL",EN01 notation clinical
+Elements of a complete medication order,"Patient name and ID, date and time, drug, dose with unit, route, frequency, weight for weight-based doses, prescriber signature",EN01 orders
