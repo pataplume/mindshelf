@@ -14,7 +14,6 @@
 |---|---|---|---|
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
-| D08 | Périmètre de la relecture d'EN01 (fiche US, relectrice infirmière en Suisse) | Relectrice CH sur les calculs et la sécurité, conventions US (horloge, pompes, seringues, Joint Commission, ISMP) validées sur sources / trouver un.e relecteur.rice formé.e à la pratique US / retirer de la fiche les conventions US non sourcées | — |
 
 ## Runs
 
