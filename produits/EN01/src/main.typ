@@ -155,8 +155,8 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
 )
 
 #exemple(titre: "Child's weight")[
-  #v("EX02A", "P") lb × #v("EX02A", "F") #res("EX02A") (recorded to #valu("poids_pas"))\;
-  course shortcut #v("EX02B", "P") ÷ #v("EX02B", "G") #res("EX02B").
+  #v("EX02A", "P") lb × #v("EX02A", "F") #res("EX02A") (to #valu("poids_pas"))\;
+  course: #v("EX02B", "P") ÷ #v("EX02B", "G") #res("EX02B").
 ]
 
 #note-clinique[Oral liquids: dose in mL with an oral syringe, never a kitchen spoon.]
@@ -251,8 +251,6 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
 
 #piege[Bag in mg, dose in mcg: × #val("facteur_metrique") first; per-minute doses need × #val("min_par_h").]
 
-#note-clinique[ISMP high-alert (IV heparin, insulin): independent double check per policy.]
-
 = Rounding & syringes
 
 #encadre(titre: "Round once, at the end")[
@@ -276,8 +274,8 @@ _Drugs A–F and their numbers: exercise values, not dosing guidance._
 
 = Medication rights & orders
 
-*Rights* (patient, drug, dose, route, time) need system safeguards, not just a checklist.
+*Rights* (patient, drug, dose, route, time) need system safeguards.
 *Complete order:* patient name and ID, date/time, drug, dose with unit, route, frequency, weight if weight-based, signature.
 
-#note-clinique[Unclear or incomplete order: clarify with the prescriber before giving.]
+#note-clinique[Unclear or incomplete order: clarify with the prescriber before giving. ISMP high-alert drips (IV heparin, insulin): independent double check per policy.]
 ]
