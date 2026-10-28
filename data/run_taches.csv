@@ -3,13 +3,13 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 2,R00,PRODUCTION,PIPELINE,,,"Chaîne Typst : build A4, Letter, N&B, tablette depuis une source unique ; fiche test",VALIDE
 3,R00,PRODUCTION,OUTILLAGE,,,"Scripts : aperçus PNG, vidéo de feuilletage, export Anki, gabarits d'annonces",VALIDE
 4,R00,VERIFICATION,VERIFICATEUR,,,Contrôle de bout en bout sur la fiche test,VALIDE
-5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",EN_COURS
-6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",EN_COURS
-7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,EN_COURS
-8,R01,PRODUCTION,PRODUCTEUR,EN01,,Porter la fiche dosage & IV dans la charte,EN_COURS
-9,R01,VERIFICATION,VERIFICATEUR,EN02,,Vérification indépendante,A_FAIRE
-10,R01,VERIFICATION,VERIFICATEUR,EN03,,Vérification indépendante,A_FAIRE
-11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,A_FAIRE
+5,R01,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VERIFIER
+6,R01,PRODUCTION,PRODUCTEUR,EN02,,"Porter la fiche physique à jour dans la charte, titre élargi College & Pre-Med",A_VERIFIER
+7,R01,PRODUCTION,PRODUCTEUR,EN03,,Porter la fiche chimie dans la charte,A_VERIFIER
+8,R01,PRODUCTION,PRODUCTEUR,EN01,,Porter la fiche dosage & IV dans la charte,A_VERIFIER
+9,R01,VERIFICATION,VERIFICATEUR,EN02,,Vérification indépendante,EN_COURS
+10,R01,VERIFICATION,VERIFICATEUR,EN03,,Vérification indépendante,EN_COURS
+11,R01,VERIFICATION,VERIFICATEUR,EN01,,Vérification indépendante,EN_COURS
 12,R01,CONDITIONNEMENT,CONDITIONNEUR,EN02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
 13,R01,CONDITIONNEMENT,CONDITIONNEUR,EN03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
 14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
@@ -130,4 +130,4 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 129,R21,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
-132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md",A_FAIRE
+132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03)",A_FAIRE
