@@ -13,13 +13,13 @@
 //   ]
 //   Environ une page A4 par système (moins si dense). Uniquement les composants de la charte.
 //   Nombres : jamais tapés ici ; k("CLE") lit donnees/valeurs.csv (clés A_ pour ce lot, B_ pour le lot B) ;
-//   un nombre calculé passe par donnees/exemples-<lot>.csv (exemples() le recalcule, concorde() le relie
+//   un nombre calculé passe par donnees/exemples.csv (exemples() le recalcule, concorde() le relie
 //   aux valeurs). Après un appel suivi de « ; », écrire \; (règle 16).
-// Sources : ../donnees/references-a.csv.
+// Sources : ../donnees/references.csv.
 #import "commun.typ": *
 
 // ── Nombres calculés : recalcul et concordance avec valeurs.csv ──
-#let ex-a = exemples("exemples-a.csv")
+#let ex-a = exemples("exemples.csv")
 #let os = ex-a.at("A_EX01")
 #concorde(os, "axial", "A_OS_AXIAL")
 #concorde(os, "appendiculaire", "A_OS_APPEND")

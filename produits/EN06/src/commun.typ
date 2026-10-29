@@ -2,7 +2,7 @@
 // Un fichier inclus par #include n'hérite pas des définitions de main.typ : chaque fichier de système
 // importe donc ce module (#import "commun.typ": *).
 // Aucun nombre affiché n'est tapé dans le Typst : valeurs dans ../donnees/valeurs.csv (clés A_… pour le
-// lot A, B_… pour le lot B), exemples calculés dans ../donnees/exemples-<lot>.csv (recalculés ici).
+// lot A, B_… pour le lot B), exemples calculés dans ../donnees/exemples.csv (recalculés ici).
 #import "/charte/modele.typ": *
 
 #let lire(f) = csv("../donnees/" + f, row-type: dictionary)

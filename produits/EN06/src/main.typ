@@ -1,8 +1,8 @@
 // EN06 : Anatomy & Physiology — Body Systems Sheets (au plus 10 pages A4, toutes sections comprises).
 // Contrat : scripts/README-pipeline.md (titre, marque, version, langue, format, produit arrivent par sys.inputs).
 // Structure : introduction ci-dessous, puis lot A (systemes-a.typ) et lot B (systemes-b.typ).
-// Fonctions partagées : commun.typ. Sources de chaque élément : ../donnees/references-a.csv (lot A),
-// references-b.csv (lot B).
+// Fonctions partagées : commun.typ. Sources de chaque élément : ../donnees/references.csv (lot A),
+// references.csv (lot B).
 #import "/charte/modele.typ": *
 #import "commun.typ": *
 

@@ -1,12 +1,12 @@
 // EN06 lot B : systèmes cardiovasculaire (avec le sang), lymphatique et immunitaire, respiratoire,
 // digestif, urinaire (avec équilibre hydro-électrolytique de base), reproducteur.
 // Gabarit commun : commentaire en tête de systemes-a.typ. Nombres : clés B_ de ../donnees/valeurs.csv ;
-// exemple calculé : ../donnees/exemples-b.csv (recalculé, relié aux valeurs par concorde()).
-// Sources : ../donnees/references-b.csv.
+// exemple calculé : ../donnees/exemples.csv (recalculé, relié aux valeurs par concorde()).
+// Sources : ../donnees/references.csv.
 #import "commun.typ": *
 
 // ── Nombres calculés : recalcul et concordance avec valeurs.csv ──
-#let ex-b = exemples("exemples-b.csv")
+#let ex-b = exemples("exemples.csv")
 #let pp = ex-b.at("B_EX02")
 #concorde(pp, "pas", "B_EX_PAS")
 #concorde(pp, "pad", "B_EX_PAD")

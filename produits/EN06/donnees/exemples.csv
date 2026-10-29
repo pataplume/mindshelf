@@ -1,3 +1,4 @@
 id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi,mode_arrondi
 A_EX01,Os du squelette adulte = os axiaux + os appendiculaires,"{""axial"": 80, ""appendiculaire"": 126}",axial + appendiculaire,206,bones,0,0,
 A_EX02,Paires de nerfs spinaux = cervicales + thoraciques + lombaires + sacrées + coccygienne,"{""c"": 8, ""t"": 12, ""l"": 5, ""s"": 5, ""co"": 1}",c + t + l + s + co,31,pairs,0,0,
+B_EX02,Pression pulsée (valeurs d'exercice) : PP = PAS − PAD ; 120/80 mm Hg,"{""pas"": 120, ""pad"": 80}",pas - pad,40,mm Hg,0.000001,0,
