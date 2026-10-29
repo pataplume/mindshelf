@@ -23,11 +23,11 @@
 - *Output:* a normal adult heart pumps about #k("B_CO_L", u: true) at rest.
 - *Blood pressure:* systolic (ventricular contraction) over diastolic (relaxation). It rises with cardiac output, blood volume, peripheral resistance and viscosity.
 - *Pulse pressure* = systolic − diastolic. Exercise values: #k("B_EX_PAS")/#k("B_EX_PAD") mm Hg gives #nombre(pp.resultat_attendu) mm Hg.
-- *Venous return* relies on skeletal muscle action, breathing movements and venous smooth muscle, not on the push of the ventricles.
+- *Venous return* relies on skeletal muscle action, breathing movements and venous smooth muscle, not directly on ventricular contraction.
 
 #note-clinique(titre: "Heart failure")[
 When the heart pumps poorly, fluid builds up: in the lungs (crackles, shortness of breath on exertion or lying down) and in the liver, abdomen, feet and ankles (swelling). Failure can affect the left side, the right side or both.
-Source: MedlinePlus, _Heart failure_ (consulted Oct. 29, 2026).
+#source("MEDLINEPLUS_HF")
 ]
 
 #piege[Arteries leave the heart, veins return to it, whatever their oxygen: *pulmonary arteries* carry low-oxygen blood and *pulmonary veins* oxygenated blood.]
@@ -36,7 +36,7 @@ Source: MedlinePlus, _Heart failure_ (consulted Oct. 29, 2026).
 ]
 
 // ════════════════════════════════════════════════════════════════════
-= Lymphatic & Immune Systems
+= Lymphatic and Immune Systems
 
 #colonnes(2)[
 #structures("b-lymphatique.csv")
@@ -49,8 +49,8 @@ Source: MedlinePlus, _Heart failure_ (consulted Oct. 29, 2026).
 - *Passive immunity:* ready-made antibodies, e.g., from mother to fetus across the placenta. Immediate but short: an infant's maternal antibodies disappear between #k("B_AC_MAT_MOIS_MIN") and #k("B_AC_MAT_MOIS_MAX", u: true).
 
 #note-clinique(titre: "Life without a spleen")[
-After the spleen is removed, infections become more likely. Immunizations such as pneumococcal, meningococcal, _Haemophilus influenzae_, flu and COVID-19 vaccines are given around the surgery.
-Source: MedlinePlus, _Spleen removal_ (consulted Oct. 29, 2026).
+After the spleen is removed, infections become more likely. Vaccination is reviewed before the operation, with shots against pneumococcus, meningococcus, _Haemophilus influenzae_, influenza and COVID-19, and discussed again with the care team afterward.
+#source("MEDLINEPLUS_SPLEEN")
 ]
 
 #piege[*T* cells mature in the *thymus*. Antibodies come from *plasma cells* (activated B cells), not from T cells.]
@@ -73,11 +73,11 @@ Source: MedlinePlus, _Spleen removal_ (consulted Oct. 29, 2026).
 
 #note-clinique(titre: "Collapsed lung (pneumothorax)")[
 Air escapes from the lung into the space between the lung and the chest wall. The trapped air presses on the lung, which can no longer expand fully. Typical signs: sharp chest or shoulder pain made worse by a deep breath or a cough, and shortness of breath.
-Source: MedlinePlus, _Collapsed lung (pneumothorax)_ (consulted Oct. 29, 2026).
+#source("MEDLINEPLUS_PNEUMO")
 ]
 
 #piege[*Larynx* (voice box, air only, guarded by the epiglottis) vs *pharynx* (throat, shared by air and food).]
-#piege[Right lung *#k("B_LOBES_D")* lobes, left lung *#k("B_LOBES_G")*. The trachea splits at the fifth thoracic vertebra.]
+#piege[Right lung *#k("B_LOBES_D")* lobes, left lung *#k("B_LOBES_G")*. The trachea splits at vertebra T#k("B_TRACHEE_T").]
 #piege[Quiet expiration is passive. Only inspiration needs muscle contraction at rest.]
 ]
 
@@ -96,7 +96,7 @@ Source: MedlinePlus, _Collapsed lung (pneumothorax)_ (consulted Oct. 29, 2026).
 
 #note-clinique(titre: "Vitamin B₁₂ and intrinsic factor")[
 Stomach acid and gastric protease free B₁₂ from food; it binds intrinsic factor from the parietal cells and is absorbed in the distal ileum. Pernicious anemia (autoimmune attack on parietal cells) and surgery that removes part of the stomach can cause deficiency.
-Source: NIH Office of Dietary Supplements, _Vitamin B12, Fact Sheet for Health Professionals_ (consulted Oct. 29, 2026).
+#source("NIH_ODS_B12")
 ]
 
 #piege[The *liver makes* bile; the *gallbladder only stores* it. Bile emulsifies fat; the enzyme that digests fat is *lipase*.]
@@ -104,7 +104,7 @@ Source: NIH Office of Dietary Supplements, _Vitamin B12, Fact Sheet for Health P
 ]
 
 // ════════════════════════════════════════════════════════════════════
-= Urinary System & Fluid Balance
+= Urinary System and Fluid Balance
 
 #colonnes(2)[
 #structures("b-urinaire.csv")
@@ -118,7 +118,7 @@ Source: NIH Office of Dietary Supplements, _Vitamin B12, Fact Sheet for Health P
 
 #note-clinique(titre: "High potassium")[
 Kidneys that do not work well may fail to remove enough potassium. High potassium decreases heart muscle activity: palpitations, a slow, weak or irregular pulse, and in severe cases cardiac arrest.
-Source: MedlinePlus, _High potassium level_ and _Potassium blood test_ (consulted Oct. 29, 2026).
+#source("MEDLINEPLUS_HYPERK", "MEDLINEPLUS_POTASSIUM")
 ]
 
 #piege[ADH saves *water only*. Aldosterone saves *sodium* (water follows) and gets rid of *potassium*.]
@@ -140,7 +140,7 @@ Source: MedlinePlus, _High potassium level_ and _Potassium blood test_ (consulte
 
 #note-clinique(titre: "Ectopic pregnancy")[
 The most common site is the fallopian tube. Risks include tubal birth defects, a previous ectopic pregnancy, scarring from past infections or surgery, and sexually transmitted infections. Rupture causes bleeding and shock: an emergency.
-Source: MedlinePlus, _Ectopic pregnancy_ (consulted Oct. 29, 2026).
+#source("MEDLINEPLUS_ECTOPIC")
 ]
 
 #piege[Sperm are *made* in the seminiferous tubules but *mature* in the epididymis.]

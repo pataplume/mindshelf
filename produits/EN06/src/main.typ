@@ -1,8 +1,8 @@
 // EN06 : Anatomy & Physiology — Body Systems Sheets (au plus 10 pages A4, toutes sections comprises).
 // Contrat : scripts/README-pipeline.md (titre, marque, version, langue, format, produit arrivent par sys.inputs).
 // Structure : introduction ci-dessous, puis lot A (systemes-a.typ) et lot B (systemes-b.typ).
-// Fonctions partagées : commun.typ. Sources de chaque élément : ../donnees/references.csv (lot A),
-// references.csv (lot B).
+// Fonctions partagées : commun.typ. Sources de chaque élément : ../donnees/references.csv (élément →
+// code de source), identification des documents : ../donnees/sources.csv. Statut : ../donnees/statut-methode.md.
 #import "/charte/modele.typ": *
 #import "commun.typ": *
 
@@ -11,6 +11,14 @@
   let v = sys.inputs.at(cle, default: "")
   if v == "" { panic("EN06 : entrée sys.inputs « " + cle + " » absente (scripts/build.py la fournit)") }
   v
+}
+
+// Le nombre de systèmes annoncé dans contenu.csv (vignette) doit être celui de valeurs.csv.
+#{
+  let n = val("G_SYSTEMES").valeur
+  if not lire("contenu.csv").any(l => l.element.contains(n + " body systems")) {
+    panic("EN06 : contenu.csv n'annonce pas " + n + " body systems (valeurs.csv G_SYSTEMES)")
+  }
 }
 
 #show: fiche.with(
@@ -27,7 +35,7 @@
 
 = How to Use These Sheets
 
-Every body system follows the same four-part layout:
+Each of the #k("G_SYSTEMES") body systems follows the same four-part layout:
 
 + *Key structures → function:* a table that pairs each structure with what it does.
 + *Physiology essentials:* the mechanisms behind the table.

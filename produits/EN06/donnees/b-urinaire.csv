@@ -1,6 +1,6 @@
 structure,fonction
 Kidneys,"Retroperitoneal; outer cortex, inner medulla; the renal pelvis collects urine as it forms"
-Nephron,"Functional unit, over a million per kidney: renal corpuscle (glomerulus in the glomerular capsule) + renal tubule (with the nephron loop)"
+Nephron,"Functional unit, over {v:B_NEPHRONS_MILLION} million per kidney: renal corpuscle (glomerulus in the glomerular capsule) + renal tubule (with the nephron loop)"
 Glomerulus,"Its thin capillary walls let small molecules, wastes and fluid (mostly water) pass into the tubule"
 Renal tubule,"Returns most of the filtered water and solutes to the blood; removes excess acid"
 Juxtaglomerular apparatus,Monitors blood pressure and secretes renin

@@ -157,5 +157,5 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 156,R03,VERIFICATION,VERIFICATEUR,EN10,CORR1,Contre-vérification des corrections v2,A_VALIDER
 157,R04,PRODUCTION,ASSEMBLEUR,EN06,,"Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD (fait par l'orchestrateur : fusion des tables -a/-b en tables canoniques)",A_VERIFIER
 158,R05,PRODUCTION,OUTILLAGE,,,anki.py : le marqueur {v:CLE} affiche « × 10⁰ » quand l'exposant vaut 0 (contourné dans EN04 et FR07) ; ne rien afficher pour un exposant nul ou vide,A_FAIRE
-159,R04,PRODUCTION,PRODUCTEUR,EN06,CORR1,"Correction v2 : valeurs du lot A resourcées hors OpenStax (M1), LH et ovulation, dates des sources en table, nœud sinusal, références, mineurs, statut-methode pour la relectrice ; puis éléments de vente",EN_COURS
+159,R04,PRODUCTION,PRODUCTEUR,EN06,CORR1,"Correction v2 : valeurs du lot A resourcées hors OpenStax (M1), LH et ovulation, dates des sources en table, nœud sinusal, références, mineurs, statut-methode pour la relectrice ; puis éléments de vente",A_VERIFIER
 160,R04,PRODUCTION,PRODUCTEUR,FR09,CORR1,"Correction v2 : références hors OpenStax (M1), VPN par Bayes, séparateurs décimaux, mineurs, barre de racine ; puis éléments de vente",EN_COURS

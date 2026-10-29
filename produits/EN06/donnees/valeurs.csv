@@ -5,10 +5,10 @@ A_COUCHES_FINE,4,layers,Couches de l'épiderme de la peau fine
 A_COUCHES_EPAISSE,5,layers,Couches de l'épiderme de la peau épaisse (avec le stratum lucidum)
 A_OS_AXIAL,80,bones,Os du squelette axial
 A_OS_APPEND,126,bones,Os du squelette appendiculaire
-A_OS_ADULTE,206,bones,Os du squelette adulte (contrôlé = A_OS_AXIAL + A_OS_APPEND dans systemes-a.typ et exemples-a.csv A_EX01)
+A_OS_ADULTE,206,bones,Os du squelette adulte (contrôlé = A_OS_AXIAL + A_OS_APPEND dans systemes-a.typ et exemples.csv A_EX01)
 A_VERT_C,7,vertebrae,Vertèbres cervicales
 A_NERFS_CRANIENS,12,pairs,Paires de nerfs crâniens
-A_NERFS_SPINAUX,31,pairs,Paires de nerfs spinaux (contrôlé = somme des A_NS_* dans systemes-a.typ et exemples-a.csv A_EX02)
+A_NERFS_SPINAUX,31,pairs,Paires de nerfs spinaux (contrôlé = somme des A_NS_* dans systemes-a.typ et exemples.csv A_EX02)
 A_NS_C,8,pairs,Paires de nerfs spinaux cervicaux
 A_NS_T,12,pairs,Paires de nerfs spinaux thoraciques
 A_NS_L,5,pairs,Paires de nerfs spinaux lombaires
@@ -22,8 +22,6 @@ A_AUDITION_MAX,20000,Hz,Borne haute de l'audition humaine
 A_T4_PCT,95,%,Part de T4 dans l'hormone thyroïdienne active (environ)
 A_PARATHYROIDES,4,glands,Nombre de glandes parathyroïdes
 A_CHALEUR_MUSCLE,85,%,Part de la chaleur corporelle produite par la contraction musculaire (près de)
-A_CP_SECONDES,15,s,Durée approximative d'ATP fournie par la créatine phosphate
-A_AEROBIE_PCT,95,%,Part de l'ATP du muscle au repos ou en activité modérée fournie par la respiration aérobie
 A_REPOSITIONNEMENT_H,2,h,Intervalle de changement de position conseillé pour prévenir les escarres
 A_AVC_ISCHEMIQUE_PCT,80,%,Part des AVC ischémiques (environ)
 A_HYPO_MGDL,70,mg/dL,Seuil de glycémie basse
@@ -58,3 +56,12 @@ B_AC_MAT_MOIS_MIN,6,months,Disparition des anticorps maternels chez le nourrisso
 B_AC_MAT_MOIS_MAX,12,months,Disparition des anticorps maternels chez le nourrisson : borne haute (MedlinePlus)
 B_EX_PAS,120,mm Hg,Valeur d'exercice : pression systolique de l'exemple B_EX02
 B_EX_PAD,80,mm Hg,Valeur d'exercice : pression diastolique de l'exemple B_EX02
+A_OSTEO_AGE,50,years,Âge au-delà duquel l'ostéoporose est la plus fréquente (MedlinePlus Osteoporosis)
+A_MOELLE_L,1,,Vertèbre lombaire où se termine la moelle spinale (L1) (SEER)
+A_CONES,3,kinds,Types de cônes de la rétine (A-VERIFIER relectrice)
+B_FC_REPOS_MIN,60,beats/min,Fréquence cardiaque de repos normale de l'adulte : borne basse (MedlinePlus Pulse)
+B_FC_REPOS_MAX,100,beats/min,Fréquence cardiaque de repos normale de l'adulte : borne haute (MedlinePlus Pulse)
+B_LARYNX_CARTILAGES,9,cartilages,Cartilages du larynx (SEER)
+B_TRACHEE_T,5,,Vertèbre thoracique où la trachée se divise (T5) (SEER)
+B_NEPHRONS_MILLION,1,million,Néphrons par rein : plus de (SEER ; NIDDK)
+G_SYSTEMES,11,systems,Nombre de systèmes traités dans la fiche (titres de niveau 1 hors introduction) ; doit figurer dans contenu.csv (contrôlé par main.typ)

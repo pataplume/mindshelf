@@ -55,6 +55,9 @@
 }
 #let q(id) = nombre(val(id).valeur)
 #let qf(id) = float(val(id).valeur)
+// Pourcentage tiré d'un risque alpha de valeurs.csv (5 % pour 0.05, 95 % de confiance pour 1 - 0.05).
+#let pct(a) = nombre(str(calc.round(float(a) * 100, digits: 1)))
+#let confiance(id) = nombre(str(calc.round((1 - float(val(id).alpha)) * 100, digits: 1)))
 #let groupe(g) = valeurs-liste.filter(l => l.groupe == g).sorted(key: l => int(l.ordre))
 
 #let textes = {
@@ -91,6 +94,19 @@
 #for id in ("BX16", "BX17") {
   for c in ("a", "b", "c", "d") { verifie(id + "." + c, float(ex(id).e.at(c)), float(ex("BX14").e.at(c)), 0) }
 }
+#verifie("BX06 j = 1 (p^j affiché p)", float(ex("BX06").e.j), 1, 0)
+#verifie("BX14 c + d = a + b (E_c = ea, E_d = eb)", float(ex("BX14").e.c + ex("BX14").e.d), float(ex("BX14").e.a + ex("BX14").e.b), 0)
+#verifie("BX15 N = a + b + c + d", float(ex("BX15").e.N), float(ex("BX14").e.a + ex("BX14").e.b + ex("BX14").e.c + ex("BX14").e.d), 0)
+#verifie("BX13 z > Z95", if ex("BX13").calcule > qf("Z95") { 1 } else { 0 }, 1, 0)
+#verifie("BX14 > KHI1_95", if ex("BX14").calcule > qf("KHI1_95") { 1 } else { 0 }, 1, 0)
+#verifie("BX14 ddl 2 × 2 = KHI1_95.ddl", float(val("KHI1_95").ddl), (2 - 1) * (2 - 1), 0)
+#verifie("BX13 alpha = KHI1_95 alpha", float(val("Z95").alpha), float(val("KHI1_95").alpha), 0)
+// Décompte annoncé dans contenu.csv (ligne 7) : nombre de résultats chiffrés.
+#{
+  let l7 = csv("../donnees/contenu.csv", row-type: dictionary).filter(l => l.ordre == "7").first().element
+  verifie("contenu.csv : " + str(exemples.len()) + " résultats", if l7.contains("(" + str(exemples.len()) + " résultats)") { 1 } else { 0 }, 1, 0)
+  verifie("contenu.csv : 3 tableaux de valeurs", if l7.contains(str(("Z", "EMP", "KHI").filter(g => groupe(g).len() > 0).len()) + " tableaux de valeurs") { 1 } else { 0 }, 1, 0)
+}
 #verifie("BX19 b = BX18", float(ex("BX19").e.b), ex("BX18").calcule, 0)
 #verifie("BX20 r = BX18", float(ex("BX20").e.r), float(ex("BX18").e.r), 0)
 // Conditions d'application des exemples : n p et n (1 - p) > seuil ; effectifs attendus ≥ seuil.
@@ -118,14 +134,14 @@
 ]
 
 #exemple(titre: "Série " + [#v("BX01", "x1"), #v("BX01", "x2"), #v("BX01", "x3"), #v("BX01", "x4"), #v("BX01", "x5")])[
-  $overline(x) = #res("BX01")$ ; $s^2 = #res("BX02")$ ; $s = #res("BX03")$.
+  $overline(x) #rel("BX01") #res("BX01")$ ; $s^2 #rel("BX02") #res("BX02")$ ; $s #rel("BX03") #res("BX03")$.
   Médiane #v("BX01", "x3") < moyenne : la valeur #v("BX01", "x5") tire la moyenne vers le haut.
 ]
 
 = Probabilités
 
 #formule[
-  $P(overline(A)) = 1 - P(A)$ ; $P(A union B) = P(A) + P(B) - P(A inter B)$.
+  $P(overline(A)) = 1 - P(A)$ ; #box[$P(A union B) = P(A) + P(B) - P(A inter B)$]. Si $P(B) > 0$ :
   $ P(A | B) = P(A inter B) / P(B) #h(1em) P(A inter B) = P(A | B) P(B) $
   Indépendants : $P(A inter B) = P(A) P(B)$, soit $P(A | B) = P(A)$. Incompatibles : $P(A inter B) = 0$.
   Bayes, avec les probabilités totales :
@@ -137,21 +153,22 @@
 #tableau(
   columns: (auto, 1fr, 1fr),
   align: (left, center, center),
-  [], [Malades (M)], [Non malades],
+  [], [Malades], [Non malades],
   [Test +], [VP], [FP],
   [Test −], [FN], [VN],
 )
 
 #formule[
-  $"Se" = "VP" \/ ("VP" + "FN")$ ; $"Sp" = "VN" \/ ("VN" + "FP")$.
-  $"VPP" = "VP" \/ ("VP" + "FP")$ ; $"VPN" = "VN" \/ ("VN" + "FN")$.
+  $"Se" = "VP"\/("VP" + "FN")$ ; $"Sp" = "VN"\/("VN" + "FP")$.
+  $"VPP" = "VP"\/("VP" + "FP")$ ; $"VPN" = "VN"\/("VN" + "FN")$.
   Par Bayes, avec la prévalence $P$ :
   $ "VPP" = ("Se" P) / ("Se" P + (1 - "Sp")(1 - P)) $
+  $ "VPN" = ("Sp"(1 - P)) / ("Sp"(1 - P) + (1 - "Se") P) $
   Se et Sp décrivent le test ; VPP et VPN dépendent aussi de la prévalence.
 ]
 
 #exemple(titre: "Maladie rare")[
-  Se #v("BX04", "se"), Sp #v("BX04", "sp"), $P = #v("BX04", "p")$ (valeurs d'exercice) : VPP #rel("BX04") #res("BX04")~% ; VPN #rel("BX05") #res("BX05")~%. Un test positif reste le plus souvent un faux positif.
+  $"Se" = #v("BX04", "se")$ ; $"Sp" = #v("BX04", "sp")$ ; $P = #v("BX04", "p")$ (valeurs d'exercice) : VPP #rel("BX04") #res("BX04")~% ; VPN #rel("BX05") #res("BX05")~%. Un test positif reste le plus souvent un faux positif.
 ]
 
 = Lois de probabilité
@@ -165,29 +182,30 @@
 ]
 
 #exemple(titre: "Binomiale, Poisson, centrage")[
-  $cal(B)(#v("BX06", "n"), #v("BX06", "p"))$ : $P(X = #v("BX06", "j")) = #v("BX06", "c") times #v("BX06", "p") times (1 - #v("BX06", "p"))^#v("BX06", "k") = #res("BX06")$.
+  $cal(B)(#v("BX06", "n") thin\; #v("BX06", "p"))$ : $P(X = #v("BX06", "j")) = #v("BX06", "c") times #v("BX06", "p") times (1 - #v("BX06", "p"))^#v("BX06", "k") #rel("BX06") #res("BX06")$.
   $cal(P)(#v("BX07", "l"))$ : $P(X = #v("BX07", "k")) = e^(-#v("BX07", "l")) times #v("BX07", "l")^#v("BX07", "k") \/ #v("BX07", "f") #rel("BX07") #res("BX07")$.
-  $mu = #v("BX08", "mu")$, $sigma = #v("BX08", "sigma")$, $x = #v("BX08", "x")$ : $z = #res("BX08")$.
+  $mu = #v("BX08", "mu")$, $sigma = #v("BX08", "sigma")$, $x = #v("BX08", "x")$ : $z #rel("BX08") #res("BX08")$.
 ]
 
 #tableau(
   columns: (1fr, auto, auto, auto),
   align: (left, right, right, right),
   [Normale], ..groupe("EMP").map(l => [$plus.minus #l.k_sigma sigma$]),
-  [Part des valeurs], ..groupe("EMP").map(l => [#nombre(l.valeur)~%]),
+  [Part des valeurs], ..groupe("EMP").map(l => [$approx$ #nombre(l.valeur)~%]),
 )
 
 = Estimation
 
 #formule[
-  Erreur standard de la moyenne : $sigma \/ sqrt(n)$ (théorème central limite : $overline(X)$ approximativement normale si $n$ grand).
+  Erreur standard de la moyenne : $sigma \/ sqrt(n)$, estimée par $s \/ sqrt(n)$ (théorème central limite : $overline(X)$ approximativement normale si $n$ grand).
   IC d'une moyenne, $n$ grand : $overline(x) plus.minus z_(alpha\/2) s \/ sqrt(n)$. Petit $n$ (population normale) : $t$ de Student à $n - 1$ ddl à la place de $z$.
-  IC d'une proportion : $p plus.minus z_(alpha\/2) sqrt(p(1 - p) \/ n)$, si $n p$ et $n(1 - p) > #q("COND_IC")$.
+  IC d'une proportion observée $hat(p)$, si $n hat(p)$ et $n(1 - hat(p)) > #q("COND_IC")$ :
+  $ hat(p) plus.minus z_(alpha\/2) sqrt(hat(p)(1 - hat(p)) \/ n) $
 ]
 
-#exemple(titre: "Intervalles de confiance à 95 %")[
-  $overline(x) = #v("BX09", "m")$, $s = #v("BX09", "s")$, $n = #v("BX09", "n")$ : IC $#rel("BX09") [#res("BX09")\; #res("BX10")]$.
-  $p = #v("BX11", "p")$, $n = #v("BX11", "n")$ : IC $#rel("BX11") [#res("BX11")\; #res("BX12")]$ (en %).
+#exemple(titre: [Intervalles de confiance à #confiance("Z95")~%])[
+  $overline(x) = #v("BX09", "m")$, $s = #v("BX09", "s")$, $n = #v("BX09", "n")$ : IC $#rel("BX09") [#res("BX09") thin\; #res("BX10")]$.
+  $hat(p) = #v("BX11", "p")$, $n = #v("BX11", "n")$ : IC $#rel("BX11") [#res("BX11") thin\; #res("BX12")]$ (en %).
 ]
 
 #tableau(
@@ -208,7 +226,7 @@
 ]
 
 #exemple(titre: "Deux moyennes")[
-  #v("BX13", "m1") ($s = #v("BX13", "s1")$) contre #v("BX13", "m2") ($s = #v("BX13", "s2")$), $n = #v("BX13", "n1")$ par groupe : $z #rel("BX13") #res("BX13") > #q("Z95")$, différence significative à 5 %.
+  #v("BX13", "m1") ($s = #v("BX13", "s1")$) contre #v("BX13", "m2") ($s = #v("BX13", "s2")$), $n = #v("BX13", "n1")$ par groupe : $z #rel("BX13") #res("BX13") > #q("Z95")$, différence significative à #pct(val("Z95").alpha)~%.
 ]
 
 = Khi-deux
@@ -233,7 +251,7 @@
 ]
 
 #exemple(titre: "Droite de régression")[
-  $r = #v("BX18", "r")$, $s_x = #v("BX18", "sx")$, $s_y = #v("BX18", "sy")$ : $b = #res("BX18")$ ; $overline(x) = #v("BX19", "mx")$, $overline(y) = #v("BX19", "my")$ : $a = #res("BX19")$ ; $r^2 = #res("BX20")$.
+  $r = #v("BX18", "r")$, $s_x = #v("BX18", "sx")$, $s_y = #v("BX18", "sy")$ : $b #rel("BX18") #res("BX18")$ ; $overline(x) = #v("BX19", "mx")$, $overline(y) = #v("BX19", "my")$ : $a #rel("BX19") #res("BX19")$ ; $r^2 #rel("BX20") #res("BX20")$.
 ]
 
 = Épidémiologie
@@ -262,12 +280,12 @@
 )
 
 #formule[
-  Cohorte : $"RR" = (a \/ (a + b)) \/ (c \/ (c + d))$. Cas-témoins : $"OR" = a d \/ (b c)$, proche du RR si la maladie est rare.
+  Cohorte : $"RR" = (a \/ (a + b)) \/ (c \/ (c + d))$. Cas-témoins : $"OR" = a d \/ (b c)$, proche du RR si la maladie est rare ; le RR n'y est pas calculable.
 ]
 
-#exemple(titre: "Même tableau")[
-  $"RR" = #res("BX16")$ ; $"OR" #rel("BX17") #res("BX17")$.
-  $E_a = #v("BX15", "l") times #v("BX15", "k") \/ #v("BX15", "N") = #res("BX15")$ ; $chi^2 #rel("BX14") #res("BX14") > #q("KHI1_95")$ (ddl 1) : association significative à 5 %.
+#exemple(titre: "Même tableau, lu comme une cohorte")[
+  $"RR" #rel("BX16") #res("BX16")$ ; $"OR" #rel("BX17") #res("BX17")$.
+  $E_a = #v("BX15", "l") times #v("BX15", "k") \/ #v("BX15", "N") #rel("BX15") #res("BX15")$ ; $E_b = #v("BX14", "eb")$, $E_c = #v("BX14", "ea")$, $E_d = #v("BX14", "eb")$ ; $chi^2 #rel("BX14") #res("BX14") > #q("KHI1_95")$ (ddl #nombre(val("KHI1_95").ddl)) : association significative à #pct(val("KHI1_95").alpha)~%.
 ]
 
 #piege[

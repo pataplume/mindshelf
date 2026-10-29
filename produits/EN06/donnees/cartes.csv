@@ -3,7 +3,7 @@ Name the epidermal layers from deep to surface,"Stratum basale → spinosum → 
 Does the epidermis have blood vessels?,No: it is avascular and is nourished from the dermis. A scrape that bleeds has reached the dermis.,EN06 integumentary
 Where are melanocytes and what do they make?,"In the stratum basale of the epidermis; they make melanin, which helps protect epidermal DNA from UV damage.",EN06 integumentary
 Role of Langerhans cells,Pick up antigens entering damaged skin and alert the immune system (stratum spinosum).,EN06 integumentary
-How does the skin cool the body?,Evaporating sweat carries heat away; dermal arterioles dilate to shed heat (and constrict in the cold to keep it).,EN06 integumentary
+How does the skin cool the body?,"Sweat reaches the surface through pores and cools the body as it evaporates; in the cold, dermal blood vessels constrict to keep heat.",EN06 integumentary
 How does the skin contribute to vitamin D?,With UV light the epidermis turns a cholesterol derivative into vitamin D<sub>3</sub>; the liver and kidneys activate it; it helps absorb calcium and phosphorus.,EN06 integumentary
 Where do pressure injuries form and how are they prevented?,"Where bone lies close to the skin (heels, hips, ankles, elbows, back). Keep skin clean and dry, reposition about every {v:A_REPOSITIONNEMENT_H} h, use pressure-relieving surfaces.",EN06 integumentary clinical
 "Osteoblasts, osteoclasts, osteocytes",Osteoblasts form bone; osteoclasts resorb it; osteocytes are mature cells in the matrix.,EN06 skeletal
@@ -25,11 +25,11 @@ Number of cranial and spinal nerve pairs,"{v:A_NERFS_CRANIENS} cranial; {v:A_NER
 "Meninges, outer to inner","Dura mater, arachnoid (CSF in the subarachnoid space beneath it), pia mater.",EN06 nervous
 Resting potential and threshold of a typical neuron,About {v:A_RMP} mV at rest; threshold about {v:A_SEUIL} mV.,EN06 nervous
 Ion movements of the action potential,Depolarization: Na⁺ enters. Repolarization: K⁺ leaves. The Na⁺/K⁺ pump (ATP) restores the gradients.,EN06 nervous
-Functions of the four main cerebral lobes,"Frontal: motor, planning, Broca's area (speech production). Parietal: touch and body sense. Temporal: hearing, long-term memory. Occipital: vision.",EN06 nervous
+Functions of the four main cerebral lobes,"Frontal: motor, planning, Broca’s area (speech production). Parietal: touch and body sense. Temporal: hearing, long-term memory. Occipital: vision.",EN06 nervous
 Which sense is not relayed by the thalamus?,Smell (olfaction).,EN06 nervous senses
 Sympathetic vs parasympathetic origin,"Sympathetic: thoracolumbar (fight or flight). Parasympathetic: craniosacral, including the vagus nerve (rest and digest).",EN06 nervous
-Five basic tastes,"Sweet, salty, sour, bitter, umami.",EN06 nervous senses
-Rods vs cones,Rods: dim light. Cones (three kinds): color. Fovea: sharpest vision; optic disc: blind spot.,EN06 nervous senses
+{v:A_GOUTS} basic tastes,"Sweet, salty, sour, bitter, savory (umami).",EN06 nervous senses
+Rods vs cones,Rods: dim light. Cones ({v:A_CONES} kinds): color. Fovea: sharpest vision; optic disc: blind spot.,EN06 nervous senses
 What detects rotation of the head?,The semicircular canals (utricle and saccule: head position and linear acceleration).,EN06 nervous senses
 Stroke warning signs,"Sudden one-sided numbness or weakness of face, arm or leg; confusion or trouble speaking; vision loss; trouble walking; sudden severe headache. Call 911 right away.",EN06 nervous clinical
 Where are ADH and oxytocin made and released?,Made in the hypothalamus; stored and released by the posterior pituitary.,EN06 endocrine
@@ -42,10 +42,10 @@ Low blood sugar threshold,Below {v:A_HYPO_MGDL} mg/dL ({v:A_HYPO_MMOL} mmol/L).,
 Trace the path of blood through the heart,Body → right atrium → right ventricle → pulmonary trunk → lungs → pulmonary veins → left atrium → left ventricle → aorta → body.,EN06 cardiovascular
 Which valve lies between the left atrium and left ventricle?,The bicuspid (mitral) valve. The tricuspid valve is on the right side.,EN06 cardiovascular
 Do pulmonary arteries carry oxygenated blood?,No. Arteries carry blood <b>away from the heart</b>: pulmonary arteries carry low-oxygen blood to the lungs; pulmonary veins bring oxygenated blood back.,EN06 cardiovascular
-Order of the cardiac conduction system,"SA node (pacemaker, {v:B_SA_MIN}–{v:B_SA_MAX} impulses/min on its own) → AV node → AV bundle → bundle branches → conduction myofibers (Purkinje fibers).",EN06 cardiovascular
+Order of the cardiac conduction system,"SA node (pacemaker; intrinsic rate {v:B_SA_MIN}–{v:B_SA_MAX}/min per SEER; normal adult resting heart rate {v:B_FC_REPOS_MIN}–{v:B_FC_REPOS_MAX}/min) → AV node → AV bundle → bundle branches → conduction myofibers (Purkinje fibers).",EN06 cardiovascular
 Pulse pressure: definition,Systolic − diastolic pressure.,EN06 cardiovascular
 Four factors that raise blood pressure,"Cardiac output, blood volume, peripheral resistance, viscosity.",EN06 cardiovascular
-Adult blood volume and share of body weight,About {v:B_SANG_L} L; {v:B_SANG_PCT} % of body weight.,EN06 cardiovascular blood
+Adult blood volume and share of body weight,About {v:B_SANG_L} L; {v:B_SANG_PCT}% of body weight.,EN06 cardiovascular blood
 Three functions of the lymphatic system,Return excess interstitial fluid to the blood; absorb fats and fat-soluble vitamins; defend against microorganisms.,EN06 lymphatic
 Which region does the right lymphatic duct drain?,The upper right quadrant of the body. The thoracic duct drains the rest.,EN06 lymphatic
 Where do T lymphocytes mature?,In the thymus (T for thymus).,EN06 lymphatic immune

@@ -9,7 +9,7 @@ What you get: 6-page anatomy & physiology review sheets as four PDFs (A4, US Let
 
 What's inside:
 - Orientation primer: levels of organization, directional terms and body planes
-- 11 body systems, each with a key structures → function table and physiology essentials: integumentary, skeletal, muscular, nervous (with the special senses), endocrine, cardiovascular (with blood), lymphatic & immune, respiratory, digestive, urinary, reproductive
+- 11 body systems, each with a key structures → function table and physiology essentials: integumentary, skeletal, muscular, nervous (with the special senses), endocrine, cardiovascular (with blood), lymphatic and immune, respiratory, digestive, urinary, reproductive
 - Cardiovascular: heart chambers, valves, conduction, vessels, blood pressure, a worked pulse-pressure example
 - Urinary: sodium, potassium, ADH and aldosterone
 - 11 clinical links, one per system, each with its source

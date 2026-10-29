@@ -8,7 +8,7 @@
 //                                                 marqueurs {v:CLE} admis, valeurs dans valeurs.csv)
 //     === Physiology essentials                   intertitre de niveau 3 (hors sommaire), puis 4 à 6 puces
 //     #note-clinique(titre: "<condition>")[…]     une seule « clinical link », courte, sans dose de médicament,
-//                                                 terminée par « Source: <organisme>, <page> (<date>). »
+//                                                 terminée par #source("CODE") (donnees/sources.csv)
 //     #piege[…] ×2 ou 3                           pièges d'examen
 //   ]
 //   Environ une page A4 par système (moins si dense). Uniquement les composants de la charte.
@@ -39,14 +39,14 @@
 === Physiology essentials
 - *Functions:* barrier against pathogens, injury, heat and light; temperature control; sensation; storage of water and fat; vitamin D; a front line for the immune system.
 - *Renewal:* new cells form in the stratum basale and are pushed upward, flattening and dying until they reach the stratum corneum.
-- *Pigment:* melanocytes in the basal layer make melanin, which helps protect the DNA of epidermal cells from UV damage.
-- *Heat:* evaporating sweat carries heat away; dermal arterioles dilate to shed heat and constrict in the cold to keep it.
+- *Pigment:* melanocytes in the basal layer make melanin, which helps protect the skin from damaging UV rays.
+- *Heat:* sweat reaches the surface through pores and cools the body as it evaporates; in the cold, dermal blood vessels constrict to keep heat.
 - *Vitamin D:* with UV light the epidermis turns a cholesterol derivative into vitamin D#sub[3]\; the liver and kidneys activate it, and it is needed to absorb calcium and phosphorus for bone.
 - *Sensation:* Merkel cells and dermal receptors sense touch, temperature and pain; cells around hair follicles sense pressure.
 
 #note-clinique(titre: "Pressure injuries")[
 Pressure injuries (bedsores) form when a person stays in one position too long, most often where bone lies close to the skin: heels, hips, ankles, elbows, back. People who are bedridden, use a wheelchair or cannot shift on their own are most at risk. Prevention: keep skin clean and dry, change position about every #k("A_REPOSITIONNEMENT_H", u: true), use pressure-relieving cushions and surfaces.
-Source: MedlinePlus, _Pressure Sores_ (updated Dec. 18, 2024).
+#source("MEDLINEPLUS_PRESSURE")
 ]
 
 #piege[The epidermis has *no blood vessels*. A scrape that bleeds has reached the dermis.]
@@ -68,8 +68,8 @@ Source: MedlinePlus, _Pressure Sores_ (updated Dec. 18, 2024).
 - *Remodeling:* osteoblasts lay down bone and osteoclasts resorb it; the balance between them keeps bone mass stable.
 
 #note-clinique(titre: "Osteoporosis")[
-Bones weaken and break more easily. It is usually silent until a fracture, most often of the hip, a vertebra or the wrist. Risk rises with female sex (especially after menopause), age over 50, a slim build, family history, long-term use of some medicines such as corticosteroids, smoking, heavy drinking and inactivity. Prevention relies on calcium and vitamin D in the diet and regular physical activity.
-Source: MedlinePlus, _Osteoporosis_ (updated Sept. 30, 2025).
+Bones weaken and break more easily. It is usually silent until a fracture, most often of the hip, a vertebra or the wrist. Risk rises with female sex (especially after menopause), age over #k("A_OSTEO_AGE"), a slim build, family history, long-term use of some medicines such as corticosteroids, smoking, heavy drinking and inactivity. Prevention relies on calcium and vitamin D in the diet and regular physical activity.
+#source("MEDLINEPLUS_OSTEO")
 ]
 
 #piege[*Osteoblasts* build, *osteoclasts* break down, *osteocytes* are the mature cells that stay in the matrix.]
@@ -88,11 +88,11 @@ Source: MedlinePlus, _Osteoporosis_ (updated Sept. 30, 2025).
 - *Excitation:* a fiber contracts only after a nerve impulse: ACh at the neuromuscular junction → action potential along the membrane and T-tubules → Ca²⁺ release.
 - *Cross-bridge cycle:* Ca²⁺ on troponin uncovers actin → myosin heads attach and pull (power stroke) → ATP lets them let go and re-cock → the cycle repeats while Ca²⁺ and ATP last.
 - *Relaxation:* ACh release stops, Ca²⁺ is pumped back into the sarcoplasmic reticulum, tropomyosin covers actin again.
-- *Energy:* creatine phosphate covers about #k("A_CP_SECONDES", u: true) of work; glycolysis covers short intense bursts; aerobic respiration supplies about #k("A_AEROBIE_PCT")% of the ATP at rest or in moderate activity.
+- *Energy:* creatine phosphate regenerates ATP for the first seconds of intense work; glycolysis covers short intense bursts; aerobic respiration supplies most of the ATP at rest or in moderate activity.
 
 #note-clinique(titre: "Myasthenia gravis")[
 An autoimmune disease: antibodies disrupt signal transmission at the neuromuscular junction, so muscles do not get the nerve signal. Weakness of voluntary muscles worsens with activity and improves with rest; drooping eyelids and double vision are often first. Watch chewing and swallowing, and breathing, since chest-wall weakness can impair it.
-Source: MedlinePlus Medical Encyclopedia, _Myasthenia gravis_ (reviewed Apr. 16, 2025).
+#source("MEDLINEPLUS_MG")
 ]
 
 #piege[ATP is needed to *release* myosin from actin, not only for the power stroke. No ATP means locked cross-bridges (rigor mortis), not relaxation.]
@@ -108,7 +108,7 @@ Source: MedlinePlus Medical Encyclopedia, _Myasthenia gravis_ (reviewed Apr. 16,
 
 === Physiology essentials
 - *Three functions:* sensory input from receptors → integration in the brain → motor output to effectors (muscles and glands).
-- *Resting potential:* about #k("A_RMP", u: true) inside a typical neuron, kept by the Na⁺/K⁺ pump, which uses ATP.
+- *Resting potential:* about #k("A_RMP", u: true) inside a typical neuron, set mainly by K⁺ leaking out, with the gradients kept up by the Na⁺/K⁺ pump (ATP).
 - *Action potential:* at threshold (about #k("A_SEUIL", u: true)) voltage-gated Na⁺ channels open and Na⁺ rushes in (depolarization); K⁺ then flows out (repolarization).
 - *Autonomic transmitters:* preganglionic fibers of both divisions release ACh; most sympathetic postganglionic fibers release norepinephrine; parasympathetic postganglionic fibers release ACh.
 - *Repair:* peripheral fibers have a neurilemma that helps them regenerate; CNS fibers lack it and do not regenerate.
@@ -117,7 +117,7 @@ Source: MedlinePlus Medical Encyclopedia, _Myasthenia gravis_ (reviewed Apr. 16,
 
 #note-clinique(titre: "Stroke")[
 Blood flow to part of the brain is lost and brain cells start dying within minutes. About #k("A_AVC_ISCHEMIQUE_PCT")% of strokes are ischemic (a clot); the rest are hemorrhagic (a vessel bursts). Warning signs come on suddenly: numbness or weakness of the face, arm or leg, especially on one side; confusion or trouble speaking; vision loss; trouble walking or balancing; severe headache with no known cause. Call 911 right away: quick treatment can save a life and improve recovery.
-Source: MedlinePlus, _Stroke_ (updated July 28, 2025).
+#source("MEDLINEPLUS_STROKE")
 ]
 
 #piege[The thalamus relays every sense to the cortex *except smell*.]
@@ -140,7 +140,7 @@ Source: MedlinePlus, _Stroke_ (updated July 28, 2025).
 
 #note-clinique(titre: "Low blood sugar (hypoglycemia)")[
 Blood glucose below #k("A_HYPO_MGDL", u: true) (#k("A_HYPO_MMOL", u: true)). In diabetes it can follow too much insulin in the blood, or exercise in people taking insulin or some other diabetes medicines. Signs: shaking, sweating, fast heartbeat, hunger, irritability, headache, blurred vision, unclear thinking; severe episodes cause seizures or loss of consciousness, and some people feel no warning at all. Treatment uses fast sugar (a sugary drink or food, or glucose tablets) per protocol; an episode that does not improve, or a person who becomes less alert, needs emergency care.
-Source: MedlinePlus Medical Encyclopedia, _Low blood sugar_ (reviewed Jan. 25, 2026).
+#source("MEDLINEPLUS_HYPO")
 ]
 
 #piege[ADH and oxytocin are *made in the hypothalamus*; the posterior pituitary only stores and releases them.]

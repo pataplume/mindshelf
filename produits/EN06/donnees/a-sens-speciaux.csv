@@ -1,6 +1,6 @@
 structure,fonction
-Taste (gustation),"Taste buds detect {v:A_GOUTS} tastes: sweet, salty, sour, bitter, umami; signals run in the facial, glossopharyngeal and vagus nerves"
+Taste (gustation),"Taste buds detect {v:A_GOUTS} basic tastes: sweet, salty, sour, bitter and savory (umami)"
 Smell (olfaction),"Olfactory neurons high in the nasal cavity send axons through the cribriform plate to the olfactory bulb; the only sense that reaches the cortex without a thalamic relay"
 Hearing (audition),"Eardrum and ossicles pass sound to the cochlea; hair cells of the organ of Corti respond, high pitches near the base, low near the apex; range about {v:A_AUDITION_MIN} to {v:A_AUDITION_MAX} Hz"
 Balance (equilibrium),"Utricle and saccule (otoliths): head position and linear acceleration; semicircular canals: rotation; vestibulocochlear nerve"
-Vision,"Retina: rods for dim light, three kinds of cones for color; the fovea gives the sharpest vision; the optic disc is the blind spot"
+Vision,"Retina: rods for dim light, {v:A_CONES} kinds of cones for color; the fovea gives the sharpest vision; the optic disc is the blind spot"

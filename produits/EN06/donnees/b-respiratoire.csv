@@ -1,8 +1,8 @@
 structure,fonction
 Nose and sinuses,"Nose hairs trap large inhaled particles; the paranasal sinuses produce mucus"
 Pharynx,"Serves both systems: air from the nose, air, food and water from the mouth; nasopharynx, oropharynx, laryngopharynx"
-Larynx,"Voice box (glottis): nine cartilages, the thyroid cartilage is the Adam's apple; vocal cords vibrate to make sound; the epiglottis keeps food out"
-Trachea,Hyaline cartilage keeps it from collapsing; divides into the right and left primary bronchi at the fifth thoracic vertebra
+Larynx,"Voice box; the glottis is the opening between the vocal cords; {v:B_LARYNX_CARTILAGES} cartilages, the thyroid cartilage is the Adam’s apple; vocal cords vibrate to make sound; the epiglottis keeps food out"
+Trachea,Hyaline cartilage keeps it from collapsing; divides into the right and left primary bronchi at vertebra T{v:B_TRACHEE_T}
 Bronchial tree,"Branches into smaller and smaller tubes; cartilage dwindles and is absent in the smallest bronchioles"
 Alveoli,Simple squamous epithelium: rapid diffusion of gases; site of gas exchange
 Lungs,"Right lung {v:B_LOBES_D} lobes, left lung {v:B_LOBES_G} lobes"

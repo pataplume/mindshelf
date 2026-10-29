@@ -1,0 +1,30 @@
+code,organisme,titre,url,date_consultation,date_revue_page,remarques
+SEER_AP,"U.S. National Cancer Institute, SEER Program",SEER Training Modules: Anatomy & Physiology,https://training.seer.cancer.gov/anatomy/,2026-10-29,,"Site d'une agence fédérale américaine ; A-VERIFIER : aucune mention de licence ni de domaine public trouvée sur les pages lues. Référence factuelle seulement, aucun texte ni tableau repris"
+SEER_MELANOMA,"U.S. National Cancer Institute, SEER Program","SEER Training Modules: Melanoma of the Skin, Anatomy",https://training.seer.cancer.gov/melanoma/anatomy/,2026-10-29,,Mêmes réserves de licence que SEER_AP
+SEER_LEUK,"U.S. National Cancer Institute, SEER Program","SEER Training Modules: Leukemia, Anatomy",https://training.seer.cancer.gov/leukemia/anatomy/,2026-10-29,,Mêmes réserves de licence que SEER_AP
+NIDDK_DIG,"National Institute of Diabetes and Digestive and Kidney Diseases (NIH)",Your Digestive System & How It Works,https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works,2026-10-29,,
+NIDDK_REIN,"National Institute of Diabetes and Digestive and Kidney Diseases (NIH)",Your Kidneys & How They Work,https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work,2026-10-29,,
+NIH_ODS_B12,NIH Office of Dietary Supplements,"Vitamin B12, Fact Sheet for Health Professionals",https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/,2026-10-29,,
+MEDLINEPLUS_PRESSURE,MedlinePlus,Pressure Sores,https://medlineplus.gov/pressuresores.html,2026-10-29,2024-12-18,
+MEDLINEPLUS_OSTEO,MedlinePlus,Osteoporosis,https://medlineplus.gov/osteoporosis.html,2026-10-29,2025-09-30,
+MEDLINEPLUS_MG,MedlinePlus,Myasthenia gravis,https://medlineplus.gov/ency/article/000712.htm,2026-10-29,2025-04-16,Encyclopédie (contenu A.D.A.M.) : usage personnel non commercial ; aucune phrase reprise
+MEDLINEPLUS_STROKE,MedlinePlus,Stroke,https://medlineplus.gov/stroke.html,2026-10-29,2025-07-28,
+MEDLINEPLUS_HYPO,MedlinePlus,Low blood sugar,https://medlineplus.gov/ency/article/000386.htm,2026-10-29,2026-01-25,Encyclopédie (contenu A.D.A.M.) : aucune phrase reprise
+MEDLINEPLUS_HEMOLYTIC,MedlinePlus,Hemolytic anemia,https://medlineplus.gov/ency/article/000571.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.) : aucune phrase reprise
+MEDLINEPLUS_HF,MedlinePlus,Heart failure,https://medlineplus.gov/ency/article/000158.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.) : aucune phrase reprise
+MEDLINEPLUS_IMMUNE,MedlinePlus,Immune response,https://medlineplus.gov/ency/article/000821.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.) : aucune phrase reprise
+MEDLINEPLUS_SPLEEN,MedlinePlus,Spleen removal,https://medlineplus.gov/ency/article/002944.htm,2026-10-29,2025-01-21,Encyclopédie (contenu A.D.A.M.) : note reformulée en v2 (m6)
+MEDLINEPLUS_PNEUMO,MedlinePlus,Collapsed lung (pneumothorax),https://medlineplus.gov/ency/article/000087.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.) : aucune phrase reprise
+MEDLINEPLUS_ALDO,MedlinePlus,Aldosterone blood test,https://medlineplus.gov/ency/article/003704.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_SODIUM,MedlinePlus,Sodium blood test,https://medlineplus.gov/ency/article/003481.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_POTASSIUM,MedlinePlus,Potassium blood test,https://medlineplus.gov/ency/article/003484.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_HYPERK,MedlinePlus,High potassium level,https://medlineplus.gov/ency/article/001179.htm,2026-10-29,,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_LH,MedlinePlus,Luteinizing hormone (LH) blood test,https://medlineplus.gov/ency/article/003708.htm,2026-10-29,2025-08-18,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_LH_TEST,MedlinePlus,Luteinizing Hormone (LH) Levels Test,https://medlineplus.gov/lab-tests/luteinizing-hormone-lh-levels-test/,2026-10-29,2023-12-05,Page Medical Tests (NLM)
+MEDLINEPLUS_FSH,MedlinePlus,Follicle-stimulating hormone (FSH) blood test,https://medlineplus.gov/ency/article/003710.htm,2026-10-29,2025-08-18,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_ECTOPIC,MedlinePlus,Ectopic pregnancy,https://medlineplus.gov/ency/article/000895.htm,2026-10-29,2026-03-17,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_PULSE,MedlinePlus,Pulse,https://medlineplus.gov/ency/article/003399.htm,2026-10-29,2025-01-01,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_AUDIO,MedlinePlus,Audiometry,https://medlineplus.gov/ency/article/003341.htm,2026-10-29,2026-04-29,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_TASTE,MedlinePlus,Taste - impaired,https://medlineplus.gov/ency/article/003050.htm,2026-10-29,2025-01-29,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_SKIN_AGING,MedlinePlus,Aging changes in skin,https://medlineplus.gov/ency/article/004014.htm,2026-10-29,2024-07-15,Encyclopédie (contenu A.D.A.M.)
+MEDLINEPLUS_SKIN_LAYERS,MedlinePlus,Skin layers,https://medlineplus.gov/ency/imagepages/8912.htm,2026-10-29,2026-04-09,Encyclopédie (contenu A.D.A.M.)

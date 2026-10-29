@@ -73,3 +73,31 @@
     ..lignes.map(l => ([*#remplir(l.structure)*], remplir(l.fonction))).flatten(),
   )
 }
+
+// ── Sources des notes cliniques : ../donnees/sources.csv (une ligne par document) ──
+// #source("CODE") ou #source("CODE1", "CODE2") écrit « Source: <organisme>, _<titre>_ (consulted <date>). »
+// Convention unique : date de consultation (colonne date_consultation, AAAA-MM-JJ).
+#let sources = {
+  let d = (:)
+  for l in lire("sources.csv") {
+    if l.code in d { panic("EN06 : source " + l.code + " en double dans donnees/sources.csv") }
+    d.insert(l.code, l)
+  }
+  d
+}
+#let _mois = ("Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec.")
+#let date-us(iso) = {
+  let p = iso.split("-")
+  if p.len() != 3 { panic("EN06 : date " + iso + " hors format AAAA-MM-JJ") }
+  _mois.at(int(p.at(1)) - 1) + " " + str(int(p.at(2))) + ", " + p.at(0)
+}
+#let source(..codes) = {
+  let ls = codes.pos().map(c => {
+    if c not in sources { panic("EN06 : source " + c + " absente de donnees/sources.csv") }
+    sources.at(c)
+  })
+  let org = ls.map(l => l.organisme).dedup()
+  let dates = ls.map(l => l.date_consultation).dedup()
+  if org.len() != 1 or dates.len() != 1 { panic("EN06 : source() n'accepte qu'un organisme et une date") }
+  [Source: #org.at(0), #ls.map(l => emph(l.titre)).join([ and ]) (consulted #date-us(dates.at(0))).]
+}
