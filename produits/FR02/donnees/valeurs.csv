@@ -21,7 +21,7 @@ oms_indications,5,,OMS : nombre d'indications de l'hygiène des mains
 masque_norme,14683,,Norme EN des masques à usage médical
 aes_desinfection_min,5,min,AES : durée minimale de désinfection
 aes_rincage_min,5,min,AES : durée minimale de rinçage d'une muqueuse
-javel_pct,2.6,%,AES : eau de Javel à 2,6 % de chlore actif
+javel_pct,2.6,%,"AES : eau de Javel à 2,6 % de chlore actif"
 javel_dilution,5,,AES : dilution au 1/5e
 alcool_degre,70,°,AES : alcool à 70°
 aes_avis_h,1,h,AES : avis médical dans l'heure
@@ -34,3 +34,9 @@ fr_haut,20,/min,FR de repos de l'adulte : borne haute (A-VERIFIER)
 spo2_bas,95,%,SpO2 en air ambiant : repère bas (A-VERIFIER)
 t_bas,36.5,°C,Température : borne basse (A-VERIFIER)
 t_haut,37.5,°C,Température : borne haute (A-VERIFIER)
+echelle_zero,0,,"Origine des échelles de douleur (EVA, EN, EVS, Algoplus)"
+javel_num,1,,AES : numérateur de la dilution au 1/5e
+glasgow_item_min,1,,Glasgow : cotation minimale de chaque item
+glasgow_y_max,4,,"Glasgow : cotation maximale, yeux"
+glasgow_v_max,5,,"Glasgow : cotation maximale, verbal"
+glasgow_m_max,6,,"Glasgow : cotation maximale, moteur"

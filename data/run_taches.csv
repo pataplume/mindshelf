@@ -47,7 +47,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 46,R05,VERIFICATION,VERIFICATEUR,FR02,,Vérification indépendante,A_FAIRE
 47,R05,VERIFICATION,VERIFICATEUR,FR03,,Vérification indépendante,EN_COURS
 48,R05,CONDITIONNEMENT,CONDITIONNEUR,FR02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
-49,R05,CONDITIONNEMENT,CONDITIONNEUR,FR03,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
+49,R05,CONDITIONNEMENT,CONDITIONNEUR,FR03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 50,R06,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 51,R06,PRODUCTION,PRODUCTEUR,EN05,,Fiche rythmes ECG (tracés dessinés en code),A_FAIRE
 52,R06,PRODUCTION,PRODUCTEUR,EN07,,Fiche interprétation des gaz du sang,A_FAIRE

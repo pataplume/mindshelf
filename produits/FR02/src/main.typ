@@ -82,6 +82,8 @@
 #meme(ex("EX05").x, val-brut("glasgow_max"), "EX05 Glasgow maximum")
 #for (i, k) in items-g.zip(("Y", "V", "M")) {
   meme(calc.max(..pts(i)), ex("EX05").e.at(k), "EX05 " + k)
+  meme(calc.max(..pts(i)), val-brut("glasgow_" + lower(k) + "_max"), "Glasgow " + k + " maximum")
+  meme(calc.min(..pts(i)), val-brut("glasgow_item_min"), "Glasgow " + k + " minimum")
   if int(ex("EX01").e.at(k)) not in pts(i) { panic("FR02 : EX01 : " + k + " hors cotation") }
 }
 #meme(braden.len(), val-brut("braden_items"), "nombre d'items de Braden")
@@ -130,19 +132,21 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
   Recontrôler la mesure (matériel, position, repos), comparer aux valeurs précédentes du.de la patient.e et à l'état clinique, puis *alerter sans attendre* l'infirmier.e référent.e ou le.la médecin selon le protocole du service. Le recontrôle ne retarde jamais l'alerte devant un.e patient.e qui se dégrade.
 ]
 
-#piege[Un chiffre « normal » ne rassure pas seul : la tendance (valeurs successives) et l'aspect du.de la patient.e comptent autant.]
+#piege[Un chiffre « normal » ne rassure pas seul : la tendance (valeurs successives) et l'aspect du.de la patient.e comptent autant. Une cible prescrite pour ce.tte patient.e (SpO₂ notamment) passe avant le repère du tableau.]
 
 = Échelles de la douleur
 
 #tableau(
   columns: (auto, 1fr),
   align: (left, left),
-  [Échelle], [Cotation et seuil (indicateur HAS)],
-  [EVA (auto-évaluation)], [Réglette de 0 à #valu("eva_max_cm") (0 à #valu("eva_max_mm")). Prise en charge si ≥ #val("douleur_seuil")/#val("en_max") (≥ #val("douleur_seuil_100")/#val("eva_max_mm")).],
-  [EN (auto-évaluation)], [Note de 0 à #val("en_max") donnée par le.la patient.e. Même seuil que l'EVA.],
-  [EVS (auto-évaluation)], [0 absente, 1 faible, 2 modérée, 3 intense, #val("evs_max") extrêmement intense. Prise en charge si ≥ #val("evs_seuil").],
-  [Algoplus (hétéro-évaluation, personne âgée non communicante)], [Score de 0 à #val("algoplus_max"). Prise en charge si ≥ #val("algoplus_seuil").],
+  [Échelle], [Cotation et seuil de prise en charge (indicateur HAS)],
+  [EVA], [Auto-évaluation. Réglette de #val("echelle_zero") à #valu("eva_max_cm") (#val("echelle_zero") à #valu("eva_max_mm")). Prise en charge si ≥ #val("douleur_seuil")/#val("en_max") (≥ #val("douleur_seuil_100")/#val("eva_max_mm")).],
+  [EN], [Auto-évaluation. Note de #val("echelle_zero") à #val("en_max") donnée par le.la patient.e. Même seuil que l'EVA.],
+  [EVS], [Auto-évaluation (échelle verbale simple). De #val("echelle_zero") (absente) à #val("evs_max") (extrêmement intense) : absente, faible, modérée, intense, extrêmement intense. Prise en charge si ≥ #val("evs_seuil").],
+  [Algoplus], [Hétéro-évaluation, personne âgée qui ne peut pas s'auto-évaluer. Score de #val("echelle_zero") à #val("algoplus_max"). Prise en charge si ≥ #val("algoplus_seuil").],
 )
+
+Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se trace et se réévalue ; la conduite est celle du protocole du service.
 
 #piege[Choisir *une* échelle et la garder pour suivre l'évolution : un score d'EVA et un score d'EN ne se comparent pas d'une prise à l'autre. Tracer l'échelle utilisée avec le score.]
 
@@ -152,7 +156,12 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
   columns: (auto, auto, 1fr),
   align: (left, right, left),
   [Item], [Points], [Meilleure réponse obtenue],
-  ..glasgow.map(l => ([#l.item], [#nombre(l.points)], [#l.reponse])).flatten(),
+  ..items-g.map(i => {
+    let ls = glasgow.filter(l => l.item == i)
+    ls.enumerate().map(((k, l)) => (
+      if k == 0 { (table.cell(rowspan: ls.len())[*#i*],) } else { () }
+    ) + ([#nombre(l.points)], [#l.reponse])).flatten()
+  }).flatten(),
 )
 
 #formule[
@@ -202,7 +211,7 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
 
 = Précautions standard
 
-#formule(titre: "Champ (SF2H 2017)")[
+#formule(titre: "Champ (SF2H)")[
   Pour tout soin, en tout lieu, pour tout.e patient.e, quel que soit son statut infectieux.
 ]
 
@@ -219,8 +228,8 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
   align: (left, left),
   [Mesure], [Repère],
   [Mains], [Friction hydro-alcoolique : technique de référence, gants ou non.],
-  [Gants], [Pas de gants pour un contact avec une peau saine.],
-  [Masque], [Masque à usage médical, au minimum de type I (norme EN #code("masque_norme")).],
+  [Gants], [Si risque de contact avec du sang, un liquide biologique, une muqueuse ou une peau lésée ; pas de gants pour un contact avec une peau saine.],
+  [Masque, lunettes], [Masque à usage médical (au minimum de type I, norme EN #code("masque_norme")) et lunettes si risque de projection ; masque pour le.la patient.e qui tousse.],
   [Matériel], [Matériel de sécurité et à usage unique ; conduite AES connue de tous.],
 )
 
@@ -240,17 +249,16 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
 = Accident d'exposition au sang (AES)
 
 #encadre(titre: "Premiers soins, tout de suite (INRS)")[
-  *Piqûre, coupure, peau lésée :* ne pas faire saigner ; nettoyer à l'eau et au savon, rincer ; désinfecter au moins #valu("aes_desinfection_min") (Dakin, ou eau de Javel à #val("javel_pct") % de chlore actif diluée au 1/#val("javel_dilution")#super[e] ; à défaut polyvidone iodée en solution dermique ou alcool à #val("alcool_degre")°).\
+  *Piqûre, coupure, peau lésée :* ne pas faire saigner ; nettoyer à l'eau et au savon, rincer ; désinfecter au moins #valu("aes_desinfection_min") (Dakin, ou eau de Javel à #val("javel_pct") % de chlore actif diluée au #val("javel_num")/#val("javel_dilution")#super[e] ; à défaut polyvidone iodée en solution dermique ou alcool à #val("alcool_degre")°).\
   *Projection sur une muqueuse (œil, bouche, nez) :* rincer abondamment au moins #valu("aes_rincage_min") au sérum physiologique ou à l'eau.
 ]
 
 #note-clinique(titre: "Délais")[
-  *Dans l'heure :* avis médical (référent AES du service ou urgences) pour évaluer le risque ; un traitement post-exposition, s'il est indiqué, débute idéalement dans les #valu("aes_tpe_h").
-  *Dans les #valu("aes_declaration_h") :* informer le.la responsable et l'IFSI, déclarer l'accident, informer la médecine du travail.
+  *Dans l'heure :* avis médical, selon la procédure AES de l'établissement, pour évaluer le risque infectieux ; un traitement post-exposition, s'il est indiqué, débute idéalement dans les #valu("aes_tpe_h").
+  *Dans les #valu("aes_declaration_h") :* informer sa hiérarchie (en stage : le service et l'IFSI), déclarer l'accident du travail, suivre les recommandations médicales, informer le.la médecin du travail.
 ]
 
 #piege[Ne pas attendre la fin du soin ou du poste pour consulter : le délai compte à partir de l'accident.]
 
-#v(0.3em)
-_Sources : HAS (HTA 2016, indicateur douleur IQSS 2023, SAED 2014), SF2H (précautions standard 2017, voie respiratoire 2013), OMS (hygiène des mains, 2009), INRS (affiche AA 775), AP-HP (dossier de soins, 2014), arrêtés IFSI de 2009 et 2026._
+_Sources : HAS (HTA de l'adulte, indicateur douleur IQSS, guide SAED), SF2H (précautions standard ; transmission par voie respiratoire), OMS (5 indications de l'hygiène des mains), INRS (affiche AES « En urgence : premiers soins à faire »), AP-HP (dossier de soins), arrêtés relatifs au diplôme d'État d'infirmier ; détail dans les références du produit._
 ]
