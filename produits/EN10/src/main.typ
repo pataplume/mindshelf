@@ -437,6 +437,8 @@ Observation → question → *hypothesis* (testable, falsifiable prediction) →
 ]
 Moving to a smaller unit gives a bigger number (multiply); moving to a larger unit gives a smaller number (divide).
 
+// Pièges en colonne droite de la dernière page (m10 du rapport v1 : colonne vide).
+#colbreak()
 = Common Traps
 
 #piege[

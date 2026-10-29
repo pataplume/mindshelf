@@ -1,5 +1,5 @@
 recto,verso,tags
-TEAS 7 Science: scored items per sub-area,"Anatomy & physiology 18, biology 9, chemistry 8, scientific reasoning 9 (44 scored; plus 6 unscored pretest items, 60 min), per ATI's TEAS 7 content outline.",EN10 overview
+TEAS 7 Science: scored items per sub-area,"Anatomy & physiology 18, biology 9, chemistry 8, scientific reasoning 9 (44 scored; plus {v:SCI_PRETEST} unscored pretest items, {v:SCI_MINUTES} min), per ATI's TEAS 7 content outline and exam details.",EN10 overview
 Describe the anatomical position,"Standing upright, facing forward, arms at the sides, <b>palms forward</b>, feet parallel.",EN10 anatomy orientation
 Proximal vs distal,"Proximal = closer to the trunk or a limb's attachment; distal = farther from it.",EN10 anatomy orientation
 Which plane divides the body into right and left parts?,"Sagittal plane (midsagittal if the halves are equal).",EN10 anatomy orientation
@@ -9,15 +9,16 @@ Which heart chamber has the thickest wall?,"The <b>left ventricle</b>: it pumps 
 Cardiac conduction pathway,"SA node → AV node → AV bundle (bundle of His) → bundle branches → Purkinje fibers.",EN10 anatomy cardiovascular
 Which vessels carry deoxygenated blood away from the heart?,"The <b>pulmonary arteries</b> (arteries carry blood away from the heart, whatever its O<sub>2</sub> content).",EN10 anatomy cardiovascular
 Cardiac output formula,"CO = heart rate × stroke volume.",EN10 anatomy cardiovascular
+Universal red-cell donor and universal recipient,"Donor: <b>O−</b> (no A, B or D antigen on its red cells). Recipient: <b>AB+</b> (no anti-A or anti-B, and Rh-positive). The Rh factor counts as well as ABO.",EN10 anatomy cardiovascular
 Where does gas exchange occur in the lungs?,"In the <b>alveoli</b>, by diffusion across the respiratory membrane; surfactant lowers surface tension.",EN10 anatomy respiratory
 What happens when the diaphragm contracts?,"It flattens: chest volume increases, pressure falls, air flows in (inspiration).",EN10 anatomy respiratory
-Lobes of the lungs,"Right lung: 3 lobes. Left lung: 2 lobes.",EN10 anatomy respiratory
+Lobes of the lungs,"Right lung: {v:LOBES_D} lobes. Left lung: {v:LOBES_G} lobes.",EN10 anatomy respiratory
 Where does protein digestion begin?,"In the <b>stomach</b> (HCl and pepsin).",EN10 anatomy digestive
 Where does most nutrient absorption occur?,"In the <b>small intestine</b>; villi and microvilli enlarge its surface.",EN10 anatomy digestive
 Role of bile,"Made by the liver, stored in the gallbladder; it <b>emulsifies fats</b>.",EN10 anatomy digestive
 Sympathetic vs parasympathetic,"Sympathetic: fight or flight (heart rate up, pupils and airways dilate). Parasympathetic: rest and digest.",EN10 anatomy nervous
 Function of the cerebellum,"Coordination, balance and posture.",EN10 anatomy nervous
-Number of cranial and spinal nerves,"12 pairs of cranial nerves, 31 pairs of spinal nerves.",EN10 anatomy nervous
+Number of cranial and spinal nerves,"{v:NERFS_CRANIENS} pairs of cranial nerves, {v:NERFS_SPINAUX} pairs of spinal nerves.",EN10 anatomy nervous
 Tendon vs ligament,"Tendon: muscle to bone. Ligament: bone to bone.",EN10 anatomy musculoskeletal
 Osteoblasts vs osteoclasts,"Osteoblasts build bone; osteoclasts break bone down.",EN10 anatomy musculoskeletal
 Three types of muscle,"Skeletal (voluntary, striated), cardiac (involuntary, striated, intercalated discs), smooth (involuntary, not striated).",EN10 anatomy musculoskeletal
@@ -38,7 +39,7 @@ Order of mitosis phases,"Prophase, metaphase, anaphase, telophase (PMAT), then c
 DNA vs RNA,"DNA: deoxyribose, thymine, double helix. RNA: ribose, uracil, usually single-stranded.",EN10 biology dna
 Transcription vs translation,"Transcription: DNA → mRNA in the nucleus. Translation: mRNA → protein at the ribosome.",EN10 biology dna
 Start and stop codons,"Start: AUG (methionine). Stop: UAA, UAG, UGA.",EN10 biology dna
-Aa × Aa: phenotype and genotype ratios,"Phenotype 3 : 1; genotype 1 AA : 2 Aa : 1 aa.",EN10 biology genetics
+Aa × Aa: phenotype and genotype ratios,"Phenotype {x:EX13} : {x:EX11}; genotype {x:EX11} AA : {x:EX12} Aa : {x:EX11} aa.",EN10 biology genetics
 Codominance vs incomplete dominance,"Codominance: both alleles expressed (blood type AB). Incomplete dominance: blended phenotype (red × white → pink).",EN10 biology genetics
 Monomer of proteins,"Amino acids, joined by peptide bonds.",EN10 biology macromolecules
 How do enzymes speed up reactions?,"They lower the activation energy; they are not used up; heat and extreme pH denature them.",EN10 biology macromolecules
@@ -53,13 +54,13 @@ How do you balance an equation?,"Change coefficients only, never subscripts, unt
 Four ways to speed up a reaction,"Raise the temperature, raise the concentration, increase surface area, add a catalyst.",EN10 chemistry reactions
 Molarity formula,"M = moles of solute / liters of solution.",EN10 chemistry solutions
 Dilution equation,"C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>.",EN10 chemistry solutions
-A solution with pH 3 vs pH 6,"pH 3 has 1000 times more H<sup>+</sup>: each pH unit is a tenfold change.",EN10 chemistry acids
-Acid vs base (pH and litmus),"Acid: pH &lt; 7, turns blue litmus red. Base: pH &gt; 7, turns red litmus blue.",EN10 chemistry acids
+A solution with pH 3 vs pH 6,"pH 3 has {x:EX18} times more H<sup>+</sup>: each pH unit is a tenfold change.",EN10 chemistry acids
+Acid vs base (pH and litmus),"Acid: pH &lt; {v:PH_NEUTRE}, turns blue litmus red. Base: pH &gt; {v:PH_NEUTRE}, turns red litmus blue.",EN10 chemistry acids
 Independent vs dependent variable,"Independent: changed by the investigator (x-axis). Dependent: measured in response (y-axis).",EN10 reasoning method
 What is a control group?,"The group that receives no treatment, used as a baseline for comparison.",EN10 reasoning method
 Accuracy vs precision,"Accuracy: close to the true value. Precision: repeated results close to each other.",EN10 reasoning method
 Which graph shows parts of a whole?,"A pie chart.",EN10 reasoning graphs
 How to read a graduated cylinder,"At eye level, at the bottom of the meniscus.",EN10 reasoning measurement
-"Metric prefixes kilo, centi, milli, micro","kilo = 1000; centi = 0.01; milli = 0.001; micro = 0.000001 of the base unit.",EN10 reasoning measurement
-Convert °F to °C,"°C = (°F − 32) / 1.8. Example: 98.6 °F = 37 °C.",EN10 reasoning measurement
-1 inch in centimeters,"1 in = 2.54 cm (exact).",EN10 reasoning measurement
+"Metric prefixes kilo, centi, milli, micro","kilo = {v:P_KILO}; centi = {v:P_CENTI}; milli = {v:P_MILLI}; micro = {v:P_MICRO} of the base unit.",EN10 reasoning measurement
+Convert °F to °C,"°C = (°F − {v:F_OFFSET}) / {v:F_RATIO}. Example: {v:T_CORPS_F} °F = {x:EX07} °C.",EN10 reasoning measurement
+1 inch in centimeters,"1 in = {v:IN_CM} cm (exact).",EN10 reasoning measurement

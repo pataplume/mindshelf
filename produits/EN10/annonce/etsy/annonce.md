@@ -23,7 +23,7 @@ Instant digital download: nothing is shipped.
 - PDF, US Letter: 4 pages, color
 - PDF, black and white (A4): 4 pages, for grayscale printing
 - PDF, tablet: 9 landscape pages for reading on a tablet
-- Anki deck (.apkg): 64 flashcards for the Anki flashcard app
+- Anki deck (.apkg): 65 flashcards for the Anki flashcard app
 
 WHAT'S INSIDE
 - The four TEAS 7 Science sub-areas, with their scored items based on the published ATI TEAS 7 content outline: anatomy & physiology 18, biology 9, chemistry 8, scientific reasoning 9
@@ -31,8 +31,8 @@ WHAT'S INSIDE
 - Biology: organelles, membrane transport and tonicity, cellular respiration and photosynthesis, mitosis vs meiosis, DNA vs RNA, protein synthesis and the genetic code, Punnett squares, macromolecules, enzymes, microorganisms and modes of transmission
 - Chemistry: atomic structure and the periodic table, bonds, states of matter, phase changes, density, gas laws, reaction types and balancing, reaction rates, solutions, moles and concentration, acids, bases and pH
 - Scientific reasoning: scientific method and variables, judging an investigation, accuracy vs precision, graph types, measuring tools, metric prefixes and unit conversions
-- Worked calculations: unit and temperature conversions, Punnett ratios, pH, molarity, dilution, percent solutions, density, gas law, slope, mean, percent error
-- 15 common traps
+- Worked calculations: unit and temperature conversions, Punnett ratios, cardiac output, pH, molar mass and moles, molarity, dilution, percent solutions, density, gas law, slope, mean, percent error
+- 16 common traps
 
 WHO IT'S FOR
 TEAS 7 candidates reviewing the Science section. These sheets review core facts for each sub-area; they are not a complete course and contain no actual test questions.
