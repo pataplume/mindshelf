@@ -2,7 +2,7 @@
 SPI Ultrasound Physics — Express Review Sheets
 
 # Accroche
-Two pages of ultrasound physics for SPI review: formulas, rules, examples, traps.
+Two pages of ultrasound physics for SPI review: formulas, examples, exam traps.
 
 # Description
 What you get: two pages of ultrasound physics review sheets as four PDFs (A4 and US Letter in color, a black-and-white A4 version for grayscale printing, and a 5-page landscape version for tablets), plus an Anki deck of 27 flashcards.
