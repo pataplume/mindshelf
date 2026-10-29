@@ -1,9 +1,10 @@
-// FR03 : Bilan biologique — normes françaises (marché FR, marque Clairance). Fiche d'une page, risque IA FAIBLE,
+// FR03 : Bilan biologique — valeurs usuelles françaises (marché FR, marque Clairance). Fiche d'une page, risque IA FAIBLE,
 // relecture métier par une médecin stagiaire avant validation (donnees/statut-methode.md). Adaptée de EN08 v2
 // (pas une traduction) : valeurs usuelles françaises en unités SI, lues telles qu'écrites dans la source
 // (donnees/examens.csv, colonne source_code), sans conversion US.
 // Contrat : titre, marque, version, langue, format, variante, référentiel et mentions arrivent par sys.inputs.
-// Aucun nombre n'est tapé ici : intervalles (examens.csv), seuils DFG (valeurs.csv), exemples recalculés
+// Aucun nombre n'est tapé ici : intervalles (examens.csv), seuils DFG et kaliémie (valeurs.csv), sources et années
+// (sources.csv), exemples recalculés
 // (exemples.csv, échec si écart), ligne d'UE propre à la variante (variantes.csv).
 #import "/charte/modele.typ": *
 
@@ -57,6 +58,20 @@
 }
 #let val(cle) = { let _ = val-brut(cle); nombre(valeurs.at(cle).valeur) }
 
+// ── Sources (donnees/sources.csv) : nom, date et année affichés en tête et en pied ──
+#let sources = csv("../donnees/sources.csv", row-type: dictionary)
+#let src(code) = {
+  let r = sources.filter(l => l.code == code)
+  if r.len() != 1 { panic("FR03 : source « " + code + " » absente ou en double dans donnees/sources.csv") }
+  r.first()
+}
+#let pied-source(l) = {
+  let morceaux = (l.auteur, "« " + l.titre + " »")
+  if l.version != "" { morceaux.push(l.version) }
+  if l.complement != "" { morceaux.push(l.complement) }
+  morceaux.join(", ") + " (" + l.date + ")"
+}
+
 // ── Examens ──
 #let groupes = csv("../donnees/groupes.csv", row-type: dictionary)
 #let examens = csv("../donnees/examens.csv", row-type: dictionary)
@@ -68,6 +83,7 @@
 #for l in examens {
   if groupes.filter(g => g.code == l.groupe_code).len() != 1 { panic("FR03 : " + l.cle + " : groupe inconnu " + l.groupe_code) }
   if l.source_code == "" { panic("FR03 : " + l.cle + " : source_code vide") }
+  let _ = src(l.source_code)
 }
 // Nombre « tel qu'écrit » : garde les zéros de la source (2,20 ; 0,80 ; 3,90).
 #let ecrit(s) = {
@@ -99,6 +115,8 @@
 }
 #meme(float(exa("HBA1C").haut) * val-brut("pct"), exa("HBA1C").autre_haut, "HbA1c fraction → %")
 #meme(val-brut("dfg_seuil_mrc3"), val-brut("dfg_stade2_bas"), "seuil stade 3 = borne basse du stade 2")
+#meme(val-brut("dfg_normal") - 1, val-brut("dfg_stade2_haut"), "stade 1 (≥) = borne haute du stade 2 + 1")
+#if val-brut("k_hyperkaliemie") < float(exa("K").haut) { panic("FR03 : seuil d'hyperkaliémie sous la borne haute de K") }
 
 // ── Ligne propre à la variante (référentiel 2009 ou 2026) ──
 #let ligne-variante(cle) = {
@@ -113,7 +131,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Valeurs usuelles de l'adulte en unités SI, cible INR sous AVK fixée par le prescripteur, pièges d'unités et repères infirmiers, pour réviser en IFSI],
+  sous-titre: [Valeurs usuelles de l'adulte en unités SI, cible INR sous AVK fixée par le.la prescripteur.rice, pièges d'unités et repères infirmiers, pour réviser en IFSI],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -124,7 +142,8 @@
 _#ligne-variante("ligne_ue")_
 
 #piege(titre: "Les valeurs usuelles varient selon les laboratoires")[
-  Interpréter un résultat avec les valeurs imprimées sur *le compte rendu du laboratoire*. Celles-ci viennent d'un référentiel national publié (adulte), pour réviser.
+  #let s = src(exa("NA").source_code)
+  Interpréter un résultat avec les valeurs imprimées sur *le compte rendu du laboratoire* : c'est lui qui fait foi. Les valeurs usuelles de cette fiche, pour réviser, viennent d'une liste nationale de l'adulte publiée en *#s.annee* (#s.auteur, « #s.titre », #s.complement).
 ]
 
 #colonnes(2)[
@@ -146,13 +165,13 @@ _#ligne-variante("ligne_ue")_
   )).flatten(),
 )
 
-_Milieu : Pl plasma, Se sérum, Sg sang. « Autre écriture » : seconde unité donnée par la source (équivalence arrondie). G/L = 10#super[9]/L ; T/L = 10#super[12]/L. Valeurs indicatives : elles varient selon le laboratoire._
+_Milieu : Pl plasma, Se sérum, Sg sang. « Autre écriture » : seconde unité donnée par la source (équivalence arrondie). G/L = 10#super[9]/L ; T/L = 10#super[12]/L. Valeurs de #src(exa("NA").source_code).annee, indicatives : elles varient selon le laboratoire._
 
 = Fonction rénale : le DFG estimé
 
 #formule[
-  Le *DFG estimé* (DFGe) se calcule à partir de la créatininémie (formule CKD-EPI chez l'adulte, recommandée par la HAS) et s'exprime en mL/min/1,73 m².
-  DFGe < #val("dfg_seuil_mrc3") pendant plus de #val("mrc_mois") mois : maladie rénale chronique de stade 3 ou plus. Au-dessus de #val("dfg_normal") : DFG normal ou augmenté (stade 1 si marqueurs d'atteinte rénale).
+  Le *DFG estimé* (DFGe) se calcule à partir de la créatininémie (formule CKD-EPI chez l'adulte) et s'exprime en mL/min/1,73 m².
+  DFGe <~#val("dfg_seuil_mrc3") pendant plus de #val("mrc_mois") mois : maladie rénale chronique de stade 3 ou plus. DFGe ≥~#val("dfg_normal") : DFG normal ou augmenté (stade 1 si marqueurs d'atteinte rénale).
 ]
 
 = Pièges d'unités
@@ -178,12 +197,13 @@ _Milieu : Pl plasma, Se sérum, Sg sang. « Autre écriture » : seconde unité 
 = Repères infirmiers
 
 #note-clinique(titre: "Kaliémie élevée et hémolyse")[
-  *Signaler d'abord* une kaliémie élevée, selon le protocole du service. Une hémolyse du prélèvement peut donner une fausse hyperkaliémie : un contrôle au laboratoire, sans garrot, peut être demandé. Il ne retarde pas le signalement.
+  Kaliémie élevée = au-dessus de l'intervalle du compte rendu du laboratoire. Par prudence, *la signaler d'abord*, selon le protocole du service. L'hyperkaliémie se définit par un potassium plasmatique >~#val("k_hyperkaliemie") mmol/L. Une hémolyse du prélèvement peut donner une fausse hyperkaliémie : un nouveau prélèvement de contrôle, sans garrot, peut être prescrit. Ce contrôle ne retarde pas le signalement.
 ]
 
 #note-clinique(titre: "INR sous AVK")[
-  La cible est fixée par le prescripteur selon l'indication : #ecrit(exa("INR_AVK").bas) à #ecrit(exa("INR_AVK").haut) le plus souvent, #ecrit(exa("INR_VALVE").bas) à #ecrit(exa("INR_VALVE").haut) pour certaines valves mécaniques. Au-dessus de la cible : risque de saignement (surdosage possible), à signaler selon le protocole.
+  La cible est fixée par le.la prescripteur.rice selon l'indication : #ecrit(exa("INR_AVK").bas) à #ecrit(exa("INR_AVK").haut) le plus souvent, #ecrit(exa("INR_VALVE").bas) à #ecrit(exa("INR_VALVE").haut) pour certaines atteintes valvulaires (prothèse mécanique mitrale notamment).
+  *Au-dessus de la cible* : surdosage, risque hémorragique. *Au-dessous de la cible* : effet anticoagulant insuffisant, risque de thrombose. Dans les deux cas, signaler selon le protocole.
 ]
 
-_Sources : Conseil scientifique des concours de l'internat en pharmacie, « Valeurs biologiques usuelles », V8 (19.11.2009), diffusé par le CNG ; VIDAL Recos « AVK (traitement par) » (21.10.2025) ; VIDAL, estimation du DFG (2022) ; La Revue du Praticien (stades de MRC, 2022 ; hyperkaliémie, 2026)._
+_Sources : #(sources.filter(l => l.ordre_pied != "").sorted(key: l => int(l.ordre_pied)).map(pied-source).join(" ; "))._
 ]

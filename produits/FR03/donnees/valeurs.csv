@@ -1,7 +1,9 @@
 cle,valeur,unite,source_code,libelle
 dfg_seuil_mrc3,60,mL/min/1.73 m²,REVPRAT_MRC_2022,DFG estimé sous lequel commence le stade 3 de maladie rénale chronique
 dfg_stade2_bas,60,mL/min/1.73 m²,REVPRAT_MRC_2022,Borne basse du stade 2
-dfg_normal,90,mL/min/1.73 m²,REVPRAT_MRC_2022,Stade 1 : DFG normal ou augmenté au-dessus de cette valeur
+dfg_stade2_haut,89,mL/min/1.73 m²,REVPRAT_MRC_2022,Borne haute du stade 2 (la source écrit « entre 60 et 89 »)
+dfg_normal,90,mL/min/1.73 m²,REVPRAT_MRC_2022,Stade 1 : DFG normal ou augmenté à partir de cette valeur (≥)
 mrc_mois,3,mois,REVPRAT_MRC_2022,Durée de persistance des anomalies
-s_par_min,60,s/min,DEFINITION_SI,Secondes par minute
-pct,100,%,DEFINITION_SI,Facteur fraction → pourcentage
+s_par_min,60,s/min,DEFINITION,Secondes par minute
+pct,100,%,DEFINITION,Facteur fraction → pourcentage
+k_hyperkaliemie,5.5,mmol/L,VIDAL_K_2022,Hyperkaliémie : potassium plasmatique supérieur à cette valeur

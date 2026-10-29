@@ -1,4 +1,4 @@
-# Script vidéo iPhone : FR03 Bilan biologique — normes françaises
+# Script vidéo iPhone : FR03 Bilan biologique — valeurs usuelles françaises
 
 Adapté de `docs/script-video-iphone.md` (matériel, réglages iPhone : voir le modèle). Durée cible : **10 s environ**, entre 5 et 15 s (`etsy_video_duree_min` / `etsy_video_duree_max`), sans son : la vidéo doit se comprendre muette.
 

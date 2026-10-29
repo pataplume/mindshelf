@@ -44,7 +44,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 43,R05,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
 44,R05,PRODUCTION,PRODUCTEUR,FR02,,"Pack stage IFSI, variantes 2009 et 2026",A_VERIFIER
 45,R05,PRODUCTION,PRODUCTEUR,FR03,,"Bilan biologique, normes françaises, variantes 2009 et 2026",A_VERIFIER
-46,R05,VERIFICATION,VERIFICATEUR,FR02,,Vérification indépendante,EN_COURS
+46,R05,VERIFICATION,VERIFICATEUR,FR02,,Vérification indépendante,A_CORRIGER
 47,R05,VERIFICATION,VERIFICATEUR,FR03,,Vérification indépendante,A_CORRIGER
 48,R05,CONDITIONNEMENT,CONDITIONNEUR,FR02,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 49,R05,CONDITIONNEMENT,CONDITIONNEUR,FR03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
@@ -164,4 +164,5 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 163,R05,PRODUCTION,PRODUCTEUR,,,"Si D10 est confirmée : resourcer hors OpenStax les valeurs des fiches déjà produites qui ne reposent que sur OpenStax (EN02, EN03, EN10, FR07, FR08 ; FR09 : σ² de population, Z = (X − μ)/σ), une ligne par valeur, sans changer le fond",BLOQUE
 164,R05,PRODUCTION,PRODUCTEUR,EN06,CORR_R04,"Mineurs du rapport-v2 EN06 : phrase œstrogène/LH (puberté), code SEER_MELANOMA ; puis décisions de la relectrice",A_VALIDER
 165,R05,PRODUCTION,PRODUCTEUR,FR09,CORR_R04,"Mineurs du rapport-v2 FR09 : source qui écrit l'IC avec p̂, contrôle des 7 décomptes de contenu.csv, césure « co-horte »",A_VALIDER
-166,R05,PRODUCTION,PRODUCTEUR,FR03,CORR1,"Correction v2 : INR au-dessus et au-dessous de la cible (B1), kaliémie « élevée » relative au compte rendu, année de la source affichée, références, contenu.csv, mineurs ; puis éléments de vente",EN_COURS
+166,R05,PRODUCTION,PRODUCTEUR,FR03,CORR1,"Correction v2 : INR au-dessus et au-dessous de la cible (B1), kaliémie « élevée » relative au compte rendu, année de la source affichée, références, contenu.csv, mineurs ; puis éléments de vente",A_VERIFIER
+167,R05,PRODUCTION,PRODUCTEUR,FR02,CORR1,"Correction v2 : alerter d'abord devant une valeur grave (B1), précautions respiratoires SF2H 2024 (B2), UE B.3 sans promesse d'évaluation, Glasgow sourcé avec NT, constantes, douleur sous 4, masque IIR, exceptions FHA, sources, mineurs ; puis éléments de vente",EN_COURS

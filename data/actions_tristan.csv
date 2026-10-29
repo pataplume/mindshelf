@@ -18,3 +18,4 @@ id,type_code,produit_code,relecteur_code,detail,statut_code,depuis
 17,VALIDATION,FR07,,"Changement après validation : exemple échographie « graisse → muscle 1,4 % » devient « graisse → foie 1,1 % » (l'ancien reprenait un exemple d'OpenStax) ; confirmer",A_FAIRE,2026-10-29
 18,VALIDATION,FR09,,Fiche biostatistiques PASS/LAS (OK avec réserves : 2 formules de base encore sourcées par OpenStax seul),A_FAIRE,2026-10-29
 19,RELECTURE,EN06,MEDECIN_STAGIAIRE,"PDF EN06-STD-a4 (6 pages) + produits/EN06/donnees/statut-methode.md (8 points, dont nœud sinusal et glandes sudoripares)",A_FAIRE,2026-10-29
+20,VALIDATION,FR03,,"Titre : « normes françaises » remplacé par « valeurs usuelles françaises » (chaque laboratoire fixe ses intervalles ; proposition du vérificateur), appliqué par défaut : confirmer ou changer",A_FAIRE,2026-10-29

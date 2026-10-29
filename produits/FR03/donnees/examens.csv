@@ -9,7 +9,7 @@ CREA_H,7,REIN,"Créatinine, homme",Se ou Pl,intervalle,60,115,µmol/L,7,13,mg/L,
 CREA_F,8,REIN,"Créatinine, femme",Se ou Pl,intervalle,45,105,µmol/L,5,12,mg/L,CNG_VBU_2009,p. 3
 CLAIR,9,REIN,"Clairance de la créatinine (pour 1,73 m²)",,intervalle,1.50,2.30,mL/s,90,140,mL/min,CNG_VBU_2009,p. 3
 GLY,10,GLU,Glucose,Pl,intervalle,3.90,5.50,mmol/L,0.70,1.00,g/L,CNG_VBU_2009,p. 4
-HBA1C,11,GLU,HbA1c (part de l'Hb totale),Sg,max,,0.06,,,6,%,CNG_VBU_2009,p. 4
+HBA1C,11,GLU,HbA1c (part de l’Hb totale),Sg,max,,0.06,,,6,%,CNG_VBU_2009,p. 4
 HB_H,12,NFS,"Hémoglobine, homme",Sg,intervalle,130,170,g/L,,,,CNG_VBU_2009,p. 4 et 6
 HB_F,13,NFS,"Hémoglobine, femme",Sg,intervalle,120,160,g/L,,,,CNG_VBU_2009,p. 4 et 6
 HT_H,14,NFS,"Hématocrite, homme",Sg,intervalle,0.42,0.54,,42,54,%,CNG_VBU_2009,p. 6
@@ -32,4 +32,4 @@ BILI,30,FOIE,Bilirubine totale,Se ou Pl,max,,17,µmol/L,,10,mg/L,CNG_VBU_2009,p.
 ALB,31,FOIE,Albumine,Se,intervalle,38,48,g/L,,,,CNG_VBU_2009,p. 5
 PROT,32,FOIE,Protéines totales,Se,intervalle,65,80,g/L,,,,CNG_VBU_2009,p. 5
 INR_AVK,33,CIBLE,"INR sous AVK, cible la plus courante",,intervalle,2,3,,,,,VIDAL_AVK_2025,Prise en charge
-INR_VALVE,34,CIBLE,"INR sous AVK, certaines valves mécaniques",,intervalle,3,4.5,,,,,VIDAL_AVK_2025,Prise en charge (traitement préventif)
+INR_VALVE,34,CIBLE,"INR sous AVK, certaines atteintes valvulaires",,intervalle,3,4.5,,,,,VIDAL_AVK_2025,Prise en charge (traitement préventif)
