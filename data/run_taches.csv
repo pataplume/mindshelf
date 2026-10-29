@@ -29,7 +29,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 28,R03,PRODUCTION,PRODUCTEUR,EN10,,Fiches TEAS 7 Science,A_VERIFIER
 29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,A_CORRIGER
 30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,A_CORRIGER
-31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,EN_COURS
+31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,A_CORRIGER
 32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
@@ -148,6 +148,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 147,R04,PRODUCTION,PRODUCTEUR,FR08,CORR_R02,"Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03",A_FAIRE
 148,R03,PREPARATION,ORCHESTRATEUR,,,Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite,A_FAIRE
 149,R03,PREPARATION,ORCHESTRATEUR,,,"Dépôt manuel par Tristan (l'envoi de fichiers vers Whop est bloqué depuis la session) : fichiers EN02, EN03 dans leurs apps Files, FR07 (produit créé masqué prod_bVA9Q6H0Vxc3h, prix 4.90 EUR), galeries ; puis textes Whop EN02/EN03 et visibilité FR07 par l'orchestrateur",EN_COURS
-150,R03,PRODUCTION,PRODUCTEUR,EN04,CORR1,"Correction v2 : sources consultables à la place de Kremkau non localisé (M1), source FDA § 5.2.8 (M2), plan v24.1, mineurs ; puis éléments de vente",EN_COURS
+150,R03,PRODUCTION,PRODUCTEUR,EN04,CORR1,"Correction v2 : sources consultables à la place de Kremkau non localisé (M1), source FDA § 5.2.8 (M2), plan v24.1, mineurs ; puis éléments de vente ; v3 : sourçage Radiopaedia des lignes A-VERIFIER",EN_COURS
 151,R03,PRODUCTION,PRODUCTEUR,EN08,CORR1,"Correction v2 : INR cible selon l'indication (B1), hémolyse sans retarder le signalement (B2), repères cliniques sourcés, HbA1c NGSP, digoxine, HDL, contenu.csv, mineurs ; puis éléments de vente",EN_COURS
 152,R04,PRODUCTION,OUTILLAGE,,,"Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10)",A_FAIRE
+153,R03,PRODUCTION,PRODUCTEUR,EN10,CORR1,"Correction v2 : ABO avec facteur Rh, points-virgules avalés, sources des modes de transmission, localisations OpenStax, mineurs ; puis éléments de vente",EN_COURS
