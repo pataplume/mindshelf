@@ -15,5 +15,5 @@ MMHG,mm Hg,kPa,0.1333,0,F_MMHG,1 mm Hg ≈ 133.322 Pa
 ENZ,U/L,µkat/L,0.0167,0,F_ENZ,1 U = 1 µmol/min = 1/60 µkat
 CHOL,mg/dL,mmol/L,0.0259,0,F_CHOL,Cholesterol C27H46O
 TG,mg/dL,mmol/L,0.0113,0,F_TG,Triglycerides as triolein C57H104O6 (convention)
-DIG,ng/mL,nmol/L,1.280,0,F_DIG,Digoxin C41H64O14
+DIG,ng/mL,nmol/L,1.28,0,F_DIG,Digoxin C41H64O14
 HBA1C,%,mmol/mol,10.929,2.15,F_HBA1C,IFCC = (NGSP % − 2.15) × 10.929
