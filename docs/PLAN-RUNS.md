@@ -2,11 +2,11 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 158
+- Runs : 22 · tâches : 165
 - Durée estimée totale : 21 h 50 · restant : 16 h 40 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R05, R06, R07, R09, R15, R18
+**Lançables maintenant :** R05, R06, R07, R09, R12, R15, R18
 
 ## En attente de Tristan
 
@@ -29,6 +29,8 @@
 | 15 | Changer un réglage de compte | — | Facultatif : autoriser le domaine de stockage de Whop dans les réglages de Claude, pour que la session dépose elle-même fichiers et galeries | 2026-10-29 |
 | 16 | Valider une fiche (ou demander des corrections) | — | Décision D10 (OpenStax) appliquée par défaut : confirmer ou changer | 2026-10-29 |
 | 17 | Valider une fiche (ou demander des corrections) | FR07 | Changement après validation : exemple échographie « graisse → muscle 1,4 % » devient « graisse → foie 1,1 % » (l'ancien reprenait un exemple d'OpenStax) ; confirmer | 2026-10-29 |
+| 18 | Valider une fiche (ou demander des corrections) | FR09 | Fiche biostatistiques PASS/LAS (OK avec réserves : 2 formules de base encore sourcées par OpenStax seul) | 2026-10-29 |
+| 19 | Faire relire une fiche par la personne du domaine | EN06 | PDF EN06-STD-a4 (6 pages) + produits/EN06/donnees/statut-methode.md (8 points, dont nœud sinusal et glandes sudoripares) | 2026-10-29 |
 
 ## Runs
 
@@ -118,21 +120,25 @@
 
 ### R04 — Anatomie-physiologie EN + biostatistiques PASS
 
-≈ 1 h 05 · statut : En cours · dépend de : R00 · décisions requises : D01
+≈ 1 h 05 · statut : Vérifié, en attente de relecture et validation · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
 | 35 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
-| 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | A | Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien | Produit, en attente de vérification |
-| 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | B | Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur | Produit, en attente de vérification |
-| 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | Produit, en attente de vérification |
+| 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | A | Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien | Vérifié, en attente de relecture et validation |
+| 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | B | Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur | Vérifié, en attente de relecture et validation |
+| 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | Vérifié, en attente de relecture et validation |
 | 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | Vérifié, en attente de relecture et validation |
 | 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | Vérifié, en attente de relecture et validation |
 | 152 | Production | Outils de conditionnement | — | — | Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10 | Vérifié, en attente de relecture et validation |
-| 157 | Production | Assemblage des kits et des guides | EN06 Anatomy & Physiology — Body Systems Sheets | — | Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD (fait par l'orchestrateur : fusion des tables -a/-b en tables canoniques) | Produit, en attente de vérification |
-| 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | — | Vérification indépendante | En cours |
-| 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | En cours |
-| 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — Body Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | En cours |
+| 157 | Production | Assemblage des kits et des guides | EN06 Anatomy & Physiology — Body Systems Sheets | — | Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD (fait par l'orchestrateur : fusion des tables -a/-b en tables canoniques) | Vérifié, en attente de relecture et validation |
+| 159 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | CORR1 | Correction v2 : valeurs du lot A resourcées hors OpenStax (M1), LH et ovulation, dates des sources en table, nœud sinusal, références, mineurs, statut-methode pour la relectrice ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 160 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | CORR1 | Correction v2 : références hors OpenStax (M1), VPN par Bayes, séparateurs décimaux, mineurs, barre de racine ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 161 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 162 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — Body Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 | 42 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR09 PASS/LAS Biostatistiques — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 
 ### R05 — Fiches IFSI à faible risque
@@ -145,6 +151,9 @@
 | 44 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Pack stage IFSI, variantes 2009 et 2026 | À faire |
 | 45 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — normes françaises | — | Bilan biologique, normes françaises, variantes 2009 et 2026 | À faire |
 | 158 | Production | Outils de conditionnement | — | — | anki.py : le marqueur {v:CLE} affiche « × 10⁰ » quand l'exposant vaut 0 (contourné dans EN04 et FR07) ; ne rien afficher pour un exposant nul ou vide | À faire |
+| 163 | Production | Rédaction et mise en page d'un produit | — | — | Si D10 est confirmée : resourcer hors OpenStax les valeurs des fiches déjà produites qui ne reposent que sur OpenStax (EN02, EN03, EN10, FR07, FR08 ; FR09 : σ² de population, Z = (X − μ)/σ), une ligne par valeur, sans changer le fond | À faire |
+| 164 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | CORR_R04 | Mineurs du rapport-v2 EN06 : phrase œstrogène/LH (puberté), code SEER_MELANOMA ; puis décisions de la relectrice | À faire |
+| 165 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | CORR_R04 | Mineurs du rapport-v2 FR09 : source qui écrit l'IC avec p̂, contrôle des 7 décomptes de contenu.csv, césure « co-horte » | À faire |
 | 46 | Vérification | Vérification indépendante | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Vérification indépendante | À faire |
 | 47 | Vérification | Vérification indépendante | FR03 Bilan biologique — normes françaises | — | Vérification indépendante | À faire |
 | 48 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
