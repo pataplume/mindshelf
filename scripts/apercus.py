@@ -126,13 +126,21 @@ def lire_contenu(chemin):
 
 # --- Vignette « ce qu'il y a dedans » ----------------------------------------------------------
 
+def _em(valeur, cle):
+    """« 0.5em » → 0.5 ; échoue si la valeur n'est pas une longueur en em."""
+    m = re.fullmatch(r"\s*([0-9]*\.?[0-9]+)\s*em\s*", valeur)
+    if not m:
+        raise ErreurOutillage(f"réglage « {cle} » : « {valeur} » n'est pas une longueur en em")
+    return float(m.group(1))
+
+
 def generer_vignette(elements, sortie_png, langue, titre="", image_page=None):
     """Vignette composée par Typst : titre, rubrique traduite, liste des éléments, miniature de la page.
     Les éléments sont affichés tels quels (texte brut, pas de balisage Typst)."""
     import typst
     largeur = reglage_entier("apercu_vignette_largeur_px")
     hauteur = reglage_entier("apercu_vignette_hauteur_px")
-    ppp = 144  # résolution de travail : 1 pt Typst = 2 px
+    ppp = reglage_entier("apercu_vignette_ppp")  # résolution de travail (144 : 1 pt Typst = 2 px)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         image, ratio = None, None
@@ -153,14 +161,31 @@ def generer_vignette(elements, sortie_png, langue, titre="", image_page=None):
             "fond": reglage("apercu_vignette_fond_couleur"), "texte": reglage("apercu_vignette_texte_couleur"),
             "accent": reglage("apercu_vignette_accent_couleur"),
             "titre": titre, "rubrique": libelle("vignette_rubrique", langue),
+            "marge": reglage_nombre("apercu_vignette_marge"),
+            "interligne_em": _em(reglage("apercu_vignette_interligne"), "apercu_vignette_interligne"),
+            "texte_diviseur": reglage_nombre("apercu_vignette_texte_diviseur"),
+            "titre_diviseur": reglage_nombre("apercu_vignette_titre_diviseur"),
+            "rubrique_diviseur": reglage_nombre("apercu_vignette_rubrique_diviseur"),
+            "rubrique_approche_em": reglage_nombre("apercu_vignette_rubrique_approche"),
+            "ecart_titre": reglage_nombre("apercu_vignette_ecart_titre"),
+            "ecart_rubrique": reglage_nombre("apercu_vignette_ecart_rubrique"),
+            "ecart_element": reglage_nombre("apercu_vignette_ecart_element"),
+            "puce_colonne": reglage_nombre("apercu_vignette_puce_colonne"),
+            "puce_decalage": reglage_nombre("apercu_vignette_puce_decalage"),
+            "puce_rayon": reglage_nombre("apercu_vignette_puce_rayon"),
+            "colonne_texte_fr": reglage_nombre("apercu_vignette_colonne_texte"),
+            "cadre_trait_pt": reglage_nombre("apercu_vignette_cadre_trait"),
+            "cadre_transparence_pct": reglage_nombre("apercu_vignette_cadre_transparence"),
             "elements": list(elements), "image": image, "image_ratio": ratio,
         }
         polices = RACINE / reglage("apercu_vignette_polices_dossier")
+        if not polices.is_dir():
+            raise ErreurOutillage(f"vignette : dossier de polices introuvable : {polices} (apercu_vignette_polices_dossier)")
         shutil.copy(GABARIT_VIGNETTE, tmp / "vignette.typ")
         try:
             pages, alertes = typst.compile_with_warnings(
                 str(tmp / "vignette.typ"), root=str(tmp), format="png", ppi=float(ppp),
-                font_paths=[str(polices)] if polices.is_dir() else [],
+                font_paths=[str(polices)], ignore_system_fonts=True,
                 sys_inputs={"donnees": json.dumps(donnees, ensure_ascii=False)})
         except Exception as e:
             raise ErreurOutillage(f"vignette : compilation Typst impossible ({e})")

@@ -59,3 +59,19 @@ controle_nb_ppp,50,ppp,Définition du rendu utilisé pour chercher des pixels co
 controle_nb_ecart_max,8,niveaux (0-255),"Écart maximal entre canaux R, V et B d'un pixel jugé gris (au-delà : pixel coloré)"
 controle_nb_pixels_max,0,pixels,Nombre de pixels colorés tolérés dans tout le PDF N&B
 controle_debordement_tolerance_pt,1,pt,Tolérance avant de signaler un mot qui sort de la zone de texte latérale
+apercu_vignette_ppp,144,ppp,Résolution de travail de la vignette (144 : 1 pt Typst = 2 px)
+apercu_vignette_marge,0.07,facteur,Marge de la vignette (fraction de sa hauteur)
+apercu_vignette_interligne,charte:interligne.fiche,,Interlignage du texte de la vignette (jeton de data/charte_tokens.csv)
+apercu_vignette_texte_diviseur,30,facteur,Taille du texte des éléments : hauteur de la vignette / ce diviseur
+apercu_vignette_titre_diviseur,19,facteur,Taille du titre : hauteur de la vignette / ce diviseur
+apercu_vignette_rubrique_diviseur,28,facteur,Taille de la rubrique : hauteur de la vignette / ce diviseur
+apercu_vignette_rubrique_approche,0.04,em,Approche (espacement des lettres) de la rubrique en capitales
+apercu_vignette_ecart_titre,0.035,facteur,Espace sous le titre (fraction de la hauteur de la vignette)
+apercu_vignette_ecart_rubrique,0.045,facteur,Espace sous la rubrique (fraction de la hauteur de la vignette)
+apercu_vignette_ecart_element,0.026,facteur,Espace sous chaque élément de la liste (fraction de la hauteur de la vignette)
+apercu_vignette_puce_colonne,0.04,facteur,Largeur de la colonne des puces (fraction de la hauteur de la vignette)
+apercu_vignette_puce_decalage,0.011,facteur,Décalage vertical de la puce (fraction de la hauteur de la vignette)
+apercu_vignette_puce_rayon,0.008,facteur,Rayon de la puce (fraction de la hauteur de la vignette)
+apercu_vignette_colonne_texte,1.25,fr,Largeur de la colonne de texte rapportée à celle de la miniature (1 fr)
+apercu_vignette_cadre_trait,0.6,pt,Épaisseur du cadre de la miniature
+apercu_vignette_cadre_transparence,80,%,Transparence de l'encre du cadre de la miniature
