@@ -8,7 +8,7 @@ Run R03, vérificateur indépendant, 29.10.2026. Objet : `src/main.typ`, `donnee
 
 Ce qui est juste :
 - **Calculs.** Toutes les lignes de `exemples.csv` (18 dérivations de facteurs et 3 conversions), les 9 masses molaires et les 18 facteurs affichés ont été recalculés sans écart (script en fin de rapport).
-- **Conversions SI.** Les 79 bornes converties sont exactes avec le facteur affiché. Cinq d'entre elles diffèrent du calcul exact au dernier chiffre (voir m1).
+- **Conversions SI.** Les 74 bornes converties sont exactes avec le facteur affiché. Cinq d'entre elles diffèrent du calcul exact au dernier chiffre (voir m1).
 - **Intervalles.** Les 40 intervalles concordent avec leurs sources : ABIM janvier 2026 (lu par moi via un outil de lecture web du PDF, avec les pages, voir A-VERIFIER 1) et MedlinePlus 003652 et 003568 (lus).
 - **Contrôles techniques.** `scripts/controle_pdf.py EN08-STD` passe sur les quatre formats. Le N&B est lisible et rien n'est coupé.
 - **Statut et publication.** `statut-methode.md` respecte la règle 15 et bloque bien la publication.
