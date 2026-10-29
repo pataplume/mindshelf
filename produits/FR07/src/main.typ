@@ -113,7 +113,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Formules, exemples chiffrés, notes santé et pièges sur les notions de physique-biophysique les plus courantes en PASS et LAS],
+  sous-titre: [Formules, exemples chiffrés, notes santé et pièges : les notions de physique-biophysique les plus courantes en PASS et LAS],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -131,7 +131,7 @@
   #val("U_ATM").libelle = #qu("U_ATM") = #qu("U_ATM_MMHG")#sep#val("U_MMHG").libelle = #qu("U_MMHG") ≈ #qu("U_MMHG_CMH2O")#sep#val("U_CMH2O").libelle = #qu("U_CMH2O")#sep#val("U_BAR").libelle = #qu("U_BAR")#sep#val("U_L").libelle = #qu("U_L")#sep#val("U_EV").libelle = #qu("U_EV")#sep#val("U_CAL").libelle = #qu("U_CAL")#sep#val("U_KELVIN").libelle #q("U_KELVIN").
 ]
 
-= Fluides et hémodynamique
+= Hémodynamique
 
 #formule[
   Statique : $P = P_0 + rho g h$ ; la pression artérielle est une pression relative.
@@ -168,7 +168,7 @@
   $Delta theta = #v("FX07", "dt") "°C"$ $=>$ $omega_m #rel("FX07") #res("FX07") "osmol/kg"$.
 ]
 
-= Électricité et bioélectricité
+= Bioélectricité
 
 #formule[
   Coulomb $F = k q_1 q_2 \/ r^2$ ; champ $arrow(E) = arrow(F) \/ q$ ; champ uniforme $E = U \/ d$ ; énergie $W = q U$.
@@ -181,7 +181,7 @@
   $C_"ext" \/ C_"int" = 10^#v("FX08", "lg")$, $z = #v("FX08", "z")$ : $E_"Ca" = #v("FX08", "k") \/ #v("FX08", "z") times #v("FX08", "lg") #rel("FX08") #res("FX08") "mV"$ (valeurs d'exercice).
 ]
 
-= Ondes, acoustique, ultrasons
+= Ondes et ultrasons
 
 #formule[
   $c = lambda f$ ($c$ célérité de l'onde, $lambda$ longueur d'onde) ; $I = cal(P) \/ S$ ($cal(P)$ puissance).
@@ -207,12 +207,12 @@
 ]
 
 #tableau(
-  columns: (auto, 1fr, auto),
-  [Défaut], [Cause], [Verre],
-  [Myopie], [œil trop convergent, PR à distance finie], [divergent],
-  [Hypermétropie], [œil pas assez convergent], [convergent],
-  [Presbytie], [accommodation réduite (âge), PP éloigné], [convergent (près)],
-  [Astigmatisme], [cornée non sphérique], [cylindrique],
+  columns: (auto, 1fr),
+  [Défaut], [Cause : verre correcteur],
+  [Myopie], [œil trop convergent, PR à distance finie : divergent],
+  [Hypermétropie], [œil pas assez convergent : convergent],
+  [Presbytie], [accommodation réduite avec l'âge : convergent (près)],
+  [Astigmatisme], [cornée non sphérique : cylindrique],
 )
 
 #exemple(titre: "Lentille, myopie, presbytie")[
@@ -221,7 +221,7 @@
   PP à #v("FX16", "pp") m, lecture à #v("FX16", "d") m $=>$ addition $#rel("FX16") #res("FX16") δ$.
 ]
 
-= Radioactivité et rayonnements
+= Rayonnements ionisants
 
 #formule[
   $N = N_0 e^(-lambda t) = N_0 (1/2)^(t \/ T_(1\/2))$ ; $lambda = ln 2 \/ T_(1\/2)$ : constante radioactive (pas une longueur d'onde).
@@ -242,7 +242,7 @@
   columns: (auto, 1fr),
   [Repère], [Valeurs],
   [$w_R$], [#groupe("WR").map(l => [#l.libelle #q(l.id)]).join(" ; ")],
-  [Doses efficaces (adulte)], [#groupe("DOSE").map(l => [#l.libelle #qu(l.id)]).join(" ; ")],
+  [Imagerie (adulte)], [#groupe("DOSE").map(l => [#l.libelle #qu(l.id)]).join(" ; ")],
   [Limites (France)], [#groupe("LIMITE").map(l => [#l.libelle #qu(l.id)]).join(" ; ") ; patients : pas de limite, justification et optimisation],
 )
 
@@ -258,7 +258,7 @@
   $B_0 = #v("FX17", "B") "T"$ : $f_0 #rel("FX17") #res("FX17") "MHz"$ ; $B_0 = #v("FX18", "B") "T"$ : $f_0 #rel("FX18") #res("FX18") "MHz"$.
 ]
 
-= Thermodynamique et gaz
+= Thermodynamique
 
 #formule[
   $P V = n R T$ ($T$ en K) ; Dalton $P_i = x_i P_"tot"$ ; Henry $C = k_H P_"gaz"$.
@@ -293,13 +293,8 @@
 
 = Constantes
 
-#let cst = groupe("CONST")
-#let moitie = calc.ceil(cst.len() / 2)
-#let cellule(l) = if l == none { ([], []) } else { ([#eval(l.symbole, mode: "math")], [#q(l.id) #l.unite]) }
-#tableau(
-  columns: (auto, 1fr, auto, 1fr),
-  entete: 0,
-  ..range(moitie).map(i => cellule(cst.at(i)) + cellule(cst.at(i + moitie, default: none))).flatten(),
-)
-Valeurs #source(val("K_C").source_code), arrondies ; $g_n$ conventionnelle ; $h c$ dérivé.
+#formule[
+  #groupe("CONST").map(l => [$#eval(l.symbole, mode: "math") = #q(l.id)$~#l.unite]).join(" ; ").
+  Valeurs #source(val("K_C").source_code), arrondies ; $g_n$ conventionnelle ; $h c$ dérivé.
+]
 ]
