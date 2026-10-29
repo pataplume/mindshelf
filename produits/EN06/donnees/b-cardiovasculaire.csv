@@ -1,0 +1,13 @@
+structure,fonction
+Right atrium,Receives deoxygenated blood from the systemic veins
+Right ventricle,Pumps blood through the pulmonary semilunar valve into the pulmonary trunk and on to the lungs
+Left atrium,Receives oxygenated blood from the pulmonary veins
+Left ventricle,Pumps blood through the aortic semilunar valve into the aorta and the systemic circuit
+AV valves,"Between atrium and ventricle: tricuspid on the right, bicuspid (mitral) on the left"
+Coronary arteries,"Right and left, branches of the ascending aorta; supply the myocardium, which needs a constant flow of oxygen"
+Conduction system,"SA node (pacemaker; {v:B_SA_MIN}–{v:B_SA_MAX} impulses/min on its own) → AV node → AV bundle → bundle branches → conduction myofibers (Purkinje fibers)"
+Arteries and arterioles,Carry blood away from the heart; arterioles regulate flow into the capillaries
+Capillaries,"Exchange between blood and tissue cells by diffusion, filtration and osmosis"
+Veins,"Carry blood toward the heart; medium and large veins have valves, most important in the arms and legs"
+Blood,"About {v:B_SANG_L} L in an adult, {v:B_SANG_PCT} % of body weight: formed elements suspended in plasma"
+Erythrocytes,"Red cells: carry oxygen; normally last about {v:B_RBC_JOURS} days"

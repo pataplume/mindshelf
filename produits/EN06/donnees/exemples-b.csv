@@ -1,0 +1,2 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi,mode_arrondi
+B_EX02,Pression pulsée (valeurs d'exercice) : PP = PAS − PAD ; 120/80 mm Hg,"{""pas"": 120, ""pad"": 80}",pas - pad,40,mm Hg,0.000001,0,

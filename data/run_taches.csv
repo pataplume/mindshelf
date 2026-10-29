@@ -36,11 +36,11 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 35,R04,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
 36,R04,PRODUCTION,PRODUCTEUR,EN06,A,"Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien",A_VERIFIER
 37,R04,PRODUCTION,PRODUCTEUR,EN06,B,"Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur",EN_COURS
-38,R04,PRODUCTION,PRODUCTEUR,FR09,,Fiche formules biostatistiques PASS/LAS,EN_COURS
+38,R04,PRODUCTION,PRODUCTEUR,FR09,,Fiche formules biostatistiques PASS/LAS,A_VERIFIER
 39,R04,VERIFICATION,VERIFICATEUR,EN06,,Vérification indépendante,A_FAIRE
-40,R04,VERIFICATION,VERIFICATEUR,FR09,,Vérification indépendante,A_FAIRE
+40,R04,VERIFICATION,VERIFICATEUR,FR09,,Vérification indépendante,EN_COURS
 41,R04,CONDITIONNEMENT,CONDITIONNEUR,EN06,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
-42,R04,CONDITIONNEMENT,CONDITIONNEUR,FR09,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+42,R04,CONDITIONNEMENT,CONDITIONNEUR,FR09,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
 43,R05,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 44,R05,PRODUCTION,PRODUCTEUR,FR02,,"Pack stage IFSI, variantes 2009 et 2026",A_FAIRE
 45,R05,PRODUCTION,PRODUCTEUR,FR03,,"Bilan biologique, normes françaises, variantes 2009 et 2026",A_FAIRE

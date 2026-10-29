@@ -1,0 +1,10 @@
+structure,fonction
+Testes,"Seminiferous tubules make sperm (spermatogenesis); interstitial (Leydig) cells make male sex hormones; Sertoli cells support and nourish"
+Scrotum,Holds the testes about {v:B_SCROTUM_C} °C below body temperature
+Epididymis,Sperm mature and become fertile here; mature sperm are stored in its tail
+Ductus deferens,"Stores sperm near the epididymis; peristalsis moves them toward the ejaculatory duct"
+Ejaculatory duct,"Receives seminal vesicle secretions, passes through the prostate and empties into the urethra"
+Ovaries,"Oogenesis; granulosa cells of the follicle secrete estrogen; the corpus luteum secretes progesterone and some estrogen"
+Uterine (fallopian) tubes,"Fimbriae sweep the oocyte in; fertilization usually happens here (oocyte fertile {v:B_OOCYTE_H_MIN}–{v:B_OOCYTE_H_MAX} h)"
+Uterus,Lined with the endometrium; site of menstruation and of pregnancy
+Vagina,Fibromuscular tube from the cervix of the uterus to the outside

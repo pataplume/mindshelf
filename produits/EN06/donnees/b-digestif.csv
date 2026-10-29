@@ -1,0 +1,10 @@
+structure,fonction
+Mouth,"Chewing (mechanical digestion); saliva has an enzyme that starts starch digestion; {v:B_DENTS_LAIT} primary teeth, {v:B_DENTS_PERM} permanent teeth"
+Esophagus,Moves food to the stomach by peristalsis
+Stomach,"Acid and enzymes break down proteins; parietal cells secrete HCl and intrinsic factor; endocrine cells secrete gastrin; mixing movements make chyme"
+Pyloric sphincter,Relaxes to let chyme pass into the small intestine
+Small intestine,"Duodenum, jejunum, ileum: absorbs most nutrients; plicae circulares, villi and microvilli enlarge the surface; secretes CCK and secretin"
+Liver,"Makes bile; also synthesizes plasma proteins, stores nutrients, detoxifies, and handles carbohydrate, lipid and protein metabolism"
+Gallbladder,Stores bile between meals
+Pancreas,"Exocrine acini: amylase, trypsin, peptidase, lipase; endocrine islets: insulin and glucagon"
+Large intestine,"Colon, rectum, anal canal: no digestive enzymes; absorbs water and electrolytes; its bacteria make vitamin K"

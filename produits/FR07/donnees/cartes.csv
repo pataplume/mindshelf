@@ -1,25 +1,25 @@
 recto,verso,tags
 Loi de Poiseuille et résistance hydraulique ?,Q = πr⁴ΔP/(8ηL) ; R = 8ηL/(πr⁴) ; ΔP = RQ. Rayon divisé par 2 : résistance × 16.,physique::hemodynamique
 Équation de continuité et théorème de Bernoulli ?,"Q = Sv ; S₁v₁ = S₂v₂. P + ½ρv² + ρgh = cste (fluide parfait) : là où le fluide va plus vite, la pression est plus basse.",physique::hemodynamique
-Nombre de Reynolds et seuils ?,"Re = 2ρvr/η ; laminaire si Re &lt; 2000, turbulent si Re &gt; 3000, instable entre les deux.",physique::hemodynamique
+Nombre de Reynolds et seuils ?,"Re = 2ρvr/η ; laminaire si Re &lt; {t:valeurs:P_RE_LAM:mantisse}, turbulent si Re &gt; {t:valeurs:P_RE_TURB:mantisse}, instable entre les deux.",physique::hemodynamique
 Loi de Laplace pour une alvéole ?,P = 2T_s/r (T_s tension superficielle). Le surfactant abaisse T_s et stabilise les petites alvéoles.,physique::hemodynamique sante
-Pression artérielle moyenne ?,PAM ≈ PAD + (PAS − PAD)/3 ; 120/80 mmHg donne environ 93 mmHg.,physique::hemodynamique
+Pression artérielle moyenne ?,PAM ≈ PAD + (PAS − PAD)/3 ; 120/80 mmHg donne environ {x:FX04} mmHg.,physique::hemodynamique
 Osmolarité ou osmolalité ?,Osmolarité : osmoles par litre de solution (ω = iC). Osmolalité : osmoles par kg d'eau.,biophysique::solutions
 Coefficient i d'un soluté qui se dissocie ?,"i = 1 + α(p − 1), α coefficient de dissociation, p particules par molécule (NaCl : i = 2 si α = 1 ; glucose : i = 1).",biophysique::solutions
 Pression osmotique (van 't Hoff) ?,π = iCRT ; C en mol/m³ donne des Pa (en mol/L : des kPa). Seules les particules qui ne traversent pas la membrane comptent (σ).,biophysique::solutions
-Cryoscopie ?,"Δθ = K_c × osmolalité ; K_c (eau) = 1,86 °C·kg/mol.",biophysique::solutions
+Cryoscopie ?,"Δθ = K_c × osmolalité ; K_c (eau) = {t:valeurs:P_KC_EAU:mantisse} °C·kg/mol.",biophysique::solutions
 Équation de Starling ?,J_v = K_f[(P_cap − P_int) − σ(π_cap − π_int)] : pressions hydrostatiques contre pressions oncotiques.,biophysique::solutions
-Équation de Nernst ?,"E_X = (RT/zF) ln(C_ext/C_int) ; à 37 °C ≈ (61,5 mV/z) log(C_ext/C_int).",biophysique::bioelectricite
-Niveau sonore et intensité doublée ?,"L = 10 log(I/I₀), I₀ = 10⁻¹² W/m² ; intensité doublée : + 3 dB.",physique::ondes
+Équation de Nernst ?,"E_X = (RT/zF) ln(C_ext/C_int) ; à {t:valeurs:P_THETA37:mantisse} °C ≈ ({t:valeurs:P_NERNST37:mantisse} mV/z) log(C_ext/C_int).",biophysique::bioelectricite
+Niveau sonore et intensité doublée ?,"L = 10 log(I/I₀), I₀ = 10⁻¹² W/m² ; intensité doublée : + {t:valeurs:P_DB2:mantisse} dB.",physique::ondes
 Impédance acoustique et réflexion à une interface ?,"Z = ρc ; a = (Z₂ − Z₁)²/(Z₁ + Z₂)². Air–tissu : réflexion quasi totale, d'où le gel d'échographie.",physique::ultrasons sante
-Décalage Doppler en échographie ?,"Δf = 2f₀v cos θ/c (décalage appliqué deux fois, aller et retour) ; c tissus ≈ 1540 m/s.",physique::ultrasons
+Décalage Doppler en échographie ?,"Δf = 2f₀v cos θ/c (décalage appliqué deux fois, aller et retour) ; c tissus ≈ {t:valeurs:P_CTISSU:mantisse} m/s.",physique::ultrasons
 Relation de conjugaison et grandissement (convention française) ?,"1/OA' − 1/OA = 1/f' = C (vergence en δ, f' en m) ; γ = OA'/OA. Objet réel : OA &lt; 0.",physique::optique
 Correction de la myopie et de la presbytie ?,"Myopie : verre divergent, C = −1/d_PR. Presbytie : verre convergent pour la vision de près. Hypermétropie : convergent. Astigmatisme : cylindrique.",physique::optique sante
 Loi de décroissance radioactive ?,N = N₀e^(−λt) ; λ = ln 2/T½ ; A = λN (Bq) ; après n périodes A = A₀/2ⁿ.,physique::rayonnements
 Couche de demi-atténuation ?,"I = I₀e^(−μx) ; CDA = ln 2/μ ; après n CDA, il reste I₀/2ⁿ.",physique::rayonnements
-"Dose absorbée, équivalente, efficace ?","D = énergie/masse (Gy) ; H = w_R D (Sv) ; E = Σ w_T H_T (Sv, risque global). w_R : photons et électrons 1, protons 2, α 20.",physique::rayonnements
-Limites de dose efficace en France ?,"Public : 1 mSv/an ; travailleur : 20 mSv sur 12 mois consécutifs ; patients : pas de limite, justification et optimisation.",physique::rayonnements sante
-Fréquence de Larmor du proton ?,"f₀ = (γ/2π)B₀ avec γ/2π = 42,58 MHz/T : 63,9 MHz à 1,5 T, 127,7 MHz à 3 T.",physique::rmn
+"Dose absorbée, équivalente, efficace ?","D = énergie/masse (Gy) ; H = w_R D (Sv) ; E = Σ w_T H_T (Sv, risque global). w_R : photons et électrons {t:valeurs:W_PHOTON:mantisse}, protons {t:valeurs:W_PROTON:mantisse}, α {t:valeurs:W_ALPHA:mantisse}.",physique::rayonnements
+Limites de dose efficace en France ?,"Public : {t:valeurs:L_PUBLIC:mantisse} mSv/an ; travailleur : {t:valeurs:L_TRAVAILLEUR:mantisse} mSv sur 12 mois consécutifs ; patients : pas de limite, justification et optimisation.",physique::rayonnements sante
+Fréquence de Larmor du proton ?,"f₀ = (γ/2π)B₀ avec γ/2π = {t:valeurs:K_GP:mantisse} MHz/T : {x:FX17} MHz à 1,5 T, {x:FX18} MHz à 3 T.",physique::rmn
 Relaxation T1 et T2 ?,M_z = M₀(1 − e^(−t/T₁)) ; M_xy = M₀e^(−t/T₂) ; T₂ &lt; T₁. Pondération T1 : TR et TE courts ; T2 : TR et TE longs.,physique::rmn
 Premier principe en convention française ?,ΔU = W + Q (travail et chaleur reçus par le système) ; isobare W = −PΔV. Les manuels anglo-saxons écrivent ΔU = Q − W.,physique::thermodynamique
-Conversions de pression utiles ?,"1 atm = 101,325 kPa = 760 mmHg ; 1 mmHg = 133,322 Pa ≈ 1,36 cmH₂O ; 1 cmH₂O = 98,0665 Pa.",physique::unites
+Conversions de pression utiles ?,"1 atm = {t:valeurs:U_ATM:mantisse} kPa = {t:valeurs:U_ATM_MMHG:mantisse} mmHg ; 1 mmHg = {t:valeurs:U_MMHG:mantisse} Pa ≈ {t:valeurs:U_MMHG_CMH2O:mantisse} cmH₂O ; 1 cmH₂O = {t:valeurs:U_CMH2O:mantisse} Pa.",physique::unites

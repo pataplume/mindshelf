@@ -1,0 +1,21 @@
+recto,verso,tags
+Variance d'échantillon et écart-type ?,"s² = Σ(xᵢ − x̄)² / (n − 1) ; s = √s². Population entière : σ² = Σ(xᵢ − μ)² / N.",biostat::descriptive
+"Série de l'exemple de la fiche : moyenne, variance, écart-type ?","x̄ = {x:BX01} ; s² = {x:BX02} ; s = {x:BX03}. Médiane &lt; moyenne : une valeur extrême tire la moyenne.",biostat::descriptive
+Probabilité conditionnelle et règle de multiplication ?,P(A | B) = P(A ∩ B) / P(B) ; P(A ∩ B) = P(A | B) P(B).,biostat::probabilites
+Indépendants ou incompatibles ?,"Indépendants : P(A ∩ B) = P(A) P(B). Incompatibles : P(A ∩ B) = 0. Deux événements incompatibles de probabilité non nulle sont dépendants.",biostat::probabilites
+Théorème de Bayes (avec les probabilités totales) ?,P(A | B) = P(B | A) P(A) / [P(B | A) P(A) + P(B | Ā) P(Ā)].,biostat::probabilites
+"Se, Sp, VPP, VPN ?","Se = VP/(VP + FN) ; Sp = VN/(VN + FP) ; VPP = VP/(VP + FP) ; VPN = VN/(VN + FN). VPP et VPN dépendent de la prévalence.",biostat::diagnostic
+Test diagnostique de la fiche (maladie rare) : VPP et VPN ?,"VPP = Se P / (Se P + (1 − Sp)(1 − P)) ≈ {x:BX04} % ; VPN ≈ {x:BX05} %.",biostat::diagnostic
+"Loi binomiale B(n, p) : P(X = k), espérance, variance ?","P(X = k) = C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ ; E = np ; V = np(1 − p).",biostat::lois
+Loi de Poisson P(λ) ?,"P(X = k) = e^(−λ) λᵏ / k! ; E = V = λ ; approche B(n, p) si n grand et p petit (λ = np).",biostat::lois
+Centrer-réduire une variable normale ?,"Z = (X − μ) / σ suit N(0, 1). Règle : {v:R1} % à ± 1σ, {v:R2} % à ± 2σ, {v:R3} % à ± 3σ.",biostat::lois
+Valeurs de z(α/2) usuelles ?,"90 % : {v:Z90} ; 95 % : {v:Z95} ; 99 % : {v:Z99}.",biostat::estimation
+IC d'une moyenne (grand n) ?,"x̄ ± z(α/2) s / √n ; petit n (population normale) : t de Student à n − 1 ddl.",biostat::estimation
+IC d'une proportion et conditions ?,"p ± z(α/2) √(p(1 − p)/n), si np et n(1 − p) &gt; {v:COND_IC}.",biostat::estimation
+"Risques α, β et puissance ?","α = P(rejeter H₀ | H₀ vraie) ; β = P(ne pas rejeter H₀ | H₀ fausse) ; puissance = 1 − β.",biostat::tests
+Règle de décision avec p ?,"p &lt; α : rejet de H₀. p n'est pas la probabilité que H₀ soit vraie.",biostat::tests
+Comparaison de deux moyennes (grands échantillons indépendants) ?,"z = (x̄₁ − x̄₂) / √(s₁²/n₁ + s₂²/n₂), à comparer à {v:Z95} au risque 5 % (bilatéral).",biostat::tests
+"Khi-deux : statistique, effectifs attendus, ddl ?","χ² = Σ(O − E)²/E ; E = total ligne × total colonne / N ; ddl = (l − 1)(c − 1) ; chaque E ≥ {v:COND_KHI}. Seuil ddl 1, 5 % : {v:KHI1_95}.",biostat::tests
+Droite des moindres carrés ?,"ŷ = a + bx ; b = r s_y / s_x ; a = ȳ − b x̄ ; r² = part de variation expliquée ; −1 ≤ r ≤ 1.",biostat::regression
+"Incidence, taux d'incidence, prévalence ?","Incidence cumulée = nouveaux cas / population à risque au début ; taux d'incidence = nouveaux cas / personnes-temps ; prévalence = cas existants / population (dépend de l'incidence et de la durée).",biostat::epidemiologie
+RR et OR (tableau a b c d) ?,"RR = [a/(a + b)] / [c/(c + d)] (cohorte) ; OR = ad/bc (cas-témoins), proche du RR si la maladie est rare.",biostat::epidemiologie

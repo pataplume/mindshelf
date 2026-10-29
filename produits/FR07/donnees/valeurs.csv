@@ -25,7 +25,7 @@ P_I0,PHYS,1,I_0,intensité de référence (seuil d'audition),1,-12,W/m²,OPENSTA
 P_CTISSU,PHYS,2,c_"tissu",célérité moyenne du son dans les tissus mous,1540,0,m/s,OPENSTAX_CP
 P_DB2,PHYS,3,,doubler l'intensité ajoute,3,0,dB,OPENSTAX_CP
 P_Z_AIR,PHYS,4,Z_"air",impédance acoustique de l'air,429,0,kg/(m²·s),OPENSTAX_CP
-P_Z_GRAISSE,PHYS,5,Z_"graisse",impédance acoustique de la graisse,1.34,6,kg/(m²·s),OPENSTAX_CP
+P_Z_GRAISSE,PHYS,5,Z_"graisse",impédance acoustique de la graisse,1.34,6,kg/(m²·s),RADIOPAEDIA_IMPED
 P_Z_MUSCLE,PHYS,6,Z_"muscle",impédance acoustique du muscle (moyenne),1.70,6,kg/(m²·s),OPENSTAX_CP
 P_RE_LAM,PHYS,7,,écoulement laminaire si Re <,2000,0,,OPENSTAX_CP
 P_RE_TURB,PHYS,8,,écoulement turbulent si Re >,3000,0,,OPENSTAX_CP
@@ -33,7 +33,8 @@ P_KC_EAU,PHYS,9,K_c,constante cryoscopique de l'eau,1.86,0,°C·kg/mol,OPENSTAX_
 P_M_NACL,PHYS,10,M,masse molaire de NaCl,58.44,0,g/mol,CIAAW_2021
 P_NERNST37,PHYS,11,,2.303 RT/F à 37 °C,61.5,0,mV,CODATA_2022
 P_T37,PHYS,12,,37 °C en kelvins,310.15,0,K,BIPM_SI_9
-P_THETA37,PHYS,13,θ,température de référence (corps humain),37,0,°C,BIPM_SI_9
+P_THETA37,PHYS,13,θ,température de référence (corps humain),37,0,°C,MEDLINEPLUS_TEMP
+P_Z_FOIE,PHYS,14,Z_"foie",impédance acoustique du foie,1.65,6,kg/(m²·s),RADIOPAEDIA_IMPED
 W_PHOTON,WR,1,,"photons (X, γ), électrons",1,0,,ICRP_103
 W_PROTON,WR,2,,protons,2,0,,ICRP_103
 W_ALPHA,WR,3,,particules α,20,0,,ICRP_103

@@ -110,7 +110,7 @@
 #verifie("FX09 c", ex("FX09").e.c, nombre-valeur("P_CTISSU"), 0)
 #verifie("FX10 c", ex("FX10").e.c, nombre-valeur("P_CTISSU"), 0)
 #verifie("FX11 Z1", ex("FX11").e.Z1, nombre-valeur("P_Z_GRAISSE"), 0.001)
-#verifie("FX11 Z2", ex("FX11").e.Z2, nombre-valeur("P_Z_MUSCLE"), 0.001)
+#verifie("FX11 Z2", ex("FX11").e.Z2, nombre-valeur("P_Z_FOIE"), 0.001)
 #verifie("FX12 Z1", ex("FX12").e.Z1, nombre-valeur("P_Z_AIR"), 0)
 #verifie("FX12 Z2", ex("FX12").e.Z2, nombre-valeur("P_Z_MUSCLE"), 0.001)
 #verifie("FX17 gamma", ex("FX17").e.g, nombre-valeur("K_GP"), 0)
@@ -204,7 +204,7 @@
 #exemple(titre: "Échographie")[
   À #nombre(ex("FX09").e.f / facteur("P_MEGA")) MHz : $lambda #rel("FX09") #res("FX09") "mm"$.
   Même $f_0$, $v = #v("FX10", "v") "m/s"$, $cos theta = #v("FX10", "cs")$ $=>$ $Delta f #rel("FX10") #res("FX10") "kHz"$.
-  Graisse → muscle : $a #rel("FX11")$ #res("FX11") % ; air → muscle : $a #rel("FX12")$ #res("FX12") %.
+  Graisse → foie : $a #rel("FX11")$ #res("FX11") % ; air → muscle : $a #rel("FX12")$ #res("FX12") %.
 ]
 
 = Optique et vision
