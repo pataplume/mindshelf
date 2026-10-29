@@ -1,7 +1,7 @@
-id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance
-EX01,"Suspension buvable : prescription D = 250 mg, flacon dosé H = 500 mg pour Q = 5 mL ; volume à administrer V = D / H × Q","{""D"": 250, ""H"": 500, ""Q"": 5}",D / H * Q,2.5,mL,0
-EX02,"Perfusion par gravité : V = 1000 mL en T = 8 h, perfuseur DF = 15 gouttes/mL, M = 60 min/h ; débit = V × DF / (T × M)","{""V"": 1000, ""DF"": 15, ""T"": 8, ""M"": 60}",V * DF / (T * M),31.25,gtt/min,0
-EX03,"Pousse-seringue ou pompe : V = 500 mL en T = 4 h ; débit horaire = V / T","{""V"": 500, ""T"": 4}",V / T,125,mL/h,0
-EX04,"Dose au poids : P = 15 mg/kg prescrits, poids W = 12 kg ; dose = P × W","{""P"": 15, ""W"": 12}",P * W,180,mg,0
-EX05,"Conversion : C = 0.5 mg en µg, K = 1000 µg par mg ; résultat = C × K","{""C"": 0.5, ""K"": 1000}",C * K,500,µg,0
-EX06,"Conversion : C = 12500 µg en mg, K = 1000 µg par mg ; résultat = C / K","{""C"": 12500, ""K"": 1000}",C / K,12.5,mg,0
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi,mode_arrondi
+EX01,"Suspension buvable : prescription D = 250 mg, flacon dosé H = 500 mg pour Q = 5 mL ; volume à administrer V = D / H × Q","{""D"": 250, ""H"": 500, ""Q"": 5}",D / H * Q,2.5,mL,0,1,1
+EX02,"Perfusion par gravité : V = 1000 mL en T = 8 h, perfuseur DF = 15 gouttes/mL, M = 60 min/h ; débit = V × DF / (T × M), réglé en gouttes entières","{""V"": 1000, ""DF"": 15, ""T"": 8, ""M"": 60}",V * DF / (T * M),31.25,gtt/min,0,0,1
+EX03,"Pompe volumétrique : V = 500 mL en T = 4 h ; débit horaire = V / T","{""V"": 500, ""T"": 4}",V / T,125,mL/h,0,0,1
+EX04,"Dose au poids : P = 15 mg/kg prescrits, poids W = 12 kg ; dose = P × W","{""P"": 15, ""W"": 12}",P * W,180,mg,0,0,1
+EX05,"Conversion : C = 0.5 mg en µg, K = 1000 µg par mg ; résultat = C × K","{""C"": 0.5, ""K"": 1000}",C * K,500,µg,0,0,1
+EX06,"Conversion : C = 12500 µg en mg, K = 1000 µg par mg ; résultat = C / K","{""C"": 12500, ""K"": 1000}",C / K,12.5,mg,0,1,1

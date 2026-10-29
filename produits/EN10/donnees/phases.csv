@@ -1,0 +1,7 @@
+changement,de,vers,energie
+Melting,solid,liquid,absorbed
+Freezing,liquid,solid,released
+Vaporization (evaporation / boiling),liquid,gas,absorbed
+Condensation,gas,liquid,released
+Sublimation,solid,gas,absorbed
+Deposition,gas,solid,released

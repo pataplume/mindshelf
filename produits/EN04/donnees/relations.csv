@@ -1,0 +1,9 @@
+ordre,si,alors
+1,frequency ×2,"period ÷2, wavelength ÷2, SPL and PD ÷2 (same cycles), axial resolution number ÷2 (better), attenuation in dB ×2, penetration ÷2, near zone length ×2, Doppler shift ×2, aliasing velocity limit ÷2"
+2,imaging depth ×2,"PRP ×2, PRF ÷2, duty factor ÷2, frame rate ÷2, Nyquist limit ÷2"
+3,cycles per pulse ×2,"PD ×2, SPL ×2, axial resolution number ×2 (worse), duty factor ×2"
+4,element diameter ×2,"near zone length ×4, divergence in the far field less"
+5,amplitude ×2,"power ×4, intensity ×4"
+6,power ×2 (same area),"intensity ×2 (+3 dB)"
+7,beam area ÷2 (same power),"intensity ×2"
+8,propagation speed ×2 (same f),"wavelength ×2, PRP ÷2"

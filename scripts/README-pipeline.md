@@ -78,12 +78,13 @@ python3 scripts/controle_pdf.py --pdf dossier/X-a4.pdf dossier/X-nb.pdf --titre 
 | pages | tous | de 1 à `pages_max × controle_pages_facteur_<format>` (arrondi au-dessus) |
 | pages blanches | tous | chaque page peint du contenu hors en-tête, pied de page et décor (contenu balisé `/Artifact` par Typst) |
 | débordement | tous | aucun mot hors de la zone de texte latérale (`page.<format>.marge.x` de la charte, tolérance `controle_debordement_tolerance_pt`) ni hors de la page |
+| double moins | tous | aucun double signe moins dans le texte extrait (`pdftotext`) : `−−`, `−-`, `-−`, ou `--` suivi d'un chiffre ; espaces admis entre les deux signes, pas de retour à la ligne |
 | sans couleur | `nb` | rendu à `controle_nb_ppp` ppp ; un pixel est coloré si l'écart entre ses canaux R, V, B dépasse `controle_nb_ecart_max` ; au plus `controle_nb_pixels_max` pixels colorés |
 | paysage, liens internes, signets | `tablette` | page plus large que haute ; liens du sommaire en page 1 et retour au sommaire sur chaque page suivante ; signets PDF présents |
 
 ## Fiche test
 
-`produits/_test/` n'est pas un produit (absent de `data/produits.csv`). `src/main.typ` exerce tous les composants de la charte. La langue vient de l'entrée `langue` : une seule source donne la version anglaise (`TEST-EN`) et la version française (`TEST-FR`). Les nombres affichés sont lus dans `donnees/exemples.csv`, et chaque `resultat_attendu` y est recalculé depuis `formule` et `entrees_json`. Un écart au-delà de `tolerance` fait échouer la compilation.
+`produits/_test/` n'est pas un produit (absent de `data/produits.csv`). `src/main.typ` exerce tous les composants de la charte. La langue vient de l'entrée `langue` : une seule source donne la version anglaise (`TEST-EN`) et la version française (`TEST-FR`). Les nombres affichés sont lus dans `donnees/exemples.csv`, et chaque `resultat_attendu` y est recalculé depuis `formule` et `entrees_json`. Un écart au-delà de `tolerance` fait échouer la compilation. Le résultat affiché est arrondi selon les colonnes `arrondi` (décimales) et `mode_arrondi` (code de `data/modes_arrondi.csv`) : « 31,25 ⇒ 31 gouttes/min » quand l'arrondi change le résultat.
 
 ```bash
 python3 scripts/build.py --source produits/_test/src/main.typ --sortie-dir produits/_test/livraison/TEST-EN --inputs produits/_test/donnees/entrees-en.json

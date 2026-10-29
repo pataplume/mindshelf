@@ -75,3 +75,7 @@ apercu_vignette_puce_rayon,0.008,facteur,Rayon de la puce (fraction de la hauteu
 apercu_vignette_colonne_texte,1.25,fr,Largeur de la colonne de texte rapportée à celle de la miniature (1 fr)
 apercu_vignette_cadre_trait,0.6,pt,Épaisseur du cadre de la miniature
 apercu_vignette_cadre_transparence,80,%,Transparence de l'encre du cadre de la miniature
+anki_tableau_trait,1px,px,Épaisseur des filets des tableaux dans les cartes Anki (CSS du modèle)
+anki_cellule_marge,0.2em 0.5em,em,Marges intérieures des cellules de tableau dans les cartes Anki (CSS : vertical horizontal)
+anki_zeros_finaux,0,booléen (0/1),"Marqueur {x:ID} de cartes.csv : 1 garde les zéros finaux du résultat arrondi, 0 les retire (règle ISMP : pas de zéro final)"
+arrondi_mode_defaut,1,code,Mode d'arrondi appliqué quand exemples.csv n'a pas de colonne mode_arrondi ou la laisse vide (code de data/modes_arrondi.csv)

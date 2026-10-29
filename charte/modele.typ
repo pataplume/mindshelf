@@ -114,14 +114,14 @@
         curve.line((0.74 * s, 0.33 * s)),
       ))
     } else if forme == "alerte" {
-      place(polygon(fill: fond, stroke: (paint: fond, thickness: 0.06 * s, join: "round"),
+      place(polygon(fill: fond, stroke: (paint: fond, thickness: _v("icone.contour-alerte") * s, join: "round"),
         (0.5 * s, 0.03 * s), (0.99 * s, 0.95 * s), (0.01 * s, 0.95 * s)))
       place(line(start: (0.5 * s, 0.36 * s), end: (0.5 * s, 0.63 * s), stroke: st))
-      place(dx: 0.5 * s - e * 0.62, dy: 0.78 * s - e * 0.62, circle(radius: e * 0.62, fill: trait))
+      place(dx: 0.5 * s - e * _v("icone.point-rayon"), dy: 0.78 * s - e * _v("icone.point-rayon"), circle(radius: e * _v("icone.point-rayon"), fill: trait))
     } else if forme == "croix" {
       place(rect(width: s, height: s, radius: _v("rayon.icone"), fill: fond))
-      place(line(start: (0.5 * s, 0.24 * s), end: (0.5 * s, 0.76 * s), stroke: st + (thickness: 1.25 * e)))
-      place(line(start: (0.24 * s, 0.5 * s), end: (0.76 * s, 0.5 * s), stroke: st + (thickness: 1.25 * e)))
+      place(line(start: (0.5 * s, 0.24 * s), end: (0.5 * s, 0.76 * s), stroke: st + (thickness: _v("icone.trait-croix") * e)))
+      place(line(start: (0.24 * s, 0.5 * s), end: (0.76 * s, 0.5 * s), stroke: st + (thickness: _v("icone.trait-croix") * e)))
     }
   })
 }
@@ -484,7 +484,7 @@
       justify: _v("paragraphe.justifier"),
     )
     set block(spacing: _v("espace.bloc." + gabarit))
-    set strong(delta: int(_v("graisse.gras")) - 400)
+    set strong(delta: int(_v("graisse.gras")) - int(_v("graisse.normale")))
     set list(
       marker: (text(fill: c("marque"), jeton("liste.puce1")), text(fill: c("marque"), jeton("liste.puce2"))),
       indent: _v("liste.retrait"),

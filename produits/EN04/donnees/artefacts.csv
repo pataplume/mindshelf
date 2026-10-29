@@ -1,0 +1,12 @@
+ordre,nom,aspect,cause
+1,Reverberation,"equally spaced parallel lines deep to a strong reflector","sound bouncing between two strong reflectors (or reflector and transducer)"
+2,Comet tail / ring-down,"short bright tapering trail behind a tiny strong reflector or gas","reverberations too close to resolve (comet tail) or resonating gas bubbles (ring-down)"
+3,Mirror image,"duplicate placed deeper than a strong specular reflector, e.g. the diaphragm","the beam is redirected by the reflector; the system assumes a straight path"
+4,Acoustic shadowing,"dark band deep to a strongly attenuating or reflecting structure","high attenuation: stone, bone, gas"
+5,Acoustic enhancement,"bright band deep to a weakly attenuating structure","low attenuation: fluid-filled cyst, bladder"
+6,Edge shadow,"thin shadow from the curved edge of a round structure","refraction and divergence at the curved surface"
+7,Refraction duplication,"structure displaced sideways or duplicated","oblique incidence on a speed boundary (Snell)"
+8,Side lobe / grating lobe,"off-axis echoes placed on the main beam axis","energy outside the main beam; grating lobes come from arrays"
+9,Speed error (range error),"reflector shown too deep or too shallow; step-off of a straight line","true speed differs from the assumed 1540 m/s"
+10,Slice thickness,"false echoes filling anechoic structures","finite beam width in the elevational plane"
+11,Range ambiguity,"deep echo shown too shallow","echo returns after the next pulse is sent (PRF too high for depth)"

@@ -1,0 +1,42 @@
+id,valeur,valeur_max,unite,condition,description
+SCI_TOTAL,50,,questions,,Questions de la section Science du TEAS 7 (notées + prétest non notées)
+SCI_PRETEST,6,,questions,,Questions de prétest non notées de la section Science
+SCI_NOTEES,44,,questions,,Questions notées de la section Science
+SCI_MINUTES,60,,min,,Durée de la section Science
+OS_ADULTE,206,,bones,,Nombre d'os du squelette adulte
+VERT_C,7,,,,Vertèbres cervicales
+VERT_T,12,,,,Vertèbres thoraciques
+VERT_L,5,,,,Vertèbres lombaires
+NERFS_CRANIENS,12,,pairs,,Paires de nerfs crâniens
+NERFS_SPINAUX,31,,pairs,,Paires de nerfs spinaux
+LOBES_D,3,,lobes,,Lobes du poumon droit
+LOBES_G,2,,lobes,,Lobes du poumon gauche
+CAVITES_COEUR,4,,chambers,,Cavités cardiaques (2 oreillettes + 2 ventricules)
+PH_SANG,7.35,7.45,,,Intervalle normal du pH sanguin artériel
+T_CORPS_C,37,,°C,,Température corporelle normale (valeur de référence usuelle)
+T_CORPS_F,98.6,,°F,,Même température en degrés Fahrenheit
+CHROM_2N,46,,chromosomes,,Nombre diploïde humain (2n)
+CHROM_PAIRES,23,,pairs,,Paires de chromosomes humains (n = 23 dans un gamète)
+AA,20,,amino acids,,Acides aminés codés par le code génétique standard
+CODONS,64,,codons,,Codons possibles (4 bases ^ 3)
+CODONS_STOP,3,,,,Codons stop (UAA UAG UGA)
+CODON_BASES,3,,bases,,Longueur d'un codon
+PH_NEUTRE,7,,,25 °C,pH neutre de l'eau pure à 25 °C
+PH_MIN,0,14,,,Échelle de pH usuelle en solution aqueuse
+PKW,14,,,25 °C,pH + pOH à 25 °C
+EAU_FUSION,0,,°C,1 atm,Point de fusion de l'eau à 1 atm
+EAU_EBULLITION,100,,°C,1 atm,Point d'ébullition de l'eau à 1 atm
+K_OFFSET,273.15,,,,K = °C + 273.15
+F_RATIO,1.8,,,,°F = 1.8 × °C + 32 (1.8 = 9/5)
+F_OFFSET,32,,,,Décalage de l'échelle Fahrenheit
+P_KILO,1000,,,,Préfixe kilo (k) = 10^3
+P_DECI,0.1,,,,Préfixe déci (d) = 10^-1
+P_CENTI,0.01,,,,Préfixe centi (c) = 10^-2
+P_MILLI,0.001,,,,Préfixe milli (m) = 10^-3
+P_MICRO,0.000001,,,,Préfixe micro (µ) = 10^-6
+IN_CM,2.54,,cm,,1 inch = 2.54 cm (exact)
+LB_KG,0.4536,,kg,,1 lb = 0.45359237 kg (exact) arrondi à 4 décimales
+KG_LB,2.2,,lb,,1 kg ≈ 2.2046 lb arrondi à 1 décimale (usage courant)
+FT_IN,12,,in,,1 ft = 12 in
+L_ML,1000,,mL,,1 L = 1000 mL
+ML_CM3,1,,cm³,,1 mL = 1 cm³ (cc)

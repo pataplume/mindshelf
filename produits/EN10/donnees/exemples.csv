@@ -1,0 +1,37 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+EX01,"Conversion : 2.5 L en mL ; f = 1000 mL/L","{""L"": 2.5, ""f"": 1000}",L * f,2500,mL,0.000001,0
+EX02,"Conversion : 250 mg en g ; f = 0.001 g/mg","{""mg"": 250, ""f"": 0.001}",mg * f,0.25,g,0.000001,2
+EX03,"Conversion : 0.5 mg en µg ; f = 1000 µg/mg","{""mg"": 0.5, ""f"": 1000}",mg * f,500,µg,0.000001,0
+EX04,"Conversion : 0.75 km en m ; f = 1000 m/km","{""km"": 0.75, ""f"": 1000}",km * f,750,m,0.000001,0
+EX05,"Conversion : 150 lb en kg ; f = 0.45359237 kg/lb (exact)","{""lb"": 150, ""f"": 0.45359237}",lb * f,68.0388555,kg,0.000001,1
+EX06,"Conversion : 5 ft 6 in en cm ; k = 12 in/ft, f = 2.54 cm/in (exact)","{""ft"": 5, ""inch"": 6, ""k"": 12, ""f"": 2.54}",(ft * k + inch) * f,167.64,cm,0.000001,1
+EX07,"Température : 98.6 °F en °C ; °C = (°F − 32) / 1.8","{""F"": 98.6, ""o"": 32, ""r"": 1.8}",(F - o) / r,37,°C,0.000001,0
+EX08,"Température : 40 °C en °F ; °F = 1.8 × °C + 32","{""C"": 40, ""r"": 1.8, ""o"": 32}",C * r + o,104,°F,0.000001,0
+EX09,"Température : 37 °C en K ; K = °C + 273.15","{""C"": 37, ""k"": 273.15}",C + k,310.15,K,0.000001,2
+EX10,"Punnett Aa × Aa : probabilité du phénotype récessif aa en % = P(a) × P(a) × 100","{""pa1"": 0.5, ""pa2"": 0.5, ""c"": 100}",pa1 * pa2 * c,25,%,0.000001,0
+EX11,"Punnett Aa × Aa : cases AA sur 4 = P(A) × P(A) × 4","{""p1"": 0.5, ""p2"": 0.5, ""n"": 4}",p1 * p2 * n,1,,0.000001,0
+EX12,"Punnett Aa × Aa : cases Aa sur 4 = (P(A)P(a) + P(a)P(A)) × 4","{""pA1"": 0.5, ""pa2"": 0.5, ""pa1"": 0.5, ""pA2"": 0.5, ""n"": 4}",(pA1 * pa2 + pa1 * pA2) * n,2,,0.000001,0
+EX13,"Punnett Aa × Aa : cases de phénotype dominant sur 4 = (1 − P(aa)) × 4, P(aa) = 0.25","{""q"": 0.25, ""n"": 4}",(1 - q) * n,3,,0.000001,0
+EX14,"Punnett Aa × aa (croisement test) : phénotype récessif en % = P(a) × P(a) × 100, P(a) = 0.5 et 1","{""pa1"": 0.5, ""pa2"": 1, ""c"": 100}",pa1 * pa2 * c,50,%,0.000001,0
+EX15,"Dihybride AaBb × AaBb : cases dominant-dominant sur 16 = 3/4 × 3/4 × 16","{""d1"": 0.75, ""d2"": 0.75, ""n"": 16}",d1 * d2 * n,9,,0.000001,0
+EX16,"Dihybride AaBb × AaBb : cases dominant-récessif sur 16 = 3/4 × 1/4 × 16","{""d1"": 0.75, ""r2"": 0.25, ""n"": 16}",d1 * r2 * n,3,,0.000001,0
+EX17,"Dihybride AaBb × AaBb : cases double récessif sur 16 = 1/4 × 1/4 × 16","{""r1"": 0.25, ""r2"": 0.25, ""n"": 16}",r1 * r2 * n,1,,0.000001,0
+EX18,"pH : rapport des [H+] entre pH 3 et pH 6 = 10^(6 − 3)","{""pHa"": 3, ""pHb"": 6}","calc.pow(10, pHb - pHa)",1000,,0.000001,0
+EX19,"pOH à 25 °C : pOH = 14 − pH, pH = 3","{""pKw"": 14, ""pH"": 3}",pKw - pH,11,,0.000001,0
+EX20,"Molarité : 14.61 g de NaCl (M = 58.44 g/mol) dans 0.500 L ; M = m / (Mmol × V)","{""m"": 14.61, ""MM"": 58.44, ""V"": 0.5}",m / (MM * V),0.5,mol/L,0.000001,2
+EX21,"Masse molaire NaCl = M(Na) + M(Cl) = 22.990 + 35.45","{""Na"": 22.99, ""Cl"": 35.45}",Na + Cl,58.44,g/mol,0.000001,2
+EX22,"Dilution : solution mère 2 M, 500 mL à 0.5 M ; V1 = C2 × V2 / C1","{""C1"": 2, ""C2"": 0.5, ""V2"": 500}",C2 * V2 / C1,125,mL,0.000001,0
+EX23,"Pourcentage masse/volume : glucose 5 % (m/v), 250 mL ; masse = pct × V / 100","{""pct"": 5, ""V"": 250, ""c"": 100}",pct * V / c,12.5,g,0.000001,1
+EX24,"Masse volumique : 50 g pour 20 mL ; d = m / V","{""m"": 50, ""V"": 20}",m / V,2.5,g/mL,0.000001,1
+EX25,"Neutrons du carbone 14 : N = A − Z, A = 14, Z = 6","{""A"": 14, ""Z"": 6}",A - Z,8,,0.000001,0
+EX26,"Neutrons du chlore 35 : N = A − Z, A = 35, Z = 17","{""A"": 35, ""Z"": 17}",A - Z,18,,0.000001,0
+EX27,"Charge de l'ion Na+ : protons − électrons = 11 − 10","{""p"": 11, ""e"": 10}",p - e,1,,0.000001,0
+EX28,"Équilibrage CH4 + 2 O2 → CO2 + 2 H2O : atomes O à gauche = coefficient O2 × 2","{""cO2"": 2, ""o"": 2}",cO2 * o,4,,0.000001,0
+EX29,"Équilibrage : atomes O à droite = O du CO2 + coefficient H2O × 1","{""oCO2"": 2, ""cH2O"": 2}",oCO2 + cH2O * 1,4,,0.000001,0
+EX30,"Équilibrage : atomes H à droite = coefficient H2O × 2 (4 H dans CH4 à gauche)","{""cH2O"": 2, ""h"": 2}",cH2O * h,4,,0.000001,0
+EX31,"Débit cardiaque : FC 70 /min × VES 70 mL × 0.001 L/mL","{""HR"": 70, ""SV"": 70, ""f"": 0.001}",HR * SV * f,4.9,L/min,0.000001,1
+EX32,"Cellule haploïde humaine : n = 2n / 2, 2n = 46","{""n2"": 46, ""d"": 2}",n2 / d,23,,0.000001,0
+EX33,"Pente : hauteur 4 cm au jour 2, 10 cm au jour 8 ; pente = (y2 − y1) / (x2 − x1)","{""y1"": 4, ""y2"": 10, ""x1"": 2, ""x2"": 8}",(y2 - y1) / (x2 - x1),1,cm/day,0.000001,0
+EX34,"Moyenne de trois essais : (12 + 15 + 18) / 3","{""a"": 12, ""b"": 15, ""c"": 18, ""n"": 3}",(a + b + c) / n,15,,0.000001,0
+EX35,"Erreur relative en % : mesure 10.4, valeur acceptée 10 ; (m − a) / a × 100","{""m"": 10.4, ""a"": 10, ""c"": 100}",(m - a) / a * c,4,%,0.000001,0
+EX36,"Nombre de codons : 4 bases, codons de 3 bases ; 4^3","{""b"": 4, ""n"": 3}","calc.pow(b, n)",64,,0.000001,0

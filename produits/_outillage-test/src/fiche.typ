@@ -4,7 +4,9 @@
 #set document(title: "Banc d'essai outillage", author: "MindShelf")
 #set page(paper: "a4", margin: (x: 16mm, y: 14mm),
   footer: context [#set text(8pt, fill: luma(90)); Banc d'essai outillage — page #counter(page).display() / #counter(page).final().first()])
-#set text(font: "Inter", size: 9.5pt, lang: "en")
+// Polices de la charte seulement (prepare.py compile avec charte/polices et sans les polices système).
+#set text(font: "Fira Sans", size: 9.5pt, lang: "en")
+#show math.equation: set text(font: "Fira Math")
 #set par(leading: 0.5em)
 
 #let accent = rgb("#2F6F73")

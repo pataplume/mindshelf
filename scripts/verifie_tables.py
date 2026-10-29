@@ -1,7 +1,8 @@
 """Contrôle d'intégrité des tables : clés étrangères, valeurs autorisées, doublons.
 Usage : python3 scripts/verifie_tables.py   (code de sortie 1 si erreur)"""
+import csv
 import sys
-from tables import lire, index
+from tables import RACINE, lire, index, param
 
 erreurs = []
 
@@ -97,6 +98,46 @@ produits_planifies = {t["produit_code"] for t in lire("run_taches.csv") if t["ro
 for code in produits:
     if code not in produits_planifies:
         erreurs.append(f"produits.csv {code} n'est produit par aucun run")
+
+# Modes d'arrondi (data/modes_arrondi.csv) : codes numériques ; la méthode est le seul lien avec le code des outils.
+METHODES_ARRONDI = {"plus_proche", "defaut", "exces"}  # méthodes connues de scripts/anki.py et des sources Typst
+unique("modes_arrondi.csv", "code")
+unique("modes_arrondi.csv", "methode")
+modes = {m["code"] for m in lire("modes_arrondi.csv")}
+for i, m in enumerate(lire("modes_arrondi.csv"), start=2):
+    if not m["code"].isdigit():
+        erreurs.append(f"modes_arrondi.csv:{i} code '{m['code']}' non numérique")
+    if m["methode"] not in METHODES_ARRONDI:
+        erreurs.append(f"modes_arrondi.csv:{i} methode '{m['methode']}' inconnue ({', '.join(sorted(METHODES_ARRONDI))})")
+    if not m["libelle"].strip():
+        erreurs.append(f"modes_arrondi.csv:{i} libellé vide")
+if param("arrondi_mode_defaut") not in modes:
+    erreurs.append(f"parametres.csv arrondi_mode_defaut='{param('arrondi_mode_defaut')}' absent de modes_arrondi.csv")
+if param("anki_zeros_finaux") not in ("0", "1"):
+    erreurs.append("parametres.csv anki_zeros_finaux doit valoir 0 ou 1")
+
+
+def _csv_produit(chemin):
+    with open(chemin, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+# Tables des produits : clés mode_arrondi* de valeurs.csv, colonnes arrondi et mode_arrondi de exemples.csv.
+for chemin in sorted((RACINE / "produits").glob("*/donnees/valeurs.csv")):
+    rel = chemin.relative_to(RACINE)
+    for i, l in enumerate(_csv_produit(chemin), start=2):
+        cle = l.get("cle") or l.get("id") or ""
+        if cle.startswith("mode_arrondi") and (l.get("valeur") or "").strip() not in modes:
+            erreurs.append(f"{rel}:{i} {cle}='{l.get('valeur')}' absent de modes_arrondi.csv.code")
+for chemin in sorted((RACINE / "produits").glob("*/donnees/exemples.csv")):
+    rel = chemin.relative_to(RACINE)
+    for i, l in enumerate(_csv_produit(chemin), start=2):
+        a = (l.get("arrondi") or "").strip()
+        if a and not a.isdigit():
+            erreurs.append(f"{rel}:{i} arrondi='{a}' : nombre de décimales attendu (entier ≥ 0)")
+        m = (l.get("mode_arrondi") or "").strip()
+        if m and m not in modes:
+            erreurs.append(f"{rel}:{i} mode_arrondi='{m}' absent de modes_arrondi.csv.code")
 
 if erreurs:
     print("\n".join(erreurs))

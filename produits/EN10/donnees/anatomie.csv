@@ -1,0 +1,63 @@
+systeme,structure,role
+Cardiovascular,Right atrium,Receives deoxygenated blood from the superior and inferior venae cavae
+Cardiovascular,Right ventricle,Pumps blood through the pulmonary valve into the pulmonary trunk (pulmonary circuit)
+Cardiovascular,Left atrium,Receives oxygenated blood from the pulmonary veins
+Cardiovascular,Left ventricle,Thickest wall; pumps blood through the aortic valve into the aorta (systemic circuit)
+Cardiovascular,Valves,Tricuspid (right) and mitral or bicuspid (left); semilunar valves (pulmonary and aortic) guard the outflow; all prevent backflow
+Cardiovascular,Conduction,SA node (pacemaker) → AV node → AV bundle (bundle of His) → bundle branches → Purkinje fibers
+Cardiovascular,Vessels,"Arteries carry blood away from the heart; capillaries (one cell thick) exchange gases and nutrients; veins return blood, with valves in the limbs"
+Cardiovascular,Blood,"Erythrocytes carry O₂ on hemoglobin; leukocytes defend; platelets start clotting; plasma carries solutes"
+Respiratory,Nasal cavity,"Warms, humidifies and filters inhaled air"
+Respiratory,Pharynx and larynx,Shared airway and food passage; larynx holds the vocal cords; the epiglottis covers it during swallowing
+Respiratory,Trachea and bronchi,Cartilage rings keep the trachea open; bronchi branch into bronchioles (conducting zone)
+Respiratory,Alveoli,"Gas exchange by diffusion across a thin respiratory membrane; surfactant lowers surface tension"
+Respiratory,Diaphragm,"Contracts and flattens on inspiration: chest volume up, pressure down, air flows in"
+Respiratory,Brainstem centers,Medulla and pons set the breathing rhythm; rising CO₂ (falling pH) is the main drive to breathe
+Digestive,Mouth,Chewing (mechanical digestion); salivary amylase starts starch digestion
+Digestive,Esophagus,Moves the bolus to the stomach by peristalsis
+Digestive,Stomach,HCl and pepsin begin protein digestion; churning makes chyme
+Digestive,Small intestine,"Duodenum, jejunum, ileum: most chemical digestion and absorption; villi and microvilli enlarge the surface"
+Digestive,Liver and gallbladder,Liver makes bile (emulsifies fats); gallbladder stores and concentrates it
+Digestive,Pancreas (exocrine),"Releases amylase, lipase, proteases and bicarbonate into the duodenum"
+Digestive,Large intestine,"Absorbs water and electrolytes; gut bacteria make vitamin K; forms feces"
+Nervous,CNS,Brain and spinal cord: integrate information
+Nervous,Neuron,"Dendrites receive, the cell body integrates, the axon conducts; myelin (Schwann cells in the PNS, oligodendrocytes in the CNS) speeds conduction"
+Nervous,Cerebrum,"Lobes: frontal (motor, planning, personality), parietal (touch, body sense), temporal (hearing, memory), occipital (vision)"
+Nervous,Cerebellum,"Coordination, balance, posture"
+Nervous,Brainstem,"Midbrain, pons, medulla oblongata: breathing, heart rate, blood pressure"
+Nervous,Autonomic NS,"Sympathetic: fight or flight (heart rate up, pupils dilate, airways dilate, digestion slows); parasympathetic: rest and digest"
+Nervous,Action potential,"Na⁺ rushes in (depolarization), K⁺ flows out (repolarization); neurotransmitters such as acetylcholine cross the synapse"
+Musculoskeletal,Skeletal muscle,"Voluntary, striated, multinucleated fibers"
+Musculoskeletal,Cardiac muscle,"Involuntary, striated, branched cells joined by intercalated discs"
+Musculoskeletal,Smooth muscle,"Involuntary, not striated; walls of hollow organs and blood vessels"
+Musculoskeletal,Sarcomere,Contraction unit: actin (thin) and myosin (thick) filaments slide past each other; needs Ca²⁺ and ATP
+Musculoskeletal,Bone functions,"Support, protection, movement, mineral (Ca²⁺) storage, blood cell formation in red marrow"
+Musculoskeletal,Bone cells,"Osteoblasts build bone, osteoclasts break it down, osteocytes maintain it"
+Musculoskeletal,Connections,"Tendons join muscle to bone; ligaments join bone to bone; synovial joints move freely"
+Endocrine,Hypothalamus,Releasing and inhibiting hormones control the anterior pituitary; makes ADH and oxytocin
+Endocrine,Anterior pituitary,"GH, TSH, ACTH, FSH, LH, prolactin"
+Endocrine,Posterior pituitary,"Releases ADH (water reabsorption) and oxytocin (uterine contraction, milk ejection)"
+Endocrine,Thyroid,"T₄ and T₃ raise metabolic rate; calcitonin lowers blood Ca²⁺"
+Endocrine,Parathyroids,PTH raises blood Ca²⁺
+Endocrine,Adrenal cortex,"Cortisol (stress, raises glucose); aldosterone (Na⁺ and water retention)"
+Endocrine,Adrenal medulla,"Epinephrine and norepinephrine (fight or flight)"
+Endocrine,Pancreatic islets,"Insulin from beta cells lowers blood glucose; glucagon from alpha cells raises it"
+Endocrine,Pineal gland,Melatonin (sleep–wake rhythm)
+Urinary,Kidneys,"Filter blood; regulate water, electrolytes, pH and blood pressure; release renin and erythropoietin (EPO)"
+Urinary,Nephron,"Glomerulus and glomerular (Bowman's) capsule filter → proximal tubule (most reabsorption) → nephron loop (loop of Henle) → distal tubule → collecting duct"
+Urinary,Hormonal control,"ADH increases water reabsorption in collecting ducts; aldosterone increases Na⁺ reabsorption"
+Urinary,Urine path,Ureters (peristalsis) → urinary bladder (storage) → urethra
+Reproductive,Testes,"Sperm production in seminiferous tubules; testosterone from interstitial cells"
+Reproductive,Male ducts and glands,"Epididymis (maturation, storage) → ductus (vas) deferens → urethra; seminal vesicles, prostate and bulbourethral glands add semen fluid"
+Reproductive,Ovaries,"Oocytes; estrogen and progesterone"
+Reproductive,Uterine tubes and uterus,"Fertilization usually occurs in the uterine (fallopian) tube; implantation in the endometrium, which sheds at menstruation"
+Reproductive,Hormones,FSH and LH from the anterior pituitary drive gamete production; the LH surge triggers ovulation
+Integumentary,Epidermis,"Keratinized stratified squamous epithelium, no blood vessels; melanocytes make melanin (UV protection)"
+Integumentary,Dermis,"Connective tissue with blood vessels, nerves, hair follicles, sweat and sebaceous glands"
+Integumentary,Hypodermis,"Subcutaneous fat: insulation, energy storage, anchoring"
+Integumentary,Functions,"Barrier, thermoregulation (sweat, blood flow), sensation, vitamin D synthesis"
+Immune & lymphatic,Innate defenses,"Nonspecific: skin and mucous membranes, phagocytes (neutrophils, macrophages), NK cells, inflammation, fever"
+Immune & lymphatic,B cells,Humoral immunity: become plasma cells that secrete antibodies; mature in red bone marrow
+Immune & lymphatic,T cells,"Cell-mediated immunity: helper T cells coordinate, cytotoxic T cells kill infected cells; mature in the thymus"
+Immune & lymphatic,Lymphatic organs,"Lymph nodes filter lymph; spleen filters blood and removes old red cells; lymphatic vessels return fluid to the blood"
+Immune & lymphatic,Immunity types,"Active (infection or vaccine, makes memory cells) vs passive (antibodies received, e.g., across the placenta; short-lived)"

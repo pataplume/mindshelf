@@ -1,0 +1,4 @@
+code,methode,libelle
+1,plus_proche,"Au plus proche (demi vers le haut, en valeur absolue)"
+2,defaut,Par défaut (troncature vers le bas)
+3,exces,Par excès (vers le haut)

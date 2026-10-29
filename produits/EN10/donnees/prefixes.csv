@@ -1,0 +1,7 @@
+prefixe,symbole,valeur_id
+kilo,k,P_KILO
+(base unit),—,
+deci,d,P_DECI
+centi,c,P_CENTI
+milli,m,P_MILLI
+micro,µ,P_MICRO

@@ -7,6 +7,7 @@ Pour chaque format :
   - nombre de pages entre 1 et pages_max × controle_pages_facteur_<format> (arrondi au-dessus) ;
   - aucune page blanche (page sans aucun contenu hors en-tête, pied de page et décor) ;
   - aucun texte qui sort de la zone de texte latérale (marges page.<format>.marge.x de la charte) ;
+  - aucun double signe moins dans le texte extrait (−−, −-, -−, ou -- suivi d'un chiffre ; espaces admis entre les deux) ;
   - N&B : aucun pixel coloré (rendu à controle_nb_ppp, écart entre canaux > controle_nb_ecart_max) ;
   - tablette : page en paysage, liens internes (sommaire, retour au sommaire) et signets présents.
 
@@ -150,6 +151,26 @@ def mentions_absentes(pdf, textes):
     return [t for t in textes if _compacte(t) not in contenu]
 
 
+# Double signe moins : U+2212 ou trait d'union-moins, deux fois de suite (espaces horizontaux admis entre les deux,
+# pas de retour à la ligne). Deux traits d'union ne sont fautifs que suivis d'un chiffre (« --formats » est admis).
+_ESP = r"[ \t\u00a0\u2009\u202f\u2060]*"
+MOTIF_DOUBLE_MOINS = re.compile(rf"\u2212{_ESP}[\u2212-]|-{_ESP}\u2212|-{_ESP}-(?={_ESP}\d)")
+
+
+def doubles_moins_texte(texte):
+    """[(page, extrait)] des doubles signes moins d'un texte pdftotext (pages séparées par \\f)."""
+    res = []
+    for num, page in enumerate(texte.split("\f"), start=1):
+        for m in MOTIF_DOUBLE_MOINS.finditer(page):
+            res.append((num, page[max(0, m.start() - 12):m.end() + 6].replace("\n", " ").strip()))
+    return res
+
+
+def doubles_moins(pdf):
+    """Doubles signes moins dans le texte extrait du PDF (cause connue : signe déjà présent dans la donnée)."""
+    return doubles_moins_texte(executer(["pdftotext", str(pdf), "-"]))
+
+
 # --- Contrôle d'un PDF -------------------------------------------------------------------
 
 def controler(pdf, fmt, titre, marque, pages_max, mentions=()):
@@ -188,6 +209,11 @@ def controler(pdf, fmt, titre, marque, pages_max, mentions=()):
     res.append(Resultat(fmt, "débordement", not hors, "aucun" if not hors else
                         "; ".join(f"p. {p} « {m} » x={x}" for p, m, x in hors[:5])
                         + (f" (+{len(hors) - 5})" if len(hors) > 5 else "")))
+
+    doubles = doubles_moins(pdf)
+    res.append(Resultat(fmt, "double moins", not doubles, "aucun" if not doubles else
+                        "; ".join(f"p. {p} « {x} »" for p, x in doubles[:5])
+                        + (f" (+{len(doubles) - 5})" if len(doubles) > 5 else "")))
 
     if mentions:
         manquantes = mentions_absentes(pdf, mentions)

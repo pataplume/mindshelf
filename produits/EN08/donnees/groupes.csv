@@ -1,0 +1,10 @@
+code,ordre,libelle
+BMP,1,Electrolytes
+GLU,2,Glucose
+RENAL,3,Kidney
+CBC,4,Blood count
+COAG,5,Coagulation
+ABG,6,Arterial blood gas (room air)
+LFT,7,Liver panel
+LIP,8,Lipids (decision limits)
+DRUG,9,Drug level

@@ -171,6 +171,9 @@ formule.espace-equation,0.3em,Espace autour d'une équation centrée dans l'enca
 icone.taille,1.05em,Côté des icônes d'encadré
 icone.ligne-de-base,0.17em,Décalage vertical des icônes par rapport à la ligne de base
 icone.trait,0.14,Épaisseur des traits d'icône (fraction de la taille)
+icone.contour-alerte,0.06,"Épaisseur du contour arrondi du triangle « ! » (fraction de la taille de l'icône)"
+icone.trait-croix,1.25,Épaisseur des traits du « + » rapportée à icone.trait
+icone.point-rayon,0.62,Rayon du point du « ! » rapporté à l'épaisseur de trait (icone.trait × taille)
 libelle.interlettre,0.04em,Interlettrage des libellés en petites capitales
 libelle.petites-capitales,true,Libellés d'encadrés en petites capitales
 liste.retrait,0.15em,Retrait des listes

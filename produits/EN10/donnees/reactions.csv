@@ -1,0 +1,7 @@
+type,schema,exemple
+Synthesis,A + B → AB,2 H₂ + O₂ → 2 H₂O
+Decomposition,AB → A + B,2 H₂O₂ → 2 H₂O + O₂
+Single replacement,A + BC → AC + B,Zn + 2 HCl → ZnCl₂ + H₂
+Double replacement,AB + CD → AD + CB,AgNO₃ + NaCl → AgCl + NaNO₃
+Combustion,fuel + O₂ → CO₂ + H₂O,CH₄ + 2 O₂ → CO₂ + 2 H₂O
+Neutralization,acid + base → salt + water,HCl + NaOH → NaCl + H₂O

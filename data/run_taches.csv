@@ -130,7 +130,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 129,R21,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
-132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02)",EN_COURS
+132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02)",A_VERIFIER
 133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",A_VALIDER
 134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VALIDER
 135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VALIDER
@@ -143,7 +143,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 142,R02,PRODUCTION,PRODUCTEUR,FR07,CORR1,"Correction v2 : double signe moins (charte corrigée), sous-titre, licences OpenStax, références qui n'écrivent pas la formule, exemples FX20/FX21, symboles réutilisés, constats du conditionneur ; puis éléments de vente",A_VALIDER
 143,R02,VERIFICATION,VERIFICATEUR,FR07,CORR1,Contre-vérification des corrections v2,A_VALIDER
 144,R02,VERIFICATION,VERIFICATEUR,FR08,CORR1,Contre-vérification des corrections v2,A_VALIDER
-145,R03,PRODUCTION,OUTILLAGE,,,"Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01)",EN_COURS
+145,R03,PRODUCTION,OUTILLAGE,,,"Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01)",A_VERIFIER
 146,R04,PRODUCTION,PRODUCTEUR,FR07,CORR_R02,"Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP",A_FAIRE
 147,R04,PRODUCTION,PRODUCTEUR,FR08,CORR_R02,"Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03",A_FAIRE
 148,R03,PREPARATION,ORCHESTRATEUR,,,Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite,A_FAIRE

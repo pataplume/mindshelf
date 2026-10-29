@@ -1,0 +1,11 @@
+id,groupe,ordre,symbole,libelle,mantisse,exposant,unite,source_code
+P_CTISSUE,PHYS,1,c,average speed of sound in soft tissue,1540,0,m/s,KREMKAU_11
+P_CTISSUE_MMUS,PHYS,2,c,same in mm/µs,1.54,0,mm/µs,KREMKAU_11
+P_ATT,PHYS,3,α,soft-tissue attenuation rule of thumb,0.5,0,dB/cm/MHz,KREMKAU_11
+P_13US,PHYS,4,,round-trip time per cm of depth in soft tissue,13,0,µs/cm,KREMKAU_11
+P_ULTRA,PHYS,5,,lower limit of ultrasound,20,0,kHz,KREMKAU_11
+P_HALF_DB,PHYS,6,,dB change for half or double intensity,3,0,dB,ANALYSE_MATH
+P_TEN_DB,PHYS,7,,dB change for a factor of 10 in intensity,10,0,dB,ANALYSE_MATH
+P_BERN_K,PHYS,8,,simplified Bernoulli coefficient,4,0,mmHg/(m/s)²,KREMKAU_11
+L_ISPTA,LIMIT,1,,FDA Track 3 upper limit for derated I_SPTA (non-ophthalmic),720,0,mW/cm²,FDA_US_2023
+L_MI,LIMIT,2,,FDA Track 3 upper limit for MI (non-ophthalmic),1.9,0,,FDA_US_2023

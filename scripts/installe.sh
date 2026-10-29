@@ -40,6 +40,17 @@ for outil in pdftoppm pdffonts pdftotext ffmpeg ffprobe; do
   fi
 done
 
+# Encodeur H.264 de ffmpeg, dont dépend scripts/video_feuilletage.py.
+if command -v ffmpeg >/dev/null 2>&1; then
+  encodeurs=$(ffmpeg -hide_banner -encoders 2>/dev/null || true)
+  if grep -q libx264 <<<"$encodeurs"; then
+    echo "ok      ffmpeg libx264"
+  else
+    echo "MANQUE  encodeur libx264 de ffmpeg (video_feuilletage.py)" >&2
+    manque=1
+  fi
+fi
+
 # Polices de la charte (incorporées dans chaque PDF).
 if ls "$RACINE"/charte/polices/*/*.otf >/dev/null 2>&1; then
   echo "ok      polices charte/polices"

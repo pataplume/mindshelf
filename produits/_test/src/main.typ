@@ -4,6 +4,8 @@
 // et de ../donnees/exemples.csv. Aucun nombre n'est tapé dans ce fichier : les valeurs affichées sont lues
 // dans exemples.csv (entrees_json et resultat_attendu), et chaque résultat est recalculé ici depuis sa formule :
 // un écart au-delà de la tolérance fait échouer la compilation.
+// Arrondi du résultat affiché : colonnes `arrondi` (décimales) et `mode_arrondi` (code de /data/modes_arrondi.csv :
+// au plus proche, par défaut, par excès). Si le résultat arrondi diffère du calcul exact : « exact ⇒ arrondi ».
 // Build : python3 scripts/build.py --source produits/_test/src/main.typ --sortie-dir produits/_test/livraison/TEST-EN \
 //           --inputs produits/_test/donnees/entrees-en.json      (idem avec entrees-fr.json et TEST-FR)
 #import "/charte/modele.typ": *
@@ -19,6 +21,21 @@
 #let t(en, fr-txt) = if fr { fr-txt } else { en }
 
 // ── Données ──
+// Modes d'arrondi : code (table) → méthode. Les codes ne sont écrits que dans /data/modes_arrondi.csv.
+#let modes_arrondi = {
+  let d = (:)
+  for l in csv("/data/modes_arrondi.csv", row-type: dictionary) { d.insert(l.code, l.methode) }
+  d
+}
+#let arrondir(x, decimales, code) = {
+  if code not in modes_arrondi { panic("fiche test : mode d'arrondi « " + code + " » absent de data/modes_arrondi.csv") }
+  let m = modes_arrondi.at(code)
+  let f = calc.pow(10, decimales)
+  if m == "plus_proche" { calc.round(x, digits: decimales) }
+  else if m == "defaut" { calc.floor(x * f) / f }
+  else if m == "exces" { calc.ceil(x * f) / f }
+  else { panic("fiche test : méthode d'arrondi inconnue : " + m) }
+}
 #let exemples = {
   let d = (:)
   for l in csv("../donnees/exemples.csv", row-type: dictionary) {
@@ -28,7 +45,11 @@
     if calc.abs(calcule - attendu) > float(l.tolerance) {
       panic("fiche test : " + l.id + " : " + l.formule + " = " + str(calcule) + ", attendu " + l.resultat_attendu)
     }
-    d.insert(l.id, l + (e: e))
+    if l.arrondi.trim() == "" or l.mode_arrondi.trim() == "" {
+      panic("fiche test : " + l.id + " : colonnes arrondi et mode_arrondi obligatoires")
+    }
+    let n = int(l.arrondi)
+    d.insert(l.id, l + (e: e, x: attendu, n: n, r: arrondir(attendu, n, l.mode_arrondi.trim())))
   }
   d
 }
@@ -43,6 +64,11 @@
   nombre(str(e.at(cle)))
 }
 #let res(id) = nombre(ex(id).resultat_attendu)
+// Résultat affiché : exact, ou « exact ⇒ arrondi » quand l'arrondi le change (ex. gouttes entières).
+#let aff(id) = {
+  let l = ex(id)
+  if l.r == l.x { nombre(l.resultat_attendu) } else [#nombre(l.resultat_attendu) ⇒ #nombre(l.r, decimales: l.n)]
+}
 // Unités : la table donne l'unité canonique ; le français écrit « gouttes/min » (vocabulaire IFSI).
 #let unite(u) = if fr and u == "gtt/min" { "gouttes/min" } else { u }
 #let u(id) = unite(ex(id).unite)
@@ -83,7 +109,7 @@
 ]
 
 #formule(titre: t("Hourly rate", "Débit horaire"))[
-  $ "mL/h" = V / T $
+  $ #t("rate", "débit") "(mL/h)" = (V "(mL)") / (T "(h)") $
 ]
 
 == #t("Worked examples", "Exemples corrigés")
@@ -102,7 +128,7 @@
     [#v("EX02", "V") mL en #v("EX02", "T") h, perfuseur à #v("EX02", "DF") gouttes/mL.],
   )
   $ (#v("EX02", "V") times #v("EX02", "DF")) / (#v("EX02", "T") times #v("EX02", "M"))
-    = #res("EX02") #u("EX02") $
+    = #aff("EX02") #u("EX02") $
 ]
 
 #exemple(titre: t("Weight-based dose", "Dose au poids"))[
@@ -133,7 +159,7 @@
   columns: (auto, 1fr, auto),
   align: (left, left, right),
   [#t[Case][Cas]], [#t[Formula][Formule]], [#t[Result][Résultat]],
-  ..exemples.values().map(l => ([#l.id], [#raw(l.formule)], [#nombre(l.resultat_attendu) #unite(l.unite)])).flatten(),
+  ..exemples.values().map(l => ([#l.id], [#raw(l.formule)], [#aff(l.id) #unite(l.unite)])).flatten(),
 )
 
 == #t("Number formatting", "Format des nombres")
@@ -145,8 +171,8 @@
 
 #note-clinique[
   #t(
-    [Two independent checks for high-alert drugs (insulin, heparin, potassium).],
-    [Double contrôle indépendant pour les médicaments à haut risque (insuline, héparine, potassium).],
+    [Independent double check for high-alert medications (insulin, heparin, concentrated potassium chloride IV).],
+    [Double contrôle indépendant pour les médicaments à haut risque (insuline, héparine, chlorure de potassium concentré IV).],
   )
 ]
 

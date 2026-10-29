@@ -1,0 +1,41 @@
+ordre,groupe_code,examen,borne,bas_us,haut_us,unite_us,facteur_code,bas_si,haut_si,unite_si,unite_source,decimales_us,decimales_si,source_code
+1,BMP,Sodium (Na⁺),intervalle,136,145,mEq/L,MEQ1,136,145,mmol/L,US,0,0,ABIM_2026
+2,BMP,Potassium (K⁺),intervalle,3.5,5.0,mEq/L,MEQ1,3.5,5.0,mmol/L,US,1,1,ABIM_2026
+3,BMP,Chloride (Cl⁻),intervalle,98,106,mEq/L,MEQ1,98,106,mmol/L,US,0,0,ABIM_2026
+4,BMP,"Bicarbonate (HCO₃⁻), serum",intervalle,23,28,mEq/L,MEQ1,23,28,mmol/L,US,0,0,ABIM_2026
+5,BMP,"Total CO₂, serum",intervalle,23,30,mEq/L,MEQ1,23,30,mmol/L,US,0,0,ABIM_2026
+6,BMP,"Calcium, total",intervalle,8.6,10.2,mg/dL,CA,2.15,2.54,mmol/L,US,1,2,ABIM_2026
+7,BMP,"Calcium, ionized",intervalle,4.65,5.25,mg/dL,CA,1.16,1.31,mmol/L,SI,2,2,ABIM_2026
+8,BMP,Magnesium,intervalle,1.6,2.6,mg/dL,MG,0.66,1.07,mmol/L,US,1,2,ABIM_2026
+9,BMP,Phosphorus (as P),intervalle,3.0,4.5,mg/dL,P,0.97,1.45,mmol/L,US,1,2,ABIM_2026
+10,GLU,"Glucose, fasting plasma",intervalle,70,99,mg/dL,GLU,3.9,5.5,mmol/L,US,0,1,ABIM_2026
+11,GLU,Hemoglobin A1c,intervalle,4.0,5.6,%,HBA1C,20,38,mmol/mol,US,1,0,ABIM_2026
+12,RENAL,BUN (urea nitrogen) → urea,intervalle,8,20,mg/dL,BUN,2.9,7.1,mmol/L,US,0,1,ABIM_2026
+13,RENAL,"Creatinine, female",intervalle,0.50,1.10,mg/dL,CREA,44,97,µmol/L,US,2,0,ABIM_2026
+14,RENAL,"Creatinine, male",intervalle,0.70,1.30,mg/dL,CREA,62,115,µmol/L,US,2,0,ABIM_2026
+15,CBC,"Hemoglobin, female",intervalle,12,16,g/dL,GDL,120,160,g/L,US,0,0,ABIM_2026
+16,CBC,"Hemoglobin, male",intervalle,14,18,g/dL,GDL,140,180,g/L,US,0,0,ABIM_2026
+17,CBC,"Hematocrit, female",intervalle,37,47,%,PCT,0.37,0.47,L/L,US,0,2,ABIM_2026
+18,CBC,"Hematocrit, male",intervalle,42,50,%,PCT,0.42,0.50,L/L,US,0,2,ABIM_2026
+19,CBC,WBC (leukocytes),intervalle,4000,11000,/µL,CELL,4.0,11.0,×10⁹/L,US,0,1,ABIM_2026
+20,CBC,Platelets,intervalle,150000,450000,/µL,CELL,150,450,×10⁹/L,US,0,0,ABIM_2026
+21,COAG,PT (prothrombin time),intervalle,11,13,s,IDENT,11,13,s,US,0,0,ABIM_2026
+22,COAG,"INR, no anticoagulant",intervalle,0.8,1.1,,IDENT,0.8,1.1,,US,1,1,MEDLINEPLUS_PT
+23,COAG,INR target on warfarin,intervalle,2.0,3.0,,IDENT,2.0,3.0,,US,1,1,MEDLINEPLUS_PT
+24,COAG,aPTT,intervalle,25,35,s,IDENT,25,35,s,US,0,0,ABIM_2026
+25,ABG,pH,intervalle,7.38,7.44,,IDENT,7.38,7.44,,US,2,2,ABIM_2026
+26,ABG,PaCO₂,intervalle,38,42,mm Hg,MMHG,5.1,5.6,kPa,US,0,1,ABIM_2026
+27,ABG,PaO₂,intervalle,75,100,mm Hg,MMHG,10.0,13.3,kPa,US,0,1,ABIM_2026
+28,ABG,HCO₃⁻,intervalle,23,26,mEq/L,MEQ1,23,26,mmol/L,US,0,0,ABIM_2026
+29,ABG,SaO₂,min,95,,%,PCT,0.95,,L/L,US,0,2,ABIM_2026
+30,LFT,Albumin,intervalle,3.5,5.5,g/dL,GDL,35,55,g/L,US,1,0,ABIM_2026
+31,LFT,Total protein,intervalle,5.5,9.0,g/dL,GDL,55,90,g/L,US,1,0,ABIM_2026
+32,LFT,"Bilirubin, total",intervalle,0.3,1.0,mg/dL,BILI,5,17,µmol/L,US,1,0,ABIM_2026
+33,LFT,ALT and AST (each),intervalle,10,40,U/L,ENZ,0.17,0.67,µkat/L,US,0,2,ABIM_2026
+34,LFT,Alkaline phosphatase,intervalle,30,120,U/L,ENZ,0.50,2.00,µkat/L,US,0,2,ABIM_2026
+35,LIP,"Total cholesterol, desirable",max,,200,mg/dL,CHOL,,5.18,mmol/L,US,0,2,ABIM_2026
+36,LIP,"LDL cholesterol, optimal",max,,100,mg/dL,CHOL,,2.59,mmol/L,US,0,2,ABIM_2026
+37,LIP,"HDL cholesterol, low if female",max,,50,mg/dL,CHOL,,1.30,mmol/L,US,0,2,ABIM_2026
+38,LIP,"HDL cholesterol, low if male",max,,40,mg/dL,CHOL,,1.04,mmol/L,US,0,2,ABIM_2026
+39,LIP,"Triglycerides, fasting, normal",max,,150,mg/dL,TG,,1.70,mmol/L,US,0,2,ABIM_2026
+40,DRUG,"Digoxin, general range",intervalle,0.5,1.9,ng/mL,DIG,0.6,2.4,nmol/L,US,1,1,MEDLINEPLUS_DIG

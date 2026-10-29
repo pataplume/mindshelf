@@ -3,7 +3,7 @@
 produits/<CODE>/annonce/whop.md : sections « # Titre », « # Accroche », « # Description », « # Labels » (liste à puces) ;
   longueurs ≤ whop_titre_car_max, whop_accroche_car_max, whop_description_car_max.
 produits/<CODE>/annonce/etsy/annonce.md, seulement si le produit a droit à Etsy (tables.etsy_autorise ;
-  s'il n'y a pas droit, la présence du fichier est une erreur) : « # Titre » (≤ etsy_titre_mots_max mots,
+  s'il n'y a pas droit, la présence du dossier annonce/etsy/ est une erreur) : « # Titre » (≤ etsy_titre_mots_max mots,
   ≤ etsy_titre_car_max caractères, caractères admis par Etsy), « # Tags » (exactement etsy_tags_max tags,
   chacun ≤ etsy_tag_car_max caractères, caractères admis, sans doublon), « # Description », « # Visuels »
   (liste numérotée de chemins relatifs au dossier produit, qui doivent exister ; au plus etsy_photos_par_annonce_max
@@ -259,8 +259,9 @@ def controler_annonces(dossier, mentions, etsy):
             erreurs += [f"{relatif(etsy_md)} : {e}" for e in controler_etsy(etsy_md, dossier, mentions)]
         else:
             erreurs.append(f"{relatif(etsy_md)} : fichier manquant (le produit a droit à Etsy)")
-    elif etsy_md.exists():
-        erreurs.append(f"{relatif(etsy_md)} : le produit n'a pas droit à Etsy (risque IA), ce fichier ne doit pas exister")
+    elif etsy_md.parent.exists():
+        erreurs.append(f"{relatif(etsy_md.parent)} : le produit n'a pas droit à Etsy (risque IA), "
+                       "ce dossier ne doit pas exister")
     return erreurs
 
 
