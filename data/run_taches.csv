@@ -31,7 +31,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,EN_COURS
 31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,EN_COURS
 32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
-33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
+33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
 35,R04,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 36,R04,PRODUCTION,PRODUCTEUR,EN06,A,Systèmes 1 à 5,A_FAIRE
