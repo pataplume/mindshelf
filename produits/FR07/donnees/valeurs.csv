@@ -5,7 +5,7 @@ K_E,CONST,3,e,charge élémentaire,1.602,-19,C,CODATA_2022
 K_NA,CONST,4,N_A,constante d'Avogadro,6.022,23,mol⁻¹,CODATA_2022
 K_KB,CONST,5,k_B,constante de Boltzmann,1.381,-23,J/K,CODATA_2022
 K_R,CONST,6,R,constante des gaz parfaits,8.314,0,J/(mol·K),CODATA_2022
-K_F,CONST,7,F,constante de Faraday,96485,0,C/mol,CODATA_2022
+K_F,CONST,7,cal(F),constante de Faraday,96485,0,C/mol,CODATA_2022
 K_K,CONST,8,k,constante de Coulomb 1/(4πε₀),8.988,9,N·m²/C²,CODATA_2022
 K_EPS,CONST,9,epsilon_0,permittivité du vide,8.854,-12,F/m,CODATA_2022
 K_GP,CONST,10,gamma_p \/ 2 pi,rapport gyromagnétique du proton / 2π,42.58,0,MHz/T,CODATA_2022

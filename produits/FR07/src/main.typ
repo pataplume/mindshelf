@@ -203,7 +203,7 @@
   Lentille mince, distances algébriques (sens de la lumière positif, objet réel : $overline("OA") < 0$) :
   $ 1 / overline("OA'") - 1 / overline("OA") = 1 / f' = C #h(1.5em) gamma = overline("A'B'") / overline("AB") = overline("OA'") / overline("OA") $
   Vergence $C$ en dioptries (δ), $f'$ en m ; lentilles accolées $C = C_1 + C_2$.
-  Œil : PR (punctum remotum), PP (punctum proximum) ; accommodation $A = 1 \/ d_"PP" - 1 \/ d_"PR"$ (δ, distances en m).
+  Œil : PR (punctum remotum), PP (punctum proximum) ; accommodation $A_"acc" = 1 \/ d_"PP" - 1 \/ d_"PR"$ (δ, distances en m).
 ]
 
 #tableau(
@@ -234,7 +234,7 @@
 
 #exemple(titre: "Décroissance, écran, dose")[
   #v("FX20", "A0") MBq, #v("FX19", "t") h, $T_(1\/2) = #v("FX19", "T") "h"$ : $n = #res("FX19")$ $=>$ #res("FX20") MBq.
-  #res("FX19") → 3 CDA : reste #res("FX21") % du faisceau.
+  Écran de #v("FX21", "n") CDA : il reste #res("FX21") % du faisceau.
   #v("FX22", "En") J dans #v("FX22", "m") kg : $D #rel("FX22") #res("FX22") "mGy"$ ; en α : $H = #v("FX23", "wR") times #v("FX23", "D") #rel("FX23") #res("FX23") "mSv"$.
 ]
 
@@ -288,7 +288,7 @@
   - Gy (énergie) ≠ Sv (risque) ; la dose efficace ne se mesure pas directement.
   - Manuels anglo-saxons : $Delta U = Q - W$ ($W$ fourni par le gaz), même physique.
   - Lois des gaz et Nernst : températures en kelvins.
-  - Mêmes lettres, grandeurs différentes : $T$ (température), $T_s$, $T_(1\/2)$, $T_1$, $T_2$.
+  - Mêmes lettres, grandeurs différentes : $T$ (température) ≠ $T_s$, $T_(1\/2)$, $T_1$, $T_2$ ; $C$ (concentration ou vergence) ; $lambda$ (onde ou constante radioactive).
 ]
 
 = Constantes

@@ -19,6 +19,6 @@ FX17,Fréquence de Larmor du proton à B0 = 1.5 T : gamma/2pi = 42.58 MHz/T ; f0
 FX18,Fréquence de Larmor du proton à B0 = 3 T : gamma/2pi = 42.58 MHz/T ; f0 = 42.58 × B0,"{""g"": 42.58, ""B"": 3}",g * B,127.74,MHz,0.0001,1
 FX19,"Décroissance : t = 24 h, T½ = 6 h ; nombre de périodes n = t / T","{""t"": 24, ""T"": 6}",t / T,4,,1e-06,0
 FX20,Décroissance : A0 = 800 MBq après n = 4 périodes ; A = A0 / 2⁴,"{""A0"": 800}",A0 / (2 * 2 * 2 * 2),50,MBq,1e-06,0
-FX21,Atténuation : écran de 3 couches de demi-atténuation ; intensité transmise = 100 / 2³ (en %),"{""I0"": 100}",I0 / (2 * 2 * 2),12.5,%,1e-06,1
+FX21,Atténuation : écran de 3 couches de demi-atténuation ; intensité transmise = 100 / 2³ (en %),"{""I0"": 100, ""n"": 3}",I0 / (2 * 2 * 2),12.5,%,1e-06,1
 FX22,Dose absorbée (valeurs d'exercice) : énergie déposée 0.14 J dans m = 70 kg ; D = E / m (en mGy),"{""En"": 0.14, ""m"": 70}",En / m * 1000,2,mGy,1e-06,0
 FX23,"Dose équivalente : D = 2 mGy de particules alpha, w_R = 20 ; H = w_R D (en mSv)","{""wR"": 20, ""D"": 2}",wR * D,40,mSv,1e-06,0
