@@ -5,12 +5,13 @@ id,type_code,produit_code,relecteur_code,detail,statut_code,depuis
 4,DEPOT_WHOP,EN02,,"Kit EN02-whop.zip : fichiers dans l'app Files « Physics Formula Sheet (PDF) », galerie ; puis dire « déposé »",A_FAIRE,2026-10-29
 5,DEPOT_WHOP,EN03,,"Kit EN03-whop.zip (version du 29.10 10:26) : app Files « Chemistry Cheat Sheet (PDF) », partagée avec le Pre-Med & Nursing Pack ; galerie ; puis dire « déposé »",A_FAIRE,2026-10-29
 6,DEPOT_WHOP,FR07,,"Kit FR07-whop.zip : ajouter une app Files au produit masqué prod_bVA9Q6H0Vxc3h, galerie ; puis dire « déposé »",A_FAIRE,2026-10-29
-7,RELECTURE,EN01,INFIRMIERE_CH,"PDF EN01-STD-a4 + section « Ce que la relecture doit confirmer » de produits/EN01/donnees/statut-methode.md",A_FAIRE,2026-10-29
-8,RELECTURE,FR01,INFIRMIERE_CH,"PDF FR01-2026-a4 + section « Ce que la relecture doit confirmer » de produits/FR01/donnees/statut-methode.md",A_FAIRE,2026-10-29
-9,RELECTURE,EN08,MEDECIN_STAGIAIRE,"PDF EN08-STD-a4 + produits/EN08/donnees/statut-methode.md (dont la question ABIM ou intervalles enseignés en soins infirmiers)",A_FAIRE,2026-10-29
+7,RELECTURE,EN01,INFIRMIERE_CH,PDF EN01-STD-a4 + section « Ce que la relecture doit confirmer » de produits/EN01/donnees/statut-methode.md,A_FAIRE,2026-10-29
+8,RELECTURE,FR01,INFIRMIERE_CH,PDF FR01-2026-a4 + section « Ce que la relecture doit confirmer » de produits/FR01/donnees/statut-methode.md,A_FAIRE,2026-10-29
+9,RELECTURE,EN08,MEDECIN_STAGIAIRE,PDF EN08-STD-a4 + produits/EN08/donnees/statut-methode.md (dont la question ABIM ou intervalles enseignés en soins infirmiers),A_FAIRE,2026-10-29
 10,VERIFICATION_EXTERNE,,,"Nom Clairance : domaine .fr, compte Instagram, base des marques INPI",A_FAIRE,2026-10-28
 11,TOURNAGE,,,Vidéos iPhone des fiches validées (video/script-iphone.md de chaque produit),A_FAIRE,2026-10-29
 12,PUBLICATION_ETSY,,,"Annonces Etsy des fiches validées (annonce/etsy/annonce.md), rythme maximal dans parametres.csv (etsy_publications_par_semaine_max)",A_FAIRE,2026-10-29
 13,SOURCE,EN04,,"Facultatif : photos des pages de Kremkau (atténuation, intensités, champ proche, Bernoulli, 20 kHz) pour lever les réserves de sourçage",A_FAIRE,2026-10-29
 14,SOURCE,FR07,,"Facultatif : photo d'un manuel de terminale (relation de conjugaison, ΔU = W + Q) pour remplacer la source SchoolMouv",A_FAIRE,2026-10-29
 15,REGLAGE,,,"Facultatif : autoriser le domaine de stockage de Whop dans les réglages de Claude, pour que la session dépose elle-même fichiers et galeries",A_FAIRE,2026-10-29
+16,VALIDATION,,,Décision D10 (OpenStax) appliquée par défaut : confirmer ou changer,A_FAIRE,2026-10-29

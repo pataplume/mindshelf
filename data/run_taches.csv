@@ -34,7 +34,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 35,R04,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
-36,R04,PRODUCTION,PRODUCTEUR,EN06,A,"Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien",EN_COURS
+36,R04,PRODUCTION,PRODUCTEUR,EN06,A,"Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien",A_VERIFIER
 37,R04,PRODUCTION,PRODUCTEUR,EN06,B,"Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur",EN_COURS
 38,R04,PRODUCTION,PRODUCTEUR,FR09,,Fiche formules biostatistiques PASS/LAS,EN_COURS
 39,R04,VERIFICATION,VERIFICATEUR,EN06,,Vérification indépendante,A_FAIRE

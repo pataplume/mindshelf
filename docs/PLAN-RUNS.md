@@ -27,6 +27,7 @@
 | 13 | Fournir une source non consultable depuis la session | EN04 | Facultatif : photos des pages de Kremkau (atténuation, intensités, champ proche, Bernoulli, 20 kHz) pour lever les réserves de sourçage | 2026-10-29 |
 | 14 | Fournir une source non consultable depuis la session | FR07 | Facultatif : photo d'un manuel de terminale (relation de conjugaison, ΔU = W + Q) pour remplacer la source SchoolMouv | 2026-10-29 |
 | 15 | Changer un réglage de compte | — | Facultatif : autoriser le domaine de stockage de Whop dans les réglages de Claude, pour que la session dépose elle-même fichiers et galeries | 2026-10-29 |
+| 16 | Valider une fiche (ou demander des corrections) | — | Décision D10 (OpenStax) appliquée par défaut : confirmer ou changer | 2026-10-29 |
 
 ## Runs
 
@@ -121,12 +122,12 @@
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
 | 35 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
-| 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | A | Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien | En cours |
+| 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | A | Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien | Produit, en attente de vérification |
 | 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | B | Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur | En cours |
 | 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | En cours |
 | 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | À faire |
 | 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | À faire |
-| 152 | Production | Outils de conditionnement | — | — | Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10 | En cours |
+| 152 | Production | Outils de conditionnement | — | — | Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10 | Vérifié, en attente de relecture et validation |
 | 157 | Production | Assemblage des kits et des guides | EN06 Anatomy & Physiology — Body Systems Sheets | — | Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD | À faire |
 | 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | — | Vérification indépendante | À faire |
 | 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | À faire |

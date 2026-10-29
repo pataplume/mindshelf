@@ -1,0 +1,12 @@
+id,groupe,ordre,libelle,valeur,unite,source_code
+Z90,Z,1,niveau 90 % (α = 0.10 bilatéral),1.645,,NIST_EHANDBOOK
+Z95,Z,2,niveau 95 % (α = 0.05 bilatéral),1.96,,NIST_EHANDBOOK
+Z99,Z,3,niveau 99 % (α = 0.01 bilatéral),2.576,,NIST_EHANDBOOK
+R1,EMP,1,± 1 σ,68,%,OPENSTAX_IS2
+R2,EMP,2,± 2 σ,95,%,OPENSTAX_IS2
+R3,EMP,3,± 3 σ,99.7,%,OPENSTAX_IS2
+KHI1_95,KHI,1,"ddl = 1, α = 0.05",3.841,,NIST_EHANDBOOK
+KHI1_99,KHI,2,"ddl = 1, α = 0.01",6.635,,NIST_EHANDBOOK
+KHI2_95,KHI,3,"ddl = 2, α = 0.05",5.991,,NIST_EHANDBOOK
+COND_IC,COND,1,seuil des conditions n p et n (1 - p) de l'IC d'une proportion,5,,OPENSTAX_IS2
+COND_KHI,COND,2,effectif attendu minimal par case (khi-deux),5,,OPENSTAX_IS2
