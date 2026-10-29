@@ -30,7 +30,7 @@ Ligne produit et variantes, mentions obligatoires, chemin de la charte et de la 
 13. **Règles cohérentes entre elles** : relire la fiche pour qu'aucune règle n'en contredise une autre (ex. arrondi d'une valeur intermédiaire).
 14. **Couverture annoncée** : le titre, le sous-titre et `contenu.csv` ne promettent jamais une couverture de programme que les sources ne justifient pas (« programme officiel », « conforme au programme », « les notions les plus courantes »). Sans programme national (PASS/LAS), écrire « notions fréquentes en PASS/LAS ; les enseignements varient selon les facultés ». Les programmes cités sont ceux de l'année en cours ou de la précédente, publiés par les universités.
 15. **Statut des contrôles** : ne jamais écrire qu'une valeur ou un passage a été « vérifié » ou « contrôlé » s'il ne l'a pas été dans sa forme actuelle (une valeur reprise d'un autre produit puis modifiée redevient à vérifier).
-16. **Typst : point-virgule après un appel** : dans le texte, un `;` collé juste après `#fonction(...)` est avalé à la compilation, sans avertissement. Écrire `#fonction(...)\;` et vérifier le texte extrait du PDF.
+16. **Typst : point-virgule après un appel** : dans le texte, un `;` collé juste après `#fonction(...)` est avalé à la compilation, sans avertissement. Écrire `#fonction(...)\;`. `build.py` le contrôle automatiquement (`scripts/controle_source.py`) et échoue en indiquant la ligne.
 
 ## Interdits
 Écrire hors de `produits/<CODE>/` ; modifier `data/` ; inventer une référence ; publier quoi que ce soit.

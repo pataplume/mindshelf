@@ -10,7 +10,7 @@ produits/<CODE>/
 │   ├── valeurs.csv          constantes et réglages propres au produit (cle ou id, valeur…)
 │   ├── references.csv       element, source_code, localisation (page, section, article)
 │   ├── variantes.csv        correspondances propres à une variante (ex. numéros d'UE 2009 / 2026)
-│   ├── cartes.csv           recto, verso, tags (export Anki ; nombres par marqueurs {v:…}, {x:…})
+│   ├── cartes.csv           recto, verso, tags (export Anki ; données par marqueurs {v:…}, {x:…}, {t:…})
 │   └── qcm.csv              guides seulement : id, question, a, b, c, d, bonne, explication, source_code
 ├── lots/<LOT>/              travail d'un agent quand la tâche est découpée en lots
 ├── livraison/<VARIANTE>/    PDF A4, Letter, N&B, tablette et .apkg livrés
@@ -24,17 +24,20 @@ produits/<CODE>/
 
 Chaque nombre affiché dans une fiche (exemple, norme, constante) provient d'un fichier de `donnees/`, jamais tapé directement dans le Typst.
 
+Dans le texte Typst, un `;` collé juste après `#fonction(…)`, `#fonction[…]` ou `#x.y(…)` est avalé à la compilation : écrire `#fonction(…)\;`. `scripts/build.py` contrôle toutes les sources de `src/` (sous-dossiers compris) avant de compiler et échoue en donnant le fichier, la ligne, l'extrait et la correction. Admis : les instructions `#let`, `#set`, `#show`, `#import` (leur `;` est voulu), le code entre `{ }` et `( )`, et un `;` qui sert à clore un nom avant une lettre (`#sym.space.nobreak;h`) ou avant `(`, `[`.
+
 ## Nombres des cartes Anki
 
-Dans `cartes.csv`, un nombre qui figure aussi dans la fiche s'écrit par un marqueur, remplacé par `scripts/anki.py` à la fabrication du paquet :
+Dans `cartes.csv`, un nombre (ou une donnée d'une table) qui figure aussi dans la fiche s'écrit par un marqueur, remplacé par `scripts/anki.py` à la fabrication du paquet :
 
 | Marqueur | Remplacé par |
 |---|---|
 | `{v:CLE}` | valeur de `donnees/valeurs.csv` (ligne `cle` ou `id` = CLE ; colonne `valeur`, sinon `mantisse` ; si `exposant` est rempli : « × 10<sup>n</sup> ») |
 | `{x:ID}` | résultat affiché de l'exemple ID de `donnees/exemples.csv` : `resultat_attendu` arrondi à `arrondi` décimales selon `mode_arrondi` (sans colonne `arrondi` : tel qu'écrit) |
 | `{xe:ID}` | résultat exact de l'exemple ID (`resultat_attendu` tel qu'écrit) |
+| `{t:FICHIER:CLE:COLONNE}` | cellule de n'importe quelle table `donnees/FICHIER.csv` (`.csv` facultatif) : ligne dont la **première colonne** vaut CLE, colonne COLONNE (nom de l'en-tête). Un nombre (`12`, `-0.5`, `3,2`) est formaté comme les autres ; un texte est repris tel quel (`&`, `<`, `>` échappés) |
 
-Les nombres sont formatés selon la langue du produit (jetons `nombre.*` de la charte : séparateurs, milliers, signe moins). Un marqueur inconnu, une clé ou un exemple absents font échouer le script. Les cartes sans marqueur ne changent pas. Exemple : `Débit de EX02 ?,{x:EX02} gouttes/min,` donne « 31 gouttes/min » en français.
+Les nombres sont formatés selon la langue du produit (jetons `nombre.*` de la charte : séparateurs, milliers, signe moins). Un marqueur inconnu, une clé ou un exemple absents font échouer le script ; pour `{t:…}`, aussi une table, une colonne absentes, une clé en double dans la première colonne, une cellule vide ou un nom de fichier hors de `donnees/`. Les cartes sans marqueur ne changent pas. Exemples : `Débit de EX02 ?,{x:EX02} gouttes/min,` donne « 31 gouttes/min » en français ; `{t:exemples:EX02:resultat_attendu} {t:exemples:EX02:unite}` donne « 31,25 gtt/min » ; `{t:plan:BIO:questions}` lit la colonne `questions` de la ligne `BIO` de `donnees/plan.csv`.
 
 Le GUID d'une carte reste tiré du recto tel qu'écrit (marqueurs compris) : corriger une valeur dans `valeurs.csv` met la carte à jour dans Anki sans la dupliquer.
 

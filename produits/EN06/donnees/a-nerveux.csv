@@ -1,0 +1,13 @@
+structure,fonction
+CNS,"Brain and spinal cord, in the dorsal body cavity, protected by the skull and vertebrae"
+PNS,"{v:A_NERFS_CRANIENS} pairs of cranial nerves and {v:A_NERFS_SPINAUX} pairs of spinal nerves; every spinal nerve is mixed (sensory and motor)"
+Neuron,"Dendrites carry impulses toward the cell body; the single axon carries them away to the synaptic bulbs"
+Myelin,"Made by Schwann cells (PNS) and oligodendrocytes (CNS); gaps are nodes of Ranvier; myelinated fibers form white matter"
+Neuroglia,"Support, nourish and protect neurons; far more numerous, and unlike neurons they can divide"
+Meninges,"Dura mater (tough, outer), arachnoid (cerebrospinal fluid in the subarachnoid space below it), pia mater (on the surface)"
+Cerebrum,"Two hemispheres joined by the corpus callosum. Frontal: motor cortex, planning, Broca's area (speech production); parietal: touch and body sense; temporal: hearing, long-term memory; occipital: vision"
+Diencephalon,"Thalamus relays sensory input except smell to the cortex; hypothalamus runs homeostasis, the autonomic system and the pituitary"
+Brainstem,"Midbrain, pons, medulla oblongata; the medulla continues as the spinal cord and carries all ascending and descending tracts"
+Cerebellum,"Coordination: compares motor commands with sensory feedback and sends corrections"
+Spinal cord,"From the foramen magnum to the first lumbar vertebra; {v:A_NERFS_SPINAUX} segments; conduction pathway and reflex center"
+Autonomic NS,"Sympathetic (thoracolumbar): heart rate and breathing up, blood to skeletal muscle, digestion down, more sweat. Parasympathetic (craniosacral, vagus nerve): rest and digest"

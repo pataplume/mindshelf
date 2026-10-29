@@ -1,0 +1,10 @@
+structure,fonction
+Epidermis,"Outer layer of keratinocytes; it has no blood vessels of its own and is nourished from the dermis"
+Stratum basale,"Deepest epidermal layer: dividing basal cells, melanocytes (make melanin) and Merkel cells (touch)"
+Stratum spinosum,"Keratinocytes plus Langerhans cells, which pick up antigens entering damaged skin and alert the immune system"
+"Stratum granulosum, lucidum","Keratinocytes flatten and lose water as they are pushed toward the surface; the lucidum exists only in thick skin (palms, soles, digits)"
+Stratum corneum,"Surface layer: {v:A_CORNEUM_MIN} to {v:A_CORNEUM_MAX} rows of dead keratinocytes forming the tough outer barrier"
+"Dermis, papillary layer","Thin collagen fibers and small vessels that feed the epidermis and help regulate temperature"
+"Dermis, reticular layer","Thicker, denser collagen: strength, structure and elasticity"
+Dermal structures,"Hair follicles, sebaceous (oil) glands, sweat glands, nerve endings, blood vessels; arrector pili muscles raise goosebumps"
+Hypodermis (subcutis),"Network of fat and collagen crossed by blood vessels, lymph vessels and nerves"

@@ -1,0 +1,30 @@
+id,valeur,unite,description
+A_CORNEUM_MIN,10,layers,Stratum corneum : nombre minimal de rangées de kératinocytes morts
+A_CORNEUM_MAX,30,layers,Stratum corneum : nombre maximal de rangées de kératinocytes morts
+A_COUCHES_FINE,4,layers,Couches de l'épiderme de la peau fine
+A_COUCHES_EPAISSE,5,layers,Couches de l'épiderme de la peau épaisse (avec le stratum lucidum)
+A_OS_AXIAL,80,bones,Os du squelette axial
+A_OS_APPEND,126,bones,Os du squelette appendiculaire
+A_OS_ADULTE,206,bones,Os du squelette adulte (contrôlé = A_OS_AXIAL + A_OS_APPEND dans systemes-a.typ et exemples-a.csv A_EX01)
+A_VERT_C,7,vertebrae,Vertèbres cervicales
+A_NERFS_CRANIENS,12,pairs,Paires de nerfs crâniens
+A_NERFS_SPINAUX,31,pairs,Paires de nerfs spinaux (contrôlé = somme des A_NS_* dans systemes-a.typ et exemples-a.csv A_EX02)
+A_NS_C,8,pairs,Paires de nerfs spinaux cervicaux
+A_NS_T,12,pairs,Paires de nerfs spinaux thoraciques
+A_NS_L,5,pairs,Paires de nerfs spinaux lombaires
+A_NS_S,5,pairs,Paires de nerfs spinaux sacrés
+A_NS_CO,1,pair,Paire de nerfs spinaux coccygiens
+A_RMP,-70,mV,Potentiel de membrane de repos typique d'un neurone
+A_SEUIL,-55,mV,Seuil typique de déclenchement du potentiel d'action
+A_GOUTS,5,tastes,Saveurs de base détectées par les bourgeons du goût
+A_AUDITION_MIN,20,Hz,Borne basse de l'audition humaine
+A_AUDITION_MAX,20000,Hz,Borne haute de l'audition humaine
+A_T4_PCT,95,%,Part de T4 dans l'hormone thyroïdienne active (environ)
+A_PARATHYROIDES,4,glands,Nombre de glandes parathyroïdes
+A_CHALEUR_MUSCLE,85,%,Part de la chaleur corporelle produite par la contraction musculaire (près de)
+A_CP_SECONDES,15,s,Durée approximative d'ATP fournie par la créatine phosphate
+A_AEROBIE_PCT,95,%,Part de l'ATP du muscle au repos ou en activité modérée fournie par la respiration aérobie
+A_REPOSITIONNEMENT_H,2,h,Intervalle de changement de position conseillé pour prévenir les escarres
+A_AVC_ISCHEMIQUE_PCT,80,%,Part des AVC ischémiques (environ)
+A_HYPO_MGDL,70,mg/dL,Seuil de glycémie basse
+A_HYPO_MMOL,3.9,mmol/L,Seuil de glycémie basse (même seuil en mmol/L)

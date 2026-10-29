@@ -12,8 +12,13 @@ Mode explicite (tests, sources hors catalogue) :
                sont exigées ; « pages_max » (borne A4 du contrôle) peut y figurer au lieu de --pages-max.
 
 Entrées transmises à Typst (sys.inputs, toutes des chaînes) : voir CLES_CONTRAT et scripts/README-pipeline.md.
+Avant toute compilation, les sources .typ du dossier de la source et de ses sous-dossiers (produits/<CODE>/src/,
+src/contenu/ compris) sont contrôlées :
+un « ; » collé après #fonction(…) en mode texte, que Typst avale sans avertissement, fait échouer le build
+(scripts/controle_source.py : fichier, ligne, extrait, correction « \\; »).
 Tout avertissement Typst est traité comme une erreur (sauf AVERTISSEMENTS_ADMIS, vide à ce jour).
-Code de sortie 1 au premier problème : source absente, donnée manquante, erreur ou avertissement Typst, contrôle PDF en échec.
+Code de sortie 1 au premier problème : source absente, donnée manquante, « ; » avalé dans la source, erreur ou
+avertissement Typst, contrôle PDF en échec.
 """
 import argparse
 import json
@@ -22,6 +27,7 @@ import time
 from pathlib import Path
 
 import controle_pdf
+import controle_source
 from outillage_commun import (FORMATS_PDF, ErreurOutillage, dossier_produit, lancer, produit, relatif,
                               variante)
 from tables import RACINE, index, lire
@@ -31,6 +37,7 @@ CLES_CONTRAT = ("variante", "produit", "referentiel", "langue", "marque", "versi
 # Disposition du dépôt (conventions de chemins, pas des valeurs métier).
 POLICES = RACINE / "charte" / "polices"
 SOURCE_PRODUIT = Path("src") / "main.typ"
+MOTIF_SOURCES = "**/*.typ"  # sources contrôlées (controle_source.py) : dossier de la source compilée et sous-dossiers
 # Avertissements Typst tolérés : (motif regex, justification). Vide : tout avertissement fait échouer le build.
 AVERTISSEMENTS_ADMIS = ()
 
@@ -159,6 +166,9 @@ def compiler(source, sortie_dir, code_variante, entrees, formats):
         raise ErreurOutillage(f"la source doit être sous la racine du dépôt ({RACINE}) : {source}")
     if not POLICES.is_dir():
         raise ErreurOutillage(f"dossier de polices introuvable : {relatif(POLICES)}")
+    sources = sorted(source.parent.glob(MOTIF_SOURCES))
+    controle_source.verifier(sources)  # « ; » avalés par Typst : échec avant toute compilation
+    print(f"  source    : {len(sources)} fichier(s) .typ sans point-virgule avalé")
     sortie_dir = Path(sortie_dir)
     sortie_dir.mkdir(parents=True, exist_ok=True)
     pdfs = {}

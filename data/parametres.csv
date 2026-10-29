@@ -79,3 +79,4 @@ anki_tableau_trait,1px,px,Épaisseur des filets des tableaux dans les cartes Ank
 anki_cellule_marge,0.2em 0.5em,em,Marges intérieures des cellules de tableau dans les cartes Anki (CSS : vertical horizontal)
 anki_zeros_finaux,0,booléen (0/1),"Marqueur {x:ID} de cartes.csv : 1 garde les zéros finaux du résultat arrondi, 0 les retire (règle ISMP : pas de zéro final)"
 arrondi_mode_defaut,1,code,Mode d'arrondi appliqué quand exemples.csv n'a pas de colonne mode_arrondi ou la laisse vide (code de data/modes_arrondi.csv)
+controle_source_extrait_car,40,caractères,"Contrôle des « ; » avalés (build.py, controle_source.py) : longueur maximale du contexte affiché de part et d'autre du « ; » et de l'expression citée"

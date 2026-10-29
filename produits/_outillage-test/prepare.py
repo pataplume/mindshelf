@@ -3,7 +3,8 @@ Ce dossier n'est pas un produit (absent de data/produits.csv) : rien ici n'est p
 
 Usage : python3 produits/_outillage-test/prepare.py      (code de sortie 1 au premier échec)
 Les mentions contrôlées sont celles d'EN02 (marché EN), lues dans data/.
-Tests négatifs : double signe moins (controle_pdf.py) et marqueurs de cartes.csv (anki.py), dans un dossier temporaire.
+Tests négatifs : double signe moins (controle_pdf.py), marqueurs de cartes.csv (anki.py) et « ; » avalés par Typst
+(controle_source.py, build.py), dans un dossier temporaire.
 """
 import subprocess
 import sys
@@ -21,6 +22,7 @@ sys.path.insert(0, str(SCRIPTS))
 from outillage_commun import langue_produit, produit  # noqa: E402
 from tables import etsy_autorise, lire, index  # noqa: E402
 import controle_pdf  # noqa: E402
+import controle_source  # noqa: E402
 from anki import relire_paquet  # noqa: E402
 
 POLICES = RACINE / "charte" / "polices"
@@ -61,6 +63,55 @@ def teste_double_moins(tmp):
             sys.exit(f"test double moins ({nom}) : {len(trouves)} trouvé(s), {attendu} attendu(s)")
 
 
+# « ; » avalés : (source, cas que le contrôle doit signaler, « ; » visibles attendus dans le PDF ou None).
+# Chaque cas est aussi compilé : le nombre de « ; » restant dans le texte du PDF confirme ce que Typst avale.
+PREAMBULE_PV = ('#set text(font: "Fira Sans")\n#let f(x, u: false) = x\n#let k = "K"\n#let d = (c: "v")\n')
+CAS_PV = (
+    ('A #f("1"); B', 1, 0),                                       # appel puis « ; » : avalé
+    ('A #f[x]; B', 1, 0),                                         # bloc de contenu
+    ('A #d.at("c"); B', 1, 0),                                    # méthode
+    ('A $x = #f("2"); y$ B', 1, 0),                               # en maths aussi
+    ('#box[A #f("3"); B]', 1, 0),                                 # dans un bloc de contenu
+    ('A #f(f("a(b)")); B', 1, 0),                                 # parenthèses imbriquées
+    ('A #if true [oui] else [non]; B', 1, 0),
+    ('A #k; B', 1, 0),                                            # nom seul
+    ('#let g(x) = [#x; B]\n#g("A")', 1, 0),                       # contenu dans du code
+    ('Sea level #f("PATM", u: true); P#sub[H₂O] #f("PH2O", u: true) at #f("PH2O"); RQ.', 2, 0),  # cas EN03 (R03)
+    ('AA : Aa = #f("1") : #f("2")\\; aa #f("3")\\; P = #f("4")~%.', 0, 2),  # corrigé (cas EN10, R03)
+    ('A #f("1") ; B', 0, 1),                                      # espace : « ; » gardé
+    ('A #f("x;y") B', 0, 1),                                      # dans une chaîne
+    ('A `#f("1"); B` C', 0, 1),                                   # bloc brut
+    ('A https://example.org/a;b C', 0, 1),                        # lien
+    ('A #k;h B', 0, 0),                                           # « ; » qui clôt le nom : voulu
+    ('A #f("1");(b) C', 0, 0),                                    # « ; » qui évite un appel : voulu
+    ('#let x = f("1");\n#set text(lang: "fr");\n#{ let y = f("2"); y }', 0, 0),  # code
+    ('#show strong: it => [#it]; A\n// #f("1"); B\n/* #f("2"); */ C', 0, 0),     # instruction, commentaires
+)
+
+
+def teste_points_virgules(tmp):
+    """controle_source : signale les « ; » avalés (contrôlé par la compilation), rien en mode code ;
+    build.py échoue sur une source qui en contient, y compris dans un autre .typ du dossier src."""
+    for n, (source, attendus, visibles) in enumerate(CAS_PV, start=1):
+        texte = PREAMBULE_PV + source + "\n"
+        trouves = controle_source.points_virgules_avales(texte)
+        typ, pdf = tmp / f"pv{n}.typ", tmp / f"pv{n}.pdf"
+        typ.write_text(texte, encoding="utf-8")
+        typst.compile(str(typ), output=str(pdf), root=str(tmp), font_paths=[str(POLICES)], ignore_system_fonts=True)
+        rendu = subprocess.run(["pdftotext", str(pdf), "-"], capture_output=True, text=True, check=True).stdout
+        print(f"$ point-virgule {n} : {len(trouves)} signalé(s), {rendu.count(';')} « ; » dans le PDF")
+        if len(trouves) != attendus or rendu.count(";") != visibles:
+            sys.exit(f"test point-virgule {n} ({source!r}) : {len(trouves)} signalé(s) pour {attendus}, "
+                     f"{rendu.count(';')} « ; » au PDF pour {visibles}")
+    # build.py : la source principale est saine, l'autre .typ du dossier ne l'est pas.
+    with tempfile.TemporaryDirectory(dir=ICI, prefix="tmp-") as src:
+        src = Path(src)
+        (src / "main.typ").write_text(PREAMBULE_PV + 'A #f("1")\\; B\n', encoding="utf-8")
+        (src / "annexe.typ").write_text(PREAMBULE_PV + 'A #f("1"); B\n', encoding="utf-8")
+        lancer_echec(SCRIPTS / "build.py", "--source", src / "main.typ", "--sortie-dir", tmp / "build",
+                     "--inputs", RACINE / "produits" / "_test" / "donnees" / "entrees-en.json", "--formats", "a4")
+
+
 def teste_marqueurs(tmp):
     """anki.py : {v:…}, {x:…} et {xe:…} remplacés depuis les tables de la fiche test ; marqueur inconnu refusé."""
     donnees = RACINE / "produits" / "_test" / "donnees"
@@ -73,7 +124,17 @@ def teste_marqueurs(tmp):
     versos = sorted(champs[1] for champs, _ in relire_paquet(apkg)["notes"].values())
     if versos != ["31 gouttes/min (calcul exact 31,25)", "Texte inchangé"]:
         sys.exit(f"test marqueurs : versos inattendus {versos}")
-    for marqueur in ("{q:EX02}", "{x:EX99}", "{v:CLE_ABSENTE}"):
+    # {t:FICHIER:CLE:COLONNE} : nombre formaté selon la langue, texte repris tel quel, .csv facultatif.
+    cartes.write_text("recto,verso,tags\n"
+                      "Table générique ?,{t:exemples:EX02:resultat_attendu} {t:exemples.csv:EX02:unite} ({t:exemples:EX01:formule}),test\n",
+                      encoding="utf-8")
+    lancer(SCRIPTS / "anki.py", "--cartes", cartes, "--sortie", apkg, "--cle", "TEST-MARQUEURS", "--nom", "Marqueurs",
+           "--langue", "fr", "--donnees", donnees)
+    versos = [champs[1] for champs, _ in relire_paquet(apkg)["notes"].values()]
+    if versos != ["31,25 gtt/min (D / H * Q)"]:
+        sys.exit(f"test marqueur {{t:…}} : verso inattendu {versos}")
+    for marqueur in ("{q:EX02}", "{x:EX99}", "{v:CLE_ABSENTE}", "{t:absente:EX02:unite}", "{t:exemples:EX99:unite}",
+                     "{t:exemples:EX02:colonne_absente}", "{t:exemples:EX02}", "{t:../exemples:EX02:unite}"):
         cartes.write_text(f"recto,verso,tags\nQuestion,{marqueur},test\n", encoding="utf-8")
         lancer_echec(SCRIPTS / "anki.py", "--cartes", cartes, "--sortie", apkg, "--cle", "TEST-MARQUEURS",
                      "--nom", "Marqueurs", "--langue", "fr", "--donnees", donnees)
@@ -101,6 +162,7 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         teste_double_moins(Path(tmp))
         teste_marqueurs(Path(tmp))
+        teste_points_virgules(Path(tmp))
     print("Banc d'essai : tout passe.")
 
 

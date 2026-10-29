@@ -1,0 +1,10 @@
+structure,fonction
+Hypothalamus,"Releasing and inhibiting hormones reach the anterior pituitary through the hypophyseal portal veins; its neurons make ADH and oxytocin"
+Anterior pituitary,"GH (growth, protein synthesis), TSH (thyroid), ACTH (adrenal cortex, cortisol), FSH (gamete production), LH (gonadal androgens), prolactin (milk production)"
+Posterior pituitary,"Stores and releases ADH (water reabsorption by kidney tubules) and oxytocin (uterine contraction, milk ejection); controlled by nerve signals"
+Pineal gland,"Melatonin: daily body rhythms, reproductive development"
+Thyroid,"T₄ (about {v:A_T4_PCT}% of active thyroid hormone) and T₃, both need iodine; calcitonin from parafollicular cells lowers blood Ca²⁺"
+Parathyroids,"{v:A_PARATHYROIDES} small glands on the back of the thyroid; PTH raises blood Ca²⁺ and is its main regulator"
+Adrenal cortex,"Steroid hormones: aldosterone (keeps Na⁺ and water), cortisol (raises blood glucose), small amounts of sex hormones"
+Adrenal medulla,"Epinephrine and norepinephrine, released on sympathetic stimulation during stress"
+Pancreatic islets,"Alpha cells release glucagon when glucose is low; beta cells release insulin when glucose is high"

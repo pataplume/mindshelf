@@ -18,9 +18,10 @@ python3 scripts/build.py EN02-STD --formats a4,nb    # un sous-ensemble
 ```
 
 1. Lit `data/variantes.csv` (produit, référentiel, version), `data/produits.csv` (titre, marché, `pages_max`), `data/marches.csv` (langue) et `data/marques.csv` (nom de la marque).
-2. Compile `produits/<CODE>/src/main.typ` pour chaque format (racine = dépôt, polices = `charte/polices` seules).
-3. Écrit `produits/<CODE>/livraison/<VARIANTE>/<VARIANTE>-<format>.pdf`. L'outillage (`apercus.py`, `video_feuilletage.py`, `anki.py`) dépend de ce nommage.
-4. Lance `controle_pdf.py` sur les PDF produits.
+2. Contrôle les sources `.typ` du dossier `src/` (sous-dossiers compris) : un `;` collé après une expression intégrée au texte (`#res("EX11"); suite`) est avalé par Typst sans avertissement ; le build échoue avant de compiler, avec fichier, ligne, extrait et correction (`#res("EX11")\; suite`). Détails ci-dessous (`scripts/controle_source.py`).
+3. Compile `produits/<CODE>/src/main.typ` pour chaque format (racine = dépôt, polices = `charte/polices` seules).
+4. Écrit `produits/<CODE>/livraison/<VARIANTE>/<VARIANTE>-<format>.pdf`. L'outillage (`apercus.py`, `video_feuilletage.py`, `anki.py`) dépend de ce nommage.
+5. Lance `controle_pdf.py` sur les PDF produits.
 
 Le code de sortie vaut 1 à la première erreur. Un PDF dont la compilation échoue est supprimé : aucun ancien fichier ne reste à sa place.
 
@@ -63,6 +64,14 @@ En-tête type d'un produit :
 
 **Pourquoi la version vit dans `variantes.csv`.** La version est celle de la variante livrée : les deux référentiels d'un produit IFSI peuvent évoluer séparément, et une correction validée par Tristan incrémente une ligne de table, pas un fichier dans le dossier produit. Elle reste lisible à côté des statuts et des revues (`revues.csv` a déjà une colonne `version`).
 
+## Contrôle de la source (`scripts/controle_source.py`)
+
+```bash
+python3 scripts/controle_source.py produits/EN10/src/main.typ   # direct, sur un ou plusieurs .typ
+```
+
+La source est lue avec les modes de Typst (texte, code, maths), parenthèses et crochets imbriqués, chaînes, commentaires, blocs bruts et liens compris. Est signalé tout `;` collé juste après une expression intégrée au texte ou aux maths : `#f(…)`, `#f[…]`, `#x.y(…)`, `#x`, `#if … [ ] else [ ]`, y compris dans un bloc de contenu `[ … ]` écrit dans du code. Ne sont pas signalés : les instructions `#let`, `#set`, `#show`, `#import`, `#include`, `#return` (le `;` y termine l'instruction), le code entre `{ }` et `( )`, `\;`, un `;` précédé d'une espace, et un `;` qui sert à clore l'expression (suivi de `(`, `[`, `.x`, ou d'une lettre après un nom : `#sym.space.nobreak;h`). Longueur des extraits : réglage `controle_source_extrait_car`.
+
 ## Contrôles (`scripts/controle_pdf.py`)
 
 ```bash
@@ -95,6 +104,7 @@ python3 scripts/build.py --source produits/_test/src/main.typ --sortie-dir produ
 
 | Message | Cause | Que faire |
 |---|---|---|
+| `N point(s)-virgule(s) avalé(s) dans la source Typst` | `;` collé après `#fonction(…)` dans le texte | écrire `\;` comme le propose la ligne `correction` (règle producteur 16) |
 | `la marque MARQUE_FR n'a pas de nom … décision ouverte : D01` | nom de marque FR vide dans `data/marques.csv` | trancher D01, puis renseigner `marques.nom` |
 | `colonne « pages_max » absente de data/produits.csv` (ou `version` dans `variantes.csv`) | colonne pas encore ajoutée | l'orchestrateur ajoute la colonne (voir le compte rendu R00) |
 | `source Typst introuvable : produits/<CODE>/src/main.typ` | le produit n'a pas encore de source | production du produit |

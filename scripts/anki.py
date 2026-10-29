@@ -7,8 +7,11 @@
 - horodatage = date de génération : Anki n'applique une mise à jour que si la note importée est plus récente ;
 - nombres tirés des données (pas de nombre tapé en dur qui pourrait diverger de la fiche) : marqueurs
   {v:CLE} (valeur de donnees/valeurs.csv), {x:ID} (résultat affiché de donnees/exemples.csv, arrondi selon
-  ses colonnes arrondi et mode_arrondi) et {xe:ID} (résultat exact, tel qu'écrit), formatés selon la langue
-  (jetons nombre.* de data/charte_tokens.csv). Un marqueur inconnu ou une clé absente fait échouer le script.
+  ses colonnes arrondi et mode_arrondi), {xe:ID} (résultat exact, tel qu'écrit) et {t:FICHIER:CLE:COLONNE}
+  (cellule de n'importe quelle table donnees/FICHIER.csv, ligne dont la première colonne vaut CLE), formatés
+  selon la langue (jetons nombre.* de data/charte_tokens.csv) ; une cellule {t:…} qui n'est pas un nombre est
+  reprise telle quelle (&, <, > échappés). Un marqueur inconnu, une table, une clé ou une colonne absentes font
+  échouer le script.
   Le GUID reste tiré du recto source (marqueurs compris) : corriger une donnée met la carte à jour.
 
 Usage :
@@ -18,6 +21,7 @@ Usage :
 import argparse
 import csv
 import hashlib
+import html
 import json
 import re
 import sqlite3
@@ -47,6 +51,8 @@ def css():
 
 # Marqueurs de nombres : {type:argument}. Tout « {…:…} » d'un type inconnu fait échouer le script.
 MOTIF_MARQUEUR = re.compile(r"\{([^{}:\s]*):([^{}]*)\}")
+# Cellule {t:…} lue comme un nombre (formatée selon la langue) : signe éventuel, chiffres, décimales éventuelles.
+MOTIF_NOMBRE = re.compile(r"[+\-\u2212]?\d+(?:[.,]\d+)?")
 # Méthodes d'arrondi (colonne methode de data/modes_arrondi.csv) → mode decimal.
 METHODES_ARRONDI = {"plus_proche": ROUND_HALF_UP, "defaut": ROUND_FLOOR, "exces": ROUND_CEILING}
 
@@ -84,12 +90,59 @@ def formater_nombre(chaine, langue):
 
 
 class Marqueurs:
-    """Remplace {v:CLE}, {x:ID} et {xe:ID} par les nombres des tables du produit (dossier donnees/).
-    Les tables ne sont lues qu'au premier marqueur : un paquet sans marqueur ne dépend pas d'elles."""
+    """Remplace {v:CLE}, {x:ID}, {xe:ID} et {t:FICHIER:CLE:COLONNE} par les données des tables du produit
+    (dossier donnees/). Les tables ne sont lues qu'au premier marqueur : un paquet sans marqueur ne dépend pas d'elles."""
 
     def __init__(self, dossier_donnees, langue):
         self.dossier, self.langue = Path(dossier_donnees), langue
         self._valeurs = self._exemples = self._modes = None
+        self._tables = {}  # {t:…} : nom de fichier → (en-tête, {clé: ligne}, clés en double)
+
+    def _table_generique(self, nom, marqueur):
+        if nom not in self._tables:
+            chemin = self.dossier / nom
+            if not chemin.is_file():
+                raise ErreurOutillage(f"table {chemin} introuvable (marqueur {marqueur})")
+            with open(chemin, newline="", encoding="utf-8-sig") as f:
+                lignes = [l for l in csv.reader(f) if any(c.strip() for c in l)]
+            if not lignes:
+                raise ErreurOutillage(f"table {chemin} vide (marqueur {marqueur})")
+            entete, par_cle, doubles = [c.strip() for c in lignes[0]], {}, set()
+            for l in lignes[1:]:
+                cle = l[0].strip()
+                if cle in par_cle:
+                    doubles.add(cle)
+                par_cle.setdefault(cle, l)
+            self._tables[nom] = (entete, par_cle, doubles)
+        return self._tables[nom]
+
+    def cellule(self, arg):
+        """{t:FICHIER:CLE:COLONNE} : cellule COLONNE de donnees/FICHIER(.csv), ligne dont la première colonne vaut
+        CLE. Nombre : formaté selon la langue ; texte : repris tel quel, HTML échappé."""
+        marqueur = "{t:" + arg + "}"
+        parties = [x.strip() for x in arg.split(":")]
+        if len(parties) != 3 or not all(parties):
+            raise ErreurOutillage(f"marqueur {marqueur} mal formé (attendu : {{t:FICHIER:CLE:COLONNE}})")
+        fichier, cle, colonne = parties
+        if Path(fichier).name != fichier or fichier.startswith("."):
+            raise ErreurOutillage(f"marqueur {marqueur} : « {fichier} » doit nommer une table du dossier {self.dossier}")
+        nom = fichier if fichier.endswith(".csv") else fichier + ".csv"
+        entete, par_cle, doubles = self._table_generique(nom, marqueur)
+        chemin = self.dossier / nom
+        if colonne not in entete:
+            raise ErreurOutillage(f"colonne « {colonne} » absente de {chemin} (colonnes : {', '.join(entete)})")
+        if cle in doubles:
+            raise ErreurOutillage(f"clé « {cle} » en double dans la première colonne de {chemin}")
+        ligne = par_cle.get(cle)
+        if ligne is None:
+            raise ErreurOutillage(f"clé « {cle} » absente de la première colonne (« {entete[0]} ») de {chemin}")
+        i = entete.index(colonne)
+        valeur = (ligne[i] if i < len(ligne) else "").strip()
+        if not valeur:
+            raise ErreurOutillage(f"cellule vide : {chemin}, clé « {cle} », colonne « {colonne} »")
+        if MOTIF_NOMBRE.fullmatch(valeur):
+            return formater_nombre(valeur, self.langue)
+        return html.escape(valeur, quote=False)
 
     def _table(self, nom):
         chemin = self.dossier / nom
@@ -154,7 +207,10 @@ class Marqueurs:
                 return formater_nombre(self.resultat_affiche(arg), self.langue)
             if genre == "xe":
                 return formater_nombre(self.exemple(arg)["resultat_attendu"], self.langue)
-            raise ErreurOutillage(f"marqueur inconnu « {m.group(0)} » (admis : {{v:CLE}}, {{x:ID}}, {{xe:ID}})")
+            if genre == "t":
+                return self.cellule(m.group(2))
+            raise ErreurOutillage(f"marqueur inconnu « {m.group(0)} » "
+                                  "(admis : {v:CLE}, {x:ID}, {xe:ID}, {t:FICHIER:CLE:COLONNE})")
         return MOTIF_MARQUEUR.sub(un, texte)
 
 
@@ -221,7 +277,8 @@ def modele(cle, nom, langue):
 
 def generer_paquet(cartes_csv, sortie, cle, nom, langue="en", donnees=None):
     """Écrit le .apkg. cle : chaîne qui fixe les identifiants (code de variante) ; nom : nom du paquet ;
-    donnees : dossier de valeurs.csv et exemples.csv pour les marqueurs (par défaut : celui de cartes.csv).
+    donnees : dossier des tables lues par les marqueurs (valeurs.csv, exemples.csv, tables de {t:…} ;
+    par défaut : celui de cartes.csv).
     Renvoie (nombre de cartes, identifiant du paquet, identifiant du modèle)."""
     cartes = lire_cartes(cartes_csv)
     marqueurs, erreurs = Marqueurs(Path(cartes_csv).parent if donnees is None else donnees, langue), []
@@ -278,7 +335,8 @@ def main():
     ap.add_argument("--cle", help="usage direct : clé des identifiants stables (code de variante)")
     ap.add_argument("--nom", help="usage direct : nom du paquet")
     ap.add_argument("--langue", default="en", help="usage direct : langue des noms de champs et des nombres (en, fr)")
-    ap.add_argument("--donnees", help="usage direct : dossier de valeurs.csv et exemples.csv (défaut : celui de --cartes)")
+    ap.add_argument("--donnees", help="usage direct : dossier des tables des marqueurs (valeurs.csv, exemples.csv, "
+                                      "tables de {t:…} ; défaut : celui de --cartes)")
     a = ap.parse_args()
     direct = (a.cartes, a.sortie, a.cle, a.nom)
     if any(direct):
