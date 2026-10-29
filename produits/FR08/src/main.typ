@@ -3,7 +3,9 @@
 // Aucun nombre affiché n'est tapé ici : exemples chiffrés dans ../donnees/exemples.csv (recalculés à la
 // compilation, échec si écart), constantes et intervalles dans ../donnees/valeurs.csv (avec le jeu de
 // constantes, ex. CODATA 2022, dans la colonne jeu), géométries dans ../donnees/vsepr.csv, bandes IR et
-// déplacements RMN dans ../donnees/spectro.csv, ordre des fonctions dans ../donnees/nomenclature.csv.
+// déplacements RMN dans ../donnees/spectro.csv, ordre des fonctions dans ../donnees/nomenclature.csv,
+// sous-titre et réserve « selon les facultés » dans ../donnees/textes.csv (la réserve doit figurer mot pour mot
+// dans contenu.csv et dans les deux annonces : échec sinon).
 // Sources de chaque élément : ../donnees/references.csv.
 #import "/charte/modele.typ": *
 
@@ -55,6 +57,26 @@
   let l = ex(id)
   let x = l.calcule
   if l.arrondi == "" or calc.abs(calc.round(x, digits: int(l.arrondi)) - x) < 1e-9 { sym.eq } else { sym.approx }
+}
+
+// ── Textes affichés (sous-titre, réserve programme) ──
+#let textes = {
+  let d = (:)
+  for l in csv("../donnees/textes.csv", row-type: dictionary) { d.insert(l.id, l.texte) }
+  d
+}
+#let texte(id) = {
+  if id not in textes { panic("FR08 : texte " + id + " absent de donnees/textes.csv") }
+  textes.at(id)
+}
+#for (nom, contenu) in (
+  ("donnees/contenu.csv", read("../donnees/contenu.csv")),
+  ("annonce/whop.md", read("../annonce/whop.md")),
+  ("annonce/etsy/annonce.md", read("../annonce/etsy/annonce.md")),
+) {
+  if not contenu.contains(texte("RESERVE_PROGRAMME")) {
+    panic("FR08 : la réserve RESERVE_PROGRAMME de donnees/textes.csv ne figure pas mot pour mot dans " + nom)
+  }
 }
 
 // ── Constantes, intervalles ──
@@ -113,7 +135,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Notions fréquentes en PASS/LAS (les enseignements varient selon les facultés) : formules, tableaux, exemples, pièges],
+  sous-titre: texte("SOUS_TITRE_OBJET") + " : " + texte("RESERVE_PROGRAMME"),
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -168,7 +190,7 @@ AX#sub[n]E#sub[m] : $n$ atomes liés, $m$ doublets non liants ; $n + m$ domaines
   $ Delta_r H° = sum nu thin Delta_f H°_"prod" - sum nu thin Delta_f H°_"réac" $
   $ Delta_r G = Delta_r H - T Delta_r S quad Delta_r G = Delta_r G° + R T ln Q $
   $ Delta_r G° = - R T ln K = - n F E° $
-  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K ($Delta_r S°$ en kJ ; $Delta_r H°$, $Delta_r S°$ indépendants de $T$).
+  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K ($Delta_r S°$ converti en kJ·mol⁻¹·K⁻¹ ; $Delta_r H°$, $Delta_r S°$ indépendants de $T$).
 ]
 $Delta_r G < 0$ : évolution spontanée. $Delta_r H < 0$ et $Delta_r S > 0$ : toujours ; $Delta_r H > 0$ et $Delta_r S < 0$ : jamais ; tous deux $< 0$ : à basse $T$ ; tous deux $> 0$ : à haute $T$. À l'équilibre, $Delta_r G = 0$ et $Q = K$.
 
@@ -226,7 +248,8 @@ La fonction de rang le plus élevé donne le suffixe ; les autres passent en pr�
 
 *Effets électroniques :* inductif −I (halogènes, O, N, C=O), +I (alkyles) ; mésomère +M (−OH, −OR, −NH₂, halogènes), −M (C=O, −NO₂, −C≡N). Carbocations : 3° > 2° > 1° > méthyle. Addition de HX sur un alcène (Markovnikov) : H sur le carbone le plus hydrogéné.
 
-#block(breakable: false)[#tableau(
+#block(breakable: false)[#set text(hyphenate: false)
+#tableau(
   columns: (auto, 1fr, 1fr),
   align: (left, left, left),
   [], [S#sub[N]1 / E1], [S#sub[N]2 / E2],

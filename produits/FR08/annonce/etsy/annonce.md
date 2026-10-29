@@ -34,7 +34,7 @@ CE QU'IL Y A SUR LA PAGE
 - Constantes usuelles (CODATA 2022) et 6 pièges fréquents
 
 POUR QUI
-Les étudiant.e.s en PASS et en LAS. Notions de chimie fréquentes en PASS/LAS ; les enseignements varient selon les facultés : vérifiez votre programme.
+Les étudiant.e.s en PASS et en LAS, en chimie : notions fréquentes en PASS/LAS ; les enseignements varient selon les facultés : vérifiez votre programme.
 
 Rédaction assistée par IA ; contenu vérifié et validé par le vendeur.
 

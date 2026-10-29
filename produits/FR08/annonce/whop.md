@@ -15,7 +15,7 @@ Sur la page :
 - 2 notes santé : tampon bicarbonate du sang, chiralité et activité des médicaments
 - Constantes usuelles (CODATA 2022) et 6 pièges fréquents
 
-Pour les étudiant.e.s en PASS et en LAS : notions de chimie fréquentes en PASS/LAS ; les enseignements varient selon les facultés : vérifiez votre programme.
+Pour les étudiant.e.s en PASS et en LAS, en chimie : notions fréquentes en PASS/LAS ; les enseignements varient selon les facultés : vérifiez votre programme.
 
 Rédaction assistée par IA ; contenu vérifié et validé par le vendeur.
 
