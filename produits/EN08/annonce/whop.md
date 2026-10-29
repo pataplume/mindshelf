@@ -2,19 +2,19 @@
 Lab Values Cheat Sheet for Nursing Students (NCLEX Review)
 
 # Accroche
-Adult lab reference intervals in US and SI units, with factors and unit traps.
+Adult lab values in US and SI units, with factors, traps and nursing cues.
 
 # Description
 What you get: a one-page lab values cheat sheet as four PDFs (A4, US Letter, grayscale A4 for black-and-white printing, and a 2-page landscape version for tablets), plus an Anki deck of 20 flashcards.
 
 What's on the page:
-- 40 rows of adult reference intervals in 9 groups, US conventional and SI units side by side: electrolytes, glucose and HbA1c, kidney, blood count, coagulation, arterial blood gas, liver panel, lipids, digoxin
-- The conversion factor for each test, calculated from molar mass or unit definitions
-- How to convert US ↔ SI, with 3 worked conversions
-- 6 unit traps: mg/dL vs mmol/L, mEq vs mmol, BUN vs urea, total vs ionized calcium, hemolysis, fractions
+- 40 rows in 9 groups, US and SI units side by side: adult reference intervals (electrolytes, glucose and HbA1c, kidney, blood count, coagulation, blood gas, liver panel), lipid decision limits, and drug therapy targets set by the prescriber (INR on warfarin, digoxin)
+- The conversion factor for each test, calculated from molar mass or unit definitions (NGSP equation for HbA1c)
+- US ↔ SI conversion, with 3 worked examples
+- 6 traps: 4 on units (mg/dL vs mmol/L, mEq vs mmol, BUN vs urea, fractions), high K⁺ and hemolysis, total vs ionized calcium
 - 3 nursing cues: INR and bleeding, potassium and the heart, digoxin level
 
-The values are usual adult reference intervals from one published set (ABIM, January 2026; MedlinePlus for INR and digoxin). Reference intervals vary between laboratories: always follow the ranges of your own lab and facility.
+Intervals and lipid limits: ABIM (January 2026); INR target and digoxin range: MedlinePlus. Ranges vary between labs: always follow your own lab and facility. Drug targets are set for each patient by the prescriber.
 
 For nursing students reviewing lab values for class, clinicals and NCLEX preparation.
 

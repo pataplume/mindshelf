@@ -26,15 +26,15 @@ Instant digital download: nothing is shipped.
 - Anki deck (.apkg): 20 flashcards for the Anki flashcard app
 
 WHAT'S ON THE PAGE
-- 40 rows of adult reference intervals in 9 groups, US conventional and SI units side by side: electrolytes, glucose and HbA1c, kidney, blood count, coagulation, arterial blood gas, liver panel, lipids, digoxin
-- The conversion factor for each test, calculated from molar mass or unit definitions
+- 40 rows in 9 groups, US conventional and SI units side by side: adult reference intervals (electrolytes, glucose and HbA1c, kidney, blood count, coagulation, arterial blood gas, liver panel), lipid decision limits, and drug therapy targets set by the prescriber (usual INR target on warfarin, general digoxin range)
+- The conversion factor for each test: calculated from molar mass or unit definitions, or from the NGSP equation for HbA1c
 - How to convert US ↔ SI, with 3 worked conversions
-- 6 unit traps: mg/dL vs mmol/L, mEq vs mmol, BUN vs urea, total vs ionized calcium, hemolysis, fractions
+- 6 traps: 4 on units (mg/dL vs mmol/L, mEq vs mmol, BUN vs urea, fractions), high K⁺ and hemolysis, total vs ionized calcium
 - 3 nursing cues: INR and bleeding, potassium and the heart, digoxin level
 - A reminder that intervals vary between labs, with the sources named
 
 ABOUT THE RANGES
-The values are usual adult reference intervals from one published set (ABIM Laboratory Test Reference Ranges, January 2026; MedlinePlus for INR and digoxin). Reference intervals vary between laboratories: always follow the ranges of your own lab and facility. Adult ranges only: no pediatric or pregnancy ranges, and no critical values.
+Reference intervals and lipid decision limits come from one published set (ABIM Laboratory Test Reference Ranges, January 2026); the INR target on warfarin and the digoxin range come from MedlinePlus. Reference intervals vary between laboratories: always follow the ranges of your own lab and facility. Drug therapy targets are set for each patient by the prescriber. Adult values only: no pediatric or pregnancy ranges, and no critical values.
 
 WHO IT'S FOR
 Nursing students reviewing lab values for class, clinicals and NCLEX preparation.
