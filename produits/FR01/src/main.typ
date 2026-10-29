@@ -248,7 +248,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 = Arrondis
 
 // Encadré non sécable (EN01, rapport v2, N6) : les règles d'arrondi restent sur une même page (tablette).
-#block(breakable: false, encadre(titre: "N'arrondir que ce qui se règle ou se prélève")[
+#block(breakable: false, encadre(titre: "N’arrondir que ce qui se règle ou se prélève")[
   - Poids : noté tel que pesé (au #valu("poids_pas")), puis utilisé tel quel.
   - Concentrations et résultats intermédiaires : jamais arrondis.
   - Gouttes/min : entières. mL/h : au pas de l'appareil (#valu("debit_pas") ici ; certains : mL/h entier).

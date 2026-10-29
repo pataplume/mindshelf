@@ -139,5 +139,5 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 138,R01,VERIFICATION,VERIFICATEUR,EN02,CORR1,Contre-vérification des corrections v2,A_VALIDER
 139,R01,PRODUCTION,PRODUCTEUR,EN01,CORR2,"Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente",A_VALIDER
 140,R02,PRODUCTION,PRODUCTEUR,FR08,CORR1,"Correction v2 : sous-titre trop affirmatif et programmes récents (M1), note fluoxétine trop proche d'OpenStax (licence NC), doublons de constantes, mineurs ; puis éléments de vente",EN_COURS
-141,R02,PRODUCTION,PRODUCTEUR,FR01,CORR1,"Correction v2 : statut des contrôles (valeurs B et F non vérifiées), échos cliniques nommés, UE 2026 sourcées (art. 23, CFVU UBE), mineurs ; puis éléments de vente",EN_COURS
+141,R02,PRODUCTION,PRODUCTEUR,FR01,CORR1,"Correction v2 : statut des contrôles (valeurs B et F non vérifiées), échos cliniques nommés, UE 2026 sourcées (art. 23, CFVU UBE), mineurs ; puis éléments de vente",A_VALIDER
 142,R02,PRODUCTION,PRODUCTEUR,FR07,CORR1,"Correction v2 : double signe moins (charte corrigée), sous-titre, licences OpenStax, références qui n'écrivent pas la formule, exemples FX20/FX21, symboles réutilisés, constats du conditionneur ; puis éléments de vente",EN_COURS

@@ -27,14 +27,14 @@ Téléchargement numérique immédiat : rien n'est expédié.
 
 CE QU'IL Y A SUR LA PAGE
 - 10 sections : concentrations, atomistique, liaisons et géométrie, thermodynamique, cinétique, acides et bases, oxydoréduction, chimie organique, spectroscopies, constantes et pièges
-- Les formules de chaque section, avec 14 exemples chiffrés courts (dilution, modèle de Bohr, enthalpie libre, demi-vie, Arrhenius, pH, tampon, Nernst, charge formelle…)
+- Les formules de chaque section, avec 12 exemples chiffrés courts, 14 résultats (dilution, modèle de Bohr, enthalpie libre, demi-vie, Arrhenius, pH, tampon, Nernst, charge formelle…)
 - 6 tableaux : géométries VSEPR (notation AXnEm), ordres de réaction 0, 1 et 2, priorité des fonctions en nomenclature, SN1/E1 vs SN2/E2, bandes IR, déplacements RMN ¹H
 - Stéréochimie (R/S, Z/E, 2ⁿ stéréoisomères), effets électroniques, stabilité des carbocations, règles de Markovnikov et de Zaïtsev
 - 2 notes santé : tampon bicarbonate du sang, chiralité et activité des médicaments
 - Constantes usuelles (CODATA 2022) et 6 pièges fréquents
 
 POUR QUI
-Les étudiant.e.s en PASS et en LAS. La fiche réunit les notions de chimie les plus courantes en PASS et en LAS ; les enseignements varient d'une université à l'autre : comparez avec vos cours.
+Les étudiant.e.s en PASS et en LAS. Notions de chimie fréquentes en PASS/LAS ; les enseignements varient selon les facultés : vérifiez votre programme.
 
 Rédaction assistée par IA ; contenu vérifié et validé par le vendeur.
 

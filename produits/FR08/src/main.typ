@@ -113,7 +113,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Notions fréquentes en PASS/LAS, selon les facultés (vérifiez votre programme) : formules, tableaux, exemples, pièges],
+  sous-titre: [Notions fréquentes en PASS/LAS (les enseignements varient selon les facultés) : formules, tableaux, exemples, pièges],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),

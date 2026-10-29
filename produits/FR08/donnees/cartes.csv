@@ -18,12 +18,12 @@ Que change un catalyseur ?,"Il abaisse E<sub>a</sub> et accélère les deux sens
 pH d'un acide faible peu dissocié,"pH = ½(pK<sub>a</sub> − log C), valable si pH &lt; pK<sub>a</sub> − 1.",FR08 acides-bases
 Équation de Henderson–Hasselbalch,"pH = pK<sub>a</sub> + log([A<sup>−</sup>]/[AH]) ; tampon efficace dans pK<sub>a</sub> ± 1 ; pH = pK<sub>a</sub> à la demi-équivalence.",FR08 acides-bases
 Équation du tampon bicarbonate,"pH = 6,1 + log([HCO<sub>3</sub><sup>−</sup>] / (0,03 × PaCO<sub>2</sub>)) ; pH du sang 7,35–7,45.",FR08 acides-bases sante
-Équation de Nernst d'un couple Ox/Red à 25 °C,"E = E° + (0,059/n) log([Ox]<sup>α</sup>/[Red]<sup>β</sup>).",FR08 redox
+Équation de Nernst d'un couple Ox/Red à 25 °C,"Pour α Ox + n e<sup>−</sup> = β Red : E = E° + (0,059/n) log([Ox]<sup>α</sup>/[Red]<sup>β</sup>).",FR08 redox
 Nombres d'oxydation usuels de O et H,"O : −II (sauf peroxydes) ; H : +I (sauf hydrures) ; corps simple : 0 ; somme des n.o. = charge de l'espèce.",FR08 redox
 Ordre de priorité des fonctions (nomenclature),"Acide carboxylique &gt; ester &gt; amide &gt; nitrile &gt; aldéhyde &gt; cétone &gt; alcool &gt; amine.",FR08 organique nomenclature
 Attribuer R ou S à un centre stéréogène,"Classer par règles CIP, n° 4 vers l'arrière, parcourir 1 → 2 → 3 : sens horaire R, antihoraire S.",FR08 organique stereochimie
 Nombre maximal de stéréoisomères pour n centres stéréogènes,"2<sup>n</sup> (moins s'il existe un composé méso).",FR08 organique stereochimie
-"SN1 et SN2 : stéréochimie et solvant","SN1 : racémisation, solvant polaire protique. SN2 : inversion de Walden, solvant polaire aprotique.",FR08 organique reactions
+"SN1 et SN2 : stéréochimie et solvant","SN1 : racémisation (souvent partielle), solvant polaire protique. SN2 : inversion de Walden, solvant polaire aprotique.",FR08 organique reactions
 Règle de Zaïtsev,"Lors d'une élimination, l'alcène le plus substitué est majoritaire.",FR08 organique reactions
 Bande IR de C=O,"1670–1780 cm<sup>−1</sup>, intense et fine.",FR08 spectroscopie
 Règle des n + 1 en RMN ¹H,"n H voisins équivalents donnent n + 1 pics ; l'intégration est proportionnelle au nombre de H.",FR08 spectroscopie
