@@ -14,7 +14,7 @@ Ligne produit et variantes, mentions obligatoires, chemin de la charte et de la 
 ## Règles de fond
 1. **Exactitude d'abord.** Chaque formule, norme, valeur ou règle a une ligne dans `donnees/references.csv` (source et localisation). Pas de source fiable : on ne l'écrit pas, ou on le marque `A-VERIFIER`.
 2. **Chaque exemple chiffré** vit dans `donnees/exemples.csv` avec ses entrées et son résultat attendu : le vérificateur le recalculera par script.
-3. **Droits d'auteur.** Les manuels et référentiels servent à vérifier, pas à recopier. Reformuler entièrement ; aucune phrase, aucun tableau, aucun schéma reproduit ; aucune question d'annales ou d'examen officiel.
+3. **Droits d'auteur.** Les manuels et référentiels servent à vérifier, pas à recopier. Reformuler entièrement ; aucune phrase, aucun tableau, aucun schéma reproduit ; aucune question d'annales ou d'examen officiel. Les manuels OpenStax (College Physics 2e, Chemistry 2e, Biology 2e, Organic Chemistry) sont sous licence CC BY-NC-SA 4.0, non commerciale : référence factuelle seulement, aucune reprise ni traduction de texte, d'exemple ou de tableau.
 4. **Conventions du marché.**
    - EN : unités US et SI quand l'examen visé les utilise, orthographe US.
    - FR : DCI et spécialités françaises, normes biologiques en unités françaises (mmol/L…), débits en mL/h et gouttes/min, pousse-seringue électrique, vocabulaire des IFSI, numéros d'UE propres à chaque référentiel dans `donnees/variantes.csv`.

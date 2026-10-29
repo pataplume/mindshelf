@@ -3,7 +3,7 @@ Produit en croix pour un volume à prélever,"H mg dans Q mL ; D mg prescrits da
 Méthode en 4 étapes,"Lire la prescription ; tout convertir dans la même unité ; poser le produit en croix avec les unités ; vérifier l'ordre de grandeur",FR01 methode
 Échelle g → mg → µg,"× 1000 à chaque marche descendue, ÷ 1000 à chaque marche remontée (même chose pour L → mL)",FR01 conversions
 Concentration d'une dilution,"Quantité de produit ÷ volume total après dilution",FR01 concentrations
-Pourcentage m/V en mg/mL,"x % = x g pour 100 mL = x × 10 mg/mL (ex. 1,2 % = 12 mg/mL)",FR01 concentrations
+Pourcentage m/V en mg/mL,"x % = x g pour 100 mL = x × 10 mg/mL (ex. 6,8 % = 68 mg/mL)",FR01 concentrations
 Concentration après reconstitution,"Quantité de produit ÷ volume final indiqué par la notice, pas le volume de solvant ajouté",FR01 reconstitution
 Par jour ou par prise ?,"Une fourchette en mg/kg/j est un total sur 24 h : comparer le total prescrit par jour à la fourchette par jour, ou chaque prise à la fourchette ÷ nombre de prises",FR01 poids
 Dose prescrite hors fourchette,"Ne pas administrer ; faire préciser par le.la prescripteur.rice",FR01 poids securite

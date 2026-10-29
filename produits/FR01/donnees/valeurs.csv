@@ -7,7 +7,8 @@ gtt_standard,20,gouttes/mL,Perfuseur standard (norme NF EN ISO 8536-4)
 gtt_pedia,60,gouttes/mL,Perfuseur pédiatrique à microgouttes / burette (norme NF EN ISO 8536-5)
 seringue_petite,1,mL,Seringue de 1 mL
 seringue_petite_pas,0.01,mL,Graduation de la seringue de 1 mL
-seringue_std_pas,0.1,mL,Graduation retenue pour les seringues des exemples EX03B et EX04B
+seringue_std,3,mL,"Seringue de 3 mL retenue pour EX03B (2,5 mL) et EX04B (1,6 mL) ; capacité à valider par la relectrice"
+seringue_std_pas,0.1,mL,Graduation de la seringue de 3 mL (EX03B et EX04B)
 seringue_pse,50,mL,Seringue de pousse-seringue électrique utilisée dans l'exemple EX09
 debit_pas,0.1,mL/h,Pas de réglage retenu pour le PSE et la pompe (certains appareils : mL/h entier)
 poids_pas,0.1,kg,"Poids noté tel que pesé (au dixième de kg), puis utilisé tel quel"

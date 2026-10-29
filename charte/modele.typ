@@ -67,7 +67,7 @@
 /// dans un CSV de données.
 #let nombre(valeur, decimales: none) = context {
   let lg = if text.lang == "fr" { "fr" } else { "en" }
-  let brut = if type(valeur) == str { valeur.trim().replace(",", ".") } else { none }
+  let brut = if type(valeur) == str { valeur.trim().replace(",", ".").replace("\u{2212}", "-") } else { none }
   let x = if brut != none { float(brut) } else { valeur }
   let negatif = x < 0
   let a = calc.abs(x)

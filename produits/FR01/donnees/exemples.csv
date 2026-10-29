@@ -2,10 +2,10 @@ id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
 EX01,"Produit en croix (Produit A, valeurs d'exercice, pas des recommandations posologiques) : ampoule de Q = 2 mL contenant H = 64 mg ; prescription D = 28 mg ; volume V = D × Q / H, prélevé à la seringue de 1 mL graduée au 0,01 mL","{""D"": 28, ""H"": 64, ""Q"": 2}",D * Q / H,0.875,mL,0,2
 EX02A,"Conversion : G = 0.075 g ; K = 1000 mg par g ; masse en mg = G × K","{""G"": 0.075, ""K"": 1000}",G * K,75,mg,0.000001,0
 EX02B,"Conversion : M = 0.4 mg ; K = 1000 µg par mg ; masse en µg = M × K","{""M"": 0.4, ""K"": 1000}",M * K,400,µg,0.000001,0
-EX03A,"Pourcentage (Produit C, valeurs d'exercice) : P = 1.2 % (m/V), soit 1,2 g pour C = 100 mL ; K = 1000 mg par g ; concentration = P × K / C","{""P"": 1.2, ""K"": 1000, ""C"": 100}",P * K / C,12,mg/mL,0.000001,0
-EX03B,"Volume à prélever (Produit C) : prescription O = 30 mg ; concentration N = 12 mg/mL (EX03A) ; volume = O / N, seringue graduée au 0,1 mL","{""O"": 30, ""N"": 12}",O / N,2.5,mL,0.000001,1
+EX03A,"Pourcentage (Produit C, valeurs d'exercice) : P = 6.8 % (m/V), soit 6,8 g pour C = 100 mL ; K = 1000 mg par g ; concentration = P × K / C","{""P"": 6.8, ""K"": 1000, ""C"": 100}",P * K / C,68,mg/mL,0.000001,0
+EX03B,"Volume à prélever (Produit C) : prescription O = 170 mg ; concentration N = 68 mg/mL (EX03A) ; volume = O / N, seringue de 3 mL graduée au 0,1 mL","{""O"": 170, ""N"": 68}",O / N,2.5,mL,0.000001,1
 EX04A,"Reconstitution (Produit E, valeurs d'exercice) : flacon de G = 1.4 g de poudre ; ajouter A = 6.2 mL de solvant pour obtenir F = 7 mL (volume final indiqué par la notice fictive) ; K = 1000 mg par g ; concentration = G × K / F","{""G"": 1.4, ""K"": 1000, ""A"": 6.2, ""F"": 7}",G * K / F,200,mg/mL,0.000001,0
-EX04B,"Volume à prélever après reconstitution (Produit E) : prescription O = 320 mg ; concentration N = 200 mg/mL (EX04A) ; volume = O / N, seringue graduée au 0,1 mL","{""O"": 320, ""N"": 200}",O / N,1.6,mL,0.000001,1
+EX04B,"Volume à prélever après reconstitution (Produit E) : prescription O = 320 mg ; concentration N = 200 mg/mL (EX04A) ; volume = O / N, seringue de 3 mL graduée au 0,1 mL","{""O"": 320, ""N"": 200}",O / N,1.6,mL,0.000001,1
 EX05A,"Dose au poids (Produit B, fourchette fictive, valeurs d'exercice) : borne basse L = 36 mg/kg/j ; poids pesé W = 20 kg ; dose minimale par jour = L × W","{""L"": 36, ""W"": 20}",L * W,720,mg/j,0,0
 EX05B,"Dose au poids (Produit B) : borne haute U = 48 mg/kg/j ; poids W = 20 kg ; dose maximale par jour = U × W","{""U"": 48, ""W"": 20}",U * W,960,mg/j,0,0
 EX05C,"Dose au poids (Produit B) : prescription O = 210 mg toutes les I = 6 h ; J = 24 h par jour ; dose prescrite par jour = O × J / I","{""O"": 210, ""J"": 24, ""I"": 6}",O * J / I,840,mg/j,0,0

@@ -103,6 +103,7 @@
 #meme(brut("EX10A", "K"), val-brut("facteur_metrique"), "µg par mg (EX10)")
 #meme(x("EX10A"), brut("EX10B", "N"), "concentration EX10")
 #meme(brut("EX10B", "M"), val-brut("min_par_h"), "minutes par heure (EX10)")
+#if x("EX03B") > val-brut("seringue_std") or x("EX04B") > val-brut("seringue_std") { panic("FR01 : EX03B/EX04B : volume supérieur à la seringue de " + str(val-brut("seringue_std")) + " mL") }
 #if brut("EX09A", "V") > val-brut("seringue_pse") { panic("FR01 : EX09A : volume supérieur à la seringue du PSE") }
 
 // Heures décimales → « 20 h 15 » ; durée → « 6 h 15 min » (chiffres issus des données).
@@ -147,7 +148,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   $H$ mg dans $Q$ mL ; $D$ mg prescrits dans $V$ mL : $V = D times Q slash H$.
 ]
 
-#exemple(titre: "Ampoule (Produit A, valeurs d'exercice)")[
+#exemple(titre: "Ampoule (Produit A, valeurs d’exercice)")[
   Prescription #v("EX01", "D") mg ; ampoule de #v("EX01", "Q") mL contenant #v("EX01", "H") mg.\
   #v("EX01", "D") × #v("EX01", "Q") ÷ #v("EX01", "H") #res("EX01") (seringue de #valu("seringue_petite"), graduée au #valu("seringue_petite_pas")).
 ]
@@ -156,7 +157,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 
 #formule(titre: [L'échelle × #val("facteur_metrique")])[
   g → mg → µg et L → mL : × #val("facteur_metrique") à chaque marche descendue, ÷ #val("facteur_metrique") à chaque marche remontée.
-  #v("EX02A", "G") g × #v("EX02A", "K") #res("EX02A")\; #v("EX02B", "M") mg × #v("EX02B", "K") #res("EX02B").
+  #v("EX02A", "G") g × #v("EX02A", "K") #res("EX02A")~; #v("EX02B", "M") mg × #v("EX02B", "K") #res("EX02B").
 ]
 
 #piege[Mélanger mg et µg multiplie l'erreur par #val("facteur_metrique") : convertir *avant* de diviser.]
@@ -168,16 +169,16 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   % (m/V) = g pour #valu("pct_volume") : #v("EX03A", "P") % = #v("EX03A", "P") × #v("EX03A", "K") ÷ #v("EX03A", "C") #res("EX03A").
 ]
 
-#exemple(titre: "Solution en % (Produit C, valeurs d'exercice)")[
-  Prescription #v("EX03B", "O") mg de Produit C à #v("EX03A", "P") % : #v("EX03B", "O") ÷ #v("EX03B", "N") #res("EX03B") (seringue graduée au #valu("seringue_std_pas")).
+#exemple(titre: "Solution en % (Produit C, valeurs d’exercice)")[
+  Prescription #v("EX03B", "O") mg de Produit C à #v("EX03A", "P") % : #v("EX03B", "O") ÷ #v("EX03B", "N") #res("EX03B") (seringue de #valu("seringue_std"), graduée au #valu("seringue_std_pas")).
 ]
 
 = Reconstitution
 
-#exemple(titre: "Poudre (Produit E, valeurs d'exercice)")[
+#exemple(titre: "Poudre (Produit E, valeurs d’exercice)")[
   Flacon de #v("EX04A", "G") g ; notice : ajouter #v("EX04A", "A") mL de solvant pour obtenir #v("EX04A", "F") mL.
   #v("EX04A", "G") × #v("EX04A", "K") ÷ #v("EX04A", "F") #res("EX04A").
-  Prescription #v("EX04B", "O") mg : #v("EX04B", "O") ÷ #v("EX04B", "N") #res("EX04B") (graduation #valu("seringue_std_pas")).
+  Prescription #v("EX04B", "O") mg : #v("EX04B", "O") ÷ #v("EX04B", "N") #res("EX04B") (même seringue).
 ]
 
 #piege[La poudre occupe un volume : diviser par les #v("EX04A", "F") mL finaux, pas par les #v("EX04A", "A") mL de solvant.]
@@ -189,9 +190,9 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   Conforme si borne basse × kg ≤ dose prescrite par jour ≤ borne haute × kg.
 ]
 
-#exemple(titre: "Fourchette (Produit B, valeurs d'exercice)")[
+#exemple(titre: "Fourchette (Produit B, valeurs d’exercice)")[
   #v("EX05A", "L") à #v("EX05B", "U") mg/kg/j ; #v("EX05A", "W") kg ; prescription #v("EX05C", "O") mg toutes les #v("EX05C", "I") h.
-  Min #v("EX05A", "L") × #v("EX05A", "W") #res("EX05A")\; max #v("EX05B", "U") × #v("EX05B", "W") #res("EX05B").
+  Min #v("EX05A", "L") × #v("EX05A", "W") #res("EX05A")~; max #v("EX05B", "U") × #v("EX05B", "W") #res("EX05B").
   Prescrit #v("EX05C", "O") × #v("EX05C", "J") ÷ #v("EX05C", "I") #res("EX05C") : conforme. Hors fourchette : ne pas administrer, joindre le.la prescripteur.rice.
 ]
 
@@ -200,9 +201,9 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 = Débits de perfusion
 
 #formule[
-  *Pompe, PSE :* débit (mL/h) = $V$ (mL) ÷ $T$ (h).
+  *Pompe, pousse-seringue électrique (PSE) :* débit (mL/h) = $V$ (mL) ÷ $T$ (h).
   *Gravité :* gouttes/min = $V$ × DF ÷ ($T$ × #val("min_par_h")).
-  DF (gouttes/mL) : perfuseur standard #val("gtt_standard") ; perfuseur pédiatrique (microgouttes) #val("gtt_pedia").
+  DF (gouttes/mL), à lire sur l’emballage du perfuseur : standard #val("gtt_standard") ; pédiatrique (microgouttes) #val("gtt_pedia").
   *Avec #val("gtt_pedia") gouttes/mL :* gouttes/min = mL/h. *Avec #val("gtt_standard") gouttes/mL :* gouttes/min = mL/h ÷ #nombre(str(val-brut("min_par_h") / val-brut("gtt_standard"))).
 ]
 
@@ -232,12 +233,12 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   mL/h = µg/kg/min × kg × #val("min_par_h") ÷ $C$.
 ]
 
-#exemple(titre: "Dose en mg/h (Produit D, valeurs d'exercice)")[
+#exemple(titre: "Dose en mg/h (Produit D, valeurs d’exercice)")[
   #v("EX09A", "Q") mg complétés à #v("EX09A", "V") mL (seringue de #valu("seringue_pse")) : #v("EX09A", "Q") ÷ #v("EX09A", "V") #res("EX09A").
   #v("EX09B", "P") mg/h ÷ #v("EX09B", "N") #res("EX09B").
 ]
 
-#exemple(titre: "Dose en µg/kg/min (Produit F, valeurs d'exercice)")[
+#exemple(titre: "Dose en µg/kg/min (Produit F, valeurs d’exercice)")[
   #v("EX10A", "D") mg dans #v("EX10A", "V") mL : #v("EX10A", "D") × #v("EX10A", "K") ÷ #v("EX10A", "V") #res("EX10A").
   #v("EX10B", "O") µg/kg/min ; #v("EX10B", "W") kg (tel que pesé) : #v("EX10B", "O") × #v("EX10B", "W") × #v("EX10B", "M") ÷ #v("EX10B", "N") #res("EX10B").
 ]

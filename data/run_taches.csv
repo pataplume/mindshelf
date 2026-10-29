@@ -17,7 +17,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",A_VERIFIER
 17,R02,PRODUCTION,PRODUCTEUR,FR08,,Adapter EN03 au tronc commun PASS/LAS (chimie),A_VERIFIER
 18,R02,PRODUCTION,PRODUCTEUR,FR01,,"Fiche méthode calculs de doses et débits, variantes 2009 et 2026",A_VERIFIER
-19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,EN_COURS
+19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,A_CORRIGER
 20,R02,VERIFICATION,VERIFICATEUR,FR08,,Vérification indépendante,A_CORRIGER
 21,R02,VERIFICATION,VERIFICATEUR,FR01,,Vérification indépendante,A_VALIDER
 22,R02,CONDITIONNEMENT,CONDITIONNEUR,FR07,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
@@ -130,7 +130,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 129,R21,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
-132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03)",A_FAIRE
+132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02)",A_FAIRE
 133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",A_VALIDER
 134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VALIDER
 135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VALIDER
@@ -140,3 +140,4 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 139,R01,PRODUCTION,PRODUCTEUR,EN01,CORR2,"Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente",A_VALIDER
 140,R02,PRODUCTION,PRODUCTEUR,FR08,CORR1,"Correction v2 : sous-titre trop affirmatif et programmes récents (M1), note fluoxétine trop proche d'OpenStax (licence NC), doublons de constantes, mineurs ; puis éléments de vente",EN_COURS
 141,R02,PRODUCTION,PRODUCTEUR,FR01,CORR1,"Correction v2 : statut des contrôles (valeurs B et F non vérifiées), échos cliniques nommés, UE 2026 sourcées (art. 23, CFVU UBE), mineurs ; puis éléments de vente",EN_COURS
+142,R02,PRODUCTION,PRODUCTEUR,FR07,CORR1,"Correction v2 : double signe moins (charte corrigée), sous-titre, licences OpenStax, références qui n'écrivent pas la formule, exemples FX20/FX21, symboles réutilisés, constats du conditionneur ; puis éléments de vente",EN_COURS
