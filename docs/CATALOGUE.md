@@ -7,8 +7,8 @@
 | Code | Produit | Type | Risque IA | Relecture métier | Méthode | Canaux | Prix | Variantes | Runs | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
 | EN01 | Dosage Calculation & IV Drip Rates | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
-| EN02 | Physics Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
-| EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
+| EN02 | Physics Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.99 | 1 | R01 | Validé par Tristan |
+| EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Validé par Tristan |
 | EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | À faire |
 | EN05 | EKG Rhythms Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 4.99 | 1 | R06 | À faire |
 | EN06 | Anatomy & Physiology — 10 Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |
@@ -29,8 +29,8 @@
 | FR04 | Pharmacologie IFSI — 10 classes | FICHE | MOYEN | oui | AGENT | WHOP + ETSY | 9.90 | 2 | R07 | À faire |
 | FR05 | Kit IFSI (doses, stage, biologie, pharmacologie) (FR01 + FR02 + FR03 + FR04) | KIT | FORT | oui | AGENT | WHOP | 19.90 | 2 | R08 | À faire |
 | FR06 | Cahier calculs de doses — 100 exercices corrigés | GUIDE | FORT | oui | AGENT | WHOP | 9.90 | 2 | R15, R16, R17 | À faire |
-| FR07 | PASS/LAS Physique-Biophysique — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Vérifié, en attente de relecture et validation |
-| FR08 | PASS/LAS Chimie — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Vérification : corrections bloquantes |
+| FR07 | PASS/LAS Physique-Biophysique — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Validé par Tristan |
+| FR08 | PASS/LAS Chimie — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Vérifié, en attente de relecture et validation |
 | FR09 | PASS/LAS Biostatistiques — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.90 | 1 | R04 | À faire |
 | FR10 | Physique-Biophysique PASS/LAS — guide complet | GUIDE | MOYEN | non | AGENT | WHOP + ETSY | 17.90 | 1 | R18, R19, R20 | À faire |
 

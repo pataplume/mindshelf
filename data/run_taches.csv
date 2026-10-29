@@ -146,3 +146,4 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 145,R03,PRODUCTION,OUTILLAGE,,,"Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01)",A_FAIRE
 146,R04,PRODUCTION,PRODUCTEUR,FR07,CORR_R02,"Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP",A_FAIRE
 147,R04,PRODUCTION,PRODUCTEUR,FR08,CORR_R02,"Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03",A_FAIRE
+148,R03,PREPARATION,ORCHESTRATEUR,,,Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite,A_FAIRE

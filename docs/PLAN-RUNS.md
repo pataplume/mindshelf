@@ -2,19 +2,11 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 147
+- Runs : 22 · tâches : 148
 - Durée estimée totale : 21 h 50 · restant : 18 h 50 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
 **Lançables maintenant :** R03, R04, R05, R06, R07, R15, R18
-
-## Décisions ouvertes
-
-| Code | Sujet | Options | Bloque |
-|---|---|---|---|
-| D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
-| D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
-| D09 | FR08 : tableaux VSEPR et RMN ¹H absents des programmes PASS cités (Montpellier, Rennes, Bordeaux) | Garder les deux, couverts par la réserve du sous-titre / garder la VSEPR et retirer la RMN / chercher un programme actuel qui les nomme | — |
 
 ## Runs
 
@@ -82,6 +74,7 @@
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
 | 25 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
+| 148 | Préparation | Orchestrateur (session principale de Claude) | — | — | Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite | À faire |
 | 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | À faire |
 | 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | À faire |
 | 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | À faire |
