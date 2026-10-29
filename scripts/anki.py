@@ -164,7 +164,7 @@ class Marqueurs:
             raise ErreurOutillage(f"clé « {cle} » sans valeur (colonne valeur ou mantisse) dans valeurs.csv")
         texte = formater_nombre(nombre, self.langue)
         exposant = (l.get("exposant") or "").strip()
-        if exposant:
+        if exposant and float(exposant.replace(",", ".")) != 0:
             texte += " × 10<sup>" + formater_nombre(exposant, self.langue) + "</sup>"
         return texte
 

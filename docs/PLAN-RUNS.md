@@ -3,10 +3,10 @@
 # Plan des runs
 
 - Runs : 22 · tâches : 165
-- Durée estimée totale : 21 h 50 · restant : 16 h 40 (hors validation par Tristan)
+- Durée estimée totale : 21 h 50 · restant : 15 h 35 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R05, R06, R07, R09, R12, R15, R18
+**Lançables maintenant :** R06, R07, R09, R12, R15, R18
 
 ## En attente de Tristan
 
@@ -143,17 +143,17 @@
 
 ### R05 — Fiches IFSI à faible risque
 
-≈ 1 h 05 · statut : À faire · dépend de : R00 · décisions requises : D01
+≈ 1 h 05 · statut : En cours · dépend de : R00 · décisions requises : D01
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 43 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
-| 44 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Pack stage IFSI, variantes 2009 et 2026 | À faire |
-| 45 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — normes françaises | — | Bilan biologique, normes françaises, variantes 2009 et 2026 | À faire |
-| 158 | Production | Outils de conditionnement | — | — | anki.py : le marqueur {v:CLE} affiche « × 10⁰ » quand l'exposant vaut 0 (contourné dans EN04 et FR07) ; ne rien afficher pour un exposant nul ou vide | À faire |
-| 163 | Production | Rédaction et mise en page d'un produit | — | — | Si D10 est confirmée : resourcer hors OpenStax les valeurs des fiches déjà produites qui ne reposent que sur OpenStax (EN02, EN03, EN10, FR07, FR08 ; FR09 : σ² de population, Z = (X − μ)/σ), une ligne par valeur, sans changer le fond | À faire |
-| 164 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | CORR_R04 | Mineurs du rapport-v2 EN06 : phrase œstrogène/LH (puberté), code SEER_MELANOMA ; puis décisions de la relectrice | À faire |
-| 165 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | CORR_R04 | Mineurs du rapport-v2 FR09 : source qui écrit l'IC avec p̂, contrôle des 7 décomptes de contenu.csv, césure « co-horte » | À faire |
+| 43 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
+| 44 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Pack stage IFSI, variantes 2009 et 2026 | En cours |
+| 45 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — normes françaises | — | Bilan biologique, normes françaises, variantes 2009 et 2026 | En cours |
+| 158 | Production | Outils de conditionnement | — | — | anki.py : le marqueur {v:CLE} affiche « × 10⁰ » quand l'exposant vaut 0 (contourné dans EN04 et FR07) ; ne rien afficher pour un exposant nul ou vide (fait par l'orchestrateur au lancement de R05) | Vérifié, en attente de relecture et validation |
+| 163 | Production | Rédaction et mise en page d'un produit | — | — | Si D10 est confirmée : resourcer hors OpenStax les valeurs des fiches déjà produites qui ne reposent que sur OpenStax (EN02, EN03, EN10, FR07, FR08 ; FR09 : σ² de population, Z = (X − μ)/σ), une ligne par valeur, sans changer le fond | Bloqué (décision ou entrée manquante) |
+| 164 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | CORR_R04 | Mineurs du rapport-v2 EN06 : phrase œstrogène/LH (puberté), code SEER_MELANOMA ; puis décisions de la relectrice | En cours |
+| 165 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | CORR_R04 | Mineurs du rapport-v2 FR09 : source qui écrit l'IC avec p̂, contrôle des 7 décomptes de contenu.csv, césure « co-horte » | En cours |
 | 46 | Vérification | Vérification indépendante | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Vérification indépendante | À faire |
 | 47 | Vérification | Vérification indépendante | FR03 Bilan biologique — normes françaises | — | Vérification indépendante | À faire |
 | 48 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
