@@ -88,13 +88,32 @@
   let l = _val(id)
   [#nombre(l.valeur)–#nombre(l.valeur_max)#if l.unite != "" [ #l.unite]]
 }
+// ── Concordance exemples.csv / valeurs.csv et entre exemples (échec de compilation si écart) ──
+// Constantes saisies dans un exemple : (exemple, entrée, id dans valeurs.csv).
+#for (i, cle, id) in (
+  ("EX03", "ER", "ER"), ("EX04", "hc", "HC_EVNM"), ("EX07", "ln2", "LN2"), ("EX08", "Rg", "R_J"),
+  ("EX13", "k", "NERNST25"), ("EX11", "s", "CO2_SOL"), ("EX12", "pKa", "BICARB_PKA"),
+) {
+  if float(ex(i).e.at(cle)) != float(_val(id).valeur) {
+    panic("FR08 : " + i + "." + cle + " = " + str(ex(i).e.at(cle)) + " ≠ valeurs.csv " + id + " = " + _val(id).valeur)
+  }
+}
+// Rapports saisis à la main : EX10.R = Ab/HA ; EX12.R = résultat calculé d'EX11.
+#if calc.abs(ex("EX10").e.R - ex("EX10").e.Ab / ex("EX10").e.HA) > 1e-12 { panic("FR08 : EX10.R ≠ Ab/HA") }
+#if calc.abs(ex("EX12").e.R - ex("EX11").calcule) > 1e-12 { panic("FR08 : EX12.R ≠ résultat d'EX11") }
+// Signe devant un logarithme fourni en entrée : « = » s'il est exact, « ≈ » sinon.
+#let rel-log(id) = {
+  let e = ex(id).e
+  if calc.abs(calc.log(e.R) - e.L) < 1e-12 { sym.eq } else { sym.approx }
+}
+
 #let vsepr = csv("../donnees/vsepr.csv", row-type: dictionary)
 #let spectro = csv("../donnees/spectro.csv", row-type: dictionary)
 #let nomenclature = csv("../donnees/nomenclature.csv", row-type: dictionary)
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Les notions de chimie générale et organique les plus courantes en PASS et en LAS : formules, tableaux, exemples chiffrés et pièges],
+  sous-titre: [Notions fréquentes en PASS/LAS, selon les facultés (vérifiez votre programme) : formules, tableaux, exemples, pièges],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -141,7 +160,7 @@ Dans une période →, rayon ↓, énergie d'ionisation ↑, électronégativit�
 )
 AX#sub[n]E#sub[m] : $n$ atomes liés, $m$ doublets non liants ; $n + m$ domaines. Double liaison = 1 σ + 1 π ; triple = 1 σ + 2 π.
 
-*Interactions faibles :* ion–dipôle > liaison hydrogène (H porté par N, O, F) > dipôle–dipôle > dispersion de London. Plus elles sont fortes, plus la température d'ébullition est haute.
+*Interactions faibles*, à taille de molécule comparable : ion–dipôle > liaison hydrogène (H porté par N, O, F) > Van der Waals (Keesom, Debye, London). Plus elles sont fortes, plus la température d'ébullition est haute.
 
 = Thermodynamique
 
@@ -149,22 +168,22 @@ AX#sub[n]E#sub[m] : $n$ atomes liés, $m$ doublets non liants ; $n + m$ domaines
   $ Delta_r H° = sum nu thin Delta_f H°_"prod" - sum nu thin Delta_f H°_"réac" $
   $ Delta_r G = Delta_r H - T Delta_r S quad Delta_r G = Delta_r G° + R T ln Q $
   $ Delta_r G° = - R T ln K = - n F E° $
-  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K.
+  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K ($Delta_r S°$ en kJ ; $Delta_r H°$, $Delta_r S°$ supposés indépendants de $T$).
 ]
 $Delta_r G < 0$ : évolution spontanée. $Delta_r H < 0$ et $Delta_r S > 0$ : toujours ; $Delta_r H > 0$ et $Delta_r S < 0$ : jamais ; tous deux $< 0$ : à basse $T$ ; tous deux $> 0$ : à haute $T$. À l'équilibre, $Delta_r G = 0$ et $Q = K$.
 
 = Cinétique
 
-#formule[
+#block(breakable: false)[#formule[
   $ v = k [A]^alpha [B]^beta quad k = A thin e^(-E_a \/ R T) $
   $ ln k_2 / k_1 = E_a / R (1 / T_1 - 1 / T_2) $
-  Ordres partiels $alpha$, $beta$ : expérimentaux ; égaux aux coefficients pour un acte élémentaire, pas en général. _Ex._ $k$ double entre #v("EX08", "T1") et #v("EX08", "T2") K : $E_a #rel("EX08") #res("EX08")$ kJ/mol.
-]
+  $A$ de $k$ : facteur préexponentiel. Ordres partiels $alpha$, $beta$ : expérimentaux ; égaux aux coefficients pour un acte élémentaire, pas en général. _Ex._ $k$ double entre #v("EX08", "T1") et #v("EX08", "T2") K : $E_a #rel("EX08") #res("EX08")$ kJ/mol.
+]]
 #block(breakable: false)[#tableau(
   columns: (auto, 1fr, auto),
   align: (center, left, left),
   [Ordre], [Loi intégrée (A → produits)], [$t_(1\/2)$],
-  [0], [$[A] = [A]_0 - k t$], [$[A]_0 \/ 2 k$],
+  [0], [$[A] = [A]_0 - k t$], [$[A]_0 \/ (2 k)$],
   [1], [$ln [A] = ln [A]_0 - k t$], [$#k("LN2") \/ k$],
   [2], [$1 \/ [A] = 1 \/ [A]_0 + k t$], [$1 \/ (k [A]_0)$],
 )]
@@ -173,23 +192,23 @@ Ordre 1 : $t_(1\/2)$ indépendant de $[A]_0$. _Ex._ principe actif A (valeurs d'
 = Acides et bases
 
 #formule[
-  $ "pH" = -log [H_3 O^+] quad K_e = [H_3 O^+][H O^-] $
-  $ "p"K_a + "p"K_b = "p"K_e quad "pH" = "p"K_a + log ([A^-]) / ([A H]) $
+  $ "pH" = -log ["H"_3"O"^+] quad K_e = ["H"_3"O"^+]["HO"^-] $
+  $ "p"K_a + "p"K_b = "p"K_e quad "pH" = "p"K_a + log (["A"^-]) / (["AH"]) $
   À #cond("KE") : $K_e = #k("KE")$, $"p"K_e = #k("PKE")$. Acide fort : $"pH" = -log C$. Acide faible peu dissocié ($"pH" < "p"K_a - 1$) : $"pH" = 1/2 ("p"K_a - log C)$.
-  _Ex._ $"p"K_a = #v("EX09", "pKa")$, $C = #v("EX09", "R")$ mol/L : pH #rel("EX09") #res("EX09"). Tampon $[A^-] = #v("EX10", "Ab")$, $[A H] = #v("EX10", "HA")$ mol/L : pH #rel("EX10") #res("EX10").
+  _Ex._ $"p"K_a = #v("EX09", "pKa")$, $C = #v("EX09", "R")$ mol/L : pH #rel("EX09") #res("EX09"). Tampon $["A"^-] = #v("EX10", "Ab")$, $["AH"] = #v("EX10", "HA")$ mol/L : pH #rel("EX10") #res("EX10").
 ]
 Tampon efficace dans $"p"K_a plus.minus #k("TAMPON_ECART")$. Titrage d'un acide faible par une base forte : pH = p$K_a$ à la demi-équivalence ; pH > #k("PH_NEUTRE") à l'équivalence. Effet −I d'un substituant : base conjuguée stabilisée, p$K_a$ ↓.
 
-#note-clinique(titre: "Santé : tampon bicarbonate")[
-  $ "pH" = #k("BICARB_PKA") + log [H C O_3^-] / (#k("CO2_SOL") times P_a"CO"_2) $
-  HCO₃⁻ #v("EX11", "HCO3") mmol/L, PaCO₂ #v("EX11", "PCO2") mmHg : rapport #res("EX11"), $log #v("EX12", "R") = #v("EX12", "L")$, pH #rel("EX12") #res("EX12"). pH du sang : #plage("PH_SANG").
-]
+#block(breakable: false)[#note-clinique(titre: "Santé : tampon bicarbonate")[
+  $ "pH" = #k("BICARB_PKA") + log ["HCO"_3^-] / (#k("CO2_SOL") times P_a"CO"_2) $
+  HCO₃⁻ #v("EX11", "HCO3") mmol/L, PaCO₂ #v("EX11", "PCO2") mmHg : rapport #res("EX11"), $log #v("EX12", "R") #rel-log("EX12") #v("EX12", "L")$, pH #rel("EX12") #res("EX12"). pH du sang : #plage("PH_SANG").
+]]
 
 = Oxydoréduction
 
 #formule[
   $ alpha "Ox" + n e^- = beta "Red" quad E = E° + #k("NERNST25") / n log ["Ox"]^alpha / ["Red"]^beta $
-  (#cond("NERNST25"), V.) Pile : $Delta E = E_+ - E_-$ ; réduction à la cathode, oxydation à l'anode. _Ex._ $E° = #v("EX13", "Eo")$ V, $n = #v("EX13", "n")$, $["Ox"] \/ ["Red"] = #v("EX13", "R")$ : $E #rel("EX13") #res("EX13")$ V.
+  (à #cond("NERNST25") ; $E$ et $E°$ en V) Pile : $Delta E = E_+ - E_-$ ; réduction à la cathode, oxydation à l'anode. _Ex._ $E° = #v("EX13", "Eo")$ V, $n = #v("EX13", "n")$, $["Ox"] \/ ["Red"] = #v("EX13", "R")$ : $E #rel("EX13") #res("EX13")$ V.
 ]
 *Nombres d'oxydation :* somme = charge de l'espèce ; O : −II (sauf peroxydes) ; H : +I (sauf hydrures) ; corps simple : 0. L'oxydant gagne des électrons, son n.o. diminue.
 
@@ -201,7 +220,7 @@ Tampon efficace dans $"p"K_a plus.minus #k("TAMPON_ECART")$. Titrage d'un acide 
   [Rang], [Fonction prioritaire], [Suffixe], [Préfixe],
   ..nomenclature.map(l => (l.rang, l.fonction, l.suffixe, l.prefixe)).flatten(),
 )
-La fonction de rang le plus élevé donne le suffixe ; les autres passent en préfixe. Alcènes et alcynes gardent leur terminaison (-ène, -yne) en plus du suffixe.
+La fonction de rang le plus élevé donne le suffixe ; les autres passent en préfixe. Alcènes et alcynes gardent leur terminaison #box[(-ène, -yne)] en plus du suffixe.
 
 *R/S :* classer les 4 substituants par numéro atomique au premier point de différence (CIP), le n° 4 vers l'arrière, tourner 1 → 2 → 3 : sens horaire _R_, antihoraire _S_ (inverser si le n° 4 pointe vers l'avant). *Z/E :* sur chaque carbone de la double liaison, le groupe prioritaire (CIP) ; du même côté _Z_, opposés _E_. $n$ centres stéréogènes : au plus $2^n$ stéréoisomères (moins s'il existe un composé méso).
 
@@ -211,18 +230,18 @@ La fonction de rang le plus élevé donne le suffixe ; les autres passent en pr�
   columns: (auto, 1fr, 1fr),
   align: (left, left, left),
   [], [S#sub[N]1 / E1], [S#sub[N]2 / E2],
-  [Substrat], [3° > 2°], [S#sub[N]2 : CH₃ > 1° > 2°],
+  [Substrat], [3°~>~2°], [S#sub[N]2 : CH₃~>~1°~>~2°],
   [Vitesse], [$k$[RX] (ordre 1)], [$k$[RX][Nu⁻ ou B⁻] (ordre 2)],
   [Intermédiaire], [carbocation], [aucun (une étape)],
   [Réactif], [Nu ou base faible], [Nu ou base forte],
   [Solvant], [polaire protique], [S#sub[N]2 : polaire aprotique],
-  [Stéréo], [S#sub[N]1 : racémisation], [S#sub[N]2 : inversion (Walden) ; E2 : anti],
+  [Stéréo], [S#sub[N]1 : #box[racémisation] (souvent partielle)], [S#sub[N]2 : inversion (Walden) ; E2 : #box[anti]],
 )]
 Élimination (E1, E2) : l'alcène le plus substitué est majoritaire (règle de Zaïtsev).
 
-#note-clinique(titre: "Santé : chiralité")[
-  Les récepteurs biologiques sont chiraux : deux énantiomères d'un médicament ont souvent des propriétés biologiques différentes. Exemple cité par McMurry : la fluoxétine racémique est antidépressive, et l'énantiomère _S_ seul s'est montré actif en prévention de la migraine.
-]
+#block(breakable: false)[#note-clinique(titre: "Santé : chiralité")[
+  Les récepteurs de l'organisme étant chiraux, deux énantiomères peuvent agir très différemment. Exemple (McMurry) : la fluoxétine, antidépresseur utilisé en racémique. Le racémique est sans effet sur la migraine ; l'énantiomère _S_ pur a été étudié en prévention.
+]]
 
 = Spectroscopies
 
@@ -247,12 +266,12 @@ RMN ¹H : $n$ H voisins équivalents donnent $n + 1$ pics ; l'intégration est p
 
 Constantes (#jeu("NA")) : $N_A$ = #k("NA", u: true) · $R$ = #k("R_J", u: true) · $F$ = #k("F", u: true) · $h$ = #k("H", u: true) · $c$ = #k("C", u: true) · #cond("T0") = #k("T0", u: true) · $ln 10 approx #k("LN10")$
 
-#piege[
+#block(breakable: false)[#piege[
   - $T$ en kelvins ; $Delta_r S$ souvent en J, $Delta_r H$ en kJ : convertir avant de calculer.
   - pH et Nernst en $log$ ; $Delta_r G° = -R T ln K$ et Arrhenius en $ln$.
   - $"pH" = 1/2 ("p"K_a - log C)$ seulement si l'acide est peu dissocié.
   - Le signe (+) ou (−) du pouvoir rotatoire ne dit rien de _R_ ou _S_.
   - Après une S#sub[N]2, le descripteur _R_/_S_ peut rester le même : il dépend des priorités CIP.
   - Un catalyseur ne change ni $K$ ni $Delta_r G°$ ; seule $T$ change $K$.
-]
+]]
 ]
