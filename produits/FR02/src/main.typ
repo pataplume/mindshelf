@@ -1,0 +1,256 @@
+// FR02 : Pack stage IFSI (constantes, échelles, transmissions, précautions) — marché FR, marque Clairance.
+// Risque IA FAIBLE, relecture infirmière avant validation (donnees/statut-methode.md). Jusqu'à 4 pages.
+// Contrat : titre, marque, version, langue, format, variante, référentiel et mentions arrivent par sys.inputs.
+// Aucun nombre n'est tapé ici : repères (donnees/constantes.csv, valeurs.csv), cotations (glasgow.csv, braden.csv),
+// sommes recalculées (exemples.csv, échec si écart), ligne d'UE propre à la variante (variantes.csv).
+// Aucune conduite thérapeutique, aucune dose : la conduite affichée est « alerter selon le protocole du service ».
+#import "/charte/modele.typ": *
+
+// ── Contrat sys.inputs ──
+#let entree(cle) = {
+  let v = sys.inputs.at(cle, default: "")
+  if v == "" { panic("FR02 : entrée sys.inputs « " + cle + " » absente (scripts/build.py la fournit)") }
+  v
+}
+
+// ── Valeurs ──
+#let valeurs = {
+  let d = (:)
+  for l in csv("../donnees/valeurs.csv", row-type: dictionary) {
+    if l.cle in d { panic("FR02 : clé " + l.cle + " en double dans donnees/valeurs.csv") }
+    d.insert(l.cle, l)
+  }
+  d
+}
+#let val-brut(cle) = {
+  if cle not in valeurs { panic("FR02 : valeur " + cle + " absente de donnees/valeurs.csv") }
+  float(valeurs.at(cle).valeur)
+}
+#let val(cle) = { let _ = val-brut(cle); nombre(valeurs.at(cle).valeur) }
+#let valu(cle) = [#val(cle)#sym.space.nobreak#valeurs.at(cle).unite]
+// Code (norme) : chiffres lus dans la table, sans séparateur de milliers.
+#let code(cle) = { let _ = val-brut(cle); valeurs.at(cle).valeur }
+
+// Gabarit « {cle} » → nombre de valeurs.csv.
+#let gabarit(t) = {
+  let morceaux = ()
+  let pos = 0
+  for m in t.matches(regex("\{([a-z0-9_]+)\}")) {
+    morceaux.push(t.slice(pos, m.start))
+    morceaux.push(val(m.captures.first()))
+    pos = m.end
+  }
+  morceaux.push(t.slice(pos))
+  morceaux.join()
+}
+
+// ── Exemples : recalcul de chaque somme ──
+#let exemples = {
+  let d = (:)
+  for l in csv("../donnees/exemples.csv", row-type: dictionary) {
+    let e = json(bytes(l.entrees_json))
+    let calcule = eval(l.formule, scope: e)
+    if calc.abs(calcule - float(l.resultat_attendu)) > float(l.tolerance) {
+      panic("FR02 : " + l.id + " : " + l.formule + " = " + str(calcule) + ", attendu " + l.resultat_attendu)
+    }
+    d.insert(l.id, l + (e: e, x: float(l.resultat_attendu)))
+  }
+  d
+}
+#let ex(id) = {
+  if id not in exemples { panic("FR02 : exemple " + id + " absent de donnees/exemples.csv") }
+  exemples.at(id)
+}
+#let ve(id, cle) = {
+  let e = ex(id).e
+  if cle not in e { panic("FR02 : entrée " + cle + " absente de " + id) }
+  nombre(str(e.at(cle)))
+}
+#let xe(id) = nombre(ex(id).resultat_attendu)
+
+// ── Échelles : tables et contrôles de cohérence ──
+#let glasgow = csv("../donnees/glasgow.csv", row-type: dictionary)
+#let braden = csv("../donnees/braden.csv", row-type: dictionary)
+#let meme(a, b, quoi) = if calc.abs(float(a) - float(b)) > 0.000000001 {
+  panic("FR02 : incohérence " + quoi + " : " + str(a) + " ≠ " + str(b))
+}
+#let items-g = glasgow.map(l => l.item).dedup()
+#let pts(item) = glasgow.filter(l => l.item == item).map(l => int(l.points))
+#meme(items-g.map(i => calc.min(..pts(i))).sum(), val-brut("glasgow_min"), "Glasgow minimum")
+#meme(items-g.map(i => calc.max(..pts(i))).sum(), val-brut("glasgow_max"), "Glasgow maximum")
+#meme(ex("EX04").x, val-brut("glasgow_min"), "EX04 Glasgow minimum")
+#meme(ex("EX05").x, val-brut("glasgow_max"), "EX05 Glasgow maximum")
+#for (i, k) in items-g.zip(("Y", "V", "M")) {
+  meme(calc.max(..pts(i)), ex("EX05").e.at(k), "EX05 " + k)
+  if int(ex("EX01").e.at(k)) not in pts(i) { panic("FR02 : EX01 : " + k + " hors cotation") }
+}
+#meme(braden.len(), val-brut("braden_items"), "nombre d'items de Braden")
+#meme(braden.map(l => int(l.min)).sum(), val-brut("braden_min"), "Braden minimum")
+#meme(braden.map(l => int(l.max)).sum(), val-brut("braden_max"), "Braden maximum")
+#meme(ex("EX02").x, val-brut("braden_min"), "EX02 Braden minimum")
+#meme(ex("EX03").x, val-brut("braden_max"), "EX03 Braden maximum")
+
+// ── Ligne propre à la variante (référentiel 2009 ou 2026) ──
+#let ligne-variante(cle) = {
+  let lignes = csv("../donnees/variantes.csv", row-type: dictionary).filter(l => l.variante == entree("variante") and l.cle == cle)
+  if lignes.len() != 1 { panic("FR02 : " + str(lignes.len()) + " ligne(s) « " + cle + " » pour " + entree("variante") + " dans donnees/variantes.csv (1 attendue)") }
+  let l = lignes.first()
+  if l.referentiel != entree("referentiel") {
+    panic("FR02 : " + entree("variante") + " : référentiel " + l.referentiel + " ≠ entrée " + entree("referentiel"))
+  }
+  l.valeur
+}
+
+#show: fiche.with(
+  titre: entree("titre"),
+  sous-titre: [Repères de l'adulte pour le stage : constantes, échelles, transmissions, hygiène et AES],
+  marque: entree("marque"),
+  langue: entree("langue"),
+  format: entree("format"),
+  mentions: mentions-produit(entree("produit"), entree("langue")),
+  version: entree("version"),
+  numerotation: true,
+)
+
+#colonnes(2)[
+
+_#ligne-variante("ligne_ue")._\
+_Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre service priment._
+
+= Constantes de l'adulte
+
+#tableau(
+  columns: (1fr, auto, auto),
+  align: (left, right, left),
+  [Paramètre], [Repère], [Unité],
+  ..csv("../donnees/constantes.csv", row-type: dictionary).map(l => ([#l.parametre], [#gabarit(l.repere)], [#l.unite])).flatten(),
+)
+
+#note-clinique(titre: "Valeur anormale ou inhabituelle")[
+  Recontrôler la mesure (matériel, position, repos), comparer aux valeurs précédentes du.de la patient.e et à l'état clinique, puis *alerter sans attendre* l'infirmier.e référent.e ou le.la médecin selon le protocole du service. Le recontrôle ne retarde jamais l'alerte devant un.e patient.e qui se dégrade.
+]
+
+#piege[Un chiffre « normal » ne rassure pas seul : la tendance (valeurs successives) et l'aspect du.de la patient.e comptent autant.]
+
+= Échelles de la douleur
+
+#tableau(
+  columns: (auto, 1fr),
+  align: (left, left),
+  [Échelle], [Cotation et seuil (indicateur HAS)],
+  [EVA (auto-évaluation)], [Réglette de 0 à #valu("eva_max_cm") (0 à #valu("eva_max_mm")). Prise en charge si ≥ #val("douleur_seuil")/#val("en_max") (≥ #val("douleur_seuil_100")/#val("eva_max_mm")).],
+  [EN (auto-évaluation)], [Note de 0 à #val("en_max") donnée par le.la patient.e. Même seuil que l'EVA.],
+  [EVS (auto-évaluation)], [0 absente, 1 faible, 2 modérée, 3 intense, #val("evs_max") extrêmement intense. Prise en charge si ≥ #val("evs_seuil").],
+  [Algoplus (hétéro-évaluation, personne âgée non communicante)], [Score de 0 à #val("algoplus_max"). Prise en charge si ≥ #val("algoplus_seuil").],
+)
+
+#piege[Choisir *une* échelle et la garder pour suivre l'évolution : un score d'EVA et un score d'EN ne se comparent pas d'une prise à l'autre. Tracer l'échelle utilisée avec le score.]
+
+= Score de Glasgow
+
+#tableau(
+  columns: (auto, auto, 1fr),
+  align: (left, right, left),
+  [Item], [Points], [Meilleure réponse obtenue],
+  ..glasgow.map(l => ([#l.item], [#nombre(l.points)], [#l.reponse])).flatten(),
+)
+
+#formule[
+  Score = Y + V + M, de #val("glasgow_min") à #val("glasgow_max"). Noter le détail des trois items, pas seulement le total.
+]
+
+#exemple(titre: "Calcul du score")[
+  Yeux à la demande (#ve("EX01", "Y")), réponse confuse (#ve("EX01", "V")), localise la douleur (#ve("EX01", "M")) : #ve("EX01", "Y") + #ve("EX01", "V") + #ve("EX01", "M") = #xe("EX01"), à noter Y#ve("EX01", "Y") V#ve("EX01", "V") M#ve("EX01", "M").
+]
+
+#note-clinique(titre: "Baisse du score")[
+  Toute baisse par rapport à la cotation précédente s'alerte immédiatement, selon le protocole du service.
+]
+
+= Risque d'escarre : échelle de Braden
+
+#tableau(
+  columns: (1fr, auto),
+  align: (left, right),
+  [Item], [Cotation],
+  ..braden.map(l => ([#l.item], [#nombre(l.min) à #nombre(l.max)])).flatten(),
+)
+
+#formule[
+  Score total de #val("braden_min") à #val("braden_max") : *plus le score est bas, plus le risque est élevé*. Le seuil qui déclenche les mesures de prévention est celui du protocole du service.
+]
+
+= Transmissions
+
+#encadre(titre: "Transmissions ciblées")[
+  - *Cible* : ce qui pose problème ou change (symptôme, réaction, événement), en quelques mots.
+  - *D, données* : faits observés et mesurés, propos du.de la patient.e.
+  - *A, actions* : ce qui a été fait, et par qui.
+  - *R, résultats* : effet observé, réévalué à l'heure dite.
+]
+
+#encadre(titre: "SAED (adaptation française de SBAR, HAS)")[
+  - *S, situation* : qui j'appelle, pour quel.le patient.e, motif de l'appel, constantes.
+  - *A, antécédents* : contexte, traitements, allergies, évolution récente.
+  - *E, évaluation* : ce que j'en pense, ce qui m'inquiète.
+  - *D, demande* : ce que j'attends, dans quel délai ; puis reformuler la décision.
+]
+
+#note-clinique(titre: "Traçabilité")[
+  Écrire ce qui est fait, quand il est fait : date, heure, identification de l'auteur.rice. Chaque administration est tracée sur le même support que la prescription. Faits objectifs, sans jugement ; jamais d'acte tracé à l'avance.
+]
+
+= Précautions standard
+
+#formule(titre: "Champ (SF2H 2017)")[
+  Pour tout soin, en tout lieu, pour tout.e patient.e, quel que soit son statut infectieux.
+]
+
+#encadre(titre: [Les #val("oms_indications") indications de l'hygiène des mains (OMS)])[
+  + Avant de toucher un.e patient.e.
+  + Avant un geste aseptique.
+  + Après un risque d'exposition à un liquide biologique.
+  + Après avoir touché un.e patient.e.
+  + Après avoir touché l'environnement du.de la patient.e.
+]
+
+#tableau(
+  columns: (auto, 1fr),
+  align: (left, left),
+  [Mesure], [Repère],
+  [Mains], [Friction hydro-alcoolique : technique de référence, gants ou non.],
+  [Gants], [Pas de gants pour un contact avec une peau saine.],
+  [Masque], [Masque à usage médical, au minimum de type I (norme EN #code("masque_norme")).],
+  [Matériel], [Matériel de sécurité et à usage unique ; conduite AES connue de tous.],
+)
+
+= Précautions complémentaires
+
+#tableau(
+  columns: (auto, 1fr),
+  align: (left, left),
+  [Type], [Mesures (en plus des précautions standard)],
+  [Air], [Chambre individuelle, porte fermée. Appareil de protection respiratoire FFP2 mis *avant* d'entrer, même chambre vide ; étanchéité vérifiée (fit check) à chaque port. Masque chirurgical pour le.la patient.e qui sort de sa chambre.],
+  [Gouttelettes], [Masque chirurgical pour le.la soignant.e dès l'entrée ; masque chirurgical pour le.la patient.e qui sort de sa chambre.],
+  [Contact], [Hygiène des mains renforcée ; protection de la tenue (tablier) pour les soins au contact du.de la patient.e ou de son environnement.],
+)
+
+#piege[La signalétique sur la porte et le protocole du service indiquent le type de précautions : ne pas le déduire du diagnostic supposé.]
+
+= Accident d'exposition au sang (AES)
+
+#encadre(titre: "Premiers soins, tout de suite (INRS)")[
+  *Piqûre, coupure, peau lésée :* ne pas faire saigner ; nettoyer à l'eau et au savon, rincer ; désinfecter au moins #valu("aes_desinfection_min") (Dakin, ou eau de Javel à #val("javel_pct") % de chlore actif diluée au 1/#val("javel_dilution")#super[e] ; à défaut polyvidone iodée en solution dermique ou alcool à #val("alcool_degre")°).\
+  *Projection sur une muqueuse (œil, bouche, nez) :* rincer abondamment au moins #valu("aes_rincage_min") au sérum physiologique ou à l'eau.
+]
+
+#note-clinique(titre: "Délais")[
+  *Dans l'heure :* avis médical (référent AES du service ou urgences) pour évaluer le risque ; un traitement post-exposition, s'il est indiqué, débute idéalement dans les #valu("aes_tpe_h").
+  *Dans les #valu("aes_declaration_h") :* informer le.la responsable et l'IFSI, déclarer l'accident, informer la médecine du travail.
+]
+
+#piege[Ne pas attendre la fin du soin ou du poste pour consulter : le délai compte à partir de l'accident.]
+
+#v(0.3em)
+_Sources : HAS (HTA 2016, indicateur douleur IQSS 2023, SAED 2014), SF2H (précautions standard 2017, voie respiratoire 2013), OMS (hygiène des mains, 2009), INRS (affiche AA 775), AP-HP (dossier de soins, 2014), arrêtés IFSI de 2009 et 2026._
+]

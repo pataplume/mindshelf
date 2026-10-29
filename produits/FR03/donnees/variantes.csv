@@ -1,0 +1,3 @@
+variante,referentiel,cle,valeur,source_code,statut
+FR03-2009,IFSI_2009,ligne_ue,"Référentiel 2009 (entré.e.s en formation avant septembre 2026) : UE en lien, UE 2.1 « Biologie fondamentale » (S1) et UE 4.4 « Thérapeutiques et contribution au diagnostic médical » (S2, S4, S5)",SRC_IFSI_2009 + SRC_IFSI_2026,A-VERIFIER
+FR03-2026,IFSI_2026,ligne_ue,"Référentiel 2026 (entrant.e.s à partir de septembre 2026) : UE en lien, UE B.1 « Sciences biomédicales » (S1, S2) et UE B.3 « Pratiques et interventions infirmières » (examens biologiques en S1, prélèvement veineux en S2), selon l'offre de formation publiée par l'Université de Bourgogne Europe",SRC_IFSI_2026 + UBE_CFVU_2026,A-VERIFIER

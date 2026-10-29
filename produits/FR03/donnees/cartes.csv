@@ -1,0 +1,17 @@
+recto,verso,tags
+Natrémie : valeurs usuelles de l'adulte (une source nationale),"{t:examens:NA:bas}–{t:examens:NA:haut} mmol/L (plasma). Les valeurs varient selon le laboratoire : lire celles du compte rendu.",FR03 ionogramme
+Kaliémie : valeurs usuelles de l'adulte (une source nationale),"{t:examens:K:bas}–{t:examens:K:haut} mmol/L (plasma). Les valeurs varient selon le laboratoire.",FR03 ionogramme
+Kaliémie élevée sur un prélèvement peut-être hémolysé : que faire d'abord ?,"Signaler d'abord, selon le protocole du service. L'hémolyse peut donner une fausse hyperkaliémie ; un contrôle au laboratoire, sans garrot, peut être demandé, sans retarder le signalement.",FR03 repere
+Calcium total : valeurs usuelles,"{t:examens:CA:bas}–{t:examens:CA:haut} mmol/L, soit {t:examens:CA:autre_bas}–{t:examens:CA:autre_haut} mg/L (sérum ou plasma)",FR03 ionogramme
+Créatininémie : valeurs usuelles selon le sexe,"Homme {t:examens:CREA_H:bas}–{t:examens:CREA_H:haut} µmol/L ; femme {t:examens:CREA_F:bas}–{t:examens:CREA_F:haut} µmol/L",FR03 rein
+DFG estimé : unité et seuil du stade 3 de maladie rénale chronique,"mL/min/1,73 m² ; DFGe &lt; {v:dfg_seuil_mrc3} pendant plus de {v:mrc_mois} mois. Calculé à partir de la créatininémie (CKD-EPI chez l'adulte).",FR03 rein
+Glycémie : deux écritures des valeurs usuelles,"{t:examens:GLY:bas}–{t:examens:GLY:haut} mmol/L ou {t:examens:GLY:autre_bas}–{t:examens:GLY:autre_haut} g/L (plasma). Lire l'unité avant de comparer.",FR03 glucose unites
+HbA1c : valeur usuelle en fraction et en %,"&lt; {t:examens:HBA1C:haut} de l'hémoglobine totale, soit &lt; {t:examens:HBA1C:autre_haut} %",FR03 glucose unites
+Hémoglobine : valeurs usuelles selon le sexe,"Homme {t:examens:HB_H:bas}–{t:examens:HB_H:haut} g/L ; femme {t:examens:HB_F:bas}–{t:examens:HB_F:haut} g/L",FR03 nfs
+Leucocytes et plaquettes : valeurs usuelles,"Leucocytes {t:examens:LEUCO:bas}–{t:examens:LEUCO:haut} G/L ; plaquettes {t:examens:PLAQ:bas}–{t:examens:PLAQ:haut} G/L (G/L = 10<sup>9</sup>/L)",FR03 nfs
+Que valent G/L et T/L ?,"G/L = 10<sup>9</sup>/L (leucocytes, plaquettes) ; T/L = 10<sup>12</sup>/L (hématies)",FR03 nfs unites
+TP et TCA : valeurs usuelles et écriture,"TP {t:examens:TP:bas}–{t:examens:TP:haut} % ; TCA en rapport malade/témoin, sans unité : {t:examens:TCA:bas}–{t:examens:TCA:haut}",FR03 hemostase
+INR sous AVK : qui fixe la cible ?,"Le prescripteur, selon l'indication : {t:examens:INR_AVK:bas} à {t:examens:INR_AVK:haut} le plus souvent ; {t:examens:INR_VALVE:bas} à {t:examens:INR_VALVE:haut} pour certaines valves mécaniques. Au-dessus : risque de saignement, à signaler.",FR03 hemostase repere
+CRP : valeur usuelle,"&lt; {t:examens:CRP:haut} mg/L (sérum)",FR03 inflammation
+ALAT et GGT : valeurs usuelles selon le sexe,"ALAT : homme &lt; {t:examens:ALAT_H:haut}, femme &lt; {t:examens:ALAT_F:haut} UI/L ; GGT : homme &lt; {t:examens:GGT_H:haut}, femme &lt; {t:examens:GGT_F:haut} UI/L",FR03 foie
+Bilirubine totale et albumine : valeurs usuelles,"Bilirubine totale &lt; {t:examens:BILI:haut} µmol/L ; albumine {t:examens:ALB:bas}–{t:examens:ALB:haut} g/L",FR03 foie

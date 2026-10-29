@@ -107,6 +107,21 @@
   verifie("contenu.csv : " + str(exemples.len()) + " résultats", if l7.contains("(" + str(exemples.len()) + " résultats)") { 1 } else { 0 }, 1, 0)
   verifie("contenu.csv : 3 tableaux de valeurs", if l7.contains(str(("Z", "EMP", "KHI").filter(g => groupe(g).len() > 0).len()) + " tableaux de valeurs") { 1 } else { 0 }, 1, 0)
 }
+// Autres décomptes de contenu.csv (lignes 1 et 7), relevés dans cette source ; pages tablette : à la fin, à la mise en page.
+#let source-fiche = read("main.typ").split("\n")
+#let lignes-egales(t) = source-fiche.filter(l => l.trim() == t).len()
+#let annonce(o, t) = {
+  let l = csv("../donnees/contenu.csv", row-type: dictionary).filter(x => x.ordre == o).first().element
+  verifie("contenu.csv l. " + o + " : « " + t + " »", if l.contains(t) { 1 } else { 0 }, 1, 0)
+}
+#annonce("1", str(source-fiche.filter(l => l.starts-with("= ")).len()) + " sections")
+#annonce("7", str(source-fiche.filter(l => l.starts-with("#exemple(")).len()) + " encadrés")
+#annonce("7", str(lignes-egales("[], [Malades], [Non malades],")) + " tableaux 2 × 2")
+#annonce("7", str(lignes-egales("[Étude], [Principe : mesure],")) + " tableau des types d'étude")
+#{
+  let i = source-fiche.position(l => l == "#piege[")
+  annonce("7", str(source-fiche.slice(i + 1).filter(l => l.starts-with("  - ")).len()) + " pièges")
+}
 #verifie("BX19 b = BX18", float(ex("BX19").e.b), ex("BX18").calcule, 0)
 #verifie("BX20 r = BX18", float(ex("BX20").e.r), float(ex("BX18").e.r), 0)
 // Conditions d'application des exemples : n p et n (1 - p) > seuil ; effectifs attendus ≥ seuil.
@@ -283,7 +298,7 @@
   Cohorte : $"RR" = (a \/ (a + b)) \/ (c \/ (c + d))$. Cas-témoins : $"OR" = a d \/ (b c)$, proche du RR si la maladie est rare ; le RR n'y est pas calculable.
 ]
 
-#exemple(titre: "Même tableau, lu comme une cohorte")[
+#exemple(titre: text(hyphenate: false)[Même tableau, lu comme une cohorte])[
   $"RR" #rel("BX16") #res("BX16")$ ; $"OR" #rel("BX17") #res("BX17")$.
   $E_a = #v("BX15", "l") times #v("BX15", "k") \/ #v("BX15", "N") #rel("BX15") #res("BX15")$ ; $E_b = #v("BX14", "eb")$, $E_c = #v("BX14", "ea")$, $E_d = #v("BX14", "eb")$ ; $chi^2 #rel("BX14") #res("BX14") > #q("KHI1_95")$ (ddl #nombre(val("KHI1_95").ddl)) : association significative à #pct(val("KHI1_95").alpha)~%.
 ]
@@ -300,3 +315,9 @@
   - Prévalence (stock) ≠ incidence (flux).
 ]
 ]
+
+// Pages : 1 en A4, Letter et N&B ; en tablette, le nombre annoncé dans contenu.csv (ligne 1).
+#context {
+  let n = counter(page).final().first()
+  if entree("format") == "tablette" { annonce("1", "tablette de " + str(n) + " pages") } else { verifie("pages " + entree("format"), n, 1, 0) }
+}

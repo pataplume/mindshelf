@@ -1,0 +1,4 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+EX01,"TCA (valeurs d'exercice) : temps du malade M = 45 s, temps du témoin T = 30 s ; rapport R = M / T, sans unité, à comparer à l'intervalle usuel du laboratoire","{""M"": 45, ""T"": 30}",M / T,1.5,,0.000001,2
+EX02,"Clairance : C = 1.50 mL/s (borne basse CNG) ; S = 60 s par minute ; clairance en mL/min = C × S","{""C"": 1.50, ""S"": 60}",C * S,90,mL/min,0.000001,0
+EX03,"Hématocrite : H = 0.42 (fraction, borne basse homme CNG) ; P = 100 ; pourcentage = H × P","{""H"": 0.42, ""P"": 100}",H * P,42,%,0.000001,0

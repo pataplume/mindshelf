@@ -1,0 +1,7 @@
+ordre,code,parametre,repere,unite,source_code,statut
+1,FC,Fréquence cardiaque (repos),{fc_bas} à {fc_haut},/min,A_VERIFIER,A-VERIFIER
+2,PA,Pression artérielle (consultation),HTA si ≥ {pa_hta_pas}/{pa_hta_pad},mmHg,HAS_HTA_2016,LU
+3,PAAMT,Pression artérielle (automesure),HTA si ≥ {pa_amt_pas}/{pa_amt_pad},mmHg,HAS_HTA_2016,LU
+4,FR,Fréquence respiratoire (repos),{fr_bas} à {fr_haut},/min,A_VERIFIER,A-VERIFIER
+5,SPO2,SpO₂ (air ambiant),≥ {spo2_bas},%,A_VERIFIER,A-VERIFIER
+6,TEMP,Température,{t_bas} à {t_haut},°C,A_VERIFIER,A-VERIFIER

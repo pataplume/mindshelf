@@ -1,0 +1,16 @@
+ordre,item,points,reponse
+1,Yeux (Y),4,Ouverture spontanée
+2,Yeux (Y),3,À la demande ou au bruit
+3,Yeux (Y),2,À la douleur
+4,Yeux (Y),1,Aucune
+5,Verbal (V),5,Orientée
+6,Verbal (V),4,Confuse
+7,Verbal (V),3,Mots inappropriés
+8,Verbal (V),2,Sons incompréhensibles
+9,Verbal (V),1,Aucune
+10,Moteur (M),6,Obéit aux ordres
+11,Moteur (M),5,Localise la douleur
+12,Moteur (M),4,Évitement (retrait)
+13,Moteur (M),3,Flexion stéréotypée (décortication)
+14,Moteur (M),2,Extension stéréotypée (décérébration)
+15,Moteur (M),1,Aucune

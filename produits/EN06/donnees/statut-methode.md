@@ -21,6 +21,6 @@
 
 ## Changements de la v2
 - Retirés : 15 s de créatine phosphate, 95 % d'ATP aérobie (OpenStax seul) et les nerfs du goût (aucune source).
-- LH : déclenche l'ovulation, stimule l'œstrogène ovarien et la testostérone testiculaire (MedlinePlus).
+- LH : déclenche l'ovulation, fait produire la testostérone par les testicules et, à la puberté, signale aux ovaires de produire l'œstrogène (MedlinePlus ; la page ne parle de l'œstrogène qu'à la puberté).
 - Les sources des notes cliniques sont écrites par `#source()` à partir de `sources.csv`. Convention unique : date de consultation.
 - Le nombre de systèmes est `G_SYSTEMES` dans `valeurs.csv`. `main.typ` vérifie que `contenu.csv` annonce bien ce nombre : la vignette ne lit pas les marqueurs, donc le chiffre y est écrit, puis contrôlé.

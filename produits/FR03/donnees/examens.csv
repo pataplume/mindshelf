@@ -1,0 +1,35 @@
+cle,ordre,groupe_code,examen,milieu,borne,bas,haut,unite,autre_bas,autre_haut,autre_unite,source_code,localisation
+NA,1,IONO,Sodium (Na⁺),Pl,intervalle,135,145,mmol/L,,,,CNG_VBU_2009,p. 3
+K,2,IONO,Potassium (K⁺),Pl,intervalle,3.5,4.5,mmol/L,,,,CNG_VBU_2009,p. 3
+CL,3,IONO,Chlorure (Cl⁻),Pl,intervalle,95,105,mmol/L,,,,CNG_VBU_2009,p. 3
+HCO3,4,IONO,Bicarbonates (HCO₃⁻),Pl,intervalle,23,27,mmol/L,,,,CNG_VBU_2009,p. 3
+CA,5,IONO,Calcium total,Se ou Pl,intervalle,2.20,2.60,mmol/L,88,104,mg/L,CNG_VBU_2009,p. 3
+UREE,6,REIN,Urée,Se ou Pl,intervalle,2.5,7.5,mmol/L,0.15,0.45,g/L,CNG_VBU_2009,p. 3
+CREA_H,7,REIN,"Créatinine, homme",Se ou Pl,intervalle,60,115,µmol/L,7,13,mg/L,CNG_VBU_2009,p. 3
+CREA_F,8,REIN,"Créatinine, femme",Se ou Pl,intervalle,45,105,µmol/L,5,12,mg/L,CNG_VBU_2009,p. 3
+CLAIR,9,REIN,"Clairance de la créatinine (pour 1,73 m²)",,intervalle,1.50,2.30,mL/s,90,140,mL/min,CNG_VBU_2009,p. 3
+GLY,10,GLU,Glucose,Pl,intervalle,3.90,5.50,mmol/L,0.70,1.00,g/L,CNG_VBU_2009,p. 4
+HBA1C,11,GLU,HbA1c (part de l'Hb totale),Sg,max,,0.06,,,6,%,CNG_VBU_2009,p. 4
+HB_H,12,NFS,"Hémoglobine, homme",Sg,intervalle,130,170,g/L,,,,CNG_VBU_2009,p. 4 et 6
+HB_F,13,NFS,"Hémoglobine, femme",Sg,intervalle,120,160,g/L,,,,CNG_VBU_2009,p. 4 et 6
+HT_H,14,NFS,"Hématocrite, homme",Sg,intervalle,0.42,0.54,,42,54,%,CNG_VBU_2009,p. 6
+HT_F,15,NFS,"Hématocrite, femme",Sg,intervalle,0.37,0.47,,37,47,%,CNG_VBU_2009,p. 6
+GR_H,16,NFS,"Hématies, homme",Sg,intervalle,4.5,5.7,T/L,,,,CNG_VBU_2009,p. 6
+GR_F,17,NFS,"Hématies, femme",Sg,intervalle,4.2,5.2,T/L,,,,CNG_VBU_2009,p. 6
+LEUCO,18,NFS,Leucocytes,Sg,intervalle,4.0,10.0,G/L,,,,CNG_VBU_2009,p. 6
+PNN,19,NFS,Polynucléaires neutrophiles,Sg,intervalle,2,7.5,G/L,,,,CNG_VBU_2009,p. 6
+PLAQ,20,NFS,Plaquettes,Sg,intervalle,150,450,G/L,,,,CNG_VBU_2009,p. 6
+TP,21,HEMO,Taux de prothrombine (TP),Pl,intervalle,70,130,%,,,,CNG_VBU_2009,p. 6
+TCA,22,HEMO,"TCA (rapport malade/témoin, sans unité)",Pl,intervalle,0.80,1.20,,,,,CNG_VBU_2009,p. 6
+FIB,23,HEMO,Fibrinogène,Pl,intervalle,2,4,g/L,,,,CNG_VBU_2009,p. 6
+CRP,24,INFL,CRP (protéine C réactive),Se,max,,5,mg/L,,,,CNG_VBU_2009,p. 5
+ASAT,25,FOIE,ASAT,Se,max,,35,UI/L,,,,CNG_VBU_2009,p. 4
+ALAT_H,26,FOIE,"ALAT, homme",Se,max,,45,UI/L,,,,CNG_VBU_2009,p. 4
+ALAT_F,27,FOIE,"ALAT, femme",Se,max,,34,UI/L,,,,CNG_VBU_2009,p. 4
+GGT_H,28,FOIE,"GGT, homme",Se,max,,55,UI/L,,,,CNG_VBU_2009,p. 4
+GGT_F,29,FOIE,"GGT, femme",Se,max,,38,UI/L,,,,CNG_VBU_2009,p. 4
+BILI,30,FOIE,Bilirubine totale,Se ou Pl,max,,17,µmol/L,,10,mg/L,CNG_VBU_2009,p. 4
+ALB,31,FOIE,Albumine,Se,intervalle,38,48,g/L,,,,CNG_VBU_2009,p. 5
+PROT,32,FOIE,Protéines totales,Se,intervalle,65,80,g/L,,,,CNG_VBU_2009,p. 5
+INR_AVK,33,CIBLE,"INR sous AVK, cible la plus courante",,intervalle,2,3,,,,,VIDAL_AVK_2025,Prise en charge
+INR_VALVE,34,CIBLE,"INR sous AVK, certaines valves mécaniques",,intervalle,3,4.5,,,,,VIDAL_AVK_2025,Prise en charge (traitement préventif)

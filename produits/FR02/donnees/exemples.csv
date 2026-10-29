@@ -1,0 +1,6 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+EX01,"Glasgow : yeux à la demande, réponse confuse, localise la douleur","{""Y"": 3, ""V"": 4, ""M"": 5}",Y + V + M,12,,0,0
+EX02,Braden : somme des minima des 6 items,"{""a"": 1, ""b"": 1, ""c"": 1, ""d"": 1, ""e"": 1, ""f"": 1}",a + b + c + d + e + f,6,,0,0
+EX03,Braden : somme des maxima des 6 items,"{""a"": 4, ""b"": 4, ""c"": 4, ""d"": 4, ""e"": 4, ""f"": 3}",a + b + c + d + e + f,23,,0,0
+EX04,Glasgow : somme des minima,"{""Y"": 1, ""V"": 1, ""M"": 1}",Y + V + M,3,,0,0
+EX05,Glasgow : somme des maxima,"{""Y"": 4, ""V"": 5, ""M"": 6}",Y + V + M,15,,0,0

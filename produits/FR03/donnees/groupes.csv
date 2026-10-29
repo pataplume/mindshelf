@@ -1,0 +1,9 @@
+code,ordre,libelle
+IONO,1,Ionogramme et calcium
+REIN,2,Rein
+GLU,3,Glucose
+NFS,4,NFS (hémogramme)
+HEMO,5,Hémostase
+INFL,6,Inflammation
+FOIE,7,Bilan hépatique et protéines
+CIBLE,8,INR sous AVK : cible fixée par le prescripteur

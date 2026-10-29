@@ -1,0 +1,36 @@
+cle,valeur,unite,libelle
+pa_hta_pas,140,mmHg,HTA en consultation : PAS seuil
+pa_hta_pad,90,mmHg,HTA en consultation : PAD seuil
+pa_amt_pas,135,mmHg,HTA en automesure ou MAPA diurne : PAS seuil
+pa_amt_pad,85,mmHg,HTA en automesure ou MAPA diurne : PAD seuil
+eva_max_cm,10,cm,EVA : longueur de la réglette en cm
+eva_max_mm,100,mm,EVA : longueur de la réglette en mm
+en_max,10,,EN : note maximale
+douleur_seuil,4,,EVA ou EN : seuil de prise en charge (sur 10) de l'indicateur HAS
+douleur_seuil_100,40,,EVA ou EN : seuil de prise en charge (sur 100)
+evs_max,4,,EVS : niveau maximal (0 absente à 4 extrêmement intense)
+evs_seuil,2,,EVS : seuil de prise en charge
+algoplus_max,5,,Algoplus : score maximal
+algoplus_seuil,2,,Algoplus : seuil de prise en charge
+glasgow_min,3,,Glasgow : score minimal
+glasgow_max,15,,Glasgow : score maximal
+braden_min,6,,Braden : score minimal (6 items)
+braden_max,23,,Braden : score maximal
+braden_items,6,,Braden : nombre d'items
+oms_indications,5,,OMS : nombre d'indications de l'hygiène des mains
+masque_norme,14683,,Norme EN des masques à usage médical
+aes_desinfection_min,5,min,AES : durée minimale de désinfection
+aes_rincage_min,5,min,AES : durée minimale de rinçage d'une muqueuse
+javel_pct,2.6,%,AES : eau de Javel à 2,6 % de chlore actif
+javel_dilution,5,,AES : dilution au 1/5e
+alcool_degre,70,°,AES : alcool à 70°
+aes_avis_h,1,h,AES : avis médical dans l'heure
+aes_tpe_h,4,h,AES : traitement post-exposition idéalement dans les 4 heures
+aes_declaration_h,24,h,AES : déclaration et information dans les 24 heures
+fc_bas,60,/min,FC de repos de l'adulte : borne basse (A-VERIFIER)
+fc_haut,100,/min,FC de repos de l'adulte : borne haute (A-VERIFIER)
+fr_bas,12,/min,FR de repos de l'adulte : borne basse (A-VERIFIER)
+fr_haut,20,/min,FR de repos de l'adulte : borne haute (A-VERIFIER)
+spo2_bas,95,%,SpO2 en air ambiant : repère bas (A-VERIFIER)
+t_bas,36.5,°C,Température : borne basse (A-VERIFIER)
+t_haut,37.5,°C,Température : borne haute (A-VERIFIER)
