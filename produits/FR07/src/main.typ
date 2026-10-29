@@ -4,6 +4,7 @@
 //   - exemples chiffrés : donnees/exemples.csv, chaque résultat recalculé depuis sa formule (échec si écart) ;
 //   - constantes, conversions, valeurs de référence : donnees/valeurs.csv ;
 //   - libellés des sources affichés : donnees/sources.csv (colonne libelle_court) ;
+//   - textes affichés (sous-titre, libellés) : donnees/textes.csv ;
 //   - justification de chaque élément : donnees/references.csv.
 // Les entiers propres à l'écriture d'une formule (1/2, 2, 8 de Poiseuille, 10 des décibels, 3 de la PAM…) restent dans les formules.
 // Build : python3 scripts/build.py FR07-STD
@@ -64,7 +65,7 @@
   if l.exposant == "0" { nombre(l.mantisse) } else { $#nombre(l.mantisse) times 10^#nombre(l.exposant)$ }
 }
 // Valeur suivie de son unité (espace insécable ; devant %, la charte met l'espace fine).
-#let qu(id) = if val(id).unite == "%" [#q(id) %] else [#q(id)~#val(id).unite]
+#let qu(id) = if val(id).unite == "%" [#q(id) %] else [#q(id)~#box(val(id).unite)]
 #let nombre-valeur(id) = float(val(id).mantisse) * calc.pow(10.0, int(val(id).exposant))
 #let facteur(id) = nombre-valeur(id)
 #let groupe(g) = valeurs-liste.filter(l => l.groupe == g).sorted(key: l => int(l.ordre))
@@ -74,6 +75,15 @@
   let d = (:)
   for l in csv("../donnees/sources.csv", row-type: dictionary) { d.insert(l.code, l) }
   d
+}
+#let textes = {
+  let d = (:)
+  for l in csv("../donnees/textes.csv", row-type: dictionary) { d.insert(l.id, l.texte) }
+  d
+}
+#let texte(id) = {
+  if id not in textes { panic("FR07 : texte " + id + " absent de donnees/textes.csv") }
+  textes.at(id)
 }
 #let source(code) = {
   if code not in sources { panic("FR07 : source " + code + " absente de donnees/sources.csv") }
@@ -86,7 +96,7 @@
 }
 #verifie("atm/mmHg", nombre-valeur("U_ATM") * 1000 / nombre-valeur("U_MMHG"), nombre-valeur("U_ATM_MMHG"), 0.01)
 #verifie("mmHg/cmH2O", nombre-valeur("U_MMHG") / nombre-valeur("U_CMH2O"), nombre-valeur("U_MMHG_CMH2O"), 0.005)
-#verifie("37 °C", 37 + nombre-valeur("U_KELVIN"), nombre-valeur("P_T37"), 0)
+#verifie("37 °C", nombre-valeur("P_THETA37") + nombre-valeur("U_KELVIN"), nombre-valeur("P_T37"), 0)
 #verifie("Nernst 37 °C", calc.ln(10) * nombre-valeur("K_R") * nombre-valeur("P_T37") / nombre-valeur("K_F") * 1000,
   nombre-valeur("P_NERNST37"), 0.05)
 #verifie("hc", nombre-valeur("K_H") * nombre-valeur("K_C") / nombre-valeur("K_E") * 1000000000, nombre-valeur("K_HC"), 0.5)
@@ -105,7 +115,8 @@
 #verifie("FX12 Z2", ex("FX12").e.Z2, nombre-valeur("P_Z_MUSCLE"), 0.001)
 #verifie("FX17 gamma", ex("FX17").e.g, nombre-valeur("K_GP"), 0)
 #verifie("FX18 gamma", ex("FX18").e.g, nombre-valeur("K_GP"), 0)
-#verifie("FX20 n", float(ex("FX19").resultat_attendu), 4, 0)
+#verifie("FX20 n", float(ex("FX20").e.n), float(ex("FX19").resultat_attendu), 0)
+#verifie("FX10 f", ex("FX10").e.f, ex("FX09").e.f, 0)
 #verifie("FX22 → FX23", float(ex("FX22").resultat_attendu), float(ex("FX23").e.D), 0)
 #verifie("FX23 wR", float(ex("FX23").e.wR), nombre-valeur("W_ALPHA"), 0)
 #verifie("FX13 → FX14", float(ex("FX13").resultat_attendu), float(ex("FX14").e.oap), 0.000001)
@@ -113,7 +124,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Formules, exemples chiffrés, notes santé et pièges : les notions de physique-biophysique les plus courantes en PASS et LAS],
+  sous-titre: texte("SOUS_TITRE"),
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -144,9 +155,9 @@
 ]
 
 #exemple(titre: "Perfusion, rayon, Reynolds")[
-  Poche à #v("FX01", "h") m : $rho g h = #v("FX01", "rho") times #v("FX01", "g") times #v("FX01", "h") "Pa" #rel("FX01") #res("FX01") "mmHg"$.
+  Poche à #v("FX01", "h") m : $rho g h = #v("FX01", "rho") times #v("FX01", "g") times #v("FX01", "h") = #nombre(ex("FX01").e.rho * ex("FX01").e.g * ex("FX01").e.h, decimales: 0) "Pa" #rel("FX01") #res("FX01") "mmHg"$.
   Rayon $times #v("FX02", "k")$ $=>$ $R times$ #res("FX02").
-  $rho = #v("FX03", "rho")$, $v = #v("FX03", "v")$, $r = #v("FX03", "r")$, $eta = #v("FX03", "eta")$ : $"Re" #rel("FX03") #res("FX03")$, zone instable.
+  $rho = #v("FX03", "rho")$~kg/m³, $v = #v("FX03", "v")$~m/s, $r = #v("FX03", "r")$~m, $eta = #v("FX03", "eta")$~Pa·s : $"Re" #rel("FX03") #res("FX03")$, zone instable.
   PAS/PAD #v("FX04", "S")/#v("FX04", "D") mmHg $=>$ PAM #rel("FX04") #res("FX04") mmHg.
 ]
 
@@ -163,7 +174,7 @@
 ]
 
 #exemple(titre: "Sérum physiologique, cryoscopie")[
-  NaCl #v("FX05", "Cm") g/L, $M = #qu("P_M_NACL")$ : $omega = #v("FX05", "i") times #v("FX05", "Cm") \/ #v("FX05", "M") #rel("FX05") #res("FX05")$ mosmol/L ;
+  NaCl #v("FX05", "Cm") g/L, $M = #qu("P_M_NACL")$ : $omega = #v("FX05", "i") times #v("FX05", "Cm") \/ #v("FX05", "M") #rel("FX05")$ #nombre(float(ex("FX05").resultat_attendu) * facteur("P_MILLI"), decimales: int(ex("FX05").arrondi) - int(val("P_MILLI").exposant))~osmol/L = #res("FX05")~mosmol/L ;
   à #q("P_T37") K : $pi #rel("FX06") #res("FX06") "kPa"$ (valeurs théoriques, solution idéale).
   $Delta theta = #v("FX07", "dt") "°C"$ $=>$ $omega_m #rel("FX07") #res("FX07") "osmol/kg"$.
 ]
@@ -174,7 +185,7 @@
   Coulomb $F = k q_1 q_2 \/ r^2$ ; champ $arrow(E) = arrow(F) \/ q$ ; champ uniforme $E = U \/ d$ ; énergie $W = q U$.
   Nernst (potentiel d'équilibre de l'ion X, valence $z$) :
   $ E_X = (R T) / (z cal(F)) ln C_"ext" / C_"int" = (#qu("P_NERNST37")) / z log C_"ext" / C_"int" $
-  ($cal(F)$ : Faraday ; #qu("P_NERNST37") à 37 °C). Repos : membrane surtout perméable à K⁺, $E_m$ proche de $E_"K"$.
+  ($cal(F)$ : Faraday ; #qu("P_NERNST37") à #qu("P_THETA37"), calculé). Repos : membrane surtout perméable à K⁺, $E_m$ proche de $E_"K"$.
 ]
 
 #exemple(titre: "Nernst du calcium")[
@@ -192,7 +203,7 @@
 
 #exemple(titre: "Échographie")[
   À #nombre(ex("FX09").e.f / facteur("P_MEGA")) MHz : $lambda #rel("FX09") #res("FX09") "mm"$.
-  $v = #v("FX10", "v") "m/s"$, $cos theta = #v("FX10", "cs")$ $=>$ $Delta f #rel("FX10") #res("FX10") "kHz"$.
+  Même $f_0$, $v = #v("FX10", "v") "m/s"$, $cos theta = #v("FX10", "cs")$ $=>$ $Delta f #rel("FX10") #res("FX10") "kHz"$.
   Graisse → muscle : $a #rel("FX11")$ #res("FX11") % ; air → muscle : $a #rel("FX12")$ #res("FX12") %.
 ]
 
@@ -200,7 +211,7 @@
 
 #formule[
   $n = c \/ v$ ; Snell-Descartes $n_1 sin i_1 = n_2 sin i_2$ ; réflexion totale si $sin i > n_2 \/ n_1$ ($n_1 > n_2$).
-  Lentille mince, distances algébriques (sens de la lumière positif, objet réel : $overline("OA") < 0$) :
+  Lentille mince, distances algébriques (sens de la lumière positif, objet réel : #box($overline("OA") < 0$)) :
   $ 1 / overline("OA'") - 1 / overline("OA") = 1 / f' = C #h(1.5em) gamma = overline("A'B'") / overline("AB") = overline("OA'") / overline("OA") $
   Vergence $C$ en dioptries (δ), $f'$ en m ; lentilles accolées $C = C_1 + C_2$.
   Œil : PR (punctum remotum), PP (punctum proximum) ; accommodation $A_"acc" = 1 \/ d_"PP" - 1 \/ d_"PR"$ (δ, distances en m).
@@ -212,13 +223,13 @@
   [Myopie], [œil trop convergent, PR à distance finie : divergent],
   [Hypermétropie], [œil pas assez convergent : convergent],
   [Presbytie], [accommodation réduite avec l'âge : convergent (près)],
-  [Astigmatisme], [cornée non sphérique : cylindrique],
+  [Astigmatisme], [courbure de la cornée inégale selon les méridiens : cylindrique],
 )
 
 #exemple(titre: "Lentille, myopie, presbytie")[
   $f' = #v("FX13", "fp") "m"$, $overline("OA") = #v("FX13", "oa") "m"$ $=>$ $overline("OA'") #rel("FX13") #res("FX13") "m"$, $gamma #rel("FX14") #res("FX14")$ (réelle, renversée).
-  PR à #v("FX15", "x") m $=>$ $C = -1 \/ d_"PR" #rel("FX15") #res("FX15") δ$.
-  PP à #v("FX16", "pp") m, lecture à #v("FX16", "d") m $=>$ addition $#rel("FX16") #res("FX16") δ$.
+  PR à #v("FX15", "x") m $=>$ $C = -1 \/ d_"PR" #rel("FX15")$ #res("FX15")~δ.
+  PP à #v("FX16", "pp") m, lecture à #v("FX16", "d") m $=>$ addition $#rel("FX16")$ #res("FX16")~δ.
 ]
 
 = Rayonnements ionisants
@@ -243,7 +254,7 @@
   [Repère], [Valeurs],
   [$w_R$], [#groupe("WR").map(l => [#l.libelle #q(l.id)]).join(" ; ")],
   [Imagerie (adulte)], [#groupe("DOSE").map(l => [#l.libelle #qu(l.id)]).join(" ; ")],
-  [Limites (France)], [#groupe("LIMITE").map(l => [#l.libelle #qu(l.id)]).join(" ; ") ; patients : pas de limite, justification et optimisation],
+  [Limites (France)], [#groupe("LIMITE").map(l => [#l.libelle #qu(l.id)]).join(" ; ") ; #texte("LIMITE_PATIENTS")],
 )
 
 = RMN et IRM
@@ -267,11 +278,11 @@
 ]
 
 #note-clinique(titre: "Notes santé")[
-  - Vasoconstriction : $R prop 1 \/ r^4$, un faible rétrécissement augmente fortement la résistance.
-  - Brassard au niveau du cœur : bras levé, mesure trop basse (pression hydrostatique).
+  - Vasoconstriction : $R prop 1 \/ r^4$, petit rétrécissement, forte hausse de résistance.
+  - Brassard au niveau du cœur : bras levé, mesure trop basse (hydrostatique).
   - Surfactant : abaisse $T_s$ et stabilise les petites alvéoles (Laplace).
   - Solution hypotonique : les hématies gonflent jusqu'à l'hémolyse.
-  - Gel d'échographie : supprime l'interface air–peau, presque totalement réfléchissante.
+  - Gel d'échographie : supprime l'interface air–peau, très réfléchissante.
   - Haute fréquence : meilleure résolution, moindre profondeur explorée.
   - IRM : pas de rayonnement ionisant (ondes radiofréquences).
   - Radioprotection : justification, optimisation, limitation.
@@ -282,19 +293,19 @@
   - $pi$ ne compte que les particules qui ne traversent pas la membrane ($sigma$).
   - Rayon ÷ 2 : résistance × 16 ($r^4$), pas × 2.
   - Fluide plus rapide, pression *plus basse* (Bernoulli, fluide parfait).
-  - Convention algébrique : objet réel $overline("OA") < 0$ ; $C$ en δ seulement avec $f'$ en m.
+  - Convention algébrique : objet réel #box($overline("OA") < 0$) ; $C$ en δ seulement avec $f'$ en m.
   - Deux sources identiques : +#qu("P_DB2"), pas un niveau doublé.
-  - Après deux périodes il reste un quart, pas zéro.
+  - Après deux périodes : un quart, pas zéro.
   - Gy (énergie) ≠ Sv (risque) ; la dose efficace ne se mesure pas directement.
   - Manuels anglo-saxons : $Delta U = Q - W$ ($W$ fourni par le gaz), même physique.
-  - Lois des gaz et Nernst : températures en kelvins.
-  - Mêmes lettres, grandeurs différentes : $T$ (température) ≠ $T_s$, $T_(1\/2)$, $T_1$, $T_2$ ; $C$ (concentration ou vergence) ; $lambda$ (onde ou constante radioactive).
+  - Gaz parfaits et Nernst : $T$ en kelvins.
+  - Mêmes lettres selon la section : $T$ ≠ $T_s$, $T_(1\/2)$, $T_1$, $T_2$ ; $C$ (concentration, vergence) ; $lambda$ (onde, radioactivité) ; $R$ (résistance, gaz) ; $Q$ (débit, chaleur) ; $L$ (longueur, niveau sonore, chaleur latente) ; $E$ (champ, potentiel, énergie, dose) ; $n$ (indice, moles, périodes) ; de même $Z$, $gamma$, $theta$, $h$, $i$.
 ]
 
 = Constantes
 
 #formule[
-  #groupe("CONST").map(l => [$#eval(l.symbole, mode: "math") = #q(l.id)$~#l.unite]).join(" ; ").
+  #groupe("CONST").map(l => [$#eval(l.symbole, mode: "math") = #q(l.id)$~#box(l.unite)]).join(" ; ").
   Valeurs #source(val("K_C").source_code), arrondies ; $g_n$ conventionnelle ; $h c$ dérivé.
 ]
 ]

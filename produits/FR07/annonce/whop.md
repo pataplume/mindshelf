@@ -5,7 +5,7 @@ PASS/LAS Physique-Biophysique — fiche formules
 Physique-biophysique en PASS/LAS : formules, exemples chiffrés et pièges.
 
 # Description
-Vous recevez une fiche de physique-biophysique d'une page en quatre PDF (A4, US Letter, noir et blanc pour l'impression en niveaux de gris, et une version tablette de 3 pages en paysage), plus un paquet Anki de 24 cartes.
+Vous recevez quatre PDF : la fiche de physique-biophysique d'une page (A4, US Letter, noir et blanc pour l'impression en niveaux de gris) et sa version tablette de 3 pages en paysage, plus un paquet Anki de 24 cartes.
 
 Sur la page :
 - 10 sections : unités et conversions, hémodynamique, solutions et échanges, bioélectricité, ondes et ultrasons, optique et vision, rayonnements ionisants, RMN et IRM, thermodynamique, constantes
