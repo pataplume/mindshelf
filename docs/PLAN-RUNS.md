@@ -2,7 +2,7 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 167
+- Runs : 22 · tâches : 168
 - Durée estimée totale : 21 h 50 · restant : 15 h 35 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
@@ -171,6 +171,7 @@
 | 50 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
 | 51 | Production | Rédaction et mise en page d'un produit | EN05 EKG Rhythms Cheat Sheet | — | Fiche rythmes ECG (tracés dessinés en code) | À faire |
 | 52 | Production | Rédaction et mise en page d'un produit | EN07 ABG Interpretation Cheat Sheet | — | Fiche interprétation des gaz du sang | À faire |
+| 168 | Production | Outils de conditionnement | — | — | Typographie française dans la charte (langue fr) : espace fine insécable avant « ; ! ? » (absente dans FR03 : « g/L; la ») ; apostrophe typographique dans data/mentions.csv (« d'un.e » du pied FR, constat m8 FR03) et contrôle des apostrophes droites dans controle_pdf.py pour le français ; non-régression sur tous les PDF | À faire |
 | 53 | Vérification | Vérification indépendante | EN05 EKG Rhythms Cheat Sheet | — | Vérification indépendante | À faire |
 | 54 | Vérification | Vérification indépendante | EN07 ABG Interpretation Cheat Sheet | — | Vérification indépendante | À faire |
 | 55 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN05 EKG Rhythms Cheat Sheet | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
