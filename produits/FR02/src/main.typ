@@ -260,5 +260,5 @@ Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se tr
 
 #piege[Ne pas attendre la fin du soin ou du poste pour consulter : le délai compte à partir de l'accident.]
 
-_Sources : HAS (HTA de l'adulte, indicateur douleur IQSS, guide SAED), SF2H (précautions standard ; transmission par voie respiratoire), OMS (5 indications de l'hygiène des mains), INRS (affiche AES « En urgence : premiers soins à faire »), AP-HP (dossier de soins), arrêtés relatifs au diplôme d'État d'infirmier ; détail dans les références du produit._
+_Sources : HAS (HTA de l'adulte, indicateur douleur IQSS, guide SAED), SF2H (précautions standard ; transmission par voie respiratoire), OMS (5 indications de l'hygiène des mains), INRS (affiche AES « En urgence : premiers soins à faire »), AP-HP (dossier de soins), CHUV (score de Glasgow), HUG (échelle de Braden), arrêtés relatifs au diplôme d'État d'infirmier ; détail dans les références du produit._
 ]
