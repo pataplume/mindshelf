@@ -1,0 +1,18 @@
+recto,verso,tags
+Produit en croix pour un volume à prélever,"H mg dans Q mL ; D mg prescrits dans V mL : V = D × Q ÷ H (mêmes unités pour D et H)",FR01 methode
+Méthode en 4 étapes,"Lire la prescription ; tout convertir dans la même unité ; poser le produit en croix avec les unités ; vérifier l'ordre de grandeur",FR01 methode
+Échelle g → mg → µg,"× 1000 à chaque marche descendue, ÷ 1000 à chaque marche remontée (même chose pour L → mL)",FR01 conversions
+Concentration d'une dilution,"Quantité de produit ÷ volume total après dilution",FR01 concentrations
+Pourcentage m/V en mg/mL,"x % = x g pour 100 mL = x × 10 mg/mL (ex. 1,2 % = 12 mg/mL)",FR01 concentrations
+Concentration après reconstitution,"Quantité de produit ÷ volume final indiqué par la notice, pas le volume de solvant ajouté",FR01 reconstitution
+Par jour ou par prise ?,"Une fourchette en mg/kg/j est un total sur 24 h : comparer le total prescrit par jour à la fourchette par jour, ou chaque prise à la fourchette ÷ nombre de prises",FR01 poids
+Dose prescrite hors fourchette,"Ne pas administrer ; faire préciser par le.la prescripteur.rice",FR01 poids securite
+Débit d'une pompe ou d'un PSE,"mL/h = volume (mL) ÷ durée (h)",FR01 debits
+Débit par gravité,"gouttes/min = volume (mL) × facteur de gouttes ÷ (durée (h) × 60), arrondi à la goutte entière",FR01 debits
+Facteurs de gouttes,"Perfuseur standard : 20 gouttes/mL ; perfuseur pédiatrique à microgouttes : 60 gouttes/mL ; lire l'emballage",FR01 debits
+Raccourcis de débit,"60 gouttes/mL : gouttes/min = mL/h ; 20 gouttes/mL : gouttes/min = mL/h ÷ 3",FR01 debits
+Heure de fin de perfusion,"Durée = volume ÷ débit ; heure de fin = heure de début + durée (horloge de 24 h)",FR01 debits
+PSE : dose en mg/h,"mL/h = dose par heure (mg/h) ÷ concentration (mg/mL)",FR01 pse
+PSE : dose en µg/kg/min,"mL/h = µg/kg/min × kg × 60 ÷ concentration (µg/mL) ; convertir les mg de la seringue en µg d'abord",FR01 pse
+Que faut-il arrondir ?,"Seulement ce qui se règle ou se prélève : gouttes entières, mL/h au pas de l'appareil, volume à la graduation de la seringue ; poids noté tel que pesé puis utilisé tel quel ; concentrations et intermédiaires jamais arrondis",FR01 arrondis
+Règle des 5 B,"Bon patient, bon médicament, bonne dose, bonne voie, bon moment (HAS)",FR01 securite

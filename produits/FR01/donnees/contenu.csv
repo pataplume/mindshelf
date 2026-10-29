@@ -1,0 +1,11 @@
+ordre,element
+1,"Ligne de rattachement aux unités d'enseignement du référentiel de la variante (2009 ou 2026)"
+2,"Méthode en 4 étapes et produit en croix"
+3,"Conversions g, mg, µg et L, mL (échelle × 1000)"
+4,"Concentrations, pourcentages m/V et dilutions ; reconstitution d'une poudre et volume final"
+5,"Doses rapportées au poids et contrôle d'une fourchette, par jour ou par prise"
+6,"Débits en mL/h (pompe, pousse-seringue électrique) et en gouttes/min (perfuseur standard à 20 gouttes/mL, pédiatrique à 60 gouttes/mL), raccourcis et heure de fin"
+7,"PSE : doses en mg/h et en µg/kg/min"
+8,"Règle d'arrondi unique : seule la valeur réglée ou prélevée est arrondie"
+9,"Règle des 5 B et note de sécurité (never events de l'ANSM)"
+10,"9 exemples détaillés, chaque calcul écrit pas à pas, et 6 pièges ; médicaments fictifs (Produits A à F)"

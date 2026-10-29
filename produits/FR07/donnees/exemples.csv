@@ -1,0 +1,24 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+FX01,"Poche de perfusion à h = 1 m au-dessus du cathéter : rho = 1000 kg/m³, g = 9.81 m/s², 1 mmHg = 133.322 Pa ; P = rho g h / 133.322 (mmHg)","{""rho"": 1000, ""g"": 9.81, ""h"": 1, ""Pmm"": 133.322}",rho * g * h / Pmm,73.581254,mmHg,0.001,0
+FX02,Poiseuille : rayon multiplié par k = 0.8 ; résistance relative = 1 / k⁴,"{""k"": 0.8}",1 / (k * k * k * k),2.441406,×,0.0001,1
+FX03,"Reynolds (valeurs d'exercice) : rho = 1050 kg/m³, v = 0.4 m/s, r = 0.01 m, eta = 0.0035 Pa·s ; Re = 2 rho v r / eta","{""rho"": 1050, ""v"": 0.4, ""r"": 0.01, ""eta"": 0.0035}",2 * rho * v * r / eta,2400,,0.001,0
+FX04,"Pression artérielle moyenne : PAS = 120 mmHg, PAD = 80 mmHg ; PAM ≈ PAD + (PAS - PAD) / 3","{""S"": 120, ""D"": 80}",D + (S - D) / 3,93.333333,mmHg,0.0001,0
+FX05,"Osmolarité théorique de NaCl à 9 g/L : i = 2, Cm = 9 g/L, M = 58.44 g/mol ; omega = i Cm / M (en mosmol/L)","{""i"": 2, ""Cm"": 9, ""M"": 58.44}",i * Cm / M * 1000,308.008214,mosmol/L,0.001,0
+FX06,"Pression osmotique théorique (van 't Hoff) de NaCl à 9 g/L à 37 °C : i = 2, Cm = 9 g/L, M = 58.44 g/mol, R = 8.314, T = 310.15 K ; pi = i (Cm / M) R T (mol/L × J/(mol·K) × K = kPa)","{""i"": 2, ""Cm"": 9, ""M"": 58.44, ""R"": 8.314, ""T"": 310.15}",i * Cm / M * R * T,794.226006,kPa,0.01,0
+FX07,"Cryoscopie : abaissement mesuré dt = 0.56 °C, Kc = 1.86 °C·kg/mol ; osmolalité = dt / Kc (osmol/kg)","{""dt"": 0.56, ""Kc"": 1.86}",dt / Kc,0.301075,osmol/kg,1e-05,2
+FX08,"Nernst à 37 °C pour Ca²⁺ (valeurs d'exercice) : 61.5 mV / z × log10(Ce/Ci), z = 2, Ce/Ci = 10000 donc log10 = 4","{""k"": 61.5, ""z"": 2, ""lg"": 4}",k / z * lg,123,mV,0.0001,0
+FX09,"Longueur d'onde ultrasonore : c = 1540 m/s, f = 5 MHz ; lambda = c / f (en mm)","{""c"": 1540, ""f"": 5000000}",c / f * 1000,0.308,mm,1e-06,2
+FX10,"Décalage Doppler : f0 = 5 MHz, v = 0.5 m/s, cos(theta) = 0.5 (60°), c = 1540 m/s ; df = 2 f0 v cos / c (en kHz)","{""f"": 5000000, ""v"": 0.5, ""cs"": 0.5, ""c"": 1540}",2 * f * v * cs / c / 1000,1.623377,kHz,1e-05,1
+FX11,"Réflexion en intensité graisse → muscle : Z1 = 1.34 × 10⁶, Z2 = 1.70 × 10⁶ kg/(m²·s) ; a = (Z2 - Z1)² / (Z1 + Z2)² (en %)","{""Z1"": 1340000, ""Z2"": 1700000}",(Z2 - Z1) * (Z2 - Z1) / ((Z1 + Z2) * (Z1 + Z2)) * 100,1.402355,%,0.0001,1
+FX12,"Réflexion en intensité air → muscle : Z1 = 429, Z2 = 1.70 × 10⁶ kg/(m²·s) ; a = (Z2 - Z1)² / (Z1 + Z2)² (en %)","{""Z1"": 429, ""Z2"": 1700000}",(Z2 - Z1) * (Z2 - Z1) / ((Z1 + Z2) * (Z1 + Z2)) * 100,99.89911,%,0.0001,1
+FX13,"Lentille mince convergente (convention algébrique) : f' = 0.1 m, objet réel OA = -0.3 m ; OA' = 1 / (1/f' + 1/OA)","{""fp"": 0.1, ""oa"": -0.3}",1 / (1 / fp + 1 / oa),0.15,m,1e-06,2
+FX14,"Grandissement : OA' = 0.15 m, OA = -0.3 m ; gamma = OA' / OA","{""oap"": 0.15, ""oa"": -0.3}",oap / oa,-0.5,,1e-06,1
+FX15,Myopie : punctum remotum à x = 0.5 m ; verre (au contact de l'œil) C = -1 / x (dioptries),"{""x"": 0.5}",-1 / x,-2,δ,1e-06,0
+FX16,"Presbytie : punctum proximum à pp = 1 m, lecture à d = 0.25 m ; addition C = 1/d - 1/pp (dioptries)","{""d"": 0.25, ""pp"": 1}",1 / d - 1 / pp,3,δ,1e-06,0
+FX17,Fréquence de Larmor du proton à B0 = 1.5 T : gamma/2pi = 42.58 MHz/T ; f0 = 42.58 × B0,"{""g"": 42.58, ""B"": 1.5}",g * B,63.87,MHz,0.0001,1
+FX18,Fréquence de Larmor du proton à B0 = 3 T : gamma/2pi = 42.58 MHz/T ; f0 = 42.58 × B0,"{""g"": 42.58, ""B"": 3}",g * B,127.74,MHz,0.0001,1
+FX19,"Décroissance : t = 24 h, T½ = 6 h ; nombre de périodes n = t / T","{""t"": 24, ""T"": 6}",t / T,4,,1e-06,0
+FX20,Décroissance : A0 = 800 MBq après n = 4 périodes ; A = A0 / 2⁴,"{""A0"": 800}",A0 / (2 * 2 * 2 * 2),50,MBq,1e-06,0
+FX21,Atténuation : écran de 3 couches de demi-atténuation ; intensité transmise = 100 / 2³ (en %),"{""I0"": 100}",I0 / (2 * 2 * 2),12.5,%,1e-06,1
+FX22,Dose absorbée (valeurs d'exercice) : énergie déposée 0.14 J dans m = 70 kg ; D = E / m (en mGy),"{""En"": 0.14, ""m"": 70}",En / m * 1000,2,mGy,1e-06,0
+FX23,"Dose équivalente : D = 2 mGy de particules alpha, w_R = 20 ; H = w_R D (en mSv)","{""wR"": 20, ""D"": 2}",wR * D,40,mSv,1e-06,0

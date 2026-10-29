@@ -1,0 +1,46 @@
+id,groupe,ordre,symbole,libelle,mantisse,exposant,unite,source_code
+K_C,CONST,1,c,vitesse de la lumière (vide),2.998,8,m/s,CODATA_2022
+K_H,CONST,2,h,constante de Planck,6.626,-34,J·s,CODATA_2022
+K_E,CONST,3,e,charge élémentaire,1.602,-19,C,CODATA_2022
+K_NA,CONST,4,N_A,constante d'Avogadro,6.022,23,mol⁻¹,CODATA_2022
+K_KB,CONST,5,k_B,constante de Boltzmann,1.381,-23,J/K,CODATA_2022
+K_R,CONST,6,R,constante des gaz parfaits,8.314,0,J/(mol·K),CODATA_2022
+K_F,CONST,7,F,constante de Faraday,96485,0,C/mol,CODATA_2022
+K_K,CONST,8,k,constante de Coulomb 1/(4πε₀),8.988,9,N·m²/C²,CODATA_2022
+K_EPS,CONST,9,epsilon_0,permittivité du vide,8.854,-12,F/m,CODATA_2022
+K_GP,CONST,10,gamma_p \/ 2 pi,rapport gyromagnétique du proton / 2π,42.58,0,MHz/T,CODATA_2022
+K_GN,CONST,11,g_n,pesanteur normale (conventionnelle),9.807,0,m/s²,CODATA_2022
+K_HC,CONST,12,h c,raccourci photon (dérivé),1240,0,eV·nm,CODATA_2022
+U_ATM,UNIT,1,,1 atm,101.325,0,kPa,NIST_SP811
+U_ATM_MMHG,UNIT,2,,1 atm,760,0,mmHg,NIST_SP811
+U_MMHG,UNIT,3,,1 mmHg,133.322,0,Pa,NIST_SP811
+U_CMH2O,UNIT,4,,1 cmH₂O,98.0665,0,Pa,NIST_SP811
+U_MMHG_CMH2O,UNIT,5,,1 mmHg,1.36,0,cmH₂O,NIST_SP811
+U_BAR,UNIT,6,,1 bar,100,0,kPa,NIST_SP811
+U_L,UNIT,7,,1 L,1,-3,m³,BIPM_SI_9
+U_EV,UNIT,8,,1 eV,1.602,-19,J,CODATA_2022
+U_CAL,UNIT,9,,1 cal,4.184,0,J,NIST_SP811
+U_KELVIN,UNIT,10,,T (K) = θ (°C) +,273.15,0,,BIPM_SI_9
+P_I0,PHYS,1,I_0,intensité de référence (seuil d'audition),1,-12,W/m²,OPENSTAX_CP
+P_CTISSU,PHYS,2,c_"tissu",célérité moyenne du son dans les tissus mous,1540,0,m/s,OPENSTAX_CP
+P_DB2,PHYS,3,,doubler l'intensité ajoute,3,0,dB,OPENSTAX_CP
+P_Z_AIR,PHYS,4,Z_"air",impédance acoustique de l'air,429,0,kg/(m²·s),OPENSTAX_CP
+P_Z_GRAISSE,PHYS,5,Z_"graisse",impédance acoustique de la graisse,1.34,6,kg/(m²·s),OPENSTAX_CP
+P_Z_MUSCLE,PHYS,6,Z_"muscle",impédance acoustique du muscle (moyenne),1.70,6,kg/(m²·s),OPENSTAX_CP
+P_RE_LAM,PHYS,7,,écoulement laminaire si Re <,2000,0,,OPENSTAX_CP
+P_RE_TURB,PHYS,8,,écoulement turbulent si Re >,3000,0,,OPENSTAX_CP
+P_KC_EAU,PHYS,9,K_c,constante cryoscopique de l'eau,1.86,0,°C·kg/mol,OPENSTAX_CHEM
+P_M_NACL,PHYS,10,M,masse molaire de NaCl,58.44,0,g/mol,CIAAW_2021
+P_NERNST37,PHYS,11,,2.303 RT/F à 37 °C,61.5,0,mV,CODATA_2022
+P_T37,PHYS,12,,37 °C en kelvins,310.15,0,K,BIPM_SI_9
+W_PHOTON,WR,1,,"photons (X, γ), électrons",1,0,,ICRP_103
+W_PROTON,WR,2,,protons,2,0,,ICRP_103
+W_ALPHA,WR,3,,particules α,20,0,,ICRP_103
+D_RXTHORAX,DOSE,1,,radio de thorax (face),0.02,0,mSv,METTLER_2008
+D_MAMMO,DOSE,2,,mammographie,0.4,0,mSv,METTLER_2008
+D_TDMCRANE,DOSE,3,,scanner crânien,2,0,mSv,METTLER_2008
+D_TDMTHORAX,DOSE,4,,scanner thoracique,7,0,mSv,METTLER_2008
+L_PUBLIC,LIMITE,1,,public (dose efficace par an),1,0,mSv,CSP_R1333_11
+L_TRAVAILLEUR,LIMITE,2,,travailleur (sur 12 mois consécutifs),20,0,mSv,CT_R4451_6
+P_MILLI,PREFIX,1,m,milli (préfixe SI),1,-3,,BIPM_SI_9
+P_MEGA,PREFIX,2,M,méga (préfixe SI),1,6,,BIPM_SI_9

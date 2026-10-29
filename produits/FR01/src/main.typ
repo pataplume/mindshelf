@@ -169,7 +169,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 ]
 
 #exemple(titre: "Solution en % (Produit C, valeurs d'exercice)")[
-  Prescription #v("EX03B", "O") mg de Produit C à #v("EX03A", "P") % : #v("EX03B", "O") ÷ #v("EX03B", "N") #res("EX03B").
+  Prescription #v("EX03B", "O") mg de Produit C à #v("EX03A", "P") % : #v("EX03B", "O") ÷ #v("EX03B", "N") #res("EX03B") (seringue graduée au #valu("seringue_std_pas")).
 ]
 
 = Reconstitution
@@ -177,7 +177,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 #exemple(titre: "Poudre (Produit E, valeurs d'exercice)")[
   Flacon de #v("EX04A", "G") g ; notice : ajouter #v("EX04A", "A") mL de solvant pour obtenir #v("EX04A", "F") mL.
   #v("EX04A", "G") × #v("EX04A", "K") ÷ #v("EX04A", "F") #res("EX04A").
-  Prescription #v("EX04B", "O") mg : #v("EX04B", "O") ÷ #v("EX04B", "N") #res("EX04B").
+  Prescription #v("EX04B", "O") mg : #v("EX04B", "O") ÷ #v("EX04B", "N") #res("EX04B") (graduation #valu("seringue_std_pas")).
 ]
 
 #piege[La poudre occupe un volume : diviser par les #v("EX04A", "F") mL finaux, pas par les #v("EX04A", "A") mL de solvant.]
@@ -203,7 +203,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   *Pompe, PSE :* débit (mL/h) = $V$ (mL) ÷ $T$ (h).
   *Gravité :* gouttes/min = $V$ × DF ÷ ($T$ × #val("min_par_h")).
   DF (gouttes/mL) : perfuseur standard #val("gtt_standard") ; perfuseur pédiatrique (microgouttes) #val("gtt_pedia").
-  *Avec #val("gtt_pedia") gouttes/mL :* gouttes/min = mL/h. *Avec #val("gtt_standard") :* gouttes/min = mL/h ÷ #nombre(str(val-brut("min_par_h") / val-brut("gtt_standard"))).
+  *Avec #val("gtt_pedia") gouttes/mL :* gouttes/min = mL/h. *Avec #val("gtt_standard") gouttes/mL :* gouttes/min = mL/h ÷ #nombre(str(val-brut("min_par_h") / val-brut("gtt_standard"))).
 ]
 
 #exemple(titre: "Même prescription, pompe ou gravité")[
@@ -233,7 +233,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
 ]
 
 #exemple(titre: "Dose en mg/h (Produit D, valeurs d'exercice)")[
-  #v("EX09A", "Q") mg complétés à #v("EX09A", "V") mL (seringue de #valu("seringue_pse")) #res("EX09A").
+  #v("EX09A", "Q") mg complétés à #v("EX09A", "V") mL (seringue de #valu("seringue_pse")) : #v("EX09A", "Q") ÷ #v("EX09A", "V") #res("EX09A").
   #v("EX09B", "P") mg/h ÷ #v("EX09B", "N") #res("EX09B").
 ]
 
@@ -251,7 +251,7 @@ _Produits A à F et leurs chiffres : valeurs d'exercice, pas des recommandations
   - Poids : noté tel que pesé (au #valu("poids_pas")), puis utilisé tel quel.
   - Concentrations et résultats intermédiaires : jamais arrondis.
   - Gouttes/min : entières. mL/h : au pas de l'appareil (#valu("debit_pas") ici ; certains : mL/h entier).
-  - Volume : à la graduation de la seringue (#valu("seringue_petite_pas") pour #valu("seringue_petite")).
+  - Volume : à la graduation de la seringue utilisée (#valu("seringue_petite_pas") ou #valu("seringue_std_pas") ici).
 ])
 
 #piege[Arrondir une concentration ou un résultat intermédiaire décale le débit final.]

@@ -16,13 +16,13 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 15,R02,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
 16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",EN_COURS
 17,R02,PRODUCTION,PRODUCTEUR,FR08,,Adapter EN03 au tronc commun PASS/LAS (chimie),A_VERIFIER
-18,R02,PRODUCTION,PRODUCTEUR,FR01,,"Fiche méthode calculs de doses et débits, variantes 2009 et 2026",EN_COURS
+18,R02,PRODUCTION,PRODUCTEUR,FR01,,"Fiche méthode calculs de doses et débits, variantes 2009 et 2026",A_VERIFIER
 19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,A_FAIRE
 20,R02,VERIFICATION,VERIFICATEUR,FR08,,Vérification indépendante,EN_COURS
-21,R02,VERIFICATION,VERIFICATEUR,FR01,,Vérification indépendante,A_FAIRE
+21,R02,VERIFICATION,VERIFICATEUR,FR01,,Vérification indépendante,EN_COURS
 22,R02,CONDITIONNEMENT,CONDITIONNEUR,FR07,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
-23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
-24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
+24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
 25,R03,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),A_FAIRE
 27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),A_FAIRE
