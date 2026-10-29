@@ -2,11 +2,11 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 148
-- Durée estimée totale : 21 h 50 · restant : 18 h 50 (hors validation par Tristan)
+- Runs : 22 · tâches : 156
+- Durée estimée totale : 21 h 50 · restant : 17 h 45 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R03, R04, R05, R06, R07, R15, R18
+**Lançables maintenant :** R04, R05, R06, R07, R09, R15, R18
 
 ## Runs
 
@@ -69,23 +69,30 @@
 
 ### R03 — Nouvelles fiches EN (SPI, labs, TEAS)
 
-≈ 1 h 05 · statut : À faire · dépend de : R00
+≈ 1 h 05 · statut : Vérifié, en attente de relecture et validation · dépend de : R00
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 25 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
-| 148 | Préparation | Orchestrateur (session principale de Claude) | — | — | Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite | À faire |
-| 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | À faire |
-| 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | À faire |
-| 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | À faire |
-| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02) | À faire |
-| 145 | Production | Outils de conditionnement | — | — | Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01) | À faire |
-| 29 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Vérification indépendante | À faire |
-| 30 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | — | Vérification indépendante | À faire |
-| 31 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | — | Vérification indépendante | À faire |
-| 32 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 33 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN08 Lab Values Cheat Sheet | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 34 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN10 TEAS 7 Science Review Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
+| 25 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | En cours |
+| 148 | Préparation | Orchestrateur (session principale de Claude) | — | — | Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite | En cours |
+| 149 | Préparation | Orchestrateur (session principale de Claude) | — | — | Dépôt manuel par Tristan (l'envoi de fichiers vers Whop est bloqué depuis la session) : fichiers EN02, EN03 dans leurs apps Files, FR07 (produit créé masqué prod_bVA9Q6H0Vxc3h, prix 4.90 EUR), galeries ; puis textes Whop EN02/EN03 et visibilité FR07 par l'orchestrateur | En cours |
+| 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | Vérifié, en attente de relecture et validation |
+| 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | Vérifié, en attente de relecture et validation |
+| 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | Vérifié, en attente de relecture et validation |
+| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02) | Vérifié, en attente de relecture et validation |
+| 145 | Production | Outils de conditionnement | — | — | Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01) | Vérifié, en attente de relecture et validation |
+| 150 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | CORR1 | Correction v2 : sources consultables à la place de Kremkau non localisé (M1), source FDA § 5.2.8 (M2), plan v24.1, mineurs ; puis éléments de vente ; v3 : sourçage Radiopaedia des lignes A-VERIFIER | Vérifié, en attente de relecture et validation |
+| 151 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | CORR1 | Correction v2 : INR cible selon l'indication (B1), hémolyse sans retarder le signalement (B2), repères cliniques sourcés, HbA1c NGSP, digoxine, HDL, contenu.csv, mineurs ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 153 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | CORR1 | Correction v2 : ABO avec facteur Rh, points-virgules avalés, sources des modes de transmission, localisations OpenStax, mineurs ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 29 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 30 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 31 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 154 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 155 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 156 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 32 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 33 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN08 Lab Values Cheat Sheet | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 34 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN10 TEAS 7 Science Review Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 
 ### R04 — Anatomie-physiologie EN + biostatistiques PASS
 
@@ -99,6 +106,7 @@
 | 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | À faire |
 | 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | À faire |
 | 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | À faire |
+| 152 | Production | Outils de conditionnement | — | — | Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10 | À faire |
 | 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — 10 Systems Sheets | — | Vérification indépendante | À faire |
 | 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | À faire |
 | 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — 10 Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |

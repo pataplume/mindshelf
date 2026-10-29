@@ -9,13 +9,13 @@
 | EN01 | Dosage Calculation & IV Drip Rates | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R01 | Vérifié, en attente de relecture et validation |
 | EN02 | Physics Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.99 | 1 | R01 | Validé par Tristan |
 | EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Validé par Tristan |
-| EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | À faire |
+| EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN05 | EKG Rhythms Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 4.99 | 1 | R06 | À faire |
 | EN06 | Anatomy & Physiology — 10 Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |
 | EN07 | ABG Interpretation Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R06 | À faire |
-| EN08 | Lab Values Cheat Sheet | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 3.99 | 1 | R03 | À faire |
+| EN08 | Lab Values Cheat Sheet | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 3.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN09 | Nursing Essentials Bundle (Dosage, EKG, ABG, Labs) (EN01 + EN05 + EN07 + EN08) | KIT | FORT | oui | AGENT | WHOP | 9.99 | 1 | R08 | À faire |
-| EN10 | TEAS 7 Science Review Sheets | FICHE | MOYEN | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | À faire |
+| EN10 | TEAS 7 Science Review Sheets | FICHE | MOYEN | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN11 | SPI Ultrasound Physics — Complete Study Guide | GUIDE | MOYEN | non | AGENT | WHOP + ETSY | 24.99 | 1 | R09, R10, R11 | À faire |
 | EN12 | TEAS 7 Science — Complete Study Guide | GUIDE | MOYEN | non | AGENT | WHOP + ETSY | 19.99 | 1 | R12, R13, R14 | À faire |
 

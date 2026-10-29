@@ -30,6 +30,7 @@ WHAT'S ON THE 2 PAGES
 - Sound parameters, decibels, pulsed ultrasound (PD, SPL, PRP, PRF, duty factor) and intensities
 - Attenuation, impedance, reflection, refraction (Snell) and resolution (axial, lateral, elevational, temporal)
 - Transducers: piezoelectric effect, matching layer, backing, near zone length, array types
+- Instrumentation: receiver, gain vs output power, processing, dynamic range, harmonics, compounding
 - Doppler equation, Nyquist limit, aliasing fixes, color and power Doppler, hemodynamics
 - Artifacts table (11 artifacts), bioeffects and safety (ALARA, TI, MI), quality assurance
 - "If X doubles" table (8 rows), 11 worked examples (27 computed results), 12 exam traps

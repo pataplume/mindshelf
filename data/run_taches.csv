@@ -24,12 +24,12 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 25,R03,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",EN_COURS
-26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),A_VERIFIER
-27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),A_VERIFIER
-28,R03,PRODUCTION,PRODUCTEUR,EN10,,Fiches TEAS 7 Science,A_VERIFIER
-29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,A_CORRIGER
-30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,A_CORRIGER
-31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,A_CORRIGER
+26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),A_VALIDER
+27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),A_VALIDER
+28,R03,PRODUCTION,PRODUCTEUR,EN10,,Fiches TEAS 7 Science,A_VALIDER
+29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,A_VALIDER
+30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,A_VALIDER
+31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,A_VALIDER
 32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
@@ -130,7 +130,7 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 129,R21,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 130,R21,CONDITIONNEMENT,CONDITIONNEUR,,,"Paquets Etsy finaux, textes de boutique, calendrier de publication étalé",A_FAIRE
 131,R21,VERIFICATION,VERIFICATEUR,,,"Contrôle de conformité final : mentions IA, marques, aperçus, risque FORT hors Etsy",A_FAIRE
-132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02)",A_VERIFIER
+132,R03,PRODUCTION,OUTILLAGE,,,"Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02)",A_VALIDER
 133,R01,PRODUCTION,PRODUCTEUR,EN01,CORR1,"Correction v2 : 2 bloquants et 3 majeurs du rapport-v1 (médicaments fictifs, noms distincts, arrondi du poids, manuel de référence identifié, Joint Commission MM.14.01.01) + mineurs",A_VALIDER
 134,R01,PRODUCTION,PRODUCTEUR,EN03,CORR1,"Correction v2 : majeurs M2-M3 du rapport-v1 (source des inhibiteurs, bornes IR/RMN alignées sur la source) + mineurs ; M1 traité par la réécriture de l'annonce",A_VALIDER
 135,R01,PRODUCTION,PRODUCTEUR,EN02,CORR1,Correction v2 : 9 mineurs du rapport-v1,A_VALIDER
@@ -143,15 +143,15 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 142,R02,PRODUCTION,PRODUCTEUR,FR07,CORR1,"Correction v2 : double signe moins (charte corrigée), sous-titre, licences OpenStax, références qui n'écrivent pas la formule, exemples FX20/FX21, symboles réutilisés, constats du conditionneur ; puis éléments de vente",A_VALIDER
 143,R02,VERIFICATION,VERIFICATEUR,FR07,CORR1,Contre-vérification des corrections v2,A_VALIDER
 144,R02,VERIFICATION,VERIFICATEUR,FR08,CORR1,Contre-vérification des corrections v2,A_VALIDER
-145,R03,PRODUCTION,OUTILLAGE,,,"Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01)",A_VERIFIER
+145,R03,PRODUCTION,OUTILLAGE,,,"Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01)",A_VALIDER
 146,R04,PRODUCTION,PRODUCTEUR,FR07,CORR_R02,"Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP",A_FAIRE
 147,R04,PRODUCTION,PRODUCTEUR,FR08,CORR_R02,"Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03",A_FAIRE
-148,R03,PREPARATION,ORCHESTRATEUR,,,Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite,A_FAIRE
+148,R03,PREPARATION,ORCHESTRATEUR,,,Mettre à jour le Pre-Med & Nursing Pack Whop (prod_YF5trr8bKPh7E) avec les fiches validées (D06) ; EN01 quand la relecture infirmière sera faite,EN_COURS
 149,R03,PREPARATION,ORCHESTRATEUR,,,"Dépôt manuel par Tristan (l'envoi de fichiers vers Whop est bloqué depuis la session) : fichiers EN02, EN03 dans leurs apps Files, FR07 (produit créé masqué prod_bVA9Q6H0Vxc3h, prix 4.90 EUR), galeries ; puis textes Whop EN02/EN03 et visibilité FR07 par l'orchestrateur",EN_COURS
-150,R03,PRODUCTION,PRODUCTEUR,EN04,CORR1,"Correction v2 : sources consultables à la place de Kremkau non localisé (M1), source FDA § 5.2.8 (M2), plan v24.1, mineurs ; puis éléments de vente ; v3 : sourçage Radiopaedia des lignes A-VERIFIER",A_VERIFIER
-151,R03,PRODUCTION,PRODUCTEUR,EN08,CORR1,"Correction v2 : INR cible selon l'indication (B1), hémolyse sans retarder le signalement (B2), repères cliniques sourcés, HbA1c NGSP, digoxine, HDL, contenu.csv, mineurs ; puis éléments de vente",A_VERIFIER
+150,R03,PRODUCTION,PRODUCTEUR,EN04,CORR1,"Correction v2 : sources consultables à la place de Kremkau non localisé (M1), source FDA § 5.2.8 (M2), plan v24.1, mineurs ; puis éléments de vente ; v3 : sourçage Radiopaedia des lignes A-VERIFIER",A_VALIDER
+151,R03,PRODUCTION,PRODUCTEUR,EN08,CORR1,"Correction v2 : INR cible selon l'indication (B1), hémolyse sans retarder le signalement (B2), repères cliniques sourcés, HbA1c NGSP, digoxine, HDL, contenu.csv, mineurs ; puis éléments de vente",A_VALIDER
 152,R04,PRODUCTION,OUTILLAGE,,,"Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10",A_FAIRE
-153,R03,PRODUCTION,PRODUCTEUR,EN10,CORR1,"Correction v2 : ABO avec facteur Rh, points-virgules avalés, sources des modes de transmission, localisations OpenStax, mineurs ; puis éléments de vente",A_VERIFIER
-154,R03,VERIFICATION,VERIFICATEUR,EN04,CORR1,Contre-vérification des corrections v2,EN_COURS
-155,R03,VERIFICATION,VERIFICATEUR,EN08,CORR1,Contre-vérification des corrections v2,EN_COURS
-156,R03,VERIFICATION,VERIFICATEUR,EN10,CORR1,Contre-vérification des corrections v2,EN_COURS
+153,R03,PRODUCTION,PRODUCTEUR,EN10,CORR1,"Correction v2 : ABO avec facteur Rh, points-virgules avalés, sources des modes de transmission, localisations OpenStax, mineurs ; puis éléments de vente",A_VALIDER
+154,R03,VERIFICATION,VERIFICATEUR,EN04,CORR1,Contre-vérification des corrections v2,A_VALIDER
+155,R03,VERIFICATION,VERIFICATEUR,EN08,CORR1,Contre-vérification des corrections v2,A_VALIDER
+156,R03,VERIFICATION,VERIFICATEUR,EN10,CORR1,Contre-vérification des corrections v2,A_VALIDER
