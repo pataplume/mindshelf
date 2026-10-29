@@ -35,7 +35,7 @@ ordre,groupe_code,examen,borne,bas_us,haut_us,unite_us,facteur_code,bas_si,haut_
 34,LFT,Alkaline phosphatase,intervalle,30,120,U/L,ENZ,0.50,2.00,µkat/L,US,0,2,ABIM_2026
 35,LIP,"Total cholesterol, desirable",max,,200,mg/dL,CHOL,,5.18,mmol/L,US,0,2,ABIM_2026
 36,LIP,"LDL cholesterol, optimal",max,,100,mg/dL,CHOL,,2.59,mmol/L,US,0,2,ABIM_2026
-37,LIP,"HDL cholesterol, low if female",max,,50,mg/dL,CHOL,,1.30,mmol/L,US,0,2,ABIM_2026
-38,LIP,"HDL cholesterol, low if male",max,,40,mg/dL,CHOL,,1.04,mmol/L,US,0,2,ABIM_2026
-39,LIP,"Triglycerides, fasting, normal",max,,150,mg/dL,TG,,1.70,mmol/L,US,0,2,ABIM_2026
+37,LIP,"HDL, low (female)",max,,50,mg/dL,CHOL,,1.30,mmol/L,US,0,2,ABIM_2026
+38,LIP,"HDL, low (male)",max,,40,mg/dL,CHOL,,1.04,mmol/L,US,0,2,ABIM_2026
+39,LIP,"Triglycerides, fasting",max,,150,mg/dL,TG,,1.70,mmol/L,US,0,2,ABIM_2026
 40,DRUG,"Digoxin, general range",intervalle,0.5,1.9,ng/mL,DIG,0.6,2.4,nmol/L,US,1,1,MEDLINEPLUS_DIG

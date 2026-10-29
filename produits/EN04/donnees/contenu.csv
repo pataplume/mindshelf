@@ -1,0 +1,8 @@
+ordre,element
+1,"Sections aligned with the 5 domains of the ARDMS SPI content outline, with their published weights"
+2,"Sound parameters, decibels, pulsed ultrasound (PD, SPL, PRP, PRF, duty factor) and intensities"
+3,"Attenuation, impedance, reflection, refraction (Snell) and resolution (axial, lateral, elevational, temporal)"
+4,"Transducers: piezoelectric effect, matching layer, backing, near zone length, array types"
+5,"Doppler equation, Nyquist limit, aliasing fixes, color and power Doppler, hemodynamics"
+6,"Artifacts table (11 artifacts), bioeffects and safety (ALARA, TI, MI), quality assurance"
+7,"""If X doubles"" table (8 rows), 11 worked examples (27 computed results), 12 exam traps"

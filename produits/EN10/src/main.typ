@@ -100,7 +100,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Compact review of the four TEAS 7 Science sub-areas: human anatomy & physiology, biology, chemistry and scientific reasoning],
+  sous-titre: [Review of the four TEAS 7 Science sub-areas: anatomy & physiology, biology, chemistry, scientific reasoning],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -118,7 +118,7 @@
   [Sub-area (ATI TEAS 7 content outline)], [Scored items],
   ..plan.map(l => ([*#l.domaine*: #l.contenu], nombre(l.questions))).flatten(),
 )
-#k("SCI_NOTEES") scored items plus #k("SCI_PRETEST") unscored pretest items (#k("SCI_TOTAL") in all) in #k("SCI_MINUTES", u: true). Pretest items look like the others, so treat every question as scored. These sheets review core facts for each sub-area; they are not a complete course and contain no actual test questions.
+#k("SCI_NOTEES") scored items plus #k("SCI_PRETEST") unscored pretest items (#k("SCI_TOTAL") in all) in #k("SCI_MINUTES", u: true). Pretest items are mixed in with the scored ones and do not count, so give every question full effort. These sheets review core facts for each sub-area; they are not a complete course and contain no actual test questions.
 
 = Human Anatomy & Physiology
 
@@ -154,6 +154,13 @@ Largest sub-area: #questions("1") scored items.
   _E.g._ HR #v("EX31", "HR")/min, SV #v("EX31", "SV") mL: CO $= #v("EX31", "HR") times #v("EX31", "SV")$ mL/min #rel("EX31") #res("EX31") L/min.
 ]
 
+#tableau(
+  columns: (auto, auto, auto, 1fr),
+  [Type], [RBC antigens], [Plasma antibodies], [Can receive red cells from],
+  ..lire("groupes_sanguins.csv").map(l => ([*#l.groupe*], l.antigenes, l.anticorps, l.recoit)).flatten(),
+)
+*Rh:* Rh-positive cells carry the D antigen. An Rh-negative person makes anti-D only after exposure (transfusion, pregnancy with an Rh-positive fetus), which can cause hemolytic disease of the newborn in a later pregnancy.
+
 == Respiratory System
 
 #systeme("Respiratory")
@@ -177,7 +184,7 @@ Adult skeleton: #k("OS_ADULTE", u: true). Axial = skull, vertebral column, rib c
 == Endocrine System
 
 #systeme("Endocrine")
-Most hormone levels are held steady by negative feedback (e.g., high T₄ suppresses TSH).
+Most hormone levels are held steady by negative feedback (e.g., high T₄ suppresses TSH). *Endocrine* glands are ductless and release hormones into the blood; *exocrine* glands secrete through ducts (sweat, salivary, the enzyme-secreting part of the pancreas).
 
 == Urinary System
 
@@ -218,6 +225,17 @@ Most hormone levels are held steady by negative feedback (e.g., high T₄ suppre
   [*Isotonic* solution], [No net water movement],
 )
 
+#let equation(id) = {
+  let l = lire("equations.csv").filter(e => e.id == id)
+  if l.len() != 1 { panic("EN10 : équation " + id + " absente de equations.csv") }
+  l.first().equation
+}
+#encadre(titre: "Cellular respiration and photosynthesis")[
+  *Aerobic respiration:* #equation("RESPIRATION"). Glycolysis (cytoplasm, no O₂ needed) → citric acid (Krebs) cycle (mitochondrial matrix) → electron transport chain (inner mitochondrial membrane; O₂ is the final electron acceptor; makes most of the ATP). Without O₂, cells rely on fermentation (lactic acid in human muscle).
+
+  *Photosynthesis* (chloroplasts): #equation("PHOTOSYNTHESE"). Its products are the reactants of respiration.
+]
+
 == Cell Division
 
 *Cell cycle:* interphase (G₁ growth, S DNA replication, G₂ preparation) → mitosis: prophase, metaphase (chromosomes line up), anaphase (sister chromatids separate), telophase (PMAT) → cytokinesis.
@@ -231,11 +249,11 @@ Humans: 2n = #k("CHROM_2N") (#k("CHROM_PAIRES", u: true)); a gamete has $n = #v(
 Base pairing: A–T and G–C in DNA; A–U in RNA. DNA replication is semiconservative (each new helix keeps one old strand).
 
 #formule(titre: "Central dogma")[
-  DNA $arrow.r^"transcription (nucleus)"$ mRNA $arrow.r^"translation (ribosome)"$ protein
+  DNA → *transcription* (nucleus, RNA polymerase) → mRNA → *translation* (ribosome, tRNA brings amino acids) → protein
 ]
 A *codon* is #k("CODON_BASES", u: true) of mRNA; the tRNA *anticodon* pairs with it. $#v("EX36", "b")^#v("EX36", "n") = #res("EX36")$ codons code for #k("AA", u: true) plus #k("CODONS_STOP") stop codons (UAA, UAG, UGA): the code is redundant. AUG = start (methionine). _E.g._ template DNA TAC CGT → mRNA AUG GCA → Met–Ala.
 
-*Mutations:* substitution (point; may change one amino acid or none); insertion or deletion (shifts the reading frame: frameshift).
+*Mutations:* substitution (point; may change one amino acid, none, or create a stop codon); insertion or deletion (shifts the reading frame: frameshift).
 
 == Mendelian Genetics
 
@@ -273,6 +291,14 @@ Dehydration synthesis joins monomers (releases water); hydrolysis splits them (u
 )
 *Gram stain:* Gram-positive = thick peptidoglycan wall, stains purple; Gram-negative = thin wall plus outer membrane, stains pink.
 
+*Pathogens* cause disease by invading tissue or releasing toxins; normal flora (e.g., gut bacteria) protect the host and help digestion. Hand hygiene breaks the chain of infection between reservoir and susceptible host.
+
+#tableau(
+  columns: (auto, 1fr, 0.7fr),
+  [Transmission], [How], [Example],
+  ..lire("transmission.csv").map(l => ([*#l.mode*], l.description, l.exemple)).flatten(),
+)
+
 = Chemistry
 
 #questions("3") scored items.
@@ -295,7 +321,7 @@ Dehydration synthesis joins monomers (releases water); hydrolysis splits them (u
 == Chemical Bonds
 
 #tableau(
-  columns: (auto, 1fr, auto),
+  columns: (auto, 1fr, 0.6fr),
   [Bond], [How], [Example],
   ..lire("liaisons.csv").map(l => ([*#l.liaison*], l.mecanisme, l.exemple)).flatten(),
 )
@@ -309,7 +335,14 @@ Dehydration synthesis joins monomers (releases water); hydrolysis splits them (u
   [Phase change], [From], [To], [Heat],
   ..lire("phases.csv").map(l => ([*#l.changement*], l.de, l.vers, l.energie)).flatten(),
 )
+*Density* $= m \/ V$ (a physical property): #v("EX24", "m") g occupying #v("EX24", "V") mL $= #res("EX24")$ g/mL; a less dense object floats on a denser liquid.
+
 *Physical change:* same substance (melting, dissolving, cutting). *Chemical change:* new substance (signs: gas, color change, precipitate, heat or light). Water melts at #k("EAU_FUSION", u: true) and boils at #k("EAU_EBULLITION", u: true) (#cond("EAU_EBULLITION")); ice floats because hydrogen bonding makes it less dense than liquid water; water has a high specific heat, cohesion and adhesion.
+
+#formule(titre: "Gas laws (temperature in kelvins)")[
+  $ P_1 V_1 = P_2 V_2 quad V_1 / T_1 = V_2 / T_2 quad P_1 / T_1 = P_2 / T_2 $
+  Boyle (constant $T$): pressure up, volume down; this is how breathing moves air. Charles (constant $P$): heat a gas, it expands. Gay-Lussac (constant $V$): heat a gas, its pressure rises. _E.g._ #v("EX37", "V1") L at #v("EX37", "P1") atm squeezed to #v("EX37", "P2") atm: $V_2 = #v("EX37", "P1") times #v("EX37", "V1") \/ #v("EX37", "P2") = #res("EX37")$ L.
+]
 
 == Chemical Reactions
 
@@ -332,6 +365,7 @@ Solute dissolves in solvent (water: the "universal solvent"); like dissolves lik
   - NaCl molar mass $#v("EX21", "Na") + #v("EX21", "Cl") = #res("EX21")$ g/mol; #v("EX20", "m") g in #v("EX20", "V") L: $M = #v("EX20", "m") \/ (#v("EX20", "MM") times #v("EX20", "V")) = #res("EX20")$ M.
   - #v("EX22", "V2") mL of #v("EX22", "C2") M from #v("EX22", "C1") M stock: $V_1 = #v("EX22", "C2") times #v("EX22", "V2") \/ #v("EX22", "C1") = #res("EX22")$ mL, then add solvent to #v("EX22", "V2") mL.
   - #v("EX23", "V") mL of #v("EX23", "pct") % (m/v) glucose holds $#v("EX23", "pct") times #v("EX23", "V") \/ #v("EX23", "c") = #res("EX23")$ g.
+  - Moles $n = m \/ M$: H₂O $= #v("EX38", "nH") times #v("EX38", "H") + #v("EX38", "O") #rel("EX38") #res("EX38")$ g/mol; #v("EX39", "m") g of water $#rel("EX39") #res("EX39")$ mol.
 ]
 
 == Acids & Bases
@@ -340,7 +374,7 @@ Solute dissolves in solvent (water: the "universal solvent"); like dissolves lik
 
 #formule[
   $ "pH" = -log [H^+] quad "pH" + "pOH" = #k("PKW") quad (#cond("PKW")) $
-  Each pH unit is a tenfold change: pH #v("EX18", "pHa") has $10^(#v("EX18", "pHb") - #v("EX18", "pHa")) = #res("EX18")$ times the [H⁺] of pH #v("EX18", "pHb"). At pH #v("EX19", "pH"), pOH $= #v("EX19", "pKw") - #v("EX19", "pH") = #res("EX19")$.
+  Each pH unit is a tenfold change: pH #v("EX18", "pHa") has $#v("EX18", "b")^(#v("EX18", "pHb") - #v("EX18", "pHa")) = #res("EX18")$ times the [H⁺] of pH #v("EX18", "pHb"). At pH #v("EX19", "pH"), pOH $= #v("EX19", "pKw") - #v("EX19", "pH") = #res("EX19")$.
 ]
 Strong acids (HCl) ionize fully; weak acids (acetic, carbonic) only partly. *Buffers* resist pH change: the bicarbonate buffer keeps blood pH at #plage("PH_SANG").
 
@@ -368,6 +402,13 @@ Observation → question → *hypothesis* (testable, falsifiable prediction) →
   - Mean of trials #v("EX34", "a"), #v("EX34", "b"), #v("EX34", "c"): $(#v("EX34", "a") + #v("EX34", "b") + #v("EX34", "c")) \/ #v("EX34", "n") = #res("EX34")$.
   - Slope: #v("EX33", "y1") cm on day #v("EX33", "x1"), #v("EX33", "y2") cm on day #v("EX33", "x2"): $(#v("EX33", "y2") - #v("EX33", "y1")) \/ (#v("EX33", "x2") - #v("EX33", "x1")) = #res("EX33")$ cm/day.
   - Percent error: measured #v("EX35", "m"), accepted #v("EX35", "a"): $(#v("EX35", "m") - #v("EX35", "a")) \/ #v("EX35", "a") times #v("EX35", "c") #rel("EX35") #res("EX35")$ %.
+]
+#encadre(titre: "Judging an investigation")[
+  - Only one independent variable should change; everything else stays controlled.
+  - Look for a control group, enough subjects and repeated trials.
+  - A conclusion must stay within the data: no claims beyond the conditions tested.
+  - A hypothesis is supported or not supported, never "proven".
+  - Check graphs for title, labeled axes, units and scale before reading a trend.
 ]
 *Graphs:* line = change over time or a continuous variable; bar = compare categories; pie = parts of a whole; scatter = relationship between two variables (positive, negative or none). Interpolation reads between data points; extrapolation goes beyond them (less reliable).
 
@@ -406,5 +447,9 @@ Moving to a smaller unit gives a bigger number (multiply); moving to a larger un
   - Balance with coefficients, never by changing subscripts.
   - The independent variable is changed; the dependent variable is measured.
   - Precise is not the same as accurate.
+  - Supine is face up; prone is face down.
+  - ADH saves water; aldosterone saves sodium (water follows).
+  - Food passes through the pharynx but never through the liver or pancreas.
+  - Gas-law calculations need kelvins, not degrees Celsius.
 ]
 ]

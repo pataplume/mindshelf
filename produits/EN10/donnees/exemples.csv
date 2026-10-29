@@ -16,7 +16,7 @@ EX14,"Punnett Aa × aa (croisement test) : phénotype récessif en % = P(a) × P
 EX15,"Dihybride AaBb × AaBb : cases dominant-dominant sur 16 = 3/4 × 3/4 × 16","{""d1"": 0.75, ""d2"": 0.75, ""n"": 16}",d1 * d2 * n,9,,0.000001,0
 EX16,"Dihybride AaBb × AaBb : cases dominant-récessif sur 16 = 3/4 × 1/4 × 16","{""d1"": 0.75, ""r2"": 0.25, ""n"": 16}",d1 * r2 * n,3,,0.000001,0
 EX17,"Dihybride AaBb × AaBb : cases double récessif sur 16 = 1/4 × 1/4 × 16","{""r1"": 0.25, ""r2"": 0.25, ""n"": 16}",r1 * r2 * n,1,,0.000001,0
-EX18,"pH : rapport des [H+] entre pH 3 et pH 6 = 10^(6 − 3)","{""pHa"": 3, ""pHb"": 6}","calc.pow(10, pHb - pHa)",1000,,0.000001,0
+EX18,"pH : rapport des [H+] entre pH 3 et pH 6 = 10^(6 − 3) ; base b = 10 (échelle logarithmique décimale)","{""b"": 10, ""pHa"": 3, ""pHb"": 6}","calc.pow(b, pHb - pHa)",1000,,0.000001,0
 EX19,"pOH à 25 °C : pOH = 14 − pH, pH = 3","{""pKw"": 14, ""pH"": 3}",pKw - pH,11,,0.000001,0
 EX20,"Molarité : 14.61 g de NaCl (M = 58.44 g/mol) dans 0.500 L ; M = m / (Mmol × V)","{""m"": 14.61, ""MM"": 58.44, ""V"": 0.5}",m / (MM * V),0.5,mol/L,0.000001,2
 EX21,"Masse molaire NaCl = M(Na) + M(Cl) = 22.990 + 35.45","{""Na"": 22.99, ""Cl"": 35.45}",Na + Cl,58.44,g/mol,0.000001,2
@@ -35,3 +35,6 @@ EX33,"Pente : hauteur 4 cm au jour 2, 10 cm au jour 8 ; pente = (y2 − y1) / (x
 EX34,"Moyenne de trois essais : (12 + 15 + 18) / 3","{""a"": 12, ""b"": 15, ""c"": 18, ""n"": 3}",(a + b + c) / n,15,,0.000001,0
 EX35,"Erreur relative en % : mesure 10.4, valeur acceptée 10 ; (m − a) / a × 100","{""m"": 10.4, ""a"": 10, ""c"": 100}",(m - a) / a * c,4,%,0.000001,0
 EX36,"Nombre de codons : 4 bases, codons de 3 bases ; 4^3","{""b"": 4, ""n"": 3}","calc.pow(b, n)",64,,0.000001,0
+EX37,"Loi de Boyle à T constante : P1 = 1 atm, V1 = 6 L, P2 = 2 atm ; V2 = P1 × V1 / P2","{""P1"": 1, ""V1"": 6, ""P2"": 2}",P1 * V1 / P2,3,L,0.000001,0
+EX38,"Masse molaire de l'eau : 2 × M(H) + M(O) = 2 × 1.008 + 15.999","{""nH"": 2, ""H"": 1.008, ""O"": 15.999}",nH * H + O,18.015,g/mol,0.000001,1
+EX39,"Moles : 36.03 g d'eau / 18.015 g/mol","{""m"": 36.03, ""MM"": 18.015}",m / MM,2,mol,0.000001,1

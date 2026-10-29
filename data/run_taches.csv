@@ -24,14 +24,14 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 25,R03,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",EN_COURS
-26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),EN_COURS
-27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),EN_COURS
+26,R03,PRODUCTION,PRODUCTEUR,EN04,,Fiches express physique de l'échographie (SPI),A_VERIFIER
+27,R03,PRODUCTION,PRODUCTEUR,EN08,,Fiche valeurs de laboratoire (unités US et SI),A_VERIFIER
 28,R03,PRODUCTION,PRODUCTEUR,EN10,,Fiches TEAS 7 Science,EN_COURS
-29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,A_FAIRE
-30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,A_FAIRE
+29,R03,VERIFICATION,VERIFICATEUR,EN04,,Vérification indépendante,EN_COURS
+30,R03,VERIFICATION,VERIFICATEUR,EN08,,Vérification indépendante,EN_COURS
 31,R03,VERIFICATION,VERIFICATEUR,EN10,,Vérification indépendante,A_FAIRE
-32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
-33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+32,R03,CONDITIONNEMENT,CONDITIONNEUR,EN04,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
+33,R03,CONDITIONNEMENT,CONDITIONNEUR,EN08,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
 34,R03,CONDITIONNEMENT,CONDITIONNEUR,EN10,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
 35,R04,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
 36,R04,PRODUCTION,PRODUCTEUR,EN06,A,Systèmes 1 à 5,A_FAIRE

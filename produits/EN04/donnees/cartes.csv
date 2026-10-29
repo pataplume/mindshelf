@@ -1,0 +1,28 @@
+recto,verso,tags
+"Average speed of sound in soft tissue (m/s and mm/µs)? What sets it?","1540 m/s = 1.54 mm/µs. Set by the medium only (stiffness, density), never by frequency.",spi::sound
+"Period and wavelength from frequency?","T = 1/f ; λ = c/f (5 MHz in soft tissue: T = 0.2 µs, λ ≈ 0.31 mm)",spi::sound
+"What do +3 dB and +10 dB mean for intensity?","+3 dB: intensity doubled ; −3 dB: halved ; +10 dB: ×10",spi::sound
+"Pulse duration and spatial pulse length?","PD = n × T = n/f ; SPL = n × λ (n = cycles per pulse)",spi::pulsed
+"Pulse repetition period in soft tissue, rule of thumb?","About 13 µs per cm of imaging depth (PRP = 2d/c). Deeper: PRP up, PRF down, duty factor down.",spi::pulsed
+"Duty factor: formula and CW value?","DF = PD/PRP ; 100% for continuous wave, very small for imaging.",spi::pulsed
+"Highest and lowest intensities? Which one relates to heating?","Highest SPTP, lowest SATA. SPTA relates to tissue heating.",spi::intensity
+"Soft-tissue attenuation rule of thumb?","≈ 0.5 dB/cm/MHz ; pulse–echo path = 2 × depth (5 MHz at 6 cm depth: 30 dB).",spi::attenuation
+"Intensity reflection coefficient at normal incidence?","IRC = ((Z₂ − Z₁)/(Z₂ + Z₁))² ; ITC = 1 − IRC ; Z = ρc. Equal impedances: no echo.",spi::reflection
+"Two conditions for refraction?","Oblique incidence AND different propagation speeds (Snell: sin θt / sin θi = c₂/c₁).",spi::refraction
+"Axial resolution formula and how to improve it?","Axial = SPL/2 = nλ/2. Higher frequency, fewer cycles (more backing). Smaller number = better.",spi::resolution
+"Lateral resolution equals…? Where is it best?","Beam width ; best at the focus.",spi::resolution
+"What lowers the frame rate?","Greater depth, more lines per frame, more focal zones (FR = c / (2 d N F)).",spi::resolution
+"Matching layer thickness and role?","λ/4 ; impedance between element and skin to improve transmission.",spi::transducers
+"Effects of backing (damping) material?","Shorter pulse, better axial resolution, wider bandwidth, lower Q factor, lower sensitivity.",spi::transducers
+"Near zone length formula? Effect of doubling diameter?","NZL = D²/(4λ) = D²f/(4c) ; diameter ×2 gives NZL ×4.",spi::transducers
+"Doppler equation? Shift at 90°?","Δf = 2 f₀ v cos θ / c ; no shift at 90° (cos 90° = 0).",spi::doppler
+"Nyquist limit? When does aliasing occur?","Nyquist = PRF/2 ; aliasing when the Doppler shift exceeds PRF/2 (pulsed wave only).",spi::doppler
+"Five ways to reduce aliasing?","Raise scale (PRF), move baseline, lower f₀, shallower sample gate, switch to CW.",spi::doppler
+"Power Doppler vs color Doppler?","Power: amplitude only, no direction, no aliasing, more sensitive to slow flow. Color: mean velocity and direction, can alias.",spi::doppler
+"Simplified Bernoulli equation?","ΔP ≈ 4v² (mmHg, v in m/s): 3 m/s gives 36 mmHg.",spi::hemodynamics
+"Mirror image artifact: where is the copy?","Deeper than the true structure, behind a strong specular reflector (e.g. diaphragm).",spi::artifacts
+"Shadowing vs enhancement?","Shadowing: high attenuation (stone, bone, gas). Enhancement: low attenuation (fluid).",spi::artifacts
+"Speed error: medium slower than 1540 m/s?","Reflector displayed too deep (and too shallow if the medium is faster).",spi::artifacts
+"Mechanical index formula?","MI = p_r / √f (derated peak rarefactional pressure in MPa, f in MHz).",spi::safety
+"ALARA in practice?","Lowest output and shortest time giving a diagnostic image; raise gain before output power; monitor TI and MI.",spi::safety
+"Sensitivity and specificity?","Sensitivity = TP/(TP + FN) ; specificity = TN/(TN + FP).",spi::qa

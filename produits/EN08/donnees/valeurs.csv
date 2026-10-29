@@ -1,0 +1,5 @@
+cle,valeur,unite,libelle,source_code
+inr_saignement,3.0,,"INR above which the source states a higher bleeding risk (people on warfarin)",MEDLINEPLUS_PT
+valence_ca,2,,"Charge of the calcium ion Ca2+: 1 mmol = 2 mEq",DEFINITION_EQUIVALENT
+valence_mg,2,,"Charge of the magnesium ion Mg2+: 1 mmol = 2 mEq",DEFINITION_EQUIVALENT
+mmhg_pa,133.322,Pa,"1 mm Hg in pascals (rounded)",BIPM_SI_9

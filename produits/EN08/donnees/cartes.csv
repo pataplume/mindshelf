@@ -1,0 +1,21 @@
+recto,verso,tags
+Why compare a result with the range on the lab report?,"Reference intervals vary between laboratories; the sheet gives one published set, for adults, for study",EN08 general
+Sodium (Na⁺) adult reference interval,"136–145 mEq/L = 136–145 mmol/L (ABIM, January 2026)",EN08 electrolytes
+Potassium (K⁺) adult reference interval,"3.5–5.0 mEq/L = 3.5–5.0 mmol/L (ABIM, January 2026)",EN08 electrolytes
+"Total calcium vs ionized calcium, adult intervals","Total: 8.6–10.2 mg/dL (2.15–2.54 mmol/L). Ionized: 1.16–1.31 mmol/L (4.65–5.25 mg/dL)",EN08 electrolytes
+Magnesium adult reference interval,"1.6–2.6 mg/dL (0.66–1.07 mmol/L, × 0.4114)",EN08 electrolytes
+Fasting plasma glucose adult reference interval,"70–99 mg/dL (3.9–5.5 mmol/L, × 0.0555)",EN08 glucose
+Hemoglobin A1c reference interval and SI unit,"4.0–5.6 % (20–38 mmol/mol IFCC; mmol/mol = (% − 2.15) × 10.929)",EN08 glucose
+"BUN and creatinine, adult intervals","BUN 8–20 mg/dL (urea 2.9–7.1 mmol/L). Creatinine: female 0.50–1.10, male 0.70–1.30 mg/dL (44–97 and 62–115 µmol/L)",EN08 kidney
+"Hemoglobin and hematocrit, adult intervals","Hb: female 12–16, male 14–18 g/dL (× 10 = g/L). Hct: female 37–47 %, male 42–50 % (0.37–0.47 and 0.42–0.50 L/L)",EN08 cbc
+"WBC and platelets, adult intervals","WBC 4,000–11,000/µL = 4.0–11.0 × 10⁹/L. Platelets 150,000–450,000/µL = 150–450 × 10⁹/L",EN08 cbc
+"PT, aPTT and INR without anticoagulant","PT 11–13 s; aPTT 25–35 s (ABIM). INR 0.8–1.1 (MedlinePlus)",EN08 coagulation
+INR target on warfarin and bleeding risk,"Usual target 2.0–3.0; above 3.0, higher bleeding risk (MedlinePlus). Report per protocol",EN08 coagulation clinical
+"Arterial blood gas, room air (adult)","pH 7.38–7.44; PaCO₂ 38–42 mm Hg (5.1–5.6 kPa); PaO₂ 75–100 mm Hg (10.0–13.3 kPa); HCO₃⁻ 23–26 mEq/L; SaO₂ ≥ 95 %",EN08 abg
+Convert mm Hg to kPa,"× 0.1333 (1 mm Hg ≈ 133.322 Pa)",EN08 conversion
+Convert mg/dL to mmol/L,"× (10 ÷ molar mass in g/mol). Example: glucose 180 mg/dL × 0.0555 ≈ 10.0 mmol/L",EN08 conversion
+When does 1 mEq equal 1 mmol?,"Only for single-charge ions (Na⁺, K⁺, Cl⁻, HCO₃⁻). For Ca²⁺ and Mg²⁺, 1 mmol = 2 mEq",EN08 traps
+Why is BUN not the same number as urea?,"BUN is urea nitrogen; urea has 2 N atoms: BUN (mg/dL) × 0.357 = urea (mmol/L)",EN08 traps
+"Albumin, total bilirubin, ALT and AST (adult)","Albumin 3.5–5.5 g/dL (35–55 g/L); total bilirubin 0.3–1.0 mg/dL (5–17 µmol/L); ALT and AST 10–40 U/L each",EN08 liver
+"Lipid decision limits (ABIM, adult)","Total cholesterol desirable &lt; 200 mg/dL; LDL optimal &lt; 100 mg/dL; HDL low &lt; 50 (female), &lt; 40 (male); fasting triglycerides &lt; 150 mg/dL",EN08 lipids
+Digoxin level: general interval,"0.5–1.9 ng/mL (0.6–2.4 nmol/L) per MedlinePlus; the right level depends on the patient: follow the prescriber's target",EN08 drug clinical
