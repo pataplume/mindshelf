@@ -168,7 +168,7 @@ AX#sub[n]E#sub[m] : $n$ atomes liés, $m$ doublets non liants ; $n + m$ domaines
   $ Delta_r H° = sum nu thin Delta_f H°_"prod" - sum nu thin Delta_f H°_"réac" $
   $ Delta_r G = Delta_r H - T Delta_r S quad Delta_r G = Delta_r G° + R T ln Q $
   $ Delta_r G° = - R T ln K = - n F E° $
-  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K ($Delta_r S°$ en kJ ; $Delta_r H°$, $Delta_r S°$ supposés indépendants de $T$).
+  _Ex._ $Delta_r H° = #v("EX05", "H")$ kJ/mol, $Delta_r S° = #v("EX05", "S")$ J·mol⁻¹·K⁻¹, #v("EX05", "T") K : $Delta_r G° #rel("EX05") #res("EX05")$ kJ/mol. $Delta_r G° < 0$ tant que $T < Delta_r H° \/ Delta_r S° #rel("EX06") #res("EX06")$ K ($Delta_r S°$ en kJ ; $Delta_r H°$, $Delta_r S°$ indépendants de $T$).
 ]
 $Delta_r G < 0$ : évolution spontanée. $Delta_r H < 0$ et $Delta_r S > 0$ : toujours ; $Delta_r H > 0$ et $Delta_r S < 0$ : jamais ; tous deux $< 0$ : à basse $T$ ; tous deux $> 0$ : à haute $T$. À l'équilibre, $Delta_r G = 0$ et $Q = K$.
 
@@ -177,7 +177,7 @@ $Delta_r G < 0$ : évolution spontanée. $Delta_r H < 0$ et $Delta_r S > 0$ : to
 #block(breakable: false)[#formule[
   $ v = k [A]^alpha [B]^beta quad k = A thin e^(-E_a \/ R T) $
   $ ln k_2 / k_1 = E_a / R (1 / T_1 - 1 / T_2) $
-  $A$ de $k$ : facteur préexponentiel. Ordres partiels $alpha$, $beta$ : expérimentaux ; égaux aux coefficients pour un acte élémentaire, pas en général. _Ex._ $k$ double entre #v("EX08", "T1") et #v("EX08", "T2") K : $E_a #rel("EX08") #res("EX08")$ kJ/mol.
+  $A$ : facteur préexponentiel. Ordres $alpha$, $beta$ expérimentaux, égaux aux coefficients pour un acte élémentaire, pas en général. _Ex._ $k$ double entre #v("EX08", "T1") et #v("EX08", "T2") K : $E_a #rel("EX08") #res("EX08")$ kJ/mol.
 ]]
 #block(breakable: false)[#tableau(
   columns: (auto, 1fr, auto),
@@ -187,7 +187,7 @@ $Delta_r G < 0$ : évolution spontanée. $Delta_r H < 0$ et $Delta_r S > 0$ : to
   [1], [$ln [A] = ln [A]_0 - k t$], [$#k("LN2") \/ k$],
   [2], [$1 \/ [A] = 1 \/ [A]_0 + k t$], [$1 \/ (k [A]_0)$],
 )]
-Ordre 1 : $t_(1\/2)$ indépendant de $[A]_0$. _Ex._ principe actif A (valeurs d'exercice), $k = #v("EX07", "k")$ h⁻¹ : $t_(1\/2) #rel("EX07") #res("EX07")$ h. Un catalyseur abaisse $E_a$ sans changer $K$.
+Ordre 1 : $t_(1\/2)$ indépendant de $[A]_0$. _Ex._ principe actif A (valeurs d'exercice), $k = #v("EX07", "k")$ h⁻¹ : $t_(1\/2) #rel("EX07") #res("EX07")$ h.
 
 = Acides et bases
 
@@ -240,7 +240,7 @@ La fonction de rang le plus élevé donne le suffixe ; les autres passent en pr�
 Élimination (E1, E2) : l'alcène le plus substitué est majoritaire (règle de Zaïtsev).
 
 #block(breakable: false)[#note-clinique(titre: "Santé : chiralité")[
-  Les récepteurs de l'organisme étant chiraux, deux énantiomères peuvent agir très différemment. Exemple (McMurry) : la fluoxétine, antidépresseur utilisé en racémique. Le racémique est sans effet sur la migraine ; l'énantiomère _S_ pur a été étudié en prévention.
+  Les récepteurs de l'organisme étant chiraux, deux énantiomères peuvent agir très différemment. Exemple (McMurry) : la fluoxétine, antidépresseur utilisé en racémique ; le racémique est sans effet sur la migraine, l'énantiomère _S_ pur a été étudié en prévention.
 ]]
 
 = Spectroscopies
@@ -272,6 +272,6 @@ Constantes (#jeu("NA")) : $N_A$ = #k("NA", u: true) · $R$ = #k("R_J", u: true) 
   - $"pH" = 1/2 ("p"K_a - log C)$ seulement si l'acide est peu dissocié.
   - Le signe (+) ou (−) du pouvoir rotatoire ne dit rien de _R_ ou _S_.
   - Après une S#sub[N]2, le descripteur _R_/_S_ peut rester le même : il dépend des priorités CIP.
-  - Un catalyseur ne change ni $K$ ni $Delta_r G°$ ; seule $T$ change $K$.
+  - Un catalyseur abaisse $E_a$ mais ne change ni $K$ ni $Delta_r G°$ ; seule $T$ change $K$.
 ]]
 ]

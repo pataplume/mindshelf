@@ -6,3 +6,5 @@ id,variante_code,version,etape_code,acteur,statut_code,date,rapport
 5,EN03-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-28,produits/EN03/verif/rapport-v2.md
 6,EN01-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-28,produits/EN01/verif/rapport-v2.md
 7,FR08-STD,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR08/verif/rapport-v1.md
+8,FR01-2009,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/FR01/verif/rapport-v1.md
+9,FR01-2026,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/FR01/verif/rapport-v1.md
