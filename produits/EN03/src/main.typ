@@ -270,7 +270,7 @@ Oxidation at the anode. *Galvanic:* $Delta G < 0$, $E_"cell" > 0$, anode (−). 
   CaO₂ = #k("HB_CAP") × Hb × SaO₂ + #k("O2_SOL") × PaO₂\
   $t_(1\/2)$ = #k("LN2") × V#sub[d] / CL
 ]
-Glu, BUN in mg/dL; Hb in g/dL. Reference: AG #plage("AG_REF"), osm #plage("OSM_REF"); intervals vary by lab and method.
+Glu, BUN in mg/dL; Hb in g/dL. Reference: AG #plage("AG_REF"), osm #plage("OSM_REF")\; intervals vary by lab and method.
 
 #exemple[
   - Na #v("EX07", "Na"), Cl #v("EX07", "Cl"), HCO₃⁻ #v("EX07", "HCO3"): AG #rel("EX07") #res("EX07") mEq/L (high).
@@ -281,7 +281,7 @@ Glu, BUN in mg/dL; Hb in g/dL. Reference: AG #plage("AG_REF"), osm #plage("OSM_R
 
 #note-clinique(titre: "Alveolar gas equation")[
   $ P_A O_2 = F_I O_2 (P_"atm" - P_(H_2 O)) - P_a"CO"_2 \/ "RQ" $
-  Sea level #k("PATM", u: true); P#sub[H₂O] #k("PH2O", u: true) at #cond("PH2O"); RQ ≈ #k("RQ").
+  Sea level #k("PATM", u: true)\; P#sub[H₂O] #k("PH2O", u: true) at #cond("PH2O")\; RQ ≈ #k("RQ").
 ]
 
 = Constants & Traps

@@ -1,7 +1,7 @@
 id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
 F_IDENT,"Conversion factor IDENT (Same number, same unit): factor = K, rounded to 0 decimals, then used as rounded","{""K"": 1.0}",K,1,(no conversion),0.000000001,0
 F_MEQ1,"Conversion factor MEQ1 (Monovalent ion: mmol = mEq ÷ valence (Z = 1)): factor = 1 / Z, rounded to 0 decimals, then used as rounded","{""Z"": 1.0}",1 / Z,1,mEq/L -> mmol/L,0.000000001,0
-F_CA,"Conversion factor CA (Calcium, M = 40.078 g/mol): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 40.078}",K / M,0.249513449,mg/dL -> mmol/L,0.000000001,4
+F_CA,"Conversion factor CA (Calcium, M = 40.078 g/mol): factor = K / M, rounded to 5 decimals, then used as rounded","{""K"": 10.0, ""M"": 40.078}",K / M,0.249513449,mg/dL -> mmol/L,0.000000001,5
 F_MG,"Conversion factor MG (Magnesium, M = 24.305 g/mol): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 24.305}",K / M,0.411437976,mg/dL -> mmol/L,0.000000001,4
 F_P,"Conversion factor P (Phosphorus (as P), M = 30.974 g/mol): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 30.974}",K / M,0.322851424,mg/dL -> mmol/L,0.000000001,4
 F_GLU,"Conversion factor GLU (Glucose C6H12O6): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 180.156}",K / M,0.055507449,mg/dL -> mmol/L,0.000000001,4
@@ -13,10 +13,10 @@ F_PCT,"Conversion factor PCT (Percent to fraction): factor = 1 / K, rounded to 2
 F_CELL,"Conversion factor CELL (1/µL = 10⁶/L): factor = 1 / K, rounded to 3 decimals, then used as rounded","{""K"": 1000.0}",1 / K,0.001000000,/µL -> ×10⁹/L,0.000000001,3
 F_MMHG,"Conversion factor MMHG (1 mm Hg ≈ 133.322 Pa): factor = P / K, rounded to 4 decimals, then used as rounded","{""P"": 133.322, ""K"": 1000.0}",P / K,0.133322000,mm Hg -> kPa,0.000000001,4
 F_ENZ,"Conversion factor ENZ (1 U = 1 µmol/min = 1/60 µkat): factor = 1 / K, rounded to 4 decimals, then used as rounded","{""K"": 60.0}",1 / K,0.016666667,U/L -> µkat/L,0.000000001,4
-F_CHOL,"Conversion factor CHOL (Cholesterol C27H46O): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 386.664}",K / M,0.025862247,mg/dL -> mmol/L,0.000000001,4
-F_TG,"Conversion factor TG (Triglycerides as triolein C57H104O6 (convention)): factor = K / M, rounded to 4 decimals, then used as rounded","{""K"": 10.0, ""M"": 885.453}",K / M,0.011293654,mg/dL -> mmol/L,0.000000001,4
+F_CHOL,"Conversion factor CHOL (Cholesterol C27H46O): factor = K / M, rounded to 5 decimals, then used as rounded","{""K"": 10.0, ""M"": 386.664}",K / M,0.025862247,mg/dL -> mmol/L,0.000000001,5
+F_TG,"Conversion factor TG (Triglycerides calculated as triolein C57H104O6): factor = K / M, rounded to 5 decimals, then used as rounded","{""K"": 10.0, ""M"": 885.453}",K / M,0.011293654,mg/dL -> mmol/L,0.000000001,5
 F_DIG,"Conversion factor DIG (Digoxin C41H64O14): factor = K / M, rounded to 2 decimals, then used as rounded","{""K"": 1000.0, ""M"": 780.949}",K / M,1.280493348,ng/mL -> nmol/L,0.000000001,2
-F_HBA1C,"Conversion factor HBA1C (IFCC = (NGSP % − 2.15) × 10.929): factor = B, rounded to 3 decimals, then used as rounded","{""B"": 10.929}",B,10.929000000,% -> mmol/mol,0.000000001,3
+F_HBA1C,"Conversion factor HBA1C (NGSP master equation NGSP % = S × IFCC + 2.152): factor = K / S, rounded to 4 decimals, then used as rounded","{""K"": 1.0, ""S"": 0.09148}",K / S,10.931351115,% -> mmol/mol,0.000000001,4
 CV1,Glucose 180 mg/dL to mmol/L with the rounded factor 0.0555,"{""G"": 180, ""F"": 0.0555}",G * F,9.990000000,mmol/L,0.000000001,1
 CV2,Creatinine 1.5 mg/dL to µmol/L with the rounded factor 88.4,"{""C"": 1.5, ""F"": 88.4}",C * F,132.600000000,µmol/L,0.000000001,0
-CV3,Ionized calcium 1.10 mmol/L to mg/dL: divide by the rounded factor 0.2495,"{""S"": 1.1, ""F"": 0.2495}",S / F,4.408817635,mg/dL,0.000000001,2
+CV3,Ionized calcium 1.10 mmol/L to mg/dL: divide by the rounded factor 0.24951,"{""S"": 1.1, ""F"": 0.24951}",S / F,4.408640936,mg/dL,0.000000001,2

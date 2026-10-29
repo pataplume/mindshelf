@@ -1,7 +1,7 @@
 code,unite_us,unite_si,facteur,decalage,exemple_id,libelle
 IDENT,,,1,0,F_IDENT,"Same number, same unit"
 MEQ1,mEq/L,mmol/L,1,0,F_MEQ1,Monovalent ion: mmol = mEq ÷ valence (Z = 1)
-CA,mg/dL,mmol/L,0.2495,0,F_CA,"Calcium, M = 40.078 g/mol"
+CA,mg/dL,mmol/L,0.24951,0,F_CA,"Calcium, M = 40.078 g/mol"
 MG,mg/dL,mmol/L,0.4114,0,F_MG,"Magnesium, M = 24.305 g/mol"
 P,mg/dL,mmol/L,0.3229,0,F_P,"Phosphorus (as P), M = 30.974 g/mol"
 GLU,mg/dL,mmol/L,0.0555,0,F_GLU,Glucose C6H12O6
@@ -13,7 +13,7 @@ PCT,%,L/L,0.01,0,F_PCT,Percent to fraction
 CELL,/µL,×10⁹/L,0.001,0,F_CELL,1/µL = 10⁶/L
 MMHG,mm Hg,kPa,0.1333,0,F_MMHG,1 mm Hg ≈ 133.322 Pa
 ENZ,U/L,µkat/L,0.0167,0,F_ENZ,1 U = 1 µmol/min = 1/60 µkat
-CHOL,mg/dL,mmol/L,0.0259,0,F_CHOL,Cholesterol C27H46O
-TG,mg/dL,mmol/L,0.0113,0,F_TG,Triglycerides as triolein C57H104O6 (convention)
+CHOL,mg/dL,mmol/L,0.02586,0,F_CHOL,Cholesterol C27H46O
+TG,mg/dL,mmol/L,0.01129,0,F_TG,Triglycerides calculated as triolein C57H104O6
 DIG,ng/mL,nmol/L,1.28,0,F_DIG,Digoxin C41H64O14
-HBA1C,%,mmol/mol,10.929,2.15,F_HBA1C,IFCC = (NGSP % − 2.15) × 10.929
+HBA1C,%,mmol/mol,10.9314,2.152,F_HBA1C,"NGSP master equation: NGSP % = 0.09148 × IFCC + 2.152, so IFCC = (NGSP % − 2.152) ÷ 0.09148"

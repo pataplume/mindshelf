@@ -62,7 +62,8 @@
 }
 #let q(id) = {
   let l = val(id)
-  if l.exposant == "0" { nombre(l.mantisse) } else { $#nombre(l.mantisse) times 10^#nombre(l.exposant)$ }
+  // exposant vide (ou 0) : pas de puissance de 10 (même convention que scripts/anki.py)
+  if l.exposant in ("", "0") { nombre(l.mantisse) } else { $#nombre(l.mantisse) times 10^#nombre(l.exposant)$ }
 }
 #let qu(id) = if val(id).unite == "" [#q(id)] else if val(id).unite == "%" [#q(id)%] else [#q(id)~#val(id).unite]
 
@@ -81,6 +82,12 @@
 #verifie("Bernoulli K", float(ex("EX18").e.K), float(val("P_BERN_K").mantisse), 0)
 #verifie("3 dB", float(ex("EX22").e.db), float(val("P_HALF_DB").mantisse), 0)
 #verifie("HVL 3 dB", float(ex("EX10").e.h), float(val("P_HALF_DB").mantisse), 0)
+#verifie("f0 EX15 MHz/kHz", float(ex("EX15").e.fm) * 1000, float(ex("EX15").e.f), 0)
+// Phrases qualitatives qui dépendent des données (échec si elles deviennent fausses).
+#let exige(nom, condition) = if not condition { panic("EN04 : phrase devenue fausse : " + nom) }
+#exige("EX15 < EX16 (no aliasing)", float(ex("EX15").resultat_attendu) < float(ex("EX16").resultat_attendu))
+#exige("EX12 c2 > c1 (bent away from the normal)", float(ex("EX12").e.c2) > float(ex("EX12").e.c1))
+#exige("EX20 c < c0 (too deep)", float(ex("EX20").e.c) < float(ex("EX20").e.c0))
 
 #let domaines = csv("../donnees/domaines.csv", row-type: dictionary).sorted(key: l => int(l.ordre))
 #let relations = csv("../donnees/relations.csv", row-type: dictionary).sorted(key: l => int(l.ordre))
@@ -95,6 +102,7 @@
   mentions: mentions-produit(entree("produit"), entree("langue")),
   version: entree("version"),
 )
+#show heading: set text(hyphenate: false)
 
 #encadre(titre: "How these sheets map to the published SPI content outline")[
   #tableau(
@@ -104,7 +112,7 @@
     ..domaines.map(l => ([#l.domaine], [#l.poids%], [#l.sections])).flatten(),
   )
   A condensed review aid for the physics side of each domain, not a complete course: patient care, ergonomics,
-  3D/4D, contrast agents and infection control are not covered. Exam units: mm, µs, MHz, cm, dB, mW/cm².
+  M-mode, 3D/4D, contrast agents and infection control, among others, are not covered. Exam units: mm, µs, MHz, cm, dB, mW/cm².
 ]
 
 #colonnes(3)[
@@ -118,7 +126,7 @@
   *Speed depends on the medium only*: stiffer (less compressible) is faster, denser is slower (same stiffness).
   Order: lung/air < fat < soft tissue < muscle < bone.
   Source sets $f$ and $T$; source *and* medium set $lambda$.
-  Amplitude, power, intensity: set by the system; $I = P \/ A$, $I prop "amplitude"^2$.
+  Amplitude, power, intensity: set by the source (output power), then decrease as sound travels; $I = P \/ A$, $I prop "amplitude"^2$.
 ]
 
 #exemple(titre: "5 MHz in soft tissue")[
@@ -263,7 +271,7 @@
 ]
 
 #exemple(titre: "Shift, Nyquist, aliasing")[
-  $f_0 = #v("EX15", "f") "kHz"$, #v("EX15", "v") m/s, $cos theta = #v("EX15", "cs")$:
+  $f_0 = #v("EX15", "fm") "MHz"$, #v("EX15", "v") m/s, $cos theta = #v("EX15", "cs")$:
   $Delta f rel("EX15") #res("EX15") "kHz"$.
   PRF #v("EX16", "prf") kHz $=>$ Nyquist $= #res("EX16") "kHz"$:
   #res("EX15") kHz is below #res("EX16") kHz, so no aliasing. Highest velocity before aliasing
@@ -308,7 +316,7 @@
 #colonnes(3)[
 
 #exemple(titre: "Speed error")[
-  True depth #v("EX20", "d") cm in tissue at #v("EX20", "c") m/s (system assumes #v("EX20", "c0")):
+  True depth #v("EX20", "d") cm in tissue at #v("EX20", "c") m/s (system assumes #v("EX20", "c0") m/s):
   shown at $#v("EX20", "d") times #v("EX20", "c0") \/ #v("EX20", "c") rel("EX20") #res("EX20") "cm"$ (too deep: slower medium).
 ]
 
@@ -321,7 +329,7 @@
   - *Mechanical* (cavitation): stable (bubbles oscillate) or transient/inertial (bubbles collapse). Gas bodies (lung, bowel, contrast) are most at risk.
   $ "MI" = p_r / sqrt(f) $
   $p_r$ derated peak rarefactional pressure (MPa), $f$ in MHz.
-  US FDA Track 3 limits (non-ophthalmic): derated $I_"SPTA" <= #qu("L_ISPTA")$, MI $<= #qu("L_MI")$.
+  US FDA Track 3 limits (non-ophthalmic): derated $I_"SPTA" <= #qu("L_ISPTA")$ and MI $<= #qu("L_MI")$ (or derated $I_"SPPA" <= #qu("L_ISPPA")$).
 ]
 
 #exemple(titre: "MI")[
@@ -355,7 +363,7 @@
   - Power Doppler shows no direction and does not alias.
   - Pulse–echo attenuation counts the round trip (2 × depth).
   - Mirror image sits *deeper* than the true structure.
-  - Shadowing: high attenuation; enhancement: low attenuation.
+  - Shadowing: strong attenuation or reflection; enhancement: low attenuation.
   - dB are logarithmic: +#qu("P_HALF_DB") doubles the intensity, it does not add a few percent.
 ]
 ]

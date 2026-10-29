@@ -3,8 +3,9 @@
 // Contrat : titre, marque, version, langue, format et mentions arrivent par sys.inputs (scripts/README-pipeline.md).
 // Aucun nombre n'est tapé ici : intervalles (donnees/examens.csv), facteurs (donnees/facteurs.csv, chacun
 // recalculé depuis sa ligne de donnees/exemples.csv), exemples de conversion (exemples.csv), seuils (valeurs.csv).
-// Chaque valeur SI (ou US, si la source donne le SI) est recalculée ici depuis l'autre unité et le facteur
-// affiché : la compilation échoue si l'écart dépasse un demi-dernier chiffre affiché.
+// Chaque valeur SI (ou US, si la source donne le SI) est recalculée ici depuis l'autre unité : la valeur
+// affichée doit être l'arrondi unique du calcul avec le facteur exact (dérivation de exemples.csv) et rester
+// à moins d'un demi-dernier chiffre du calcul avec le facteur affiché ; sinon la compilation échoue.
 #import "/charte/modele.typ": *
 
 // ── Contrat sys.inputs ──
@@ -90,16 +91,29 @@
   if us == "" and si == "" { return }
   if us == "" or si == "" { panic("EN08 : " + l.examen + " : borne US ou SI manquante") }
   let f = fac(l.facteur_code)
-  let (a, b, d) = if l.unite_source == "US" {
-    (float(si), (float(us) - f.z) * f.f, int(l.decimales_si))
+  let fx = ex(f.exemple_id).x
+  let (a, b, bx, d) = if l.unite_source == "US" {
+    (float(si), (float(us) - f.z) * f.f, (float(us) - f.z) * fx, int(l.decimales_si))
   } else if l.unite_source == "SI" {
-    (float(us), float(si) / f.f + f.z, int(l.decimales_us))
+    (float(us), float(si) / f.f + f.z, float(si) / fx + f.z, int(l.decimales_us))
   } else { panic("EN08 : " + l.examen + " : unite_source " + l.unite_source) }
   if calc.abs(a - b) > 0.5 * calc.pow(10.0, -d) + 0.000000001 {
-    panic("EN08 : " + l.examen + " : " + str(a) + " affiché, " + str(b) + " recalculé")
+    panic("EN08 : " + l.examen + " : " + str(a) + " affiché, " + str(b) + " recalculé (facteur affiché)")
+  }
+  if calc.abs(a - calc.round(bx, digits: d)) > 0.000000001 {
+    panic("EN08 : " + l.examen + " : " + str(a) + " affiché, " + str(bx) + " avec le facteur exact")
   }
 }
 #for l in examens { controle(l, l.bas_us, l.bas_si); controle(l, l.haut_us, l.haut_si) }
+
+// Une même valeur écrite dans deux tables doit concorder (sinon échec).
+#let concorde(a, b, quoi) = if calc.abs(float(a) - float(b)) > 0.000000001 {
+  panic("EN08 : " + quoi + " : " + str(a) + " ≠ " + str(b))
+}
+#concorde(exa("INR on warfarin, common").bas_us, valeurs.at("inr_caillot").valeur, "INR cible basse vs inr_caillot")
+#concorde(exa("INR on warfarin, common").haut_us, valeurs.at("inr_saignement").valeur, "INR cible haute vs inr_saignement")
+#concorde(fac("HBA1C").decalage, valeurs.at("ngsp_ordonnee").valeur, "HBA1C décalage vs ngsp_ordonnee")
+#concorde(ex("F_HBA1C").e.S, valeurs.at("ngsp_pente").valeur, "F_HBA1C pente vs ngsp_pente")
 
 #let plage(l, bas, haut, unite) = {
   let u = if unite == "" { [] } else { [#sym.space.nobreak#unite] }
@@ -119,7 +133,7 @@
 
 #show: fiche.with(
   titre: entree("titre"),
-  sous-titre: [Adult reference intervals in US conventional and SI units, conversion factors, nursing cues and unit traps for NCLEX review],
+  sous-titre: [Adult reference intervals, lipid decision limits and drug therapy targets in US conventional and SI units, with conversion factors, traps and nursing cues for NCLEX review],
   marque: entree("marque"),
   langue: entree("langue"),
   format: entree("format"),
@@ -133,14 +147,15 @@
 
 #colonnes(2)[
 
-= Adult reference intervals
+= Adult lab values
 
 #tableau(
   columns: (1fr, auto, auto, auto),
   align: (left, right, right, right),
   [Test], [US conventional], [Factor], [SI],
   ..groupes.map(g => (
-    table.cell(colspan: 4)[*#g.libelle*],
+    // Sous-en-tête de groupe : répété en haut de page si le groupe est coupé, jamais seul en bas de page.
+    table.header(level: 2, table.cell(colspan: 4)[*#g.libelle*]),
     ..examens.filter(l => l.groupe_code == g.code).map(l => (
       [#l.examen],
       plage(l, l.bas_us, l.haut_us, l.unite_us),
@@ -150,44 +165,44 @@
   )).flatten(),
 )
 
-_SI = US × factor; the SI value is calculated from the US value, except ionized calcium (source in mmol/L). Blood gas values: room air._
+_Ranges vary by lab. SI = US × factor, calculated from the US value except ionized calcium (source in mmol/L). Blood gas: room air._
 
 = Convert US ↔ SI
 
 #formule[
   *SI = US × factor*; US = SI ÷ factor.
-  mg/dL → mmol/L: factor = 10 ÷ molar mass (g/mol).
+  mg/dL → mmol/L: factor = #v("F_GLU", "K") ÷ molar mass (g/mol).
   mEq/L → mmol/L: ÷ ion charge (Na⁺, K⁺, Cl⁻, HCO₃⁻: same number).
   mm Hg → kPa: × #nombre(fac("MMHG").facteur) (1 mm Hg ≈ #val("mmhg_pa") Pa).
-  HbA1c: mmol/mol = (% − #nombre(fac("HBA1C").decalage)) × #nombre(fac("HBA1C").facteur) (IFCC eq.).
+  HbA1c: mmol/mol = (% − #val("ngsp_ordonnee")) ÷ #val("ngsp_pente") (NGSP).
 ]
 
-#exemple(titre: "Three conversions")[
+#exemple(titre: "Worked conversions")[
   Glucose #v("CV1", "G") mg/dL × #v("CV1", "F") #res("CV1").\
   Creatinine #v("CV2", "C") mg/dL × #v("CV2", "F") #res("CV2").\
-  Ionized Ca #v("CV3", "S") mmol/L ÷ #v("CV3", "F") #res("CV3").
+  Ionized Ca #nombre(str(ex("CV3").e.S), decimales: int(exa("Calcium, ionized").decimales_si)) mmol/L ÷ #v("CV3", "F") #res("CV3").
 ]
 
-= Unit traps
+= Traps
 
 #piege(titre: "Same test, two numbers")[
   Glucose #nombre(exa("Glucose, fasting plasma").haut_us) mg/dL = #nombre(exa("Glucose, fasting plasma").haut_si) mmol/L. Read the unit before you compare a result with a range.
 ]
 
 #piege(titre: "mEq is not always mmol")[
-  Equal only for single-charge ions. Ca²⁺ and Mg²⁺: 1 mmol = #val("valence_ca") mEq.
+  Equal only for single-charge ions. Ca²⁺: 1 mmol = #val("valence_ca") mEq; Mg²⁺: 1 mmol = #val("valence_mg") mEq.
 ]
 
 #piege(titre: "BUN is not urea")[
-  US labs report urea *nitrogen* (BUN); SI labs report urea. Urea has 2 N atoms: × #nombre(fac("BUN").facteur).
+  US labs report urea *nitrogen* (BUN); SI labs report urea. Urea has #v("F_BUN", "A") N atoms: × #nombre(fac("BUN").facteur).
 ]
 
 #piege(titre: "Total vs ionized calcium")[
-  Low albumin lowers *total* calcium; ionized calcium (the active fraction) may be normal. Check which one the order and the report give.
+  About half of blood calcium is bound to proteins, mainly albumin: abnormal albumin changes *total* calcium, and an ionized (unbound) calcium test may be ordered.
 ]
 
-#piege(titre: "Hemolyzed sample")[
-  Red-cell breakdown in the tube releases potassium: a falsely high K⁺. Unexpected high K⁺: ask whether the sample was hemolyzed and a redraw is needed.
+#piege(titre: "High K⁺ and hemolysis")[
+  Report a high K⁺ per protocol. Hemolysis (red-cell injury in the sample) can release potassium and falsely raise K⁺; a redraw may be requested.
 ]
 
 #piege(titre: "Hematocrit and SaO₂ in SI")[
@@ -197,16 +212,16 @@ _SI = US × factor; the SI value is calculated from the US value, except ionized
 = Nursing cues
 
 #note-clinique(titre: "INR and bleeding")[
-  On warfarin, the usual INR target is #nombre(exa("INR target on warfarin").bas_us)–#nombre(exa("INR target on warfarin").haut_us). Above #val("inr_saignement"): higher bleeding risk. Report per protocol.
+  On warfarin, the prescriber sets the INR target, which depends on the indication; #val("inr_caillot")–#val("inr_saignement") is common. Above #val("inr_saignement"): higher bleeding risk; below #val("inr_caillot"): clot risk. Report per protocol.
 ]
 
 #note-clinique(titre: "Potassium and the heart")[
-  K⁺ outside the interval, high or low, can disturb cardiac rhythm: report promptly; ECG monitoring per protocol.
+  Low K⁺ can cause an irregular heartbeat; high K⁺ decreases heart muscle activity. Either can be life-threatening: report promptly per protocol.
 ]
 
 #note-clinique(titre: "Digoxin level")[
-  The interval shown is a general one; the right level depends on the patient and the indication. Follow the prescriber's target.
+  A general range: the right level may vary with the situation. Follow the prescriber's target.
 ]
 
-_Sources: ABIM Laboratory Test Reference Ranges (January 2026); MedlinePlus (INR, digoxin). Factors calculated from IUPAC atomic weights and SI definitions._
+_Sources: ABIM Laboratory Test Reference Ranges (Jan. 2026); MedlinePlus; NGSP (HbA1c). Other factors calculated: IUPAC atomic weights, unit definitions, triglycerides as triolein._
 ]

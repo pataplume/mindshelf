@@ -7,4 +7,4 @@ COAG,5,Coagulation
 ABG,6,Arterial blood gas (room air)
 LFT,7,Liver panel
 LIP,8,Lipids (decision limits)
-DRUG,9,Drug level
+DRUG,9,Drug therapy (target set by the prescriber)

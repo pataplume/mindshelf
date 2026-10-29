@@ -1,5 +1,8 @@
 cle,valeur,unite,libelle,source_code
-inr_saignement,3.0,,"INR above which the source states a higher bleeding risk (people on warfarin)",MEDLINEPLUS_PT
+inr_saignement,3.0,,"INR above which the source states a higher bleeding risk (people on warfarin); upper bound of the common target",MEDLINEPLUS_PT
+inr_caillot,2.0,,"INR below which the source states a risk of blood clot (people on warfarin); lower bound of the common target",MEDLINEPLUS_PT
 valence_ca,2,,"Charge of the calcium ion Ca2+: 1 mmol = 2 mEq",DEFINITION_EQUIVALENT
 valence_mg,2,,"Charge of the magnesium ion Mg2+: 1 mmol = 2 mEq",DEFINITION_EQUIVALENT
 mmhg_pa,133.322,Pa,"1 mm Hg in pascals (rounded)",BIPM_SI_9
+ngsp_pente,0.09148,,"Slope of the NGSP master equation: NGSP % = 0.09148 × IFCC (mmol/mol) + 2.152",NGSP_IFCC
+ngsp_ordonnee,2.152,%,"Intercept of the NGSP master equation",NGSP_IFCC

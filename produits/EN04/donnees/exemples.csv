@@ -1,5 +1,5 @@
 id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
-EX01,"Period: f = 5 MHz ; T = 1 / f (µs)","{""f"": 5}",1 / f,0.2,µs,0.000001,1
+EX01,Period: f = 5 MHz ; T = 1 / f (µs),"{""f"": 5}",1 / f,0.2,µs,0.000001,1
 EX02,"Wavelength in soft tissue: c = 1.54 mm/µs, f = 5 MHz ; lambda = c / f (mm)","{""c"": 1.54, ""f"": 5}",c / f,0.308,mm,0.000001,3
 EX03,"Pulse duration: n = 3 cycles, f = 5 MHz ; PD = n / f (µs)","{""n"": 3, ""f"": 5}",n / f,0.6,µs,0.000001,1
 EX04,"Spatial pulse length: n = 3, c = 1.54 mm/µs, f = 5 MHz ; SPL = n c / f (mm)","{""n"": 3, ""c"": 1.54, ""f"": 5}",n * c / f,0.924,mm,0.000001,3
@@ -13,16 +13,16 @@ EX11,"Intensity reflection coefficient, exercise values Z1 = 1.5 MRayl, Z2 = 1.7
 EX12,"Snell's law: sin(theta_i) = 0.5 (30 deg), c1 = 1540 m/s, c2 = 1600 m/s ; sin(theta_t) = sin(theta_i) c2 / c1","{""s"": 0.5, ""c1"": 1540, ""c2"": 1600}",s * c2 / c1,0.519481,,0.000001,3
 EX13,"Near zone length: D = 6 mm, f = 5 MHz, c = 1.54 mm/µs ; NZL = D^2 f / (4 c) (mm)","{""D"": 6, ""f"": 5, ""c"": 1.54}",D * D * f / (4 * c),29.220779,mm,0.00001,0
 EX14,"Frame rate: c = 154000 cm/s, depth d = 10 cm, N = 128 lines per frame, F = 1 focal zone ; FR = c / (2 d N F) (Hz)","{""c"": 154000, ""d"": 10, ""N"": 128, ""F"": 1}",c / (2 * d * N * F),60.15625,Hz,0.00001,0
-EX15,"Doppler shift: f0 = 5000 kHz, v = 0.5 m/s, cos(theta) = 0.5 (60 deg), c = 1540 m/s ; 2 f0 v cos / c (kHz)","{""f"": 5000, ""v"": 0.5, ""cs"": 0.5, ""c"": 1540}",2 * f * v * cs / c,1.623377,kHz,0.000001,2
-EX16,"Nyquist limit: PRF = 5 kHz ; PRF / 2 (kHz)","{""prf"": 5}",prf / 2,2.5,kHz,0.000001,1
+EX15,"Doppler shift: f0 = 5 MHz (fm) = 5000 kHz (f), v = 0.5 m/s, cos(theta) = 0.5 (60 deg), c = 1540 m/s ; 2 f0 v cos / c (kHz)","{""f"": 5000, ""fm"": 5, ""v"": 0.5, ""cs"": 0.5, ""c"": 1540}",2 * f * v * cs / c,1.623377,kHz,0.000001,2
+EX16,Nyquist limit: PRF = 5 kHz ; PRF / 2 (kHz),"{""prf"": 5}",prf / 2,2.5,kHz,0.000001,1
 EX17,"Highest velocity before aliasing: PRF = 5000 Hz, c = 1540 m/s, f0 = 5000000 Hz, cos(theta) = 0.5 ; v = PRF c / (4 f0 cos) (m/s)","{""prf"": 5000, ""c"": 1540, ""f"": 5000000, ""cs"": 0.5}",prf * c / (4 * f * cs),0.77,m/s,0.000001,2
 EX18,"Simplified Bernoulli: K = 4 mmHg per (m/s)^2, v = 3 m/s ; dP = K v^2 (mmHg)","{""K"": 4, ""v"": 3}",K * v * v,36,mmHg,0.000001,0
 EX19,"Resistive index: PSV = 100 cm/s, EDV = 30 cm/s ; RI = (PSV - EDV) / PSV","{""ps"": 100, ""ed"": 30}",(ps - ed) / ps,0.7,,0.000001,1
 EX20,"Speed error: true depth 5 cm in a medium at c = 1450 m/s, system assumes c0 = 1540 m/s ; displayed depth = d c0 / c (cm)","{""d"": 5, ""c0"": 1540, ""c"": 1450}",d * c0 / c,5.310345,cm,0.000001,1
 EX21,"Mechanical index: peak rarefactional pressure p = 2 MPa (derated), f = 4 MHz ; MI = p / f^0.5","{""p"": 2, ""f"": 4}","p / calc.pow(f, 0.5)",1,,0.000001,1
-EX22,"Decibels to intensity ratio: +3 dB ; ratio = 10^(dB/10)","{""db"": 3}","calc.pow(10, db / 10)",1.995262,×,0.000001,0
-EX23,"Gray shades stored with b = 8 bits per pixel: 2^b","{""b"": 8}","calc.pow(2, b)",256,,0.000001,0
+EX22,Decibels to intensity ratio: +3 dB ; ratio = 10^(dB/10),"{""db"": 3}","calc.pow(10, db / 10)",1.995262,×,0.000001,0
+EX23,Gray shades stored with b = 8 bits per pixel: 2^b,"{""b"": 8}","calc.pow(2, b)",256,,0.000001,0
 EX24,"Sensitivity: TP = 90, FN = 10 ; TP / (TP + FN) x 100 (%)","{""tp"": 90, ""fn"": 10}",tp / (tp + fn) * 100,90,%,0.000001,0
 EX25,"Specificity: TN = 80, FP = 20 ; TN / (TN + FP) x 100 (%)","{""tn"": 80, ""fp"": 20}",tn / (tn + fp) * 100,80,%,0.000001,0
 EX26,"Element thickness and frequency, exercise values: c_PZT = 4 mm/µs, thickness t = 0.4 mm ; f = c / (2 t) (MHz)","{""c"": 4, ""t"": 0.4}",c / (2 * t),5,MHz,0.000001,0
-EX27,"Intensity: power P = 10 mW over beam area A = 0.5 cm2 ; I = P / A (mW/cm2)","{""P"": 10, ""A"": 0.5}",P / A,20,mW/cm²,0.000001,0
+EX27,Intensity: power P = 10 mW over beam area A = 0.5 cm2 ; I = P / A (mW/cm2),"{""P"": 10, ""A"": 0.5}",P / A,20,mW/cm²,0.000001,0
