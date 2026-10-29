@@ -14,13 +14,13 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 13,R01,CONDITIONNEMENT,CONDITIONNEUR,EN03,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 14,R01,CONDITIONNEMENT,CONDITIONNEUR,EN01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 15,R02,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_VALIDER
-16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",EN_COURS
+16,R02,PRODUCTION,PRODUCTEUR,FR07,,"Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises",A_VERIFIER
 17,R02,PRODUCTION,PRODUCTEUR,FR08,,Adapter EN03 au tronc commun PASS/LAS (chimie),A_VERIFIER
 18,R02,PRODUCTION,PRODUCTEUR,FR01,,"Fiche méthode calculs de doses et débits, variantes 2009 et 2026",A_VERIFIER
-19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,A_FAIRE
-20,R02,VERIFICATION,VERIFICATEUR,FR08,,Vérification indépendante,EN_COURS
+19,R02,VERIFICATION,VERIFICATEUR,FR07,,Vérification indépendante,EN_COURS
+20,R02,VERIFICATION,VERIFICATEUR,FR08,,Vérification indépendante,A_CORRIGER
 21,R02,VERIFICATION,VERIFICATEUR,FR01,,Vérification indépendante,EN_COURS
-22,R02,CONDITIONNEMENT,CONDITIONNEUR,FR07,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_FAIRE
+22,R02,CONDITIONNEMENT,CONDITIONNEUR,FR07,,"Aperçus, vidéo, Anki, annonces, script iPhone",EN_COURS
 23,R02,CONDITIONNEMENT,CONDITIONNEUR,FR08,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 24,R02,CONDITIONNEMENT,CONDITIONNEUR,FR01,,"Aperçus, vidéo, Anki, annonces, script iPhone",A_VALIDER
 25,R03,PREPARATION,ORCHESTRATEUR,,,"Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes",A_FAIRE
@@ -138,3 +138,4 @@ id,run_code,phase_code,role_code,produit_code,lot,description,statut_code
 137,R01,VERIFICATION,VERIFICATEUR,EN03,CORR1,Contre-vérification des corrections v2,A_VALIDER
 138,R01,VERIFICATION,VERIFICATEUR,EN02,CORR1,Contre-vérification des corrections v2,A_VALIDER
 139,R01,PRODUCTION,PRODUCTEUR,EN01,CORR2,"Correction v3 : échos cliniques Drug B/E/F, unités coupées, mention près des exemples, encadré tablette, dossier de relecture ; puis régénération des éléments de vente",A_VALIDER
+140,R02,PRODUCTION,PRODUCTEUR,FR08,CORR1,"Correction v2 : sous-titre trop affirmatif et programmes récents (M1), note fluoxétine trop proche d'OpenStax (licence NC), doublons de constantes, mineurs ; puis éléments de vente",EN_COURS

@@ -193,7 +193,7 @@
 #exemple(titre: "Échographie")[
   À #nombre(ex("FX09").e.f / facteur("P_MEGA")) MHz : $lambda #rel("FX09") #res("FX09") "mm"$.
   $v = #v("FX10", "v") "m/s"$, $cos theta = #v("FX10", "cs")$ $=>$ $Delta f #rel("FX10") #res("FX10") "kHz"$.
-  Graisse → muscle : $a #rel("FX11") #res("FX11") %$ ; air → muscle : $a #rel("FX12") #res("FX12") %$.
+  Graisse → muscle : $a #rel("FX11")$ #res("FX11") % ; air → muscle : $a #rel("FX12")$ #res("FX12") %.
 ]
 
 = Optique et vision
