@@ -57,6 +57,8 @@ Ne jamais publier une variante qui n'est pas `VALIDE`. Ne jamais publier sur Ets
 
 ## Règles permanentes
 
+- Toute action attendue de Tristan (validation, relecture, dépôt, source, réglage) est une ligne de `data/actions_tristan.csv` ; elle passe à `VALIDE` quand c'est fait. La vue `docs/PLAN-RUNS.md` les liste.
+
 - Les tables se modifient par script ou édition ciblée, toujours suivies de `verifie_tables.py`.
 - Un agent n'écrit que dans le dossier de son produit ; seul l'orchestrateur touche à `data/`.
 - Aucun chiffre ne s'écrit en dur dans un texte : il vit dans une table ou un fichier de données du produit.

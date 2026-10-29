@@ -70,6 +70,14 @@ fk("runs_durees.csv", "run_code", "runs.csv")
 fk("runs_durees.csv", "phase_code", "phases.csv")
 fk("runs_durees.csv", "role_code", "roles_agents.csv")
 
+# Actions attendues de Tristan (data/actions_tristan.csv)
+unique("actions_tristan.csv", "id")
+unique("types_action.csv", "code")
+fk("actions_tristan.csv", "type_code", "types_action.csv")
+fk("actions_tristan.csv", "produit_code", "produits.csv", vide_ok=True)
+fk("actions_tristan.csv", "relecteur_code", "relecteurs.csv", vide_ok=True)
+fk("actions_tristan.csv", "statut_code", "statuts.csv")
+
 # Règles métier
 produits = index(lire("produits.csv"))
 for p in produits.values():

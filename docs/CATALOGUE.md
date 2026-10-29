@@ -11,7 +11,7 @@
 | EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Validé par Tristan |
 | EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN05 | EKG Rhythms Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 4.99 | 1 | R06 | À faire |
-| EN06 | Anatomy & Physiology — 10 Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |
+| EN06 | Anatomy & Physiology — Body Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |
 | EN07 | ABG Interpretation Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R06 | À faire |
 | EN08 | Lab Values Cheat Sheet | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 3.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN09 | Nursing Essentials Bundle (Dosage, EKG, ABG, Labs) (EN01 + EN05 + EN07 + EN08) | KIT | FORT | oui | AGENT | WHOP | 9.99 | 1 | R08 | À faire |

@@ -1,0 +1,9 @@
+code,libelle
+VALIDATION,Valider une fiche (ou demander des corrections)
+RELECTURE,Faire relire une fiche par la personne du domaine
+DEPOT_WHOP,Déposer des fichiers sur Whop (l'envoi est bloqué depuis la session)
+PUBLICATION_ETSY,Publier une annonce Etsy à la main
+TOURNAGE,Tourner une vidéo iPhone
+VERIFICATION_EXTERNE,Vérifier une information hors de la session
+SOURCE,Fournir une source non consultable depuis la session
+REGLAGE,Changer un réglage de compte

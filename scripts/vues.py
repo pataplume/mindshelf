@@ -65,6 +65,13 @@ if ouvertes:
     for d in ouvertes:
         L.append(f"| {d['code']} | {d['sujet']} | {d['options']} | {', '.join(runs_decision[d['code']]) or '—'} |\n")
     L.append("\n")
+actions = [a for a in lire("actions_tristan.csv") if a["statut_code"] not in ("VALIDE", "PUBLIE")]
+if actions:
+    types_action = index(lire("types_action.csv"))
+    L.append("## En attente de Tristan\n\n| # | Type | Produit | Détail | Depuis |\n|---|---|---|---|---|\n")
+    for a in actions:
+        L.append(f"| {a['id']} | {types_action[a['type_code']]['libelle']} | {a['produit_code'] or '—'} | {a['detail']} | {a['depuis']} |\n")
+    L.append("\n")
 L.append("## Runs\n\n")
 for r in runs:
     c = r["code"]
