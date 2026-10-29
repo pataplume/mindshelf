@@ -1,8 +1,8 @@
 ordre,element
 1,"Ligne d’UE du référentiel de formation de la variante (2009 ou 2026)"
-2,"Valeurs usuelles de l’adulte en unités SI, avec milieu de prélèvement : ionogramme, calcium, urée, créatinine, clairance, glucose, HbA1c, NFS, hémostase, CRP, bilan hépatique (ASAT, ALAT, GGT, bilirubine), albumine et protéines ; d’après la liste nationale « Valeurs biologiques usuelles » du CNG (version de 2009)"
+2,"Valeurs usuelles de l’adulte en unités SI, avec milieu de prélèvement : ionogramme, calcium, urée, créatinine, clairance, glucose, HbA1c, NFS, hémostase, CRP, bilan hépatique (ASAT, ALAT, GGT, bilirubine), albumine et protéines ; d’après la liste nationale « Valeurs biologiques usuelles » diffusée par le CNG (année affichée sur la fiche)"
 3,"INR sous AVK : cibles fixées par le.la prescripteur.rice selon l’indication, dans un groupe distinct du même tableau"
-4,"DFG estimé : unité, seuil du stade 3 de maladie rénale chronique, DFGe ≥ 90"
+4,"DFG estimé : unité, seuil du stade 3 de maladie rénale chronique, seuil du DFG normal"
 5,"3 pièges d’unités (deux unités, fraction ou %, TP / INR / TCA)"
 6,"2 calculs (rapport de TCA, clairance mL/s en mL/min)"
 7,"2 repères infirmiers : kaliémie au-dessus de l’intervalle du compte rendu et hémolyse, INR sous AVK hors cible (au-dessus : risque hémorragique ; au-dessous : risque de thrombose ; signaler)"

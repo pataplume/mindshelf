@@ -22,28 +22,37 @@ Une décision = un code de ligne + une valeur, jamais une note en texte. Elle le
 
 | Point | Champ |
 |---|---|
-| FC, FR, SpO₂, température de l'adulte | `donnees/valeurs.csv`, clés `fc_bas`, `fc_haut`, `fr_bas`, `fr_haut`, `spo2_bas`, `t_bas`, `t_haut` |
+| FC, FR, SpO₂, température, PA basse de l'adulte | `donnees/valeurs.csv`, clés `fc_bas`, `fc_haut`, `fr_bas`, `fr_haut`, `spo2_bas`, `t_bas`, `t_haut`, `pa_bas_pas`, `pa_bas_pad` |
 | Libellés et points du Glasgow | `donnees/glasgow.csv` (colonnes `points`, `reponse`) |
 | Items et cotation de Braden | `donnees/braden.csv` (colonnes `item`, `min`, `max`) |
 | Ligne d'UE d'une variante | `donnees/variantes.csv`, colonne `valeur` |
+
+## Correction v2 (29.10.2026, après le rapport de vérification v1)
+
+Le contenu a été corrigé après le rapport `verif/rapport-v1.md` (2 bloquants, 12 majeurs, 7 mineurs). Le pied de page porte encore « v1 » : la version vient de `data/variantes.csv`, que le producteur ne modifie pas ; à passer en v2 par l'orchestrateur. Le produit doit repasser chez le vérificateur avant la relecture.
 
 ## Points à confirmer (`A-VERIFIER`)
 
 Classés par priorité. Le détail des sources est dans `references.csv`.
 
-1. **Constantes FC, FR, SpO₂, température** : aucune source française lue. Valeurs usuelles enseignées ; bornes de température selon le site de mesure. Seuls les seuils d'HTA (HAS 2016) sont lus.
-2. **Glasgow, libellés et points** : seuls les trois critères et l'étendue 3 à 15 sont lus (CHUV). La cotation de chaque réponse vient de Teasdale et Jennett (1974), non lu ; une copie en ligne lue était incohérente et n'est pas retenue. Libellés à aligner sur ceux du service.
-3. **Braden** : items et cotations lus (HUG, fiche de soins de juillet 2017) ; total 6 à 23 calculé. Aucun seuil chiffré affiché : le seuil est « celui du protocole du service ». La fiche HUG donne 15–18 faible, 13–14 modéré, ≤ 12 élevé : faut-il afficher un seuil (et lequel) ? Source française (HAS 2001) non lue.
-4. **Consignes génériques sans source** : « recontrôler puis alerter ; le recontrôle ne retarde jamais l'alerte » (constantes) ; « toute baisse du Glasgow s'alerte immédiatement » ; « une cible prescrite (SpO₂) passe avant le repère » ; « garder la même échelle de douleur » ; « toute douleur exprimée se trace et se réévalue » ; « le type de précautions se lit sur la signalétique ». À valider ou retirer.
-5. **Douleur** : les seuils (≥ 4/10, EVS ≥ 2, Algoplus ≥ 2) sont ceux de l'indicateur HAS IQSS 2023 (lu). La fiche dit « seuil de prise en charge (indicateur HAS) » et ajoute que toute douleur se trace et se réévalue : formulation à valider (éviter qu'une douleur à 3/10 soit ignorée).
-6. **Précautions standard** : champ, friction hydro-alcoolique, « pas de gants sur peau saine », masque de type I lus (présentation du groupe SF2H, CHU Amiens 2017 ; le texte SF2H lui-même n'a pas pu être ouvert). **Non lus** : indication des gants (sang, liquide biologique, muqueuse, peau lésée), lunettes si risque de projection, masque pour le.la patient.e qui tousse.
-7. **Précautions Gouttelettes et Contact** : non sourcées (la synthèse SF2H 2013 lue ne traite que de l'air). Précautions Air : lues (R2, R3, FFP2, fit check).
-8. **Transmissions ciblées (cible, DAR)** : aucune source lue. SAED : lu (HAS 2014). Traçabilité : identification de l'auteur.rice et administration tracée sur le support de la prescription lus (AP-HP 2014) ; « date, heure », « faits objectifs », « jamais d'acte tracé à l'avance » non lus.
-9. **AES** : premiers soins et délais lus sur l'affiche INRS AA 775 (année d'édition non relevée). Ajouts pour l'étudiant.e, non sourcés : « selon la procédure AES de l'établissement », « en stage : le service et l'IFSI ».
-10. **Lignes d'UE** : 2009 (UE 2.10, 3.1, 4.1, 4.3) non relues dans l'annexe III ; 2026 (UE B.3, évaluée en stage ou en pratique simulée) reprise de FR01 (arrêté du 20 février 2026, art. 23 ; UBE), non relue dans ce run. Hors périmètre de la relectrice ; à vérifier par le vérificateur.
+1. **Conduite devant une valeur anormale (B1), consigne de prudence sans source** : « Valeur grave ou patient.e qui va mal : alerter immédiatement selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter. » Même texte sur la fiche et sur la carte Anki. Aucune source HAS, CHU ou IFSI lue. À valider ou reformuler.
+2. **Précautions respiratoires (B2)** : le tableau Air / Gouttelettes (SF2H 2013) est retiré. La fiche dit seulement que la SF2H a remplacé en 2024 cette distinction par trois niveaux (simples, renforcées, maximales) et que le niveau et le type de masque suivent le protocole de l'établissement et l'équipe d'hygiène. Le texte SF2H 2024 lui-même n'a pas été lu (présentations CPias Hauts-de-France et FAQ SF2H lues). Aucun type de masque n'est affiché. « L'équipe d'hygiène » : ajout de prudence, à valider.
+3. **Glasgow, réponse non testable (M2)** : « noter NT et la raison, ne pas coter 1 » (patient.e intubé.e, paupières œdématiées). Source non lue. Points lus dans le Manuel MSD (version professionnelle en français) ; libellés de la fiche reformulés, à aligner sur ceux du service.
+4. **Constantes FR, SpO₂, température** : toujours sans source qui les soutienne. MedlinePlus (lu) donne FR 12 à 18/min et température 36,5 à 37,3 °C, la fiche affiche 12 à 20 et 36,5 à 37,5 : à trancher (champs `fr_haut`, `t_haut`). SpO₂ ≥ 95 % : non sourcé. FC 60 à 100 : MedlinePlus, lu.
+5. **PA basse** : nouvelle ligne « < 90/60 ou en chute » (MedlinePlus, borne basse de l'intervalle usuel, lue). « Ou en chute » : consigne de prudence. À valider ou à remplacer par « selon la prescription ou le protocole ».
+6. **Douleur (M6)** : « Sous ces seuils, la douleur reste évaluée, tracée et prise en compte » (fiche et 3 cartes) : consigne, non écrite dans le document HAS IQSS 2023 lu.
+7. **Masque en cas de risque de projection (M7)** : la fiche écrit « masque et lunettes, type de masque selon le protocole ». Le type IIR (EN 14683, SF2H 2017) n'a pas pu être lu : à confirmer. Type I : affiché pour le.la patient.e qui tousse (présentation SF2H 2017, CHU Amiens, lue).
+8. **Exceptions à la friction (M8)** : mains visiblement souillées, lavage à l'eau et au savon ; *C. difficile* et gale, lavage au savon puis friction. Source lue : quiz CPias Hauts-de-France, mai 2025. À valider.
+9. **Précautions Contact (M9)** : chambre seule ou regroupement, signalée ; tablier pour les soins directs ; hygiène des mains en sortant de la chambre. Source secondaire lue (CHU de Saint-Étienne, 2011, d'après SF2H 2009) ; texte SF2H 2009 non lu.
+10. **Consignes sans source (M3, M12)** : « toute baisse du Glasgow s'alerte immédiatement » ; « une cible prescrite (SpO₂) passe avant le repère » ; « garder la même échelle de douleur » ; « ne pas déduire le niveau du diagnostic supposé » ; AES « selon la procédure AES de l'établissement », « en stage : le service et l'IFSI ». À valider ou retirer.
+11. **Transmissions (M10)** : transmissions ciblées (cible, DAR) sans source ; traçabilité « date, heure », « faits objectifs », « jamais d'acte tracé à l'avance » sans source (le reste : AP-HP 2014, lu). SAED : « reformuler la décision » retiré (p. 13 du guide HAS non relue).
+12. **Braden** : items et cotations lus (HUG, 2017) ; aucune source française lue (HAS 2001 non accessible). Seuil : « celui du protocole du service ».
+13. **AES** : affiche INRS AA 775 lue ; année d'édition non relevée.
+14. **Lignes d'UE** (hors périmètre de la relectrice) : 2009, intitulés lus sur une copie (HPSJ), annexe III officielle non lue ; « Infectiologie hygiène » repris tel quel. 2026, arrêté du 20 février 2026 (NOR ESRS2601184A, JORF du 25.02.2026, texte 53) : « notions mobilisées notamment dans l'UE B.3 », rattachement éditorial ; annexe III non lue.
 
 ## Ce qui est contrôlé automatiquement
 - Chaque somme (Glasgow 3 à 15, exemple à 12 ; Braden 6 à 23) est recalculée à la compilation (`main.typ`, échec si écart) et par un script indépendant du producteur.
 - Cohérence entre `glasgow.csv`, `braden.csv`, `valeurs.csv` et `exemples.csv` contrôlée à la compilation.
 - Ligne d'UE : une seule ligne par variante, et son référentiel doit correspondre à l'entrée `referentiel` (échec sinon).
 - Les nombres des cartes Anki sont tirés de `valeurs.csv` et `exemples.csv` par marqueurs.
+- Script de recalcul du vérificateur relancé sur les PDF v2 : 0 écart.

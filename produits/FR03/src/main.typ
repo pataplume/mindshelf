@@ -3,7 +3,8 @@
 // (pas une traduction) : valeurs usuelles françaises en unités SI, lues telles qu'écrites dans la source
 // (donnees/examens.csv, colonne source_code), sans conversion US.
 // Contrat : titre, marque, version, langue, format, variante, référentiel et mentions arrivent par sys.inputs.
-// Aucun nombre n'est tapé ici : intervalles (examens.csv), seuils DFG et kaliémie (valeurs.csv), sources et années
+// Aucune valeur clinique n'est tapée ici (seuls les nombres qui font partie d'une unité ou d'une définition d'unité le sont :
+// mL/min/1,73 m², G/L = 10⁹/L, T/L = 10¹²/L) : intervalles (examens.csv), seuils DFG et kaliémie (valeurs.csv), sources et années
 // (sources.csv), exemples recalculés
 // (exemples.csv, échec si écart), ligne d'UE propre à la variante (variantes.csv).
 #import "/charte/modele.typ": *
@@ -116,7 +117,6 @@
 #meme(float(exa("HBA1C").haut) * val-brut("pct"), exa("HBA1C").autre_haut, "HbA1c fraction → %")
 #meme(val-brut("dfg_seuil_mrc3"), val-brut("dfg_stade2_bas"), "seuil stade 3 = borne basse du stade 2")
 #meme(val-brut("dfg_normal") - 1, val-brut("dfg_stade2_haut"), "stade 1 (≥) = borne haute du stade 2 + 1")
-#if val-brut("k_hyperkaliemie") < float(exa("K").haut) { panic("FR03 : seuil d'hyperkaliémie sous la borne haute de K") }
 
 // ── Ligne propre à la variante (référentiel 2009 ou 2026) ──
 #let ligne-variante(cle) = {
@@ -197,7 +197,7 @@ _Milieu : Pl plasma, Se sérum, Sg sang. « Autre écriture » : seconde unité 
 = Repères infirmiers
 
 #note-clinique(titre: "Kaliémie élevée et hémolyse")[
-  Kaliémie élevée = au-dessus de l'intervalle du compte rendu du laboratoire. Par prudence, *la signaler d'abord*, selon le protocole du service. L'hyperkaliémie se définit par un potassium plasmatique >~#val("k_hyperkaliemie") mmol/L. Une hémolyse du prélèvement peut donner une fausse hyperkaliémie : un nouveau prélèvement de contrôle, sans garrot, peut être prescrit. Ce contrôle ne retarde pas le signalement.
+  Kaliémie élevée = au-dessus de l'intervalle du compte rendu du laboratoire. Par prudence, *la signaler d'abord*, selon le protocole du service. Une hémolyse du prélèvement peut donner une fausse hyperkaliémie : un nouveau prélèvement de contrôle, sans garrot, peut être prescrit. Ce contrôle ne retarde pas le signalement.
 ]
 
 #note-clinique(titre: "INR sous AVK")[

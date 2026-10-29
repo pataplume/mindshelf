@@ -1,5 +1,5 @@
 <!--
-Paquet d'annonce Etsy FR02 (boutique MindShelf, annonce en français), préparé au run R05. Risque IA FAIBLE : droit à Etsy.
+Paquet d'annonce Etsy FR02 (boutique MindShelf, annonce en français), préparé au run R05, mis à jour après la correction v2. Risque IA FAIBLE : droit à Etsy.
 Une seule annonce qui livre les deux versions (FR02-2009 et FR02-2026). Tristan publie à la main, seulement après la
 relecture de l'infirmière. Sources des chiffres : voir annonce/whop.md (pdfinfo, comptage du PDF, contenu.csv,
 braden.csv, valeurs.csv, anki.py).
@@ -34,13 +34,13 @@ Téléchargement numérique immédiat : rien n'est expédié. Deux versions incl
 
 CE QU'IL Y A SUR LES 2 PAGES
 8 rubriques de repères de l'adulte :
-- Constantes de l'adulte : FC, pression artérielle (seuils d'HTA de la HAS), FR, SpO₂, température, et la conduite « alerter selon le protocole »
+- Constantes de l'adulte : FC, pression artérielle (seuils d'HTA de la HAS, repère bas), FR, SpO₂, température, et la conduite devant une valeur anormale
 - Échelles de la douleur : EVA, EN, EVS et Algoplus, avec les seuils de prise en charge de l'indicateur HAS
-- Score de Glasgow : cotation des 3 items (yeux, verbal, moteur) et un exemple de calcul
+- Score de Glasgow : cotation des 3 items (yeux, verbal, moteur), réponse non testable (NT) et un exemple de calcul
 - Risque d'escarre : les 6 items de l'échelle de Braden et leur cotation
 - Transmissions ciblées (cible, données, actions, résultats), SAED et règles de traçabilité
-- Précautions standard : champ, mains, gants, masque et lunettes, matériel ; les 5 indications de l'hygiène des mains (OMS)
-- Précautions complémentaires Air, Gouttelettes et Contact
+- Précautions standard : champ, mains (et exceptions à la friction), gants, masque et lunettes, matériel ; les 5 indications de l'hygiène des mains (OMS)
+- Précautions complémentaires : Contact, et les trois niveaux de précautions respiratoires (SF2H 2024) à appliquer selon le protocole de l'établissement
 - Accident d'exposition au sang (AES) : premiers soins et délais (INRS)
 Avec 4 pièges, 4 notes cliniques et les sources citées.
 

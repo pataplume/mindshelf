@@ -6,4 +6,3 @@ dfg_normal,90,mL/min/1.73 m²,REVPRAT_MRC_2022,Stade 1 : DFG normal ou augmenté
 mrc_mois,3,mois,REVPRAT_MRC_2022,Durée de persistance des anomalies
 s_par_min,60,s/min,DEFINITION,Secondes par minute
 pct,100,%,DEFINITION,Facteur fraction → pourcentage
-k_hyperkaliemie,5.5,mmol/L,VIDAL_K_2022,Hyperkaliémie : potassium plasmatique supérieur à cette valeur

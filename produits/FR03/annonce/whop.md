@@ -27,7 +27,7 @@ Sur la page :
 - DFG estimé : unité, stade 3, DFGe ≥ 90
 - 3 pièges d’unités, 2 calculs, 2 repères infirmiers (kaliémie et hémolyse, INR sous AVK)
 
-Valeurs : valeurs usuelles du référentiel du CNG (2009), « Valeurs biologiques usuelles », année affichée sur la fiche. Elles varient selon les laboratoires : le compte rendu de votre laboratoire fait foi. L’INR sous AVK est une cible fixée par le.la prescripteur.rice, pas une valeur usuelle.
+Valeurs : liste nationale « Valeurs biologiques usuelles » (2009, CNG), année affichée sur la fiche. Elles varient selon les laboratoires : le compte rendu de votre laboratoire fait foi. L’INR sous AVK est une cible fixée par le.la prescripteur.rice, pas une valeur usuelle.
 
 Pour les étudiant.e.s en IFSI qui révisent le bilan biologique.
 

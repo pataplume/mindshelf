@@ -42,7 +42,7 @@ CE QU'IL Y A SUR LA PAGE
 - Le rappel que les valeurs varient selon les laboratoires, la source des valeurs et son année en tête de fiche, et les sources citées en pied
 
 À PROPOS DES VALEURS
-Les intervalles usuels de l’adulte sont les valeurs usuelles du CNG (2009) : liste nationale « Valeurs biologiques usuelles » du Conseil scientifique des concours de l’internat en pharmacie, version du 19.11.2009, diffusée par le Centre national de gestion (CNG). L’année est affichée sur la fiche. Ces intervalles varient selon les laboratoires : le compte rendu de votre laboratoire fait foi, suivez aussi les protocoles de votre établissement. L’INR sous AVK n’est pas une valeur usuelle : c’est une cible fixée par le.la prescripteur.rice, selon l’indication. Valeurs de l'adulte uniquement : pas de valeurs de l'enfant ni de la grossesse.
+Les intervalles usuels de l’adulte viennent de la liste nationale « Valeurs biologiques usuelles » du Conseil scientifique des concours de l’internat en pharmacie, version du 19.11.2009, diffusée par le Centre national de gestion (CNG). L’année est affichée sur la fiche. Ces intervalles varient selon les laboratoires : le compte rendu de votre laboratoire fait foi, suivez aussi les protocoles de votre établissement. L’INR sous AVK n’est pas une valeur usuelle : c’est une cible fixée par le.la prescripteur.rice, selon l’indication. Valeurs de l'adulte uniquement : pas de valeurs de l'enfant ni de la grossesse.
 
 POUR QUI
 Les étudiant.e.s en IFSI qui révisent le bilan biologique. Les UE en lien sont indiquées en tête de chaque version.

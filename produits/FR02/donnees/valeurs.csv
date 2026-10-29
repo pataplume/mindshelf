@@ -27,8 +27,8 @@ alcool_degre,70,°,AES : alcool à 70°
 aes_avis_h,1,h,AES : avis médical dans l'heure
 aes_tpe_h,4,h,AES : traitement post-exposition idéalement dans les 4 heures
 aes_declaration_h,24,h,AES : déclaration et information dans les 24 heures
-fc_bas,60,/min,FC de repos de l'adulte : borne basse (A-VERIFIER)
-fc_haut,100,/min,FC de repos de l'adulte : borne haute (A-VERIFIER)
+fc_bas,60,/min,FC de repos de l'adulte : borne basse (MedlinePlus)
+fc_haut,100,/min,FC de repos de l'adulte : borne haute (MedlinePlus)
 fr_bas,12,/min,FR de repos de l'adulte : borne basse (A-VERIFIER)
 fr_haut,20,/min,FR de repos de l'adulte : borne haute (A-VERIFIER)
 spo2_bas,95,%,SpO2 en air ambiant : repère bas (A-VERIFIER)
@@ -40,3 +40,5 @@ glasgow_item_min,1,,Glasgow : cotation minimale de chaque item
 glasgow_y_max,4,,"Glasgow : cotation maximale, yeux"
 glasgow_v_max,5,,"Glasgow : cotation maximale, verbal"
 glasgow_m_max,6,,"Glasgow : cotation maximale, moteur"
+pa_bas_pas,90,mmHg,PA de l'adulte : borne basse usuelle de la PAS (MedlinePlus)
+pa_bas_pad,60,mmHg,PA de l'adulte : borne basse usuelle de la PAD (MedlinePlus)

@@ -1,18 +1,18 @@
 recto,verso,tags
 Seuil d'HTA en consultation (HAS),"PA ≥ {v:pa_hta_pas}/{v:pa_hta_pad} mmHg, persistante dans le temps",FR02 constantes
 Seuil d'HTA en automesure ou MAPA diurne (HAS),"PAS ≥ {v:pa_amt_pas} ou PAD ≥ {v:pa_amt_pad} mmHg",FR02 constantes
-Constante anormale ou inhabituelle : conduite,"Recontrôler la mesure, comparer aux valeurs précédentes et à l'état clinique, alerter selon le protocole du service ; le recontrôle ne retarde pas l'alerte",FR02 constantes
-EVA et EN : bornes et seuil de prise en charge (indicateur HAS),"EVA {v:echelle_zero} à {v:eva_max_cm} cm ({v:echelle_zero} à {v:eva_max_mm} mm) ; EN {v:echelle_zero} à {v:en_max} ; prise en charge si ≥ {v:douleur_seuil}/{v:en_max}",FR02 douleur
-EVS : niveaux et seuil,"{v:echelle_zero} absente à {v:evs_max} extrêmement intense ; prise en charge si ≥ {v:evs_seuil}",FR02 douleur
-Algoplus : pour qui et seuil,"Hétéro-évaluation de la personne âgée qui ne peut pas s'auto-évaluer ; score {v:echelle_zero} à {v:algoplus_max}, prise en charge si ≥ {v:algoplus_seuil}",FR02 douleur
-Score de Glasgow : items et étendue,"Yeux ({v:glasgow_item_min} à {v:glasgow_y_max}), verbal ({v:glasgow_item_min} à {v:glasgow_v_max}), moteur ({v:glasgow_item_min} à {v:glasgow_m_max}) ; total de {v:glasgow_min} à {v:glasgow_max} ; noter le détail Y V M",FR02 glasgow
+Valeur anormale : consigne de prudence,"Valeur grave ou patient.e qui va mal : alerter immédiatement selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.",FR02 constantes
+EVA et EN : bornes et seuil de prise en charge (indicateur HAS),"EVA {v:echelle_zero} à {v:eva_max_cm} cm ({v:echelle_zero} à {v:eva_max_mm} mm) ; EN {v:echelle_zero} à {v:en_max} ; prise en charge requise si ≥ {v:douleur_seuil}/{v:en_max} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
+EVS : niveaux et seuil,"{v:echelle_zero} absente à {v:evs_max} extrêmement intense ; prise en charge requise si ≥ {v:evs_seuil} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
+Algoplus : pour qui et seuil,"Hétéro-évaluation de la personne âgée qui ne peut pas s'auto-évaluer ; score {v:echelle_zero} à {v:algoplus_max}, prise en charge requise si ≥ {v:algoplus_seuil} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
+Score de Glasgow : items et étendue,"Yeux ({v:glasgow_item_min} à {v:glasgow_y_max}), verbal ({v:glasgow_item_min} à {v:glasgow_v_max}), moteur ({v:glasgow_item_min} à {v:glasgow_m_max}) ; total de {v:glasgow_min} à {v:glasgow_max} ; noter le détail Y V M ; réponse non testable : NT et la raison, ne pas coter 1",FR02 glasgow
 "Glasgow : yeux à la demande, réponse confuse, localise la douleur","{xe:EX01} : somme des trois items ; noter aussi le détail Y V M",FR02 glasgow
 Échelle de Braden : items et étendue,"Perception sensorielle, humidité, activité, mobilité, nutrition, friction et cisaillement ; total {v:braden_min} à {v:braden_max} ; score bas = risque élevé",FR02 escarre
 Transmissions ciblées : structure,"Cible ; D données ; A actions ; R résultats",FR02 transmissions
 SAED : les quatre temps,"Situation, Antécédents, Évaluation, Demande (adaptation française de SBAR, HAS)",FR02 transmissions
 Précautions standard : champ (SF2H),"Pour tout soin, en tout lieu, pour tout.e patient.e, quel que soit son statut infectieux",FR02 hygiene
 Les {v:oms_indications} indications de l'hygiène des mains (OMS),"Avant de toucher un.e patient.e ; avant un geste aseptique ; après un risque d'exposition à un liquide biologique ; après avoir touché un.e patient.e ; après avoir touché son environnement",FR02 hygiene
-Précautions Air : mesures,"Chambre individuelle porte fermée ; FFP2 mis avant d'entrer, fit check à chaque port ; masque chirurgical pour le.la patient.e qui sort",FR02 hygiene
+Précautions respiratoires (SF2H 2024),"La distinction Air / Gouttelettes est remplacée par trois niveaux de précautions complémentaires respiratoires : simples, renforcées, maximales ; niveau et type de masque selon le protocole de l'établissement et l'équipe d'hygiène",FR02 hygiene
 "AES par piqûre ou coupure : premiers soins (INRS)","Ne pas faire saigner ; eau et savon, rincer ; désinfecter au moins {v:aes_desinfection_min} min (Dakin, ou eau de Javel à {v:javel_pct} % de chlore actif diluée au {v:javel_num}/{v:javel_dilution}e ; à défaut polyvidone iodée en solution dermique ou alcool à {v:alcool_degre}°)",FR02 aes
 AES par projection sur une muqueuse,"Rincer abondamment au moins {v:aes_rincage_min} min au sérum physiologique ou à l'eau",FR02 aes
-AES : délais (INRS),"Avis médical dans l'heure ; traitement post-exposition idéalement dans les {v:aes_tpe_h} h ; déclaration dans les {v:aes_declaration_h} h",FR02 aes
+AES : délais (INRS),"Avis médical sous {v:aes_avis_h} h ; traitement post-exposition idéalement dans les {v:aes_tpe_h} h ; déclaration dans les {v:aes_declaration_h} h",FR02 aes

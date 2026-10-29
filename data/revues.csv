@@ -28,3 +28,5 @@ id,variante_code,version,etape_code,acteur,statut_code,date,rapport
 27,FR03-2026,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR03/verif/rapport-v1.md
 28,FR02-2009,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR02/verif/rapport-v1.md
 29,FR02-2026,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR02/verif/rapport-v1.md
+30,FR03-2009,v2,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR03/verif/rapport-v2.md
+31,FR03-2026,v2,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR03/verif/rapport-v2.md

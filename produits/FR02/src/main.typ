@@ -128,8 +128,8 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
   ..csv("../donnees/constantes.csv", row-type: dictionary).map(l => ([#l.parametre], [#gabarit(l.repere)], [#l.unite])).flatten(),
 )
 
-#note-clinique(titre: "Valeur anormale ou inhabituelle")[
-  Recontrôler la mesure (matériel, position, repos), comparer aux valeurs précédentes du.de la patient.e et à l'état clinique, puis *alerter sans attendre* l'infirmier.e référent.e ou le.la médecin selon le protocole du service. Le recontrôle ne retarde jamais l'alerte devant un.e patient.e qui se dégrade.
+#note-clinique(titre: "Valeur anormale : consigne de prudence")[
+  Valeur grave ou patient.e qui va mal : *alerter immédiatement* selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.
 ]
 
 #piege[Un chiffre « normal » ne rassure pas seul : la tendance (valeurs successives) et l'aspect du.de la patient.e comptent autant. Une cible prescrite pour ce.tte patient.e (SpO₂ notamment) passe avant le repère du tableau.]
@@ -139,14 +139,14 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
 #tableau(
   columns: (auto, 1fr),
   align: (left, left),
-  [Échelle], [Cotation et seuil de prise en charge (indicateur HAS)],
-  [EVA], [Auto-évaluation. Réglette de #val("echelle_zero") à #valu("eva_max_cm") (#val("echelle_zero") à #valu("eva_max_mm")). Prise en charge si ≥ #val("douleur_seuil")/#val("en_max") (≥ #val("douleur_seuil_100")/#val("eva_max_mm")).],
+  [Échelle], [Cotation et seuil de l'indicateur HAS],
+  [EVA], [Auto-évaluation. Réglette de #val("echelle_zero") à #valu("eva_max_cm") (#val("echelle_zero") à #valu("eva_max_mm")). Prise en charge requise si ≥ #val("douleur_seuil")/#val("en_max") (≥ #val("douleur_seuil_100")/#val("eva_max_mm")).],
   [EN], [Auto-évaluation. Note de #val("echelle_zero") à #val("en_max") donnée par le.la patient.e. Même seuil que l'EVA.],
-  [EVS], [Auto-évaluation (échelle verbale simple). De #val("echelle_zero") (absente) à #val("evs_max") (extrêmement intense) : absente, faible, modérée, intense, extrêmement intense. Prise en charge si ≥ #val("evs_seuil").],
-  [Algoplus], [Hétéro-évaluation, personne âgée qui ne peut pas s'auto-évaluer. Score de #val("echelle_zero") à #val("algoplus_max"). Prise en charge si ≥ #val("algoplus_seuil").],
+  [EVS], [Auto-évaluation (échelle verbale simple). De #val("echelle_zero") (absente) à #val("evs_max") (extrêmement intense) : absente, faible, modérée, intense, extrêmement intense. Prise en charge requise si ≥ #val("evs_seuil").],
+  [Algoplus], [Hétéro-évaluation, personne âgée qui ne peut pas s'auto-évaluer. Score de #val("echelle_zero") à #val("algoplus_max"). Prise en charge requise si ≥ #val("algoplus_seuil").],
 )
 
-Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se trace et se réévalue ; la conduite est celle du protocole du service.
+Sous ces seuils, la douleur reste évaluée, tracée et prise en compte ; la conduite est celle du protocole du service.
 
 #piege[Choisir *une* échelle et la garder pour suivre l'évolution : un score d'EVA et un score d'EN ne se comparent pas d'une prise à l'autre. Tracer l'échelle utilisée avec le score.]
 
@@ -165,7 +165,7 @@ Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se tr
 )
 
 #formule[
-  Score = Y + V + M, de #val("glasgow_min") à #val("glasgow_max"). Noter le détail des trois items, pas seulement le total.
+  Score = Y + V + M, de #val("glasgow_min") à #val("glasgow_max"). Noter le détail des trois items, pas seulement le total. Réponse non testable (patient.e intubé.e, paupières œdématiées) : noter NT et la raison, ne pas coter 1.
 ]
 
 #exemple(titre: "Calcul du score")[
@@ -202,7 +202,7 @@ Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se tr
   - *S, situation* : qui j'appelle, pour quel.le patient.e, motif de l'appel, constantes.
   - *A, antécédents* : contexte, traitements, allergies, évolution récente.
   - *E, évaluation* : ce que j'en pense, ce qui m'inquiète.
-  - *D, demande* : ce que j'attends, dans quel délai ; puis reformuler la décision.
+  - *D, demande* : ce que j'attends, dans quel délai.
 ]
 
 #note-clinique(titre: "Traçabilité")[
@@ -227,24 +227,26 @@ Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se tr
   columns: (auto, 1fr),
   align: (left, left),
   [Mesure], [Repère],
-  [Mains], [Friction hydro-alcoolique : technique de référence, gants ou non.],
+  [Mains], [Friction hydro-alcoolique : technique de référence, gants ou non. Mains visiblement souillées : lavage à l'eau et au savon. _C. difficile_, gale : lavage au savon *puis* friction (friction seule inefficace).],
   [Gants], [Si risque de contact avec du sang, un liquide biologique, une muqueuse ou une peau lésée ; pas de gants pour un contact avec une peau saine.],
-  [Masque, lunettes], [Masque à usage médical (au minimum de type I, norme EN #code("masque_norme")) et lunettes si risque de projection ; masque pour le.la patient.e qui tousse.],
+  [Masque, lunettes], [Risque de projection : masque et lunettes, type de masque selon le protocole. Patient.e qui tousse : masque à usage médical, au minimum de type I (norme EN #code("masque_norme")).],
   [Matériel], [Matériel de sécurité et à usage unique ; conduite AES connue de tous.],
 )
 
 = Précautions complémentaires
 
+#formule(titre: "Respiratoires (SF2H 2024)")[
+  La SF2H a remplacé en 2024 la distinction Air / Gouttelettes par trois niveaux de précautions complémentaires respiratoires : simples, renforcées, maximales. Le niveau et le type de masque (soignant.e, patient.e) suivent le protocole de l'établissement et l'équipe d'hygiène.
+]
+
 #tableau(
   columns: (auto, 1fr),
   align: (left, left),
   [Type], [Mesures (en plus des précautions standard)],
-  [Air], [Chambre individuelle, porte fermée. Appareil de protection respiratoire FFP2 mis *avant* d'entrer, même chambre vide ; étanchéité vérifiée (fit check) à chaque port. Masque chirurgical pour le.la patient.e qui sort de sa chambre.],
-  [Gouttelettes], [Masque chirurgical pour le.la soignant.e dès l'entrée ; masque chirurgical pour le.la patient.e qui sort de sa chambre.],
-  [Contact], [Hygiène des mains renforcée ; protection de la tenue (tablier) pour les soins au contact du.de la patient.e ou de son environnement.],
+  [Contact], [Chambre seule ou regroupement, signalée. Tablier pour les soins directs. Hygiène des mains en sortant de la chambre.],
 )
 
-#piege[La signalétique sur la porte et le protocole du service indiquent le type de précautions : ne pas le déduire du diagnostic supposé.]
+#piege[Les précautions sont prescrites et signalées : suivre la signalétique et le protocole du service, ne pas déduire le niveau du diagnostic supposé.]
 
 = Accident d'exposition au sang (AES)
 
@@ -254,11 +256,11 @@ Ces seuils sont ceux de l'indicateur de qualité : toute douleur exprimée se tr
 ]
 
 #note-clinique(titre: "Délais")[
-  *Dans l'heure :* avis médical, selon la procédure AES de l'établissement, pour évaluer le risque infectieux ; un traitement post-exposition, s'il est indiqué, débute idéalement dans les #valu("aes_tpe_h").
+  *Sous #valu("aes_avis_h") :* avis médical, selon la procédure AES de l'établissement, pour évaluer le risque infectieux ; un traitement post-exposition, s'il est indiqué, débute idéalement dans les #valu("aes_tpe_h").\
   *Dans les #valu("aes_declaration_h") :* informer sa hiérarchie (en stage : le service et l'IFSI), déclarer l'accident du travail, suivre les recommandations médicales, informer le.la médecin du travail.
 ]
 
 #piege[Ne pas attendre la fin du soin ou du poste pour consulter : le délai compte à partir de l'accident.]
 
-_Sources : HAS (HTA de l'adulte, indicateur douleur IQSS, guide SAED), SF2H (précautions standard ; transmission par voie respiratoire), OMS (5 indications de l'hygiène des mains), INRS (affiche AES « En urgence : premiers soins à faire »), AP-HP (dossier de soins), CHUV (score de Glasgow), HUG (échelle de Braden), arrêtés relatifs au diplôme d'État d'infirmier ; détail dans les références du produit._
+_Sources : HAS (HTA, douleur IQSS, SAED), MedlinePlus (FC, PA basse), Manuel MSD et CHUV (Glasgow), SF2H (précautions standard, contact, respiratoires 2024), CPias Hauts-de-France, OMS (hygiène des mains), INRS (AES), AP-HP (dossier de soins), HUG (Braden), arrêtés du diplôme d'État d'infirmier ; détail dans les références du produit._
 ]
