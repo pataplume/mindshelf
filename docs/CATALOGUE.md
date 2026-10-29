@@ -11,7 +11,7 @@
 | EN03 | Chemistry Formula Sheet (College & Pre-Med) | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.99 | 1 | R01 | Validé par Tristan |
 | EN04 | SPI Ultrasound Physics — Express Review Sheets | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 9.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN05 | EKG Rhythms Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 4.99 | 1 | R06 | À faire |
-| EN06 | Anatomy & Physiology — Body Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | À faire |
+| EN06 | Anatomy & Physiology — Body Systems Sheets | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 8.99 | 1 | R04 | Produit, en attente de vérification |
 | EN07 | ABG Interpretation Cheat Sheet | FICHE | FORT | oui | AGENT | WHOP | 3.99 | 1 | R06 | À faire |
 | EN08 | Lab Values Cheat Sheet | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 3.99 | 1 | R03 | Vérifié, en attente de relecture et validation |
 | EN09 | Nursing Essentials Bundle (Dosage, EKG, ABG, Labs) (EN01 + EN05 + EN07 + EN08) | KIT | FORT | oui | AGENT | WHOP | 9.99 | 1 | R08 | À faire |
@@ -31,7 +31,7 @@
 | FR06 | Cahier calculs de doses — 100 exercices corrigés | GUIDE | FORT | oui | AGENT | WHOP | 9.90 | 2 | R15, R16, R17 | À faire |
 | FR07 | PASS/LAS Physique-Biophysique — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Validé par Tristan |
 | FR08 | PASS/LAS Chimie — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 4.90 | 1 | R02, R04 | Vérifié, en attente de relecture et validation |
-| FR09 | PASS/LAS Biostatistiques — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.90 | 1 | R04 | À faire |
+| FR09 | PASS/LAS Biostatistiques — fiche formules | FICHE | FAIBLE | non | AGENT | WHOP + ETSY | 3.90 | 1 | R04 | Produit, en attente de vérification |
 | FR10 | Physique-Biophysique PASS/LAS — guide complet | GUIDE | MOYEN | non | AGENT | WHOP + ETSY | 17.90 | 1 | R18, R19, R20 | À faire |
 
 ## Produits Whop existants

@@ -2,7 +2,7 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 157
+- Runs : 22 · tâches : 158
 - Durée estimée totale : 21 h 50 · restant : 16 h 40 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
@@ -17,7 +17,7 @@
 | 3 | Valider une fiche (ou demander des corrections) | FR08 | Fiche chimie PASS/LAS (VSEPR et RMN gardées : D09) | 2026-10-29 |
 | 4 | Déposer des fichiers sur Whop (l'envoi est bloqué depuis la session) | EN02 | Kit EN02-whop.zip : fichiers dans l'app Files « Physics Formula Sheet (PDF) », galerie ; puis dire « déposé » | 2026-10-29 |
 | 5 | Déposer des fichiers sur Whop (l'envoi est bloqué depuis la session) | EN03 | Kit EN03-whop.zip (version du 29.10 10:26) : app Files « Chemistry Cheat Sheet (PDF) », partagée avec le Pre-Med & Nursing Pack ; galerie ; puis dire « déposé » | 2026-10-29 |
-| 6 | Déposer des fichiers sur Whop (l'envoi est bloqué depuis la session) | FR07 | Kit FR07-whop.zip : ajouter une app Files au produit masqué prod_bVA9Q6H0Vxc3h, galerie ; puis dire « déposé » | 2026-10-29 |
+| 6 | Déposer des fichiers sur Whop (l'envoi est bloqué depuis la session) | FR07 | Kit FR07-whop.zip (version du 29.10 vers 11:20, après la correction FX11 graisse → foie) : ajouter une app Files au produit masqué prod_bVA9Q6H0Vxc3h, galerie ; puis dire « déposé » | 2026-10-29 |
 | 7 | Faire relire une fiche par la personne du domaine | EN01 | PDF EN01-STD-a4 + section « Ce que la relecture doit confirmer » de produits/EN01/donnees/statut-methode.md | 2026-10-29 |
 | 8 | Faire relire une fiche par la personne du domaine | FR01 | PDF FR01-2026-a4 + section « Ce que la relecture doit confirmer » de produits/FR01/donnees/statut-methode.md | 2026-10-29 |
 | 9 | Faire relire une fiche par la personne du domaine | EN08 | PDF EN08-STD-a4 + produits/EN08/donnees/statut-methode.md (dont la question ABIM ou intervalles enseignés en soins infirmiers) | 2026-10-29 |
@@ -28,6 +28,7 @@
 | 14 | Fournir une source non consultable depuis la session | FR07 | Facultatif : photo d'un manuel de terminale (relation de conjugaison, ΔU = W + Q) pour remplacer la source SchoolMouv | 2026-10-29 |
 | 15 | Changer un réglage de compte | — | Facultatif : autoriser le domaine de stockage de Whop dans les réglages de Claude, pour que la session dépose elle-même fichiers et galeries | 2026-10-29 |
 | 16 | Valider une fiche (ou demander des corrections) | — | Décision D10 (OpenStax) appliquée par défaut : confirmer ou changer | 2026-10-29 |
+| 17 | Valider une fiche (ou demander des corrections) | FR07 | Changement après validation : exemple échographie « graisse → muscle 1,4 % » devient « graisse → foie 1,1 % » (l'ancien reprenait un exemple d'OpenStax) ; confirmer | 2026-10-29 |
 
 ## Runs
 
@@ -123,16 +124,16 @@
 |---|---|---|---|---|---|---|
 | 35 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
 | 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | A | Squelette de la fiche (main.typ) et systèmes du lot A : tégumentaire, squelettique, musculaire, nerveux (avec sens spéciaux), endocrinien | Produit, en attente de vérification |
-| 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | B | Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur | En cours |
-| 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | En cours |
-| 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | À faire |
-| 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | À faire |
+| 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | B | Systèmes du lot B : cardiovasculaire, lymphatique et immunitaire, respiratoire, digestif, urinaire, reproducteur | Produit, en attente de vérification |
+| 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | Produit, en attente de vérification |
+| 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | Vérifié, en attente de relecture et validation |
+| 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | Vérifié, en attente de relecture et validation |
 | 152 | Production | Outils de conditionnement | — | — | Contrôle de source dans build.py : échouer si un « ; » suit directement un appel #fonction(...) dans le texte Typst (point-virgule avalé, trouvé dans EN03 et EN10) ; anki.py : marqueur générique pour toute table du produit (ex. plan.csv, examens.csv), constat EN08/EN10 | Vérifié, en attente de relecture et validation |
-| 157 | Production | Assemblage des kits et des guides | EN06 Anatomy & Physiology — Body Systems Sheets | — | Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD | À faire |
-| 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | — | Vérification indépendante | À faire |
-| 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | À faire |
-| 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — Body Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 42 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR09 PASS/LAS Biostatistiques — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
+| 157 | Production | Assemblage des kits et des guides | EN06 Anatomy & Physiology — Body Systems Sheets | — | Assembler les lots A et B (main.typ, tables, cartes, références, contenu) et fabriquer EN06-STD (fait par l'orchestrateur : fusion des tables -a/-b en tables canoniques) | Produit, en attente de vérification |
+| 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — Body Systems Sheets | — | Vérification indépendante | En cours |
+| 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | En cours |
+| 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — Body Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | En cours |
+| 42 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR09 PASS/LAS Biostatistiques — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 
 ### R05 — Fiches IFSI à faible risque
 
@@ -143,6 +144,7 @@
 | 43 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
 | 44 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Pack stage IFSI, variantes 2009 et 2026 | À faire |
 | 45 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — normes françaises | — | Bilan biologique, normes françaises, variantes 2009 et 2026 | À faire |
+| 158 | Production | Outils de conditionnement | — | — | anki.py : le marqueur {v:CLE} affiche « × 10⁰ » quand l'exposant vaut 0 (contourné dans EN04 et FR07) ; ne rien afficher pour un exposant nul ou vide | À faire |
 | 46 | Vérification | Vérification indépendante | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Vérification indépendante | À faire |
 | 47 | Vérification | Vérification indépendante | FR03 Bilan biologique — normes françaises | — | Vérification indépendante | À faire |
 | 48 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
