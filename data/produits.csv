@@ -12,8 +12,8 @@ EN10,EN,FICHE,TEAS 7 Science Review Sheets,TEAS 7 candidates,MOYEN,non,AGENT,6,9
 EN11,EN,GUIDE,SPI Ultrasound Physics — Complete Study Guide,Sonography students (ARDMS SPI),MOYEN,non,AGENT,80,24.99,,A_FAIRE
 EN12,EN,GUIDE,TEAS 7 Science — Complete Study Guide,TEAS 7 candidates,MOYEN,non,AGENT,80,19.99,,A_FAIRE
 FR01,FR,FICHE,Calculs de doses et débits — fiche méthode,Étudiant.e.s en IFSI,FORT,oui,AGENT,1,3.90,,A_VALIDER
-FR02,FR,FICHE,"Pack stage IFSI (constantes, échelles, transmissions, précautions)",Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,4,6.90,,A_VERIFIER
-FR03,FR,FICHE,Bilan biologique — valeurs usuelles françaises,Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,1,3.90,,A_VERIFIER
+FR02,FR,FICHE,"Pack stage IFSI (constantes, échelles, transmissions, précautions)",Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,4,6.90,,A_VALIDER
+FR03,FR,FICHE,Bilan biologique — valeurs usuelles françaises,Étudiant.e.s en IFSI,FAIBLE,oui,AGENT,1,3.90,,A_VALIDER
 FR04,FR,FICHE,Pharmacologie IFSI — 10 classes,Étudiant.e.s en IFSI,MOYEN,oui,AGENT,4,9.90,,A_FAIRE
 FR05,FR,KIT,"Kit IFSI (doses, stage, biologie, pharmacologie)",Étudiant.e.s en IFSI,FORT,oui,AGENT,12,19.90,,A_FAIRE
 FR06,FR,GUIDE,Cahier calculs de doses — 100 exercices corrigés,Étudiant.e.s en IFSI,FORT,oui,AGENT,80,9.90,,A_FAIRE

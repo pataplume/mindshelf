@@ -19,3 +19,5 @@ id,type_code,produit_code,relecteur_code,detail,statut_code,depuis
 18,VALIDATION,FR09,,Fiche biostatistiques PASS/LAS (OK avec réserves : 2 formules de base encore sourcées par OpenStax seul),A_FAIRE,2026-10-29
 19,RELECTURE,EN06,MEDECIN_STAGIAIRE,"PDF EN06-STD-a4 (6 pages) + produits/EN06/donnees/statut-methode.md (8 points, dont nœud sinusal et glandes sudoripares)",A_FAIRE,2026-10-29
 20,VALIDATION,FR03,,"Titre : « normes françaises » remplacé par « valeurs usuelles françaises » (chaque laboratoire fixe ses intervalles ; proposition du vérificateur), appliqué par défaut : confirmer ou changer ; l'annonce Etsy garde « normes » dans son titre et ses tags (mot cherché sur Etsy) : garder ou retirer",A_FAIRE,2026-10-29
+21,RELECTURE,FR02,INFIRMIERE_CH,"PDF FR02-2026-a4 (2 pages) + produits/FR02/donnees/statut-methode.md (points à confirmer, dont la conduite devant une valeur anormale, sans source)",A_FAIRE,2026-10-29
+22,RELECTURE,FR03,MEDECIN_STAGIAIRE,"PDF FR03-2026-a4 (1 page) + produits/FR03/donnees/statut-methode.md (dont INR au-dessus et au-dessous de la cible, kaliémie élevée et hémolyse, glycémie sans « à jeun »)",A_FAIRE,2026-10-29

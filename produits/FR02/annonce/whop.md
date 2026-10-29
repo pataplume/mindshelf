@@ -6,9 +6,9 @@ Sources des chiffres : pdfinfo (A4, Letter, N&B : 2 pages ; tablette : 3 pages e
 comptage du PDF FR02-2026-a4.pdf v2 (8 rubriques numérotées, 4 pièges, 4 notes cliniques, 1 exemple),
 donnees/contenu.csv (EVA, EN, EVS, Algoplus ; 3 items du Glasgow et NT ; 5 indications OMS ; Contact et niveaux respiratoires SF2H 2024),
 donnees/braden.csv et valeurs.csv (6 items de Braden, braden_items), sortie d'anki.py (17 cartes par variante).
-Aucune valeur de constante n'est citée : FR, SpO2 et température restent A-VERIFIER (statut-methode.md).
+Aucune valeur de constante n'est citée (FR et température alignées sur MedlinePlus en v2, SpO2 A-VERIFIER : statut-methode.md).
 Aucune promesse d'évaluation en UE B.3 : la ligne 2026 dit « notions mobilisées notamment dans l'UE B.3 ».
-À recompter après la relecture : le point 4 de statut-methode.md (consignes sans source, à valider ou retirer) touche
+À recompter après la relecture : le point 10 de statut-methode.md (consignes sans source, à valider ou retirer) touche
 3 des 4 pièges et 2 des 4 notes cliniques ; mettre à jour « 4 pièges et 4 notes cliniques » ici et dans l'annonce Etsy.
 -->
 

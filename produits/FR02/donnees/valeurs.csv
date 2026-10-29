@@ -29,11 +29,11 @@ aes_tpe_h,4,h,AES : traitement post-exposition idéalement dans les 4 heures
 aes_declaration_h,24,h,AES : déclaration et information dans les 24 heures
 fc_bas,60,/min,FC de repos de l'adulte : borne basse (MedlinePlus)
 fc_haut,100,/min,FC de repos de l'adulte : borne haute (MedlinePlus)
-fr_bas,12,/min,FR de repos de l'adulte : borne basse (A-VERIFIER)
-fr_haut,20,/min,FR de repos de l'adulte : borne haute (A-VERIFIER)
+fr_bas,12,/min,FR de repos de l'adulte : borne basse (MedlinePlus)
+fr_haut,18,/min,FR de repos de l'adulte : borne haute (MedlinePlus)
 spo2_bas,95,%,SpO2 en air ambiant : repère bas (A-VERIFIER)
-t_bas,36.5,°C,Température : borne basse (A-VERIFIER)
-t_haut,37.5,°C,Température : borne haute (A-VERIFIER)
+t_bas,36.5,°C,Température : borne basse (MedlinePlus)
+t_haut,37.3,°C,Température : borne haute (MedlinePlus)
 echelle_zero,0,,"Origine des échelles de douleur (EVA, EN, EVS, Algoplus)"
 javel_num,1,,AES : numérateur de la dilution au 1/5e
 glasgow_item_min,1,,Glasgow : cotation minimale de chaque item

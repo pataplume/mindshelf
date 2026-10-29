@@ -129,7 +129,7 @@ _Repères de l'adulte. Les valeurs, seuils et conduites du protocole de votre se
 )
 
 #note-clinique(titre: "Valeur anormale : consigne de prudence")[
-  Valeur grave ou patient.e qui va mal : *alerter immédiatement* selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.
+  Valeur très anormale ou patient.e qui va mal : *alerter immédiatement* selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.
 ]
 
 #piege[Un chiffre « normal » ne rassure pas seul : la tendance (valeurs successives) et l'aspect du.de la patient.e comptent autant. Une cible prescrite pour ce.tte patient.e (SpO₂ notamment) passe avant le repère du tableau.]

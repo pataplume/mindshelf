@@ -1,7 +1,7 @@
 recto,verso,tags
 Seuil d'HTA en consultation (HAS),"PA ≥ {v:pa_hta_pas}/{v:pa_hta_pad} mmHg, persistante dans le temps",FR02 constantes
 Seuil d'HTA en automesure ou MAPA diurne (HAS),"PAS ≥ {v:pa_amt_pas} ou PAD ≥ {v:pa_amt_pad} mmHg",FR02 constantes
-Valeur anormale : consigne de prudence,"Valeur grave ou patient.e qui va mal : alerter immédiatement selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.",FR02 constantes
+Valeur anormale : consigne de prudence,"Valeur très anormale ou patient.e qui va mal : alerter immédiatement selon le protocole, puis recontrôler. Valeur anormale isolée chez un.e patient.e stable : recontrôler (matériel, position, repos) et comparer aux valeurs précédentes avant de signaler. En cas de doute, alerter.",FR02 constantes
 EVA et EN : bornes et seuil de prise en charge (indicateur HAS),"EVA {v:echelle_zero} à {v:eva_max_cm} cm ({v:echelle_zero} à {v:eva_max_mm} mm) ; EN {v:echelle_zero} à {v:en_max} ; prise en charge requise si ≥ {v:douleur_seuil}/{v:en_max} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
 EVS : niveaux et seuil,"{v:echelle_zero} absente à {v:evs_max} extrêmement intense ; prise en charge requise si ≥ {v:evs_seuil} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
 Algoplus : pour qui et seuil,"Hétéro-évaluation de la personne âgée qui ne peut pas s'auto-évaluer ; score {v:echelle_zero} à {v:algoplus_max}, prise en charge requise si ≥ {v:algoplus_seuil} ; sous le seuil, la douleur reste évaluée, tracée et prise en compte",FR02 douleur
