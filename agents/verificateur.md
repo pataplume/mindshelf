@@ -15,3 +15,5 @@ Tu n'as pas participé à la production. Pars du principe que le produit contien
 `produits/<CODE>/verif/rapport-v<N>.md` : verdict (`OK`, `OK avec réserves`, `À corriger`), puis un tableau des constats (gravité, emplacement, constat, correction proposée), puis le script de recalcul.
 
 Tu ne corriges pas toi-même le contenu.
+
+Copies de travail (copie du dépôt, rendus) : dans un sous-dossier à ton nom du scratchpad, jamais à sa racine ni dans un dossier partagé.

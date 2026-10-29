@@ -20,3 +20,4 @@ id,variante_code,version,etape_code,acteur,statut_code,date,rapport
 19,EN04-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/EN04/verif/rapport-v2.md
 20,EN08-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/EN08/verif/rapport-v2.md
 21,EN10-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/EN10/verif/rapport-v2.md
+22,EN06-STD,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/EN06/verif/rapport-v1.md
