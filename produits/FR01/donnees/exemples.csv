@@ -1,0 +1,20 @@
+id,enonce,entrees_json,formule,resultat_attendu,unite,tolerance,arrondi
+EX01,"Produit en croix (Produit A, valeurs d'exercice, pas des recommandations posologiques) : ampoule de Q = 2 mL contenant H = 64 mg ; prescription D = 28 mg ; volume V = D × Q / H, prélevé à la seringue de 1 mL graduée au 0,01 mL","{""D"": 28, ""H"": 64, ""Q"": 2}",D * Q / H,0.875,mL,0,2
+EX02A,"Conversion : G = 0.075 g ; K = 1000 mg par g ; masse en mg = G × K","{""G"": 0.075, ""K"": 1000}",G * K,75,mg,0.000001,0
+EX02B,"Conversion : M = 0.4 mg ; K = 1000 µg par mg ; masse en µg = M × K","{""M"": 0.4, ""K"": 1000}",M * K,400,µg,0.000001,0
+EX03A,"Pourcentage (Produit C, valeurs d'exercice) : P = 1.2 % (m/V), soit 1,2 g pour C = 100 mL ; K = 1000 mg par g ; concentration = P × K / C","{""P"": 1.2, ""K"": 1000, ""C"": 100}",P * K / C,12,mg/mL,0.000001,0
+EX03B,"Volume à prélever (Produit C) : prescription O = 30 mg ; concentration N = 12 mg/mL (EX03A) ; volume = O / N, seringue graduée au 0,1 mL","{""O"": 30, ""N"": 12}",O / N,2.5,mL,0.000001,1
+EX04A,"Reconstitution (Produit E, valeurs d'exercice) : flacon de G = 1.4 g de poudre ; ajouter A = 6.2 mL de solvant pour obtenir F = 7 mL (volume final indiqué par la notice fictive) ; K = 1000 mg par g ; concentration = G × K / F","{""G"": 1.4, ""K"": 1000, ""A"": 6.2, ""F"": 7}",G * K / F,200,mg/mL,0.000001,0
+EX04B,"Volume à prélever après reconstitution (Produit E) : prescription O = 320 mg ; concentration N = 200 mg/mL (EX04A) ; volume = O / N, seringue graduée au 0,1 mL","{""O"": 320, ""N"": 200}",O / N,1.6,mL,0.000001,1
+EX05A,"Dose au poids (Produit B, fourchette fictive, valeurs d'exercice) : borne basse L = 36 mg/kg/j ; poids pesé W = 20 kg ; dose minimale par jour = L × W","{""L"": 36, ""W"": 20}",L * W,720,mg/j,0,0
+EX05B,"Dose au poids (Produit B) : borne haute U = 48 mg/kg/j ; poids W = 20 kg ; dose maximale par jour = U × W","{""U"": 48, ""W"": 20}",U * W,960,mg/j,0,0
+EX05C,"Dose au poids (Produit B) : prescription O = 210 mg toutes les I = 6 h ; J = 24 h par jour ; dose prescrite par jour = O × J / I","{""O"": 210, ""J"": 24, ""I"": 6}",O * J / I,840,mg/j,0,0
+EX06A,"Pompe volumétrique : V = 750 mL en T = 6 h ; débit = V / T, réglé au 0,1 mL/h","{""V"": 750, ""T"": 6}",V / T,125,mL/h,0,1
+EX06B,"Perfusion par gravité, même prescription : V = 750 mL en T = 6 h ; perfuseur standard DF = 20 gouttes/mL ; M = 60 min/h ; débit = V × DF / (T × M), compté en gouttes entières","{""V"": 750, ""DF"": 20, ""T"": 6, ""M"": 60}",V * DF / (T * M),41.6666666667,gouttes/min,0.000001,0
+EX07,"Perfuseur pédiatrique (microperfuseur) : V = 250 mL en T = 10 h ; DF = 60 gouttes/mL ; M = 60 min/h ; débit = V × DF / (T × M)","{""V"": 250, ""DF"": 60, ""T"": 10, ""M"": 60}",V * DF / (T * M),25,gouttes/min,0,0
+EX08A,"Durée de perfusion : V = 500 mL à R = 80 mL/h ; durée = V / R (heures décimales)","{""V"": 500, ""R"": 80}",V / R,6.25,h,0,2
+EX08B,"Heure de fin : début S = 14 (14 h 00, horloge de 24 h) ; V = 500 mL à R = 80 mL/h ; fin = S + V / R (heures décimales, affichées en heure d'horloge)","{""S"": 14, ""V"": 500, ""R"": 80}",S + V / R,20.25,h,0,2
+EX09A,"Pousse-seringue électrique, dilution (Produit D, valeurs d'exercice) : Q = 135 mg complétés à V = 45 mL dans une seringue de 50 mL ; concentration = Q / V","{""Q"": 135, ""V"": 45}",Q / V,3,mg/mL,0.000001,0
+EX09B,"Débit du PSE (Produit D) : prescription P = 5.6 mg/h ; concentration N = 3 mg/mL (EX09A, non arrondie) ; débit = P / N, réglé au 0,1 mL/h","{""P"": 5.6, ""N"": 3}",P / N,1.8666666667,mL/h,0.000001,1
+EX10A,"Concentration en µg/mL (Produit F, valeurs d'exercice) : D = 55 mg dans V = 50 mL ; K = 1000 µg par mg ; concentration = D × K / V","{""D"": 55, ""K"": 1000, ""V"": 50}",D * K / V,1100,µg/mL,0.000001,0
+EX10B,"Débit en µg/kg/min (Produit F) : prescription O = 4.5 µg/kg/min ; poids tel que pesé W = 76.4 kg (non arrondi) ; M = 60 min/h ; concentration N = 1100 µg/mL (EX10A) ; débit = O × W × M / N, réglé au 0,1 mL/h","{""O"": 4.5, ""W"": 76.4, ""M"": 60, ""N"": 1100}",O * W * M / N,18.7527272727,mL/h,0.000001,1

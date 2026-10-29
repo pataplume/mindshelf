@@ -1,0 +1,29 @@
+recto,verso,tags
+"Concentration molaire, concentration massique : définitions et lien","C = n / V<sub>solution</sub> (mol/L) ; C<sub>m</sub> = m / V (g/L) ; C<sub>m</sub> = C × M.",FR08 concentrations
+Équation de dilution,"C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> : la quantité de matière de soluté se conserve.",FR08 concentrations
+Les quatre nombres quantiques et leurs valeurs permises,"n ≥ 1 ; ℓ de 0 à n − 1 ; m<sub>ℓ</sub> de −ℓ à +ℓ ; m<sub>s</sub> = ±1/2.",FR08 atomistique
+Énergie d'un niveau dans le modèle de Bohr (hydrogénoïde),"E<sub>n</sub> = −13,6 Z²/n² eV.",FR08 atomistique
+"Principe de Pauli, règle de Hund","Pauli : deux électrons d'un atome n'ont jamais les 4 mêmes nombres quantiques. Hund : maximum d'électrons célibataires dans des orbitales de même énergie.",FR08 atomistique
+Ordre de remplissage des sous-couches (Klechkowski) jusqu'à 5p,"1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p. Exceptions classiques : Cr et Cu.",FR08 atomistique
+Évolution dans une période (de gauche à droite),"Rayon atomique ↓ ; énergie d'ionisation ↑ ; électronégativité ↑. Dans une colonne vers le bas : l'inverse.",FR08 atomistique
+Formule de la charge formelle,"CF = V − N<sub>l</sub> − B/2 (électrons de valence − électrons non liants − moitié des électrons liants).",FR08 liaisons
+"VSEPR : AX<sub>2</sub>E<sub>2</sub>","Coudée, ≈ 104,5° (H<sub>2</sub>O), sp<sup>3</sup>.",FR08 liaisons vsepr
+"VSEPR : AX<sub>3</sub>E","Pyramidale, ≈ 107° (NH<sub>3</sub>), sp<sup>3</sup>.",FR08 liaisons vsepr
+Composition en liaisons σ et π d'une double et d'une triple liaison,"Double : 1 σ + 1 π. Triple : 1 σ + 2 π.",FR08 liaisons
+"Δ<sub>r</sub>H &gt; 0 et Δ<sub>r</sub>S &gt; 0 : quand la réaction est-elle spontanée ?","À haute température (Δ<sub>r</sub>G = Δ<sub>r</sub>H − TΔ<sub>r</sub>S devient négatif).",FR08 thermodynamique
+"Liens entre Δ<sub>r</sub>G°, K et E°","Δ<sub>r</sub>G° = −RT ln K = −nFE°.",FR08 thermodynamique
+Temps de demi-réaction pour les ordres 0 ; 1 ; 2,"Ordre 0 : [A]<sub>0</sub>/2k ; ordre 1 : ln 2/k (indépendant de [A]<sub>0</sub>) ; ordre 2 : 1/(k[A]<sub>0</sub>).",FR08 cinetique
+Loi d'Arrhenius à deux températures,"ln(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/R)(1/T<sub>1</sub> − 1/T<sub>2</sub>).",FR08 cinetique
+Que change un catalyseur ?,"Il abaisse E<sub>a</sub> et accélère les deux sens ; il ne change ni K ni Δ<sub>r</sub>G°.",FR08 cinetique
+pH d'un acide faible peu dissocié,"pH = ½(pK<sub>a</sub> − log C), valable si pH &lt; pK<sub>a</sub> − 1.",FR08 acides-bases
+Équation de Henderson–Hasselbalch,"pH = pK<sub>a</sub> + log([A<sup>−</sup>]/[AH]) ; tampon efficace dans pK<sub>a</sub> ± 1 ; pH = pK<sub>a</sub> à la demi-équivalence.",FR08 acides-bases
+Équation du tampon bicarbonate,"pH = 6,1 + log([HCO<sub>3</sub><sup>−</sup>] / (0,03 × PaCO<sub>2</sub>)) ; pH du sang 7,35–7,45.",FR08 acides-bases sante
+Équation de Nernst d'un couple Ox/Red à 25 °C,"E = E° + (0,059/n) log([Ox]<sup>α</sup>/[Red]<sup>β</sup>).",FR08 redox
+Nombres d'oxydation usuels de O et H,"O : −II (sauf peroxydes) ; H : +I (sauf hydrures) ; corps simple : 0 ; somme des n.o. = charge de l'espèce.",FR08 redox
+Ordre de priorité des fonctions (nomenclature),"Acide carboxylique &gt; ester &gt; amide &gt; nitrile &gt; aldéhyde &gt; cétone &gt; alcool &gt; amine.",FR08 organique nomenclature
+Attribuer R ou S à un centre stéréogène,"Classer par règles CIP, n° 4 vers l'arrière, parcourir 1 → 2 → 3 : sens horaire R, antihoraire S.",FR08 organique stereochimie
+Nombre maximal de stéréoisomères pour n centres stéréogènes,"2<sup>n</sup> (moins s'il existe un composé méso).",FR08 organique stereochimie
+"SN1 et SN2 : stéréochimie et solvant","SN1 : racémisation, solvant polaire protique. SN2 : inversion de Walden, solvant polaire aprotique.",FR08 organique reactions
+Règle de Zaïtsev,"Lors d'une élimination, l'alcène le plus substitué est majoritaire.",FR08 organique reactions
+Bande IR de C=O,"1670–1780 cm<sup>−1</sup>, intense et fine.",FR08 spectroscopie
+Règle des n + 1 en RMN ¹H,"n H voisins équivalents donnent n + 1 pics ; l'intégration est proportionnelle au nombre de H.",FR08 spectroscopie

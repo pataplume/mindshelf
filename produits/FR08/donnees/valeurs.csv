@@ -1,0 +1,19 @@
+id,valeur,valeur_max,exposant,unite,condition,jeu,description
+NA,6.022,,23,mol⁻¹,,CODATA 2022,Constante d'Avogadro (6.02214076 × 10^23 exacte ; affichée à 4 chiffres)
+R_J,8.314,,,J·mol⁻¹·K⁻¹,,CODATA 2022,Constante molaire des gaz (8.314462618 ; affichée à 4 chiffres)
+F,96485,,,C/mol,,CODATA 2022,Constante de Faraday (96485.33212 ; affichée à l'unité)
+H,6.626,,-34,J·s,,CODATA 2022,Constante de Planck (6.62607015 × 10^−34 exacte)
+C,3.00,,8,m/s,,CODATA 2022,Vitesse de la lumière (299792458 m/s exacte ; arrondie à 3 chiffres)
+HC_EVNM,1240,,,eV·nm,,CODATA 2022,"hc/e = 1239.84198 eV·nm (calcul depuis h, c et e exacts ; arrondi)"
+ER,13.6,,,eV,,CODATA 2022,Énergie de Rydberg R∞hc = 13.605693122990 eV (arrondie)
+T0,273.15,,,K,0 °C,,0 °C en kelvins
+KE,1.0,,-14,,25 °C,,Produit ionique de l'eau Ke à 25 °C
+PKE,14,,,,25 °C,,pKe = −log Ke à 25 °C
+PH_NEUTRE,7,,,,25 °C,,pH neutre à 25 °C (pKe / 2)
+TAMPON_ECART,1,,,,,,Zone tampon efficace : pKa ± 1 (rapport [A−]/[HA] de 0.1 à 10)
+LN2,0.693,,,,,,ln 2 (0.693147…) : t1/2 = ln 2 / k
+LN10,2.303,,,,,,ln 10 (2.302585…) pour passer de ln à log10
+NERNST25,0.059,,,V,25 °C,CODATA 2022,RT ln10 / F à 298.15 K (0.059159 V ; arrondi à 3 décimales)
+BICARB_PKA,6.1,,,,37 °C,,pKa apparent du système CO2/HCO3− à 37 °C
+CO2_SOL,0.03,,,mmol·L⁻¹·mmHg⁻¹,,,Solubilité du CO2 dans le plasma
+PH_SANG,7.35,7.45,,,,,pH du milieu intérieur en l'absence de pathologie (moyenne 7.40)

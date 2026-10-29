@@ -1,0 +1,13 @@
+methode,groupe,min,max,remarque
+IR,O–H (alcool),3400,3650,large
+IR,O–H (acide carboxylique),2500,3100,large
+IR,N–H,3300,3500,1 ou 2 bandes
+IR,C≡N / C≡C,2100,2260,
+IR,C=O,1670,1780,intense et fine
+RMN,C–H alkyle,0.7,1.8,
+RMN,CH₃–C=O,2.0,2.4,méthylcétone
+RMN,H–C–O,3.3,4.5,"alcool, éther"
+RMN,=C–H vinylique,4.5,6.5,
+RMN,Ar–H aromatique,6.5,8.0,
+RMN,CHO aldéhyde,9.7,10.0,
+RMN,COOH acide,11.0,12.0,large

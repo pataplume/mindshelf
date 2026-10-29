@@ -1,0 +1,9 @@
+type,forme,angle,angle2,qualificatif,hybridation,exemple
+AX₂,linéaire,180,,,sp,CO₂
+AX₃,triangulaire plane,120,,,sp²,BF₃
+AX₂E,coudée,120,,<,sp²,SO₂
+AX₄,tétraédrique,109.5,,,sp³,CH₄
+AX₃E,pyramidale,107,,≈,sp³,NH₃
+AX₂E₂,coudée,104.5,,≈,sp³,H₂O
+AX₅,bipyramide trigonale,90,120,,sp³d,PCl₅
+AX₆,octaédrique,90,,,sp³d²,SF₆
