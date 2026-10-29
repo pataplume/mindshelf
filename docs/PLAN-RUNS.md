@@ -2,7 +2,7 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 168
+- Runs : 22 · tâches : 171
 - Durée estimée totale : 21 h 50 · restant : 15 h 35 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
@@ -31,7 +31,7 @@
 | 17 | Valider une fiche (ou demander des corrections) | FR07 | Changement après validation : exemple échographie « graisse → muscle 1,4 % » devient « graisse → foie 1,1 % » (l'ancien reprenait un exemple d'OpenStax) ; confirmer | 2026-10-29 |
 | 18 | Valider une fiche (ou demander des corrections) | FR09 | Fiche biostatistiques PASS/LAS (OK avec réserves : 2 formules de base encore sourcées par OpenStax seul) | 2026-10-29 |
 | 19 | Faire relire une fiche par la personne du domaine | EN06 | PDF EN06-STD-a4 (6 pages) + produits/EN06/donnees/statut-methode.md (8 points, dont nœud sinusal et glandes sudoripares) | 2026-10-29 |
-| 20 | Valider une fiche (ou demander des corrections) | FR03 | Titre : « normes françaises » remplacé par « valeurs usuelles françaises » (chaque laboratoire fixe ses intervalles ; proposition du vérificateur), appliqué par défaut : confirmer ou changer | 2026-10-29 |
+| 20 | Valider une fiche (ou demander des corrections) | FR03 | Titre : « normes françaises » remplacé par « valeurs usuelles françaises » (chaque laboratoire fixe ses intervalles ; proposition du vérificateur), appliqué par défaut : confirmer ou changer ; l'annonce Etsy garde « normes » dans son titre et ses tags (mot cherché sur Etsy) : garder ou retirer | 2026-10-29 |
 
 ## Runs
 
@@ -155,10 +155,13 @@
 | 163 | Production | Rédaction et mise en page d'un produit | — | — | Si D10 est confirmée : resourcer hors OpenStax les valeurs des fiches déjà produites qui ne reposent que sur OpenStax (EN02, EN03, EN10, FR07, FR08 ; FR09 : σ² de population, Z = (X − μ)/σ), une ligne par valeur, sans changer le fond | Bloqué (décision ou entrée manquante) |
 | 164 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — Body Systems Sheets | CORR_R04 | Mineurs du rapport-v2 EN06 : phrase œstrogène/LH (puberté), code SEER_MELANOMA ; puis décisions de la relectrice | Vérifié, en attente de relecture et validation |
 | 165 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | CORR_R04 | Mineurs du rapport-v2 FR09 : source qui écrit l'IC avec p̂, contrôle des 7 décomptes de contenu.csv, césure « co-horte » | Vérifié, en attente de relecture et validation |
-| 166 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — valeurs usuelles françaises | CORR1 | Correction v2 : INR au-dessus et au-dessous de la cible (B1), kaliémie « élevée » relative au compte rendu, année de la source affichée, références, contenu.csv, mineurs ; puis éléments de vente | Produit, en attente de vérification |
-| 167 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | CORR1 | Correction v2 : alerter d'abord devant une valeur grave (B1), précautions respiratoires SF2H 2024 (B2), UE B.3 sans promesse d'évaluation, Glasgow sourcé avec NT, constantes, douleur sous 4, masque IIR, exceptions FHA, sources, mineurs ; puis éléments de vente | En cours |
+| 166 | Production | Rédaction et mise en page d'un produit | FR03 Bilan biologique — valeurs usuelles françaises | CORR1 | Correction v2 : INR au-dessus et au-dessous de la cible (B1), kaliémie « élevée » relative au compte rendu, année de la source affichée, références, contenu.csv, mineurs ; puis éléments de vente | Validé par Tristan |
+| 167 | Production | Rédaction et mise en page d'un produit | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | CORR1 | Correction v2 : alerter d'abord devant une valeur grave (B1), précautions respiratoires SF2H 2024 (B2), UE B.3 sans promesse d'évaluation, Glasgow sourcé avec NT, constantes, douleur sous 4, masque IIR, exceptions FHA, sources, mineurs ; puis éléments de vente | Produit, en attente de vérification |
+| 169 | Production | Orchestrateur (session principale de Claude) | FR03 Bilan biologique — valeurs usuelles françaises | CORR2 | Après contre-vérification v2 : seuil d'hyperkaliémie retiré (sources divergentes, N1), « version du », CNG diffuseur et non auteur, apostrophes des rectos, en-tête du Typst exact ; fiche et éléments de vente refabriqués | Vérifié, en attente de relecture et validation |
 | 46 | Vérification | Vérification indépendante | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Vérification indépendante | Vérification : corrections bloquantes |
 | 47 | Vérification | Vérification indépendante | FR03 Bilan biologique — valeurs usuelles françaises | — | Vérification indépendante | Vérification : corrections bloquantes |
+| 170 | Vérification | Vérification indépendante | FR03 Bilan biologique — valeurs usuelles françaises | CORR1 | Contre-vérification des corrections v2 : 1 majeur (seuil d'hyperkaliémie, sources divergentes), mineurs ; corrigés par l'orchestrateur (CORR2) | Vérifié, en attente de relecture et validation |
+| 171 | Vérification | Vérification indépendante | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | CORR1 | Contre-vérification des corrections v2 | En cours |
 | 48 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR02 Pack stage IFSI (constantes, échelles, transmissions, précautions) | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 | 49 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR03 Bilan biologique — valeurs usuelles françaises | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 

@@ -24,7 +24,7 @@
 | Code | Produit | Type | Risque IA | Relecture métier | Méthode | Canaux | Prix | Variantes | Runs | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
 | FR01 | Calculs de doses et débits — fiche méthode | FICHE | FORT | oui | AGENT | WHOP | 3.90 | 2 | R02 | Vérifié, en attente de relecture et validation |
-| FR02 | Pack stage IFSI (constantes, échelles, transmissions, précautions) | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 6.90 | 2 | R05 | Vérification : corrections bloquantes |
+| FR02 | Pack stage IFSI (constantes, échelles, transmissions, précautions) | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 6.90 | 2 | R05 | Produit, en attente de vérification |
 | FR03 | Bilan biologique — valeurs usuelles françaises | FICHE | FAIBLE | oui | AGENT | WHOP + ETSY | 3.90 | 2 | R05 | Produit, en attente de vérification |
 | FR04 | Pharmacologie IFSI — 10 classes | FICHE | MOYEN | oui | AGENT | WHOP + ETSY | 9.90 | 2 | R07 | À faire |
 | FR05 | Kit IFSI (doses, stage, biologie, pharmacologie) (FR01 + FR02 + FR03 + FR04) | KIT | FORT | oui | AGENT | WHOP | 19.90 | 2 | R08 | À faire |
