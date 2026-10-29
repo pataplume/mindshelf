@@ -2,11 +2,11 @@
 
 # Plan des runs
 
-- Runs : 22 · tâches : 139
-- Durée estimée totale : 21 h 50 · restant : 19 h 55 (hors validation par Tristan)
+- Runs : 22 · tâches : 147
+- Durée estimée totale : 21 h 50 · restant : 18 h 50 (hors validation par Tristan)
 - Validation estimée : 10 min par variante produite
 
-**Lançables maintenant :** R02, R03, R04, R05, R06, R07
+**Lançables maintenant :** R03, R04, R05, R06, R07, R15, R18
 
 ## Décisions ouvertes
 
@@ -14,6 +14,7 @@
 |---|---|---|---|
 | D02 | Boutique Etsy pour le marché FR | 2e boutique (2e frais d'ouverture) / annonces FR dans la boutique MindShelf | R21 |
 | D06 | Produits Whop hors plan (Pre-Med pack, Betting, Futures) | Garder tels quels / passer à la charte / retirer | — |
+| D09 | FR08 : tableaux VSEPR et RMN ¹H absents des programmes PASS cités (Montpellier, Rennes, Bordeaux) | Garder les deux, couverts par la réserve du sous-titre / garder la VSEPR et retirer la RMN / chercher un programme actuel qui les nomme | — |
 
 ## Runs
 
@@ -54,20 +55,25 @@
 
 ### R02 — Adaptations FR des fiches existantes
 
-≈ 1 h 05 · statut : À faire · dépend de : R01 · décisions requises : D01, D04
+≈ 1 h 05 · statut : Vérifié, en attente de relecture et validation · dépend de : R01 · décisions requises : D01, D04
 
 | # | Phase | Rôle | Produit | Lot | Tâche | Statut |
 |---|---|---|---|---|---|---|
-| 15 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | À faire |
-| 16 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises | À faire |
-| 17 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | — | Adapter EN03 au tronc commun PASS/LAS (chimie) | À faire |
-| 18 | Production | Rédaction et mise en page d'un produit | FR01 Calculs de doses et débits — fiche méthode | — | Fiche méthode calculs de doses et débits, variantes 2009 et 2026 | À faire |
-| 19 | Vérification | Vérification indépendante | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Vérification indépendante | À faire |
-| 20 | Vérification | Vérification indépendante | FR08 PASS/LAS Chimie — fiche formules | — | Vérification indépendante | À faire |
-| 21 | Vérification | Vérification indépendante | FR01 Calculs de doses et débits — fiche méthode | — | Vérification indépendante | À faire |
-| 22 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 23 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR08 PASS/LAS Chimie — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
-| 24 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR01 Calculs de doses et débits — fiche méthode | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |
+| 15 | Préparation | Orchestrateur (session principale de Claude) | — | — | Publier sur Whop les variantes VALIDE, vérifier dépendances et décisions bloquantes | Vérifié, en attente de relecture et validation |
+| 16 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Adapter EN02 au tronc commun PASS/LAS (physique-biophysique), conventions françaises | Vérifié, en attente de relecture et validation |
+| 17 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | — | Adapter EN03 au tronc commun PASS/LAS (chimie) | Vérifié, en attente de relecture et validation |
+| 18 | Production | Rédaction et mise en page d'un produit | FR01 Calculs de doses et débits — fiche méthode | — | Fiche méthode calculs de doses et débits, variantes 2009 et 2026 | Vérifié, en attente de relecture et validation |
+| 140 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR1 | Correction v2 : sous-titre trop affirmatif et programmes récents (M1), note fluoxétine trop proche d'OpenStax (licence NC), doublons de constantes, mineurs ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 141 | Production | Rédaction et mise en page d'un produit | FR01 Calculs de doses et débits — fiche méthode | CORR1 | Correction v2 : statut des contrôles (valeurs B et F non vérifiées), échos cliniques nommés, UE 2026 sourcées (art. 23, CFVU UBE), mineurs ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 142 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR1 | Correction v2 : double signe moins (charte corrigée), sous-titre, licences OpenStax, références qui n'écrivent pas la formule, exemples FX20/FX21, symboles réutilisés, constats du conditionneur ; puis éléments de vente | Vérifié, en attente de relecture et validation |
+| 19 | Vérification | Vérification indépendante | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 20 | Vérification | Vérification indépendante | FR08 PASS/LAS Chimie — fiche formules | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 21 | Vérification | Vérification indépendante | FR01 Calculs de doses et débits — fiche méthode | — | Vérification indépendante | Vérifié, en attente de relecture et validation |
+| 143 | Vérification | Vérification indépendante | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 144 | Vérification | Vérification indépendante | FR08 PASS/LAS Chimie — fiche formules | CORR1 | Contre-vérification des corrections v2 | Vérifié, en attente de relecture et validation |
+| 22 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR07 PASS/LAS Physique-Biophysique — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 23 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR08 PASS/LAS Chimie — fiche formules | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
+| 24 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | FR01 Calculs de doses et débits — fiche méthode | — | Aperçus, vidéo, Anki, annonces, script iPhone | Vérifié, en attente de relecture et validation |
 
 ### R03 — Nouvelles fiches EN (SPI, labs, TEAS)
 
@@ -79,7 +85,8 @@
 | 26 | Production | Rédaction et mise en page d'un produit | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Fiches express physique de l'échographie (SPI) | À faire |
 | 27 | Production | Rédaction et mise en page d'un produit | EN08 Lab Values Cheat Sheet | — | Fiche valeurs de laboratoire (unités US et SI) | À faire |
 | 28 | Production | Rédaction et mise en page d'un produit | EN10 TEAS 7 Science Review Sheets | — | Fiches TEAS 7 Science | À faire |
-| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md ; charte : nombre() doit accepter le signe moins U+2212 produit par str() (contourné localement dans EN03) | À faire |
+| 132 | Production | Outils de conditionnement | — | — | Corrections reportées de R00 : M2 (style en dur de la vignette), M3/M4 (fiche test : arrondi, référence de la note clinique), 10 mineurs — voir runs/journal/R00-verification.md  (la correction de nombre() pour le signe moins U+2212 est faite en R02) | À faire |
+| 145 | Production | Outils de conditionnement | — | — | Outillage issu de R02 : contrôle du double signe moins dans controle_pdf.py ; nombres de cartes.csv générés depuis les tables ; champ de table numérique pour le mode d'arrondi des gouttes (N9 EN01, m5 FR01) | À faire |
 | 29 | Vérification | Vérification indépendante | EN04 SPI Ultrasound Physics — Express Review Sheets | — | Vérification indépendante | À faire |
 | 30 | Vérification | Vérification indépendante | EN08 Lab Values Cheat Sheet | — | Vérification indépendante | À faire |
 | 31 | Vérification | Vérification indépendante | EN10 TEAS 7 Science Review Sheets | — | Vérification indépendante | À faire |
@@ -97,6 +104,8 @@
 | 36 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — 10 Systems Sheets | A | Systèmes 1 à 5 | À faire |
 | 37 | Production | Rédaction et mise en page d'un produit | EN06 Anatomy & Physiology — 10 Systems Sheets | B | Systèmes 6 à 10 | À faire |
 | 38 | Production | Rédaction et mise en page d'un produit | FR09 PASS/LAS Biostatistiques — fiche formules | — | Fiche formules biostatistiques PASS/LAS | À faire |
+| 146 | Production | Rédaction et mise en page d'un produit | FR07 PASS/LAS Physique-Biophysique — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR07 : exemple FX11 repris d'OpenStax (changer d'interface), fiches d'UE datées de l'année en cours, source de P_THETA37, localisations CIPR 103 / Costanzo / McRobbie, art. L1333-2 CSP | À faire |
+| 147 | Production | Rédaction et mise en page d'un produit | FR08 PASS/LAS Chimie — fiche formules | CORR_R02 | Mineurs du rapport-v2 FR08 : pages Rennes, sous-titre et réserve dans une table, unité de ΔrS°, césure, source consultable pour pKa 6,1 et 0,03 | À faire |
 | 39 | Vérification | Vérification indépendante | EN06 Anatomy & Physiology — 10 Systems Sheets | — | Vérification indépendante | À faire |
 | 40 | Vérification | Vérification indépendante | FR09 PASS/LAS Biostatistiques — fiche formules | — | Vérification indépendante | À faire |
 | 41 | Conditionnement | Aperçus, vidéo, Anki, annonces, script iPhone | EN06 Anatomy & Physiology — 10 Systems Sheets | — | Aperçus, vidéo, Anki, annonces, script iPhone | À faire |

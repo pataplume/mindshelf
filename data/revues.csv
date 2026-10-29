@@ -9,3 +9,5 @@ id,variante_code,version,etape_code,acteur,statut_code,date,rapport
 8,FR01-2009,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/FR01/verif/rapport-v1.md
 9,FR01-2026,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/FR01/verif/rapport-v1.md
 10,FR07-STD,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR07/verif/rapport-v1.md
+11,FR07-STD,v1,VERIF_AUTO,VERIFICATEUR,A_VALIDER,2026-10-29,produits/FR07/verif/rapport-v2.md
+12,FR08-STD,v1,VERIF_AUTO,VERIFICATEUR,A_CORRIGER,2026-10-29,produits/FR08/verif/rapport-v2.md
