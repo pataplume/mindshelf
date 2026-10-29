@@ -1,0 +1,4 @@
+particule,charge,emplacement
+Proton,positive,nucleus; their number is the atomic number $Z$ and defines the element
+Neutron,none,nucleus
+Electron,negative,shells (energy levels) around the nucleus; valence electrons drive bonding

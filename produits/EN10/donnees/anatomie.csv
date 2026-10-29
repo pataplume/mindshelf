@@ -8,7 +8,8 @@ Cardiovascular,Conduction,SA node (pacemaker) → AV node → AV bundle (bundle 
 Cardiovascular,Vessels,"Arteries carry blood away from the heart; capillaries (one cell thick) exchange gases and nutrients; veins return blood, with valves in the limbs"
 Cardiovascular,Blood,"Erythrocytes carry O₂ on hemoglobin; leukocytes defend; platelets start clotting; plasma carries solutes"
 Respiratory,Nasal cavity,"Warms, humidifies and filters inhaled air"
-Respiratory,Pharynx and larynx,Shared airway and food passage; larynx holds the vocal cords; the epiglottis covers it during swallowing
+Respiratory,Pharynx,Throat: shared passage for air and food
+Respiratory,Larynx,Airway only: holds the vocal cords; the epiglottis covers it during swallowing
 Respiratory,Trachea and bronchi,Cartilage rings keep the trachea open; bronchi branch into bronchioles (conducting zone)
 Respiratory,Alveoli,"Gas exchange by diffusion across a thin respiratory membrane; surfactant lowers surface tension"
 Respiratory,Diaphragm,"Contracts and flattens on inspiration: chest volume up, pressure down, air flows in"

@@ -1,7 +1,5 @@
 id,valeur,valeur_max,unite,condition,description
-SCI_TOTAL,50,,questions,,Questions de la section Science du TEAS 7 (notées + prétest non notées)
 SCI_PRETEST,6,,questions,,Questions de prétest non notées de la section Science
-SCI_NOTEES,44,,questions,,Questions notées de la section Science
 SCI_MINUTES,60,,min,,Durée de la section Science
 OS_ADULTE,206,,bones,,Nombre d'os du squelette adulte
 VERT_C,7,,,,Vertèbres cervicales
@@ -18,7 +16,6 @@ T_CORPS_F,98.6,,°F,,Même température en degrés Fahrenheit
 CHROM_2N,46,,chromosomes,,Nombre diploïde humain (2n)
 CHROM_PAIRES,23,,pairs,,Paires de chromosomes humains (n = 23 dans un gamète)
 AA,20,,amino acids,,Acides aminés codés par le code génétique standard
-CODONS,64,,codons,,Codons possibles (4 bases ^ 3)
 CODONS_STOP,3,,,,Codons stop (UAA UAG UGA)
 CODON_BASES,3,,bases,,Longueur d'un codon
 PH_NEUTRE,7,,,25 °C,pH neutre de l'eau pure à 25 °C

@@ -78,6 +78,11 @@
 #let plan = lire("plan.csv")
 #let anatomie = lire("anatomie.csv")
 #let comparaisons = lire("comparaisons.csv")
+// Questions notées : somme de plan.csv ; total = notées + prétest (valeurs.csv SCI_PRETEST).
+#let sci-notees = plan.map(p => int(p.questions)).sum()
+#let sci-total = sci-notees + int(_val("SCI_PRETEST").valeur)
+// Sous-domaine qui compte le plus de questions notées (ordre de plan.csv).
+#let plus-gros = plan.fold(plan.first(), (m, p) => if int(p.questions) > int(m.questions) { p } else { m }).ordre
 #let questions(ordre) = {
   let l = plan.filter(p => p.ordre == ordre)
   if l.len() != 1 { panic("EN10 : domaine " + ordre + " absent de plan.csv") }
@@ -91,6 +96,11 @@
     entete: 0,
     ..lignes.map(l => ([*#l.structure*], l.role)).flatten(),
   )
+}
+#let critere(nom, c) = {
+  let l = comparaisons.filter(l => l.tableau == nom and l.critere == c)
+  if l.len() != 1 { panic("EN10 : critère « " + c + " » absent du tableau " + nom + " de comparaisons.csv") }
+  l.first()
 }
 #let compare(nom, a, b) = tableau(
   columns: (auto, 1fr, 1fr),
@@ -118,11 +128,11 @@
   [Sub-area (ATI TEAS 7 content outline)], [Scored items],
   ..plan.map(l => ([*#l.domaine*: #l.contenu], nombre(l.questions))).flatten(),
 )
-#k("SCI_NOTEES") scored items plus #k("SCI_PRETEST") unscored pretest items (#k("SCI_TOTAL") in all) in #k("SCI_MINUTES", u: true). Pretest items are mixed in with the scored ones and do not count, so give every question full effort. These sheets review core facts for each sub-area; they are not a complete course and contain no actual test questions.
+#nombre(str(sci-notees)) scored items plus #k("SCI_PRETEST") unscored pretest items (#nombre(str(sci-total)) in all) in #k("SCI_MINUTES", u: true). Pretest items are mixed in with the scored ones and do not count, so give every question full effort. These sheets review core facts for each sub-area; they are not a complete course and contain no actual test questions.
 
 = Human Anatomy & Physiology
 
-Largest sub-area: #questions("1") scored items.
+#if plus-gros == "1" [Largest sub-area: ] #questions("1") scored items.
 
 == Orientation
 
@@ -140,7 +150,7 @@ Largest sub-area: #questions("1") scored items.
 )
 *Cavities:* dorsal = cranial (brain) + vertebral (spinal cord); ventral = thoracic (pleural cavities, pericardial cavity, mediastinum) + abdominopelvic, separated by the diaphragm.
 
-*Levels of organization:* chemical → cell → tissue → organ → organ system → organism. Four tissue types: epithelial, connective, muscle, nervous.
+*Levels of organization:* chemical → cell → tissue → organ → organ system → organism. Tissue types: epithelial, connective, muscle, nervous.
 
 *Homeostasis:* negative feedback reverses a change (body temperature near #k("T_CORPS_C", u: true) / #k("T_CORPS_F", u: true), blood glucose, blood pH #plage("PH_SANG")); positive feedback amplifies it until an end point (oxytocin in labor, blood clotting).
 
@@ -156,10 +166,10 @@ Largest sub-area: #questions("1") scored items.
 
 #tableau(
   columns: (auto, auto, auto, 1fr),
-  [Type], [RBC antigens], [Plasma antibodies], [Can receive red cells from],
+  [Type], [RBC antigens], [Plasma antibodies], [Can receive red cells from (ABO only)],
   ..lire("groupes_sanguins.csv").map(l => ([*#l.groupe*], l.antigenes, l.anticorps, l.recoit)).flatten(),
 )
-*Rh:* Rh-positive cells carry the D antigen. An Rh-negative person makes anti-D only after exposure (transfusion, pregnancy with an Rh-positive fetus), which can cause hemolytic disease of the newborn in a later pregnancy.
+*Rh:* Rh-positive cells carry the D antigen. An Rh-negative person makes anti-D only after exposure (transfusion, pregnancy with an Rh-positive fetus), which can cause hemolytic disease of the newborn in a later pregnancy. *Universal red-cell donor:* O−; *universal recipient:* AB+. An Rh− person should receive Rh− red cells.
 
 == Respiratory System
 
@@ -220,9 +230,7 @@ Most hormone levels are held steady by negative feedback (e.g., high T₄ suppre
 #tableau(
   columns: (auto, 1fr),
   [Cell placed in], [Result],
-  [*Hypertonic* solution], [Water leaves; the cell shrinks (crenates)],
-  [*Hypotonic* solution], [Water enters; the cell swells, may burst (lyse)],
-  [*Isotonic* solution], [No net water movement],
+  ..lire("tonicite.csv").map(l => ([*#l.solution* solution], l.resultat)).flatten(),
 )
 
 #let equation(id) = {
@@ -259,16 +267,19 @@ A *codon* is #k("CODON_BASES", u: true) of mRNA; the tRNA *anticodon* pairs with
 
 *Allele:* version of a gene. *Genotype* (AA, Aa, aa) vs *phenotype* (observed trait). Homozygous = two identical alleles; heterozygous = two different. *Law of segregation:* allele pairs separate into gametes. *Independent assortment:* genes on different chromosomes sort independently.
 
-#exemple(titre: "Punnett square, Aa × Aa")[
+// Gamètes des deux parents ; une case réunit un allèle de chaque parent, la majuscule (dominant) en premier.
+#let punnett-p1 = ("A", "a")
+#let punnett-p2 = ("A", "a")
+#let punnett-case(g1, g2) = if g1 == lower(g1) and g2 != lower(g2) { g2 + g1 } else { g1 + g2 }
+#exemple(titre: "Punnett square, " + punnett-p1.join() + " × " + punnett-p2.join())[
   #tableau(
     columns: (auto, 1fr, 1fr),
     align: center,
-    [], [*A*], [*a*],
-    [*A*], [AA], [Aa],
-    [*a*], [Aa], [aa],
+    [], ..punnett-p2.map(g => [*#g*]),
+    ..punnett-p1.map(g1 => ([*#g1*], ..punnett-p2.map(g2 => [#punnett-case(g1, g2)]))).flatten(),
   )
-  Genotypes AA : Aa : aa = #res("EX11") : #res("EX12") : #res("EX11"); phenotypes dominant : recessive = #res("EX13") : #res("EX11"); P(aa) $= #v("EX10", "pa1") times #v("EX10", "pa2")$ = #res("EX10") %.
-  - Test cross Aa × aa: P(aa) $= #v("EX14", "pa1") times #v("EX14", "pa2")$ = #res("EX14") %.
+  Genotypes AA : Aa : aa = #res("EX11") : #res("EX12") : #res("EX11")\; phenotypes dominant : recessive = #res("EX13") : #res("EX11")\; P(aa) $= #v("EX10", "pa1") times #v("EX10", "pa2")$ = #res("EX10")~%.
+  - Test cross Aa × aa: P(aa) $= #v("EX14", "pa1") times #v("EX14", "pa2")$ = #res("EX14")~%.
   - Dihybrid AaBb × AaBb, out of #v("EX15", "n"): #res("EX15") : #res("EX16") : #res("EX16") : #res("EX17") (e.g., both dominant $= #v("EX15", "d1") times #v("EX15", "d2") times #v("EX15", "n") = #res("EX15")$).
 ]
 *Non-Mendelian:* incomplete dominance (blend: red × white → pink); codominance (both expressed: blood type AB); multiple alleles (ABO); X-linked recessive traits (e.g., hemophilia) appear more often in males.
@@ -308,9 +319,7 @@ Dehydration synthesis joins monomers (releases water); hydrolysis splits them (u
 #tableau(
   columns: (auto, auto, 1fr),
   [Particle], [Charge], [Location],
-  [*Proton*], [positive], [nucleus; their number is the atomic number $Z$ and defines the element],
-  [*Neutron*], [none], [nucleus],
-  [*Electron*], [negative], [shells (energy levels) around the nucleus; valence electrons drive bonding],
+  ..lire("particules.csv").map(l => ([*#l.particule*], l.charge, eval(l.emplacement, mode: "markup"))).flatten(),
 )
 #formule[
   Mass number $A = Z + N$; *isotopes* = same $Z$, different $N$; *ion* = atom that gained (anion, −) or lost (cation, +) electrons.
@@ -361,10 +370,10 @@ Dehydration synthesis joins monomers (releases water); hydrolysis splits them (u
 Solute dissolves in solvent (water: the "universal solvent"); like dissolves like (polar with polar). Unsaturated → saturated → supersaturated. Most solids dissolve better when hot; gases dissolve better when cold and under pressure.
 
 #formule(titre: "Concentration")[
-  $ M = "mol solute" / "L solution" quad C_1 V_1 = C_2 V_2 quad "% (m/v)" = "g solute" / "100 mL solution" $
+  $ M = "mol solute" / "L solution" quad C_1 V_1 = C_2 V_2 quad "% (m/v)" = "g solute" / (#v("EX23", "c") "mL solution") $
   - NaCl molar mass $#v("EX21", "Na") + #v("EX21", "Cl") = #res("EX21")$ g/mol; #v("EX20", "m") g in #v("EX20", "V") L: $M = #v("EX20", "m") \/ (#v("EX20", "MM") times #v("EX20", "V")) = #res("EX20")$ M.
   - #v("EX22", "V2") mL of #v("EX22", "C2") M from #v("EX22", "C1") M stock: $V_1 = #v("EX22", "C2") times #v("EX22", "V2") \/ #v("EX22", "C1") = #res("EX22")$ mL, then add solvent to #v("EX22", "V2") mL.
-  - #v("EX23", "V") mL of #v("EX23", "pct") % (m/v) glucose holds $#v("EX23", "pct") times #v("EX23", "V") \/ #v("EX23", "c") = #res("EX23")$ g.
+  - #v("EX23", "V") mL of #v("EX23", "pct")~% (m/v) glucose holds $#v("EX23", "pct") times #v("EX23", "V") \/ #v("EX23", "c") = #res("EX23")$ g.
   - Moles $n = m \/ M$: H₂O $= #v("EX38", "nH") times #v("EX38", "H") + #v("EX38", "O") #rel("EX38") #res("EX38")$ g/mol; #v("EX39", "m") g of water $#rel("EX39") #res("EX39")$ mol.
 ]
 
@@ -389,19 +398,14 @@ Observation → question → *hypothesis* (testable, falsifiable prediction) →
 #tableau(
   columns: (auto, 1fr),
   [Term], [Meaning],
-  [*Independent variable*], [What the investigator changes (x-axis)],
-  [*Dependent variable*], [What is measured in response (y-axis)],
-  [*Controlled variables*], [Kept the same in every trial],
-  [*Control group*], [Gets no treatment: the baseline for comparison],
-  [*Theory*], [Broad, well-tested explanation],
-  [*Law*], [Describes what happens (often an equation), not why],
+  ..lire("methode.csv").map(l => ([*#l.terme*], l.sens)).flatten(),
 )
 *Accuracy* = closeness to the true value; *precision* = closeness of repeated results to each other. More trials and larger samples make results more reliable. Correlation does not prove causation. An *observation* is what you sense or measure; an *inference* is a conclusion drawn from it. Inductive reasoning goes from specific cases to a general rule; deductive reasoning applies a general rule to a specific case.
 
 #formule(titre: "Working with data")[
   - Mean of trials #v("EX34", "a"), #v("EX34", "b"), #v("EX34", "c"): $(#v("EX34", "a") + #v("EX34", "b") + #v("EX34", "c")) \/ #v("EX34", "n") = #res("EX34")$.
   - Slope: #v("EX33", "y1") cm on day #v("EX33", "x1"), #v("EX33", "y2") cm on day #v("EX33", "x2"): $(#v("EX33", "y2") - #v("EX33", "y1")) \/ (#v("EX33", "x2") - #v("EX33", "x1")) = #res("EX33")$ cm/day.
-  - Percent error: measured #v("EX35", "m"), accepted #v("EX35", "a"): $(#v("EX35", "m") - #v("EX35", "a")) \/ #v("EX35", "a") times #v("EX35", "c") #rel("EX35") #res("EX35")$ %.
+  - Percent error: measured #v("EX35", "m"), accepted #v("EX35", "a"): $abs(#v("EX35", "m") - #v("EX35", "a")) \/ #v("EX35", "a") times #v("EX35", "c") #rel("EX35") #res("EX35")$~%.
 ]
 #encadre(titre: "Judging an investigation")[
   - Only one independent variable should change; everything else stays controlled.
@@ -439,7 +443,7 @@ Moving to a smaller unit gives a bigger number (multiply); moving to a larger un
   - Pulmonary arteries carry deoxygenated blood and pulmonary veins oxygenated blood: arteries are defined by direction (away from the heart), not by O₂.
   - Tendons join muscle to bone; ligaments join bone to bone.
   - Insulin lowers blood glucose; glucagon raises it. Calcitonin lowers blood Ca²⁺; PTH raises it.
-  - Mitosis gives two identical diploid cells; meiosis gives four different haploid cells.
+  - Mitosis gives #lower(critere("division", "Daughter cells").a) (diploid); meiosis gives #lower(critere("division", "Daughter cells").b) (haploid).
   - RNA has uracil, not thymine; codons are read on mRNA.
   - Aa × Aa gives a #res("EX13") : #res("EX11") phenotype ratio but a #res("EX11") : #res("EX12") : #res("EX11") genotype ratio.
   - Antibiotics act on bacteria, not on viruses.
@@ -448,6 +452,7 @@ Moving to a smaller unit gives a bigger number (multiply); moving to a larger un
   - The independent variable is changed; the dependent variable is measured.
   - Precise is not the same as accurate.
   - Supine is face up; prone is face down.
+  - Universal red-cell donor is O−, universal recipient AB+: Rh counts as well as ABO.
   - ADH saves water; aldosterone saves sodium (water follows).
   - Food passes through the pharynx but never through the liver or pancreas.
   - Gas-law calculations need kelvins, not degrees Celsius.

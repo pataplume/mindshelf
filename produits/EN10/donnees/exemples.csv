@@ -33,7 +33,7 @@ EX31,"Débit cardiaque : FC 70 /min × VES 70 mL × 0.001 L/mL","{""HR"": 70, ""
 EX32,"Cellule haploïde humaine : n = 2n / 2, 2n = 46","{""n2"": 46, ""d"": 2}",n2 / d,23,,0.000001,0
 EX33,"Pente : hauteur 4 cm au jour 2, 10 cm au jour 8 ; pente = (y2 − y1) / (x2 − x1)","{""y1"": 4, ""y2"": 10, ""x1"": 2, ""x2"": 8}",(y2 - y1) / (x2 - x1),1,cm/day,0.000001,0
 EX34,"Moyenne de trois essais : (12 + 15 + 18) / 3","{""a"": 12, ""b"": 15, ""c"": 18, ""n"": 3}",(a + b + c) / n,15,,0.000001,0
-EX35,"Erreur relative en % : mesure 10.4, valeur acceptée 10 ; (m − a) / a × 100","{""m"": 10.4, ""a"": 10, ""c"": 100}",(m - a) / a * c,4,%,0.000001,0
+EX35,"Erreur relative en % : mesure 10.4, valeur acceptée 10 ; |m − a| / a × 100, affichée avec la valeur absolue ; m > a, donc la formule s'écrit sans valeur absolue (règle 9)","{""m"": 10.4, ""a"": 10, ""c"": 100}",(m - a) / a * c,4,%,0.000001,0
 EX36,"Nombre de codons : 4 bases, codons de 3 bases ; 4^3","{""b"": 4, ""n"": 3}","calc.pow(b, n)",64,,0.000001,0
 EX37,"Loi de Boyle à T constante : P1 = 1 atm, V1 = 6 L, P2 = 2 atm ; V2 = P1 × V1 / P2","{""P1"": 1, ""V1"": 6, ""P2"": 2}",P1 * V1 / P2,3,L,0.000001,0
 EX38,"Masse molaire de l'eau : 2 × M(H) + M(O) = 2 × 1.008 + 15.999","{""nH"": 2, ""H"": 1.008, ""O"": 15.999}",nH * H + O,18.015,g/mol,0.000001,1

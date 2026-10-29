@@ -1,5 +1,5 @@
 groupe,antigenes,anticorps,recoit
 A,A,anti-B,"A, O"
 B,B,anti-A,"B, O"
-AB,A and B,none,"A, B, AB, O (universal recipient)"
-O,none,anti-A and anti-B,O only (universal donor of red cells)
+AB,A and B,none,"A, B, AB, O"
+O,none,anti-A and anti-B,O only
